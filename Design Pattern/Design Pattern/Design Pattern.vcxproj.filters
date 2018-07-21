@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="单件模式">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="策略模式">
+      <UniqueIdentifier>{8bf42ff0-23b1-48e2-8890-28c6dd4b1e93}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="singleton.h">
+      <Filter>单件模式</Filter>
+    </ClInclude>
+    <ClInclude Include="Strategy.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="Strategytest.h">
+      <Filter>策略模式</Filter>
+    </ClInclude>
+    <ClInclude Include="singletonTest.h">
+      <Filter>单件模式</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="singleton.cpp">
+      <Filter>单件模式</Filter>
+    </ClCompile>
+    <ClCompile Include="Strategy.cpp">
+      <Filter>策略模式</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
