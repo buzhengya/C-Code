@@ -118,12 +118,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Observe.h" />
+    <ClInclude Include="observe_test.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="singletonTest.h" />
     <ClInclude Include="Strategy.h" />
     <ClInclude Include="Strategytest.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="singleton.cpp" />
     <ClCompile Include="Strategy.cpp" />
   </ItemGroup>

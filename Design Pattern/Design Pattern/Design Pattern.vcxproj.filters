@@ -8,6 +8,9 @@
     <Filter Include="策略模式">
       <UniqueIdentifier>{8bf42ff0-23b1-48e2-8890-28c6dd4b1e93}</UniqueIdentifier>
     </Filter>
+    <Filter Include="观察者模式">
+      <UniqueIdentifier>{28e4f4c1-013f-4a70-97da-27ad789ee2fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -22,6 +25,12 @@
     <ClInclude Include="singletonTest.h">
       <Filter>单件模式</Filter>
     </ClInclude>
+    <ClInclude Include="Observe.h">
+      <Filter>观察者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="observe_test.h">
+      <Filter>观察者模式</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="singleton.cpp">
@@ -30,5 +39,6 @@
     <ClCompile Include="Strategy.cpp">
       <Filter>策略模式</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
 </Project>

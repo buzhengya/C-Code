@@ -5,7 +5,7 @@
 using namespace std;
 
 
-int test()
+void test_Singleton()
 {
 
 	Singleton *s1 = Singleton::getInstance();
@@ -17,5 +17,4 @@ int test()
 	s2->value = 2;
 	cout << s1->value << s2->value;
 	system("pause");
-	return 0;
 }
