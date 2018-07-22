@@ -1,32 +1,30 @@
 #pragma once
-#ifndef SINGLETON
-#define SINGLETON
-
-
+#include<iostream>
+#include<vector>
+#include<map>
+#include<list>
+#include<unordered_map>
+#include<set>
+#include<unordered_set>
 class Singleton
 {
 public:
-	int value;
-	static Singleton * getInstance();
-	static Singleton *uniqueInstance;
+	int m_nValue;
+	static Singleton* getInstance()
+	{
+		if (m_pInstance == 0)
+		{
+			m_pInstance = new Singleton();
+		}
+		return m_pInstance;
+	}
 
 private:
-	~Singleton() {}
-
+	static Singleton* m_pInstance;
 	Singleton()
 	{
-		value = 0;
+		m_nValue = 0;
 	}
+	Singleton(const Singleton&) {}
+	Singleton operator=(const Singleton&) {}
 };
-Singleton *Singleton::uniqueInstance = 0;
-
-Singleton * Singleton::getInstance()
-{
-	if (uniqueInstance == 0)
-	{
-		uniqueInstance = new Singleton();
-	}
-	return uniqueInstance;
-}
-
-#endif // !Singleton

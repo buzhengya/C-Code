@@ -118,6 +118,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="abstract_factory.h" />
+    <ClInclude Include="abstract_factor_test.h" />
+    <ClInclude Include="Decorator.h" />
+    <ClInclude Include="decorator_test.h" />
+    <ClInclude Include="factory.h" />
+    <ClInclude Include="factory_test.h" />
     <ClInclude Include="Observe.h" />
     <ClInclude Include="observe_test.h" />
     <ClInclude Include="singleton.h" />

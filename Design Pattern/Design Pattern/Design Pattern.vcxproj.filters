@@ -11,6 +11,15 @@
     <Filter Include="观察者模式">
       <UniqueIdentifier>{28e4f4c1-013f-4a70-97da-27ad789ee2fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="装饰者模式">
+      <UniqueIdentifier>{63b6e927-05df-43ef-88aa-5be61511d59a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="工厂模式">
+      <UniqueIdentifier>{d5d08489-f71c-4e0d-84f2-71ebf0427314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="抽象工厂模式">
+      <UniqueIdentifier>{983fb6be-9845-4534-8032-14a012bb6cbb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -30,6 +39,24 @@
     </ClInclude>
     <ClInclude Include="observe_test.h">
       <Filter>观察者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="Decorator.h">
+      <Filter>装饰者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="decorator_test.h">
+      <Filter>装饰者模式</Filter>
+    </ClInclude>
+    <ClInclude Include="factory.h">
+      <Filter>工厂模式</Filter>
+    </ClInclude>
+    <ClInclude Include="factory_test.h">
+      <Filter>工厂模式</Filter>
+    </ClInclude>
+    <ClInclude Include="abstract_factory.h">
+      <Filter>抽象工厂模式</Filter>
+    </ClInclude>
+    <ClInclude Include="abstract_factor_test.h">
+      <Filter>抽象工厂模式</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
