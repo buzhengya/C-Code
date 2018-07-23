@@ -20,6 +20,15 @@
     <Filter Include="抽象工厂模式">
       <UniqueIdentifier>{983fb6be-9845-4534-8032-14a012bb6cbb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="命令模式">
+      <UniqueIdentifier>{1452a579-f3a8-413f-9f83-d7b479ce9fea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="适配器模式">
+      <UniqueIdentifier>{16c7a38d-bb0a-4449-bab9-4998b0af3f48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="外观模式">
+      <UniqueIdentifier>{693d6bf0-49bc-49ac-88e6-1885aef5a93b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -57,6 +66,24 @@
     </ClInclude>
     <ClInclude Include="abstract_factor_test.h">
       <Filter>抽象工厂模式</Filter>
+    </ClInclude>
+    <ClInclude Include="command.h">
+      <Filter>命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="command_test.h">
+      <Filter>命令模式</Filter>
+    </ClInclude>
+    <ClInclude Include="adapt.h">
+      <Filter>适配器模式</Filter>
+    </ClInclude>
+    <ClInclude Include="adapt_test.h">
+      <Filter>适配器模式</Filter>
+    </ClInclude>
+    <ClInclude Include="facade.h">
+      <Filter>外观模式</Filter>
+    </ClInclude>
+    <ClInclude Include="facade_test.h">
+      <Filter>外观模式</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

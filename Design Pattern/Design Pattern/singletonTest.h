@@ -22,4 +22,4 @@ void SingletonTest()
 	system("pause");
 }
 
-Singleton* Singleton::m_pInstance = NULL;
+

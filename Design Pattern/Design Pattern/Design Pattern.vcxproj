@@ -120,8 +120,14 @@
   <ItemGroup>
     <ClInclude Include="abstract_factory.h" />
     <ClInclude Include="abstract_factor_test.h" />
+    <ClInclude Include="adapt.h" />
+    <ClInclude Include="adapt_test.h" />
+    <ClInclude Include="command.h" />
+    <ClInclude Include="command_test.h" />
     <ClInclude Include="Decorator.h" />
     <ClInclude Include="decorator_test.h" />
+    <ClInclude Include="facade.h" />
+    <ClInclude Include="facade_test.h" />
     <ClInclude Include="factory.h" />
     <ClInclude Include="factory_test.h" />
     <ClInclude Include="Observe.h" />

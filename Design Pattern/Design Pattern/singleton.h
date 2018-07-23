@@ -1,4 +1,7 @@
 #pragma once
+#ifndef SINGLETON
+#define SINGLETON
+
 #include<iostream>
 #include<vector>
 #include<map>
@@ -28,3 +31,6 @@ private:
 	Singleton(const Singleton&) {}
 	Singleton operator=(const Singleton&) {}
 };
+
+
+#endif // !SINGLETON
