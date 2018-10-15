@@ -25,6 +25,9 @@
     <ClInclude Include="cstring.h">
       <Filter>string</Filter>
     </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>string</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="content_process.cpp">

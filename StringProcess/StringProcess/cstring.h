@@ -2,6 +2,8 @@
 #pragma once
 #include<string.h>
 #include<iostream>
+#include"define.h"
+
 
 class CString
 {
@@ -27,10 +29,13 @@ public:
 	~CString();
 
 	//others
-	size_t Length()const;
-	size_t Size()const;
+	uint32 Length()const;
+	uint32 Size()const;
 
 private:
+	//负责内存分配 将pcStr指向的字符串复制给m_pcData m_pcData原先指向的数据不做处理
 	void Assign(const char * pcStr);
 	char *m_pcData;
+	uint32 m_nLen;
+	uint32 m_nCap;
 };

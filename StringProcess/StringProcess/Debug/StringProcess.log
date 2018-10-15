@@ -1,5 +1,3 @@
-﻿  main.cpp
-  cstring.cpp
-  正在生成代码...
-  StringProcess.vcxproj -> D:\C++Code\StringProcess\Debug\StringProcess.exe
-  StringProcess.vcxproj -> D:\C++Code\StringProcess\Debug\StringProcess.pdb (Full PDB)
+﻿  cstring.cpp
+d:\c-code\stringprocess\stringprocess\cstring.cpp(39): warning C4172: 返回局部变量或临时变量的地址
+  StringProcess.vcxproj -> D:\C-Code\StringProcess\Debug\StringProcess.exe

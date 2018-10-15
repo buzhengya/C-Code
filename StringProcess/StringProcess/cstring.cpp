@@ -1,10 +1,10 @@
 #include "cstring.h"
 
-static int nCount = 0;
+
 
 CString::CString()
 {
-	m_pcData = nullptr;
+	Assign("");
 }
 
 CString::CString(const char * pcStr)
@@ -21,14 +21,8 @@ CString::CString(const CString & oStr)
 
 CString& CString::operator=(const CString& oStr)
 {
-	//先将右值内存复制 避免 s=s这样的情况
+	//先复制再销毁原内存 避免 s=s这样的情况
 	char * pTmp = nullptr;
-	if(oStr.m_pcData!=nullptr)
-	{
-		int nLen = strlen(oStr.m_pcData);
-		pTmp = new char(nLen + 1);
-		strncpy(pTmp, oStr.m_pcData, nLen + 1);
-	}
 
 	//如果原指针不为空 则删除指向的内存
 	if(m_pcData!=nullptr)
@@ -42,7 +36,7 @@ CString& CString::operator=(const CString& oStr)
 
 CString & CString::operator=(char pcStr)
 {
-	
+	return CString();
 }
 
 CString& CString::operator=(const char *)
@@ -59,26 +53,26 @@ CString::~CString()
 	}
 }
 
-size_t CString::Length()const
+uint32 CString::Length()const
 {
 	return strlen(m_pcData);
 }
 
-size_t CString::Size()const
+uint32 CString::Size()const
 {
 	return strlen(m_pcData);
 }
 
 void CString::Assign(const char * pcStr)
 {
-	if (pcStr != nullptr)
+	uint32 nLen = strlen(pcStr);
+	m_nCap = 1;
+	while (m_nCap <= nLen) m_nCap = m_nCap << 1;
+	if (m_pcData != nullptr)
 	{
-		int nLen = strlen(pcStr);
-		m_pcData = new char(nLen + 1);
-		strncpy(m_pcData, pcStr, nLen + 1);
+		delete m_pcData;
 	}
-	else
-	{
-		m_pcData = nullptr;
-	}
+	m_pcData = new char(m_nCap);
+	strncpy(m_pcData, pcStr,nLen);
+	m_pcData[m_nLen] = '\0';
 }
