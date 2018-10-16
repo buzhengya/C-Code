@@ -1,6 +1,5 @@
 #pragma once
 #pragma once
-#include<string.h>
 #include<iostream>
 #include"define.h"
 
@@ -33,7 +32,7 @@ public:
 	uint32 Size()const;
 
 private:
-	//负责内存分配 将pcStr指向的字符串复制给m_pcData m_pcData原先指向的数据不做处理
+	//负责构造时 进行内存分配并将字符串赋给该内存
 	void Assign(const char * pcStr);
 	char *m_pcData;
 	uint32 m_nLen;

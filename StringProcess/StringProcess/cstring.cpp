@@ -55,17 +55,19 @@ CString::~CString()
 
 uint32 CString::Length()const
 {
-	return strlen(m_pcData);
+	return 0;
+	//return strlen(m_pcData);
 }
 
 uint32 CString::Size()const
 {
-	return strlen(m_pcData);
+	return 0;
+	//return strlen(m_pcData);
 }
 
 void CString::Assign(const char * pcStr)
 {
-	uint32 nLen = strlen(pcStr);
+	/*uint32 nLen = strlen(pcStr);
 	m_nCap = 1;
 	while (m_nCap <= nLen) m_nCap = m_nCap << 1;
 	if (m_pcData != nullptr)
@@ -74,5 +76,5 @@ void CString::Assign(const char * pcStr)
 	}
 	m_pcData = new char(m_nCap);
 	strncpy(m_pcData, pcStr,nLen);
-	m_pcData[m_nLen] = '\0';
+	m_pcData[m_nLen] = '\0';*/
 }
