@@ -1,7 +1,3 @@
-﻿  cstring.cpp
-  正在生成代码...
-d:\c++ code\string-process\string-process\cstring.cpp(51): warning C4172: 返回局部变量或临时变量的地址
-d:\c++ code\string-process\string-process\cstring.cpp(85): error C4716: “CString::Empty”: 必须返回一个值
-  正在编译...
-  main.cpp
-  正在生成代码...
+﻿  main.cpp
+  string-process.vcxproj -> D:\C++Code\string-process\Debug\string-process.exe
+  string-process.vcxproj -> D:\C++Code\string-process\Debug\string-process.pdb (Full PDB)
