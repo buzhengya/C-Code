@@ -1,7 +1,0 @@
-﻿  main.cpp
-d:\c++ code\delete_repeat_log\delete_repeat_log\main.cpp(15): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
-d:\c++ code\delete_repeat_log\delete_repeat_log\main.cpp(76): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: 参见“fopen”的声明
-  delete_repeat_log.vcxproj -> D:\C++ code\delete_repeat_log\Debug\delete_repeat_log.exe
-  delete_repeat_log.vcxproj -> D:\C++ code\delete_repeat_log\Debug\delete_repeat_log.pdb (Full PDB)

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="log">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="pattern">
+      <UniqueIdentifier>{b65dd6a6-4c70-4fa0-b6bf-4cb6981147be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="time">
+      <UniqueIdentifier>{b0e31ec3-fe29-419b-b818-e70dbee2b76e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{ec591251-666e-4343-b81d-0ba49246198f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="string">
+      <UniqueIdentifier>{39e9b6c0-b07f-4d0f-9a37-52b7ef528090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="net">
+      <UniqueIdentifier>{89c8367a-5531-4b19-89b7-730cb485824a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="singleton.h">
+      <Filter>pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="base_define.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="wtime.h">
+      <Filter>time</Filter>
+    </ClInclude>
+    <ClInclude Include="wstring.h">
+      <Filter>string</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="wbase.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="wnet.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="wnet_opt.h">
+      <Filter>net</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="wtime.cpp">
+      <Filter>time</Filter>
+    </ClCompile>
+    <ClCompile Include="wstring.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

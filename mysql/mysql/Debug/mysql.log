@@ -1,0 +1,6 @@
+﻿  main.cpp
+main.obj : error LNK2019: 无法解析的外部符号 _mysql_init@4，该符号在函数 _main 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 _mysql_real_connect@32，该符号在函数 _main 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 _mysql_query@8，该符号在函数 _main 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 _mysql_close@4，该符号在函数 _main 中被引用
+D:\C++ code\mysql\Debug\mysql.exe : fatal error LNK1120: 4 个无法解析的外部命令

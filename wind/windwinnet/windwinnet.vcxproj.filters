@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="netwin.h" />
+    <ClInclude Include="connector.h" />
+    <ClInclude Include="connection.h" />
+    <ClInclude Include="sock.h" />
+    <ClInclude Include="conn_data_mgr.h" />
+    <ClInclude Include="conn_data_allocator.h" />
+    <ClInclude Include="iocpctrl.h" />
+    <ClInclude Include="simple_loop_buffer.h" />
+    <ClInclude Include="thread_buffer_pool.h" />
+    <ClInclude Include="listener.h" />
+    <ClInclude Include="net_config.h" />
+    <ClInclude Include="bufpool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="netwin.cpp" />
+    <ClCompile Include="connector.cpp" />
+    <ClCompile Include="connection.cpp" />
+    <ClCompile Include="sock.cpp" />
+    <ClCompile Include="iocpctrl.cpp" />
+    <ClCompile Include="simple_loop_buffer.cpp" />
+    <ClCompile Include="listener.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="net_config.cpp" />
+    <ClCompile Include="bufpool.cpp" />
+    <ClCompile Include="conn_data_mgr.cpp" />
+    <ClCompile Include="conn_data_allocator.cpp" />
+  </ItemGroup>
+</Project>

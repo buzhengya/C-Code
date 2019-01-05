@@ -1,0 +1,7 @@
+﻿  main.cpp
+d:\c++code\robot\socket\main.cpp(13): error C2036: “void *”: 未知的大小
+  d:\c++code\robot\socket\main.cpp(18): note: 参见对正在编译的函数 模板 实例化“int Size<int>(T &)”的引用
+          with
+          [
+              T=int
+          ]
