@@ -47,7 +47,7 @@ public:
 		if (m_objects.empty())
 		{
 			LOG << "CConnDataAllocator::allocate failed!!!" << std::endl;
-			return;
+			return nullptr;
 		}
 		CConnData* pConnData = m_objects.front();
 		m_objects.pop_front();

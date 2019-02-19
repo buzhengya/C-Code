@@ -1,6 +1,11 @@
 #include "wtime.h"
 #include <sstream>
 #include <iomanip>
+#include <sys/timeb.h>
+#include <chrono>
+#include <iostream>
+using namespace std;
+
 namespace wind
 {
 	time_t CTime::GetTimeValue()
@@ -25,5 +30,15 @@ namespace wind
 		auto oCurDate = GetTime();
 		ss << std::put_time(oCurDate, pszFmt);
 		return ss.str();
+
+		struct tm tv;
 	}
+
+	uint64 CTime::GetNowMilTime()
+	{
+		using namespace std::chrono;
+		time_point<system_clock> oNow = system_clock::now();
+		return duration_cast<milliseconds>(oNow.time_since_epoch()).count();
+	}
+
 }

@@ -1,0 +1,5 @@
+﻿  gtest_prod_test.cc
+  production.cc
+  正在生成代码...
+  gtest_prod_test.vcxproj -> D:\C++Code\googletest\googletest\msvc\gtest/Release\gtest_prod_test.exe
+  gtest_prod_test.vcxproj -> gtest/Release\gtest_prod_test.pdb (Full PDB)

@@ -12,6 +12,9 @@
     <Filter Include="reader">
       <UniqueIdentifier>{3d9c0033-2342-4a4a-a081-9a212b9ce5c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="read_json">
+      <UniqueIdentifier>{aa92b8d1-5e41-44ab-9334-b8d732e1a973}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="json.h">
@@ -19,6 +22,9 @@
     </ClInclude>
     <ClInclude Include="reader.h">
       <Filter>reader</Filter>
+    </ClInclude>
+    <ClInclude Include="read_json.h">
+      <Filter>read_json</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -30,6 +36,9 @@
     </ClCompile>
     <ClCompile Include="reader.cpp">
       <Filter>reader</Filter>
+    </ClCompile>
+    <ClCompile Include="read_json.cpp">
+      <Filter>read_json</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

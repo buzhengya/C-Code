@@ -20,6 +20,9 @@
     <Filter Include="net">
       <UniqueIdentifier>{89c8367a-5531-4b19-89b7-730cb485824a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="object_pool">
+      <UniqueIdentifier>{77271abe-5224-4dc0-b5c3-512a014340ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -46,6 +49,9 @@
     <ClInclude Include="wnet_opt.h">
       <Filter>net</Filter>
     </ClInclude>
+    <ClInclude Include="object_pool.h">
+      <Filter>object_pool</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="wtime.cpp">
@@ -54,5 +60,6 @@
     <ClCompile Include="wstring.cpp">
       <Filter>string</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
 </Project>

@@ -51,24 +51,7 @@ ofstream write;
 void Init(string strSourcePath, string strDestPath)
 {
 	read.open(strSourcePath);
-
-
 	write.open(strDestPath,ios::app);
-
-
-	string strTemp;
-	getline(read, strTemp);
-	if (strTemp.size() >= 3 && (strTemp[0] < 0 || strTemp[1] < 0 || strTemp[2] < 0))
-	{
-		assert(read);
-		read.seekg(3, ios::beg);
-	}
-	else
-	{
-		assert(read);
-		read.seekg(0, ios::beg);
-	}
-
 }
 void Close()
 {
@@ -185,6 +168,7 @@ void DelayFunc(string strSource, string strDest)
 	Init(strSource, strDest);
 	vector<string> vecStrLast;
 	vector<string> vecReqAndAck;
+	vector<string> vecCountReqAndAck;
 	vecReqAndAck.push_back("//注册ack对应的req\n\n");
 	vector<string> vecProtoDelay;
 	vecProtoDelay.push_back("\n//注册需要打印的协议\n");
@@ -207,6 +191,8 @@ void DelayFunc(string strSource, string strDest)
 				{
 					strReq += "_" + vecStrLast[i];
 				}
+				vecCountReqAndAck.push_back("p.ArrReqAndAck[SProtoSpace.ECSProtoID" + strReq + "_id]  = SProtoSpace.ECSProtoID" + strAck + "_id\n");
+
 				vecReqAndAck.push_back("p.ArrReqAndAck[SProtoSpace.ECSProtoID" + strAck + "_id]  = SProtoSpace.ECSProtoID" + strReq + "_id\n");
 
 				vecProtoDelay.push_back("p.SliValidProtoID = append(p.SliValidProtoID,SProtoSpace.ECSProtoID" + strAck + "_id)\n");
@@ -214,6 +200,12 @@ void DelayFunc(string strSource, string strDest)
 			vecStrLast = vecStr;
 		}
 	}
+
+	for (int i = 0; i < vecCountReqAndAck.size(); i++)
+	{
+		write << vecCountReqAndAck[i];
+	}
+
 	for (int i = 0; i < vecReqAndAck.size(); i++)
 	{
 		write << vecReqAndAck[i];
@@ -363,16 +355,6 @@ void DStruct2SStruct(string strSource, string strDest, string strNameUp, string 
 	Close();
 }
 
-void BattleScript(string strSource, string strDest)
-{
-	Init(strSource, strDest);
-	for (int i=0; i < 50; i++)
-	{
-		write << "####msgid:5750;\n";
-		write << "time:" << i * 20000 << ";\n";
-		write << "content:{\"type\":2,\"battle_id\":" << 2001 + i << ",\"module_id\":" << 2001 + i << ",\"formation_type\":2};\n";
-	}
-}
 bool FindHaveSubStr(string strSour, string strSub)
 {
 	int nSour = strSour.size(), nSub = strSub.size();
@@ -425,7 +407,7 @@ int main()
 	string strSource = "E:\\project\\intermediate\\Proto\\cs_proto.proto";
 	string strDest = "E:\\project\\intermediate\\Proto\\cs_proto.go";
 
-	FrameworkGenerate(strSource, strDest, "Guild", "guild");
+	FrameworkGenerate(strSource, strDest, "Plot", "plot");
 	//普通发送注册
 	SendRegisterFunc(strSource, strDest);
 	//特殊发送注册

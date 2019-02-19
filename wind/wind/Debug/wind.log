@@ -1,4 +1,2 @@
-﻿  main.cpp
-d:\c++ code\wind\wind\main.cpp(14): warning C4101: “tv”: 未引用的局部变量
-  wind.vcxproj -> D:\C++ code\wind\Debug\wind.exe
-  wind.vcxproj -> D:\C++ code\wind\Debug\wind.pdb (Full PDB)
+﻿  wind.vcxproj -> D:\C++Code\wind\Debug\wind.exe
+  wind.vcxproj -> D:\C++Code\wind\Debug\wind.pdb (Full PDB)

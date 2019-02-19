@@ -4,9 +4,14 @@
 #include <unordered_map>
 #include "reader.h"
 
-class JsonString;
-class JsonList;
-class JsonDict;
+using namespace std;
+
+class CJsonString;
+class CJsonList;
+class CJsonDict;
+class CJsonStruct;
+
+typedef vector<CJsonStruct*> VecJsonOutput;
 
 enum JSONVALUETYPE
 {
@@ -18,14 +23,24 @@ enum JSONVALUETYPE
 	JSONVALUETYPE_DICT,   ///< @brief 字典类型
 };
 
+enum JSON_VALUE_TYPE
+{
+	JSON_VALUE_NUM,
+	JSON_VALUE_STR,
+	JSON_VALUE_OBJ,
+	JSON_VALUE_ARRAY_NUM,
+	JSON_VALUE_ARRAY_STR,
+	JSON_VALUE_ARRAY_OBJ
+};
+
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief JSON值
 ////////////////////////////////////////////////////////////////////////////////
-class JsonValue
+class CJsonValue
 {
 protected:
 	JSONVALUETYPE m_Type;  ///< @brief JSON对象类型
-	/// @brief 数据域
+						   /// @brief 数据域
 	union
 	{
 		bool m_ValueBool;     ///< @brief 逻辑型
@@ -33,18 +48,22 @@ protected:
 	};
 public:
 	virtual void WriteToStr(std::string& OutStr);
+	JSONVALUETYPE GetType() { return m_Type; }
+	CJsonString* ToString();
+	CJsonList * ToList();
+	CJsonDict * ToDict();
 public: // 用于手动创建
-	JsonValue();                       ///< @brief 创建为null值类型
-	JsonValue(bool Value);             ///< @brief 创建为bool值类型
-	JsonValue(double Value);           ///< @brief 创建为数值类型
-	JsonValue(JSONVALUETYPE Type);     ///< @brief 创建为String/List/Dict
-	virtual ~JsonValue();
+	CJsonValue();                       ///< @brief 创建为null值类型
+	CJsonValue(bool Value);             ///< @brief 创建为bool值类型
+	CJsonValue(double Value);           ///< @brief 创建为数值类型
+	CJsonValue(JSONVALUETYPE Type);     ///< @brief 创建为String/List/Dict
+	virtual ~CJsonValue();
 };
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief JSON字符串
 ////////////////////////////////////////////////////////////////////////////////
-class JsonString : public JsonValue
+class CJsonString : public CJsonValue
 {
 protected:
 	std::string m_Str;   ///< @brief 字符串字面值
@@ -56,55 +75,103 @@ public:
 public:
 	/// @brief     构造函数
 	/// @param[in] Value 字符串值
-	JsonString(std::string Value);
-	~JsonString();
+	CJsonString(std::string Value);
+	~CJsonString();
 };
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief JSON数组
-/// @note  JsonList将会负责销毁子对象
+/// @note  CJsonList将会负责销毁子对象
 ////////////////////////////////////////////////////////////////////////////////
+class CJsonList : public CJsonValue
+{
+protected:
+	std::vector<CJsonValue*> m_vecObj;   ///< @brief 内部数组
+public:
+	void WriteToStr(std::string& OutStr);
+public:
+	CJsonValue* GetValue(int Index);
 
+	void Append(CJsonValue* pNew);
+
+	JSON_VALUE_TYPE GetValueType();
+
+	void Clear();
+
+	int GetCount();
+public:
+	CJsonList();
+	~CJsonList();
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief JSON字典
 ////////////////////////////////////////////////////////////////////////////////
-class JsonDict : public JsonValue
+class CJsonDict : public CJsonValue
 {
 protected:
-	std::vector<std::string> m_ObjList;                      
-	std::unordered_map<std::string, JsonValue*> m_Cache;
+	std::vector<std::string> m_vecObj;
+	std::unordered_map<std::string, CJsonValue*> m_Cache;
 public:
 	void WriteToStr(std::string& OutStr);
 
+	void Output(VecJsonOutput& vecOutput, string strSturctName);
 	/// @brief 清空
 	void Clear();;
 
-	bool AddValue(std::string strName, JsonValue* pVal);
+	CJsonValue * FindJson(std::string strName);
+
+	bool AddValue(std::string strName, CJsonValue* pVal);
 
 	bool Contain(std::string Name);
 public:
 	/// @brief 构造函数
-	JsonDict();
-	~JsonDict();
+	CJsonDict();
+	~CJsonDict();
 };
 
 ////////////////////////////////////////////////////////////////////////////////
 /// @brief JSON解析器
 /// @note  注意该解析器只会解析第一个元素。
 ////////////////////////////////////////////////////////////////////////////////
-class Json
+class CJson
 {
 private:
-	JsonValue* m_Root;  ///< @brief 根节点
+	CJsonValue* m_Root;  ///< @brief 根节点
 private: // 解析函数
-	JsonValue* ParseValue(Reader& Context);    ///< @brief 解析一个值
-	JsonValue* ParseNumber(Reader& Context);   ///< @brief 解析一个数值
-	JsonString* ParseString(Reader& Context);  ///< @brief 解析一个字符串
-	//JsonList* ParseList(Reader& Context);      ///< @brief 解析一个表
-	JsonDict* ParseDict(Reader& Context);      ///< @brief 解析一个字典
+	CJsonValue* ParseValue(Reader& Context);    ///< @brief 解析一个值
+	CJsonValue* ParseNumber(Reader& Context);   ///< @brief 解析一个数值
+	CJsonString* ParseString(Reader& Context);  ///< @brief 解析一个字符串
+	CJsonList* ParseList(Reader& Context);      ///< @brief 解析一个表
+	CJsonDict* ParseDict(Reader& Context);      ///< @brief 解析一个字典
 
 public:
-	Json();                           ///< @brief 构造函数
-	Json(const std::string& Str);    ///< @brief 从文本构造JSON
+	VecJsonOutput Output();
+	CJson();                           ///< @brief 构造函数
+	CJson(const std::string& Str);    ///< @brief 从文本构造JSON
+};
+
+struct JsonField {
+	string m_strKey;
+	JSON_VALUE_TYPE m_eType;
+public:
+	JsonField(string strKey, JSON_VALUE_TYPE eType)
+	{
+		m_strKey = strKey;
+		m_eType = eType;
+	}
+};
+
+class CJsonStruct
+{
+private:
+	string m_strSrcName;  //当为嵌套结构体时 名字为key  如果时最外层结构体则无名
+	vector<JsonField> m_vecJsonOutput;
+public:
+	string Type2GoStuctStr(JSON_VALUE_TYPE eType, string strKey);
+	void AddField(JsonField field);
+	void OutputStruct();
+	void SetStructName(string strStructName) { m_strSrcName = strStructName; }
+	string GetStructName() { return m_strSrcName; }
+	vector<JsonField> GetVecField() { return m_vecJsonOutput; }
 };

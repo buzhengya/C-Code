@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="timer_test.cpp">
+      <Filter>timer_test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="timer_test">
+      <UniqueIdentifier>{472941cb-0609-4e6a-a710-a8932e1c6792}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="timer_test.h">
+      <Filter>timer_test</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

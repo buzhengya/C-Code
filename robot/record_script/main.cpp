@@ -9,9 +9,9 @@ using namespace std;
 
 fstream read;
 ofstream write;
-void Init(string strSourcePath, string strDestPath)
+void Init(string strSrccePath, string strDestPath)
 {
-	read.open(strSourcePath);
+	read.open(strSrccePath);
 
 
 	write.open(strDestPath, ios::app);
@@ -38,17 +38,17 @@ void Close()
 	write.close();
 }
 
-string RemoveSpaceAndNote(string strSour)
+string RemoveSpaceAndNote(string strSrc)
 {
 	int nFirst = 0, nSecond = 0;
-	for (; nSecond < strSour.size(); nSecond++)
+	for (; nSecond < strSrc.size(); nSecond++)
 	{
-		if (strSour[nSecond] != ' '&& strSour[nSecond] != '\t' && strSour[nSecond] != '\n')
+		if (strSrc[nSecond] != ' '&& strSrc[nSecond] != '\t' && strSrc[nSecond] != '\n')
 		{
-			strSour[nFirst++] = strSour[nSecond];
+			strSrc[nFirst++] = strSrc[nSecond];
 		}
 	}
-	string strDest = strSour.substr(0, nFirst);
+	string strDest = strSrc.substr(0, nFirst);
 	int nEnd = strDest.size();
 	for (int i = 0; i < strDest.size(); i++)
 	{
@@ -60,128 +60,85 @@ string RemoveSpaceAndNote(string strSour)
 	}
 	return strDest.substr(0, nEnd);
 }
-bool IsNameChar(char szCh)
-{
-	if ((szCh >= 'a'&&szCh <= 'z') || (szCh >= 'A'&&szCh <= 'Z') || (szCh >= '0'&&szCh <= '9') || szCh == '_')
-	{
-		return true;
-	}
-	return false;
-}
 
-string ParseMessageName(string strSour)
-{
-	return strSour.substr(7, strSour.size());
-}
-
-string ParseMessageId(string strSour)
-{
-	int nLeft = 0, nRight = 0;
-	for(int i=0; i<strSour.size(); i++)
-	{
-		if (strSour[i] == '[')
-		{
-			nLeft = i;
-		}
-		else if (strSour[i] == ']')
-		{
-			nRight = i;
-		}
-	}
-	int nSt = nLeft + 9, nEnd = nRight;
-	return strSour.substr(nSt, nEnd - nSt);
-}
-
-bool FindHaveSubStr(string strSour,string strSub)
-{
-	int nSour = strSour.size(), nSub = strSub.size();
-	for(int i=0;i<nSour;i++)
-	{
-		int k = i, j = 0;
-		for (; k < nSour&&j < nSub; j++, k++)
-		{
-			if(strSour[k]!=strSub[j])
-			{
-				break;
-			}
-		}
-		if(j==nSub)
-		{
-			return true;
-		}
-	}
-	return false;
-}
-
-int Str2Int(string strSour)
+int Str2Int(string strSrc)
 {
 	int nRet = 0;
-	for (int i = 0; i < strSour.size(); i++)
+	for (int i = 0; i < strSrc.size(); i++)
 	{
-		if (strSour[i] < '0' || strSour[i] > '9')
+		if (strSrc[i] < '0' || strSrc[i] > '9')
 		{
 			return 0;
 		}
-		nRet = nRet * 10 + strSour[i] - '0';
+		nRet = nRet * 10 + strSrc[i] - '0';
 	}
 	return nRet;
 }
 
-void GenerateMap(string strSource, string strDest)
+string GenMsgId(string strSrc)
 {
-	Init(strSource, strDest);
+	int nSt = 0, nEnd = 0;
+	for (int i = strSrc.size() - 1; i >= 0; i--)
+	{
+		if (strSrc[i] == ']')
+		{
+			nEnd = i;
+		}
+		if (strSrc[i] == '=')
+		{
+			nSt = i + 1;
+			break;
+		}
+	}
+	return strSrc.substr(nSt, nEnd - nSt);
+}
+
+void GenerateMap(string strSrc, string strDest)
+{
+	Init(strSrc, strDest);
 	string strMsgName = "", strMsgId = "";
 	while (!read.eof())
 	{
-		string strSour;
-		getline(read, strSour);
+		string strSrc;
+		getline(read, strSrc);
 		{
-			strSour = RemoveSpaceAndNote(strSour);
-			if (!FindHaveSubStr(strSour, "req"))
+			strSrc = RemoveSpaceAndNote(strSrc);
+			if (strSrc.find("message") != string::npos && 
+				(strSrc.find("_req") != string::npos || strSrc.find("_ntf") != string::npos))
 			{
-				continue;
+				strMsgName = strSrc.substr(7);
 			}
-			if (FindHaveSubStr(strSour,"message"))
+			if (strSrc.find("default=") != string::npos &&
+				(strSrc.find("_req") != string::npos || strSrc.find("_ntf") != string::npos))
 			{
-				strMsgName = ParseMessageName(strSour);
-				continue;
-			}
-			if (FindHaveSubStr(strSour, "default"))
-			{
-				strMsgId = ParseMessageId(strSour);
-				write << "gpArrMsg[" << strMsgId << "] = new(" << strMsgName << ");" << endl;
+				strMsgId = GenMsgId(strSrc);
+				write << "\tgpArrMsg[" << strMsgId << "] = new(" << strMsgName << ");" << endl;
 			}
 		}
 	}
 	Close();
 }
 
-void WriteData(string strPath,string strData)
-{
-	write.open(strPath, ios::app);
-	write << strData << endl;
-	write.close();
-}
 
 int main()
 {
 	string strDest = "E:\\project\\intermediate\\Proto\\cs_proto.go";
 
-	vector<string> vecStrSour;
-	vecStrSour.push_back("E:\\project\\intermediate\\Proto\\cs_activity.proto");
-	vecStrSour.push_back("E:\\project\\intermediate\\Proto\\cs_battle.proto");
-	vecStrSour.push_back("E:\\project\\intermediate\\Proto\\cs_chat.proto");
-	vecStrSour.push_back("E:\\project\\intermediate\\Proto\\cs_gamesystem.proto");
-	vecStrSour.push_back("E:\\project\\intermediate\\Proto\\cs_mail.proto");
-	vecStrSour.push_back("E:\\project\\intermediate\\Proto\\cs_role.proto");
-	vecStrSour.push_back("E:\\project\\intermediate\\Proto\\cs_social.proto");
+	vector<string> vecstrSrc;
+	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_activity.proto");
+	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_battle.proto");
+	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_chat.proto");
+	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_gamesystem.proto");
+	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_mail.proto");
+	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_role.proto");
+	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_social.proto");
 
-	WriteData(strDest, "void RegisterProto()\n{\nRegisterBlackList();");
+	write << "void RegisterProto()\n{\n\tRegisterBlackList();" << endl;
 
-	for (int i=0; i < vecStrSour.size(); i++)
+	for (int i=0; i < vecstrSrc.size(); i++)
 	{
-		GenerateMap(vecStrSour[i], strDest);
+		GenerateMap(vecstrSrc[i], strDest);
 	}
 
-	WriteData(strDest, "}");
+	write << "}" << endl;
 }

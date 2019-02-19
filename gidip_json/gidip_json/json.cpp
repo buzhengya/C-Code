@@ -3,35 +3,35 @@
 
 using namespace std;
 
-std::string doubleToStr(double num)
-{
-	char buf[20];
-	memset(buf, 0, sizeof(buf));
-	_itoa(num, buf, 10);
-	return buf;
-}
+//std::string doubleToStr(double num)
+//{
+//	char buf[20];
+//	memset(buf, 0, sizeof(buf));
+//	itoa(num, buf, 10);
+//	return buf;
+//}
 
-JsonValue::JsonValue()
+CJsonValue::CJsonValue()
 	:m_Type(JSONVALUETYPE_NULL), m_ValueNumber(0.)
 {}
 
-JsonValue::JsonValue(bool Value)   ///< @brief 创建为bool类型
+CJsonValue::CJsonValue(bool Value)   ///< @brief 创建为bool类型
 	: m_Type(JSONVALUETYPE_BOOL), m_ValueBool(Value)
 {}
 
-JsonValue::JsonValue(double Value) ///< @brief 创建为数值类型
+CJsonValue::CJsonValue(double Value) ///< @brief 创建为数值类型
 	: m_Type(JSONVALUETYPE_NUMBER), m_ValueNumber(Value)
 {}
 
 
-JsonValue::JsonValue(JSONVALUETYPE Type) ///< @brief 创建为String/List/Dict
+CJsonValue::CJsonValue(JSONVALUETYPE Type) ///< @brief 创建为String/List/Dict
 	: m_Type(Type)
 {}
 
-JsonValue::~JsonValue()
+CJsonValue::~CJsonValue()
 {}
 
-void JsonValue::WriteToStr(std::string& OutStr)
+void CJsonValue::WriteToStr(std::string& OutStr)
 {
 	switch (m_Type)
 	{
@@ -45,14 +45,41 @@ void JsonValue::WriteToStr(std::string& OutStr)
 			OutStr += "false";
 		break;
 	case JSONVALUETYPE_NUMBER:
-		OutStr += doubleToStr(m_ValueNumber);
+		//OutStr += doubleToStr(m_ValueNumber);
 		break;
 	default:
-		std::cout << "JsonValue::writeToStr Error!" << std::endl;
+		std::cout << "CJsonValue::writeToStr Error!" << std::endl;
 	}
 }
 
-void JsonString::WriteToStr(std::string& OutStr)
+CJsonString * CJsonValue::ToString()
+{
+	if (CJsonString *pJsonStr = dynamic_cast<CJsonString*>(this))
+	{
+		return pJsonStr;
+	}
+	return nullptr;
+}
+
+CJsonList * CJsonValue::ToList()
+{
+	if (CJsonList *pJsonList = dynamic_cast<CJsonList*>(this))
+	{
+		return pJsonList;
+	}
+	return nullptr;
+}
+
+CJsonDict * CJsonValue::ToDict()
+{
+	if (CJsonDict *pJsonDict = dynamic_cast<CJsonDict*>(this))
+	{
+		return pJsonDict;
+	}
+	return nullptr;
+}
+
+void CJsonString::WriteToStr(std::string& OutStr)
 {
 	OutStr += "\"";
 	for (int i = 0; i < m_Str.size(); ++i)
@@ -91,88 +118,272 @@ void JsonString::WriteToStr(std::string& OutStr)
 	OutStr += "\"";
 }
 
-std::string JsonString::GetStr()           ///< @brief 获得字符串
+std::string CJsonString::GetStr()           ///< @brief 获得字符串
 {
 	return m_Str;
 }
 
-void JsonString::SetStr(std::string Value) ///< @brief 设置字符串
+void CJsonString::SetStr(std::string Value) ///< @brief 设置字符串
 {
 	m_Str = Value;
 }
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * json dictionary * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-JsonDict::JsonDict()
-	:JsonValue(JSONVALUETYPE_DICT)
+CJsonString::CJsonString(std::string Value)
+	:CJsonValue(JSONVALUETYPE_STRING), m_Str(Value)
 {}
 
-JsonDict::~JsonDict()
+CJsonString::~CJsonString()
+{}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * json list * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+CJsonList::CJsonList()
+	:CJsonValue(JSONVALUETYPE_LIST)
+{}
+
+CJsonList::~CJsonList()
+{
+	Clear();
+}
+
+void CJsonList::WriteToStr(std::string& OutStr)
+{
+	OutStr += "[ ";
+	for (int i = 0; i < m_vecObj.size(); ++i)
+	{
+		m_vecObj[i]->WriteToStr(OutStr);
+
+		if (i != m_vecObj.size() - 1)
+			OutStr += ", ";
+	}
+	OutStr += " ]";
+}
+
+
+
+CJsonValue* CJsonList::GetValue(int Index)
+{
+	if (Index >= GetCount())
+		return NULL;
+	return m_vecObj[Index];
+}
+void CJsonList::Append(CJsonValue* pNew)
+{
+	if (pNew)
+		m_vecObj.push_back(pNew);
+}
+
+JSON_VALUE_TYPE CJsonList::GetValueType()
+{
+	JSON_VALUE_TYPE eType;
+	if (GetCount() != 0)
+	{
+		switch (m_vecObj[0]->GetType())
+		{
+		case JSONVALUETYPE_NULL:
+			eType = JSON_VALUE_ARRAY_NUM;
+			break;
+
+		case JSONVALUETYPE_BOOL:
+
+		case JSONVALUETYPE_NUMBER:
+			eType = JSON_VALUE_ARRAY_NUM;
+			break;
+
+		case JSONVALUETYPE_STRING:
+			eType = JSON_VALUE_ARRAY_STR;
+			break;
+
+		case JSONVALUETYPE_DICT:
+			eType = JSON_VALUE_ARRAY_OBJ;
+			break;
+
+		default:
+			cout << "json list first type is illegal!" << endl;
+			break;
+		}
+	}
+	else
+	{
+		cout << "json list is empty!" << endl;
+	}
+	return eType;
+}
+
+/// @brief 清空
+void CJsonList::Clear()
+{
+	std::vector<CJsonValue*>::iterator i = m_vecObj.begin();
+	while (i != m_vecObj.end())
+	{
+		/*delete (*i);
+		++i;*/
+	}
+	m_vecObj.clear();
+}
+
+/// @brief 返回对象数量
+int CJsonList::GetCount()
+{
+	return m_vecObj.size();
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * json dictionary * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+CJsonDict::CJsonDict()
+	:CJsonValue(JSONVALUETYPE_DICT)
+{}
+
+CJsonDict::~CJsonDict()
 {
 
 }
 
-void JsonDict::WriteToStr(std::string& OutStr)
+void CJsonDict::WriteToStr(std::string& OutStr)
 {
 	OutStr += "{";
-	for (int i = 0; i < m_ObjList.size(); ++i)
+	for (int i = 0; i < m_vecObj.size(); ++i)
 	{
-		JsonValue* pObj = m_Cache[m_ObjList[i]];
+		CJsonValue* pObj = m_Cache[m_vecObj[i]];
 		OutStr += "\"";
-		OutStr += m_ObjList[i];
+		OutStr += m_vecObj[i];
 		OutStr += "\":";
 		pObj->WriteToStr(OutStr);
 
-		if (i != m_ObjList.size() - 1)
+		if (i != m_vecObj.size() - 1)
 			OutStr += ", ";
 	}
 	OutStr += " }";
 }
 
-
-void JsonDict::Clear()
+void CJsonDict::Output(VecJsonOutput & vecOutput, string strSturctName)
 {
-	std::unordered_map<std::string, JsonValue*>::iterator j = m_Cache.begin();
+	CJsonStruct* pJsonStruct = new(CJsonStruct);
+	pJsonStruct->SetStructName(strSturctName);
+	for (const auto & it : m_vecObj)
+	{
+		string strKey = it;
+		CJsonValue * pJsonVal = FindJson(strKey);
+		string strVal = "";
+		JSON_VALUE_TYPE eType;
+		switch (pJsonVal->GetType())
+		{
+		case JSONVALUETYPE_NULL:
+			eType = JSON_VALUE_NUM;
+			break;
+
+		case JSONVALUETYPE_BOOL:
+
+		case JSONVALUETYPE_NUMBER:
+			eType = JSON_VALUE_NUM;
+			break;
+
+		case JSONVALUETYPE_STRING:
+			eType = JSON_VALUE_STR;
+			break;
+
+		case JSONVALUETYPE_LIST:
+		{
+			CJsonList * pJsonList = pJsonVal->ToList();
+			if (pJsonList == nullptr)
+			{
+				cout << "to list is nullptr" << endl;
+			}
+			else
+			{
+				eType = pJsonList->GetValueType();
+				if (pJsonList->GetValue(0)->GetType() == JSONVALUETYPE_DICT)
+				{
+					CJsonDict * pJsonDict = pJsonList->GetValue(0)->ToDict();
+					if (pJsonDict == nullptr)
+					{
+						cout << "to dict is nullptr" << endl;
+					}
+					else
+					{
+						pJsonDict->Output(vecOutput,strKey);
+					}
+				}
+			}
+		}
+		break;
+
+		case JSONVALUETYPE_DICT:
+		{
+			eType = JSON_VALUE_OBJ;
+			CJsonDict * pJsonDict = pJsonVal->ToDict();
+			if (pJsonDict == nullptr)
+			{
+				cout << "to dict is nullptr" << endl;
+			}
+			else
+			{
+				pJsonDict->Output(vecOutput,strKey);
+			}
+		}
+		break;
+
+		default:
+			cout << "json val type is illegal!" << endl;
+			break;
+		}
+		JsonField field(strKey, eType);
+		pJsonStruct->AddField(field);
+	}
+	vecOutput.push_back(pJsonStruct);
+}
+
+
+void CJsonDict::Clear()
+{
+	std::unordered_map<std::string, CJsonValue*>::iterator j = m_Cache.begin();
 	while (j != m_Cache.end())
 	{
 		delete (j->second);
 		j++;
 	}
 	m_Cache.clear();
-	m_ObjList.clear();
+	m_vecObj.clear();
 }
 
-bool JsonDict::AddValue(std::string strName, JsonValue * pVal)
+CJsonValue * CJsonDict::FindJson(std::string strName)
+{
+	auto it = m_Cache.find(strName);
+	if (it != m_Cache.end())
+	{
+		return it->second;
+	}
+	return nullptr;
+}
+
+bool CJsonDict::AddValue(std::string strName, CJsonValue * pVal)
 {
 	if (Contain(strName))
 	{
 		return false;
 	}
-	m_ObjList.push_back(strName);
+	m_vecObj.push_back(strName);
 	m_Cache[strName] = pVal;
 	return true;
 }
 
-bool JsonDict::Contain(std::string Name)
+bool CJsonDict::Contain(std::string Name)
 {
 	return m_Cache.find(Name) != m_Cache.end();
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * json Parse * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-Json::Json() 
+CJson::CJson()
 	:m_Root(NULL)
 {
 }
 
-Json::Json(const std::string& Str)
+CJson::CJson(const std::string& Str)
 	: m_Root(NULL)
 {
 	Reader tReader(Str);
 	m_Root = ParseValue(tReader);
 }
 
-JsonValue* Json::ParseValue(Reader& Context)    ///< @brief 解析一个值
+CJsonValue* CJson::ParseValue(Reader& Context)    ///< @brief 解析一个值
 {
-	JsonValue* tRet = NULL;
+	CJsonValue* tRet = NULL;
 
 	Context.ignoreSpace();
 	char tChar = Context.PeekChar();
@@ -182,7 +393,7 @@ JsonValue* Json::ParseValue(Reader& Context)    ///< @brief 解析一个值
 		tRet = ParseDict(Context);
 		break;
 	case '[':
-		//tRet = ParseList(Context);
+		tRet = ParseList(Context);
 		break;
 	case '"':
 		tRet = ParseString(Context);
@@ -190,19 +401,19 @@ JsonValue* Json::ParseValue(Reader& Context)    ///< @brief 解析一个值
 	case 't':
 	{
 		Context.match("true", false);
-		tRet = new JsonValue(true);
+		tRet = new CJsonValue(true);
 	}
 	break;
 	case 'f':
 	{
 		Context.match("false", false);
-		tRet = new JsonValue(false);
+		tRet = new CJsonValue(false);
 	}
 	break;
 	case 'n':
 	{
 		Context.match("null", false);
-		tRet = new JsonValue();
+		tRet = new CJsonValue();
 	}
 	break;
 	default:
@@ -211,13 +422,13 @@ JsonValue* Json::ParseValue(Reader& Context)    ///< @brief 解析一个值
 			tRet = ParseNumber(Context);
 		}
 		else
-			cout << "Json::ParseValue", "Unexpected char.";
+			cout << "CJson::ParseValue", "Unexpected char.";
 		break;
 	}
 	return tRet;
 }
 
-JsonValue* Json::ParseNumber(Reader& Context)   ///< @brief 解析一个数值
+CJsonValue* CJson::ParseNumber(Reader& Context)   ///< @brief 解析一个数值
 {
 	std::string tRet;
 	Context.ignoreSpace();
@@ -234,10 +445,10 @@ JsonValue* Json::ParseNumber(Reader& Context)   ///< @brief 解析一个数值
 		else
 			tChar = Context.PeekChar();
 	}
-	return new JsonValue(atof(tRet.c_str()));
+	return new CJsonValue(atof(tRet.c_str()));
 }
 
-JsonString* Json::ParseString(Reader& Context)  ///< @brief 解析一个字符串
+CJsonString* CJson::ParseString(Reader& Context)  ///< @brief 解析一个字符串
 {
 	std::string tRet;
 	Context.match('"', true);
@@ -246,7 +457,7 @@ JsonString* Json::ParseString(Reader& Context)  ///< @brief 解析一个字符串
 	{
 		if (iscntrl(tChar))
 		{
-			cout << "Json::ParseString", "Unexpected char.";
+			cout << "CJson::ParseString", "Unexpected char.";
 		}
 
 		if (tChar == '\\')
@@ -279,11 +490,11 @@ JsonString* Json::ParseString(Reader& Context)  ///< @brief 解析一个字符串
 				tRet += "\t";
 				break;
 			case 'u':
-				std::cout << "Json::ParseString", "Unexpected char.", Context.getLine(), Context.getRow();
+				std::cout << "CJson::ParseString", "Unexpected char.", Context.getLine(), Context.getRow();
 				break;
 			default:
 			{
-				std::cout << "Json::ParseString", "Unexpected char.", Context.getLine(), Context.getRow();
+				std::cout << "CJson::ParseString", "Unexpected char.", Context.getLine(), Context.getRow();
 				break;
 			}
 			}
@@ -293,12 +504,34 @@ JsonString* Json::ParseString(Reader& Context)  ///< @brief 解析一个字符串
 			tRet += tChar;
 		}
 	}
-	return new JsonString(tRet.c_str());
+	return new CJsonString(tRet.c_str());
 }
 
-JsonDict* Json::ParseDict(Reader& Context)      ///< @brief 解析一个字典
+CJsonList* CJson::ParseList(Reader& Context)      ///< @brief 解析一个表
 {
-	JsonDict* tRet = new JsonDict();
+	CJsonList* tRet = new CJsonList();
+	Context.match('[', true);
+	while (1)
+	{
+		if (Context.tryMatch(']', true, true))
+			break;
+
+		CJsonValue* tValue = NULL;
+
+		tValue = ParseValue(Context);
+
+
+		tRet->Append(tValue);
+
+		if (Context.tryMatch(',', true, true))
+			continue;
+	}
+	return tRet;
+}
+
+CJsonDict* CJson::ParseDict(Reader& Context)      ///< @brief 解析一个字典
+{
+	CJsonDict* tRet = new CJsonDict();
 
 	Context.match('{', true);
 
@@ -308,14 +541,14 @@ JsonDict* Json::ParseDict(Reader& Context)      ///< @brief 解析一个字典
 			break;
 
 		//解析键名
-		JsonString* tKey = NULL;
+		CJsonString* tKey = NULL;
 
 		tKey = ParseString(Context);
 
 		Context.match(':', true);
 
 		//解析键值
-		JsonValue* tValue = NULL;
+		CJsonValue* tValue = NULL;
 
 		tValue = ParseValue(Context);
 		// 追加
@@ -327,4 +560,71 @@ JsonDict* Json::ParseDict(Reader& Context)      ///< @brief 解析一个字典
 			continue;
 	}
 	return tRet;
+}
+
+VecJsonOutput CJson::Output()
+{
+	VecJsonOutput vecJosnOutput;
+
+	CJsonDict * pJsonDict = m_Root->ToDict();
+	if (pJsonDict == nullptr)
+	{
+		cout << "CJson::Output to dict is nullptr!" << endl;
+		return vecJosnOutput;
+	}
+
+	pJsonDict->Output(vecJosnOutput, "");
+	for (const auto & itStruct : vecJosnOutput)
+	{
+		itStruct->OutputStruct();
+	}
+	return vecJosnOutput;
+}
+
+string CJsonStruct::Type2GoStuctStr(JSON_VALUE_TYPE eType, string strKey)
+{
+	switch (eType)
+	{
+	case JSON_VALUE_NUM:
+		return "int32";
+		break;
+
+	case JSON_VALUE_STR:
+		return "string";
+		break;
+
+	case JSON_VALUE_OBJ:
+		return "S" + strKey;
+		break;
+
+	case JSON_VALUE_ARRAY_NUM:
+		return "[]int32";
+		break;
+
+	case JSON_VALUE_ARRAY_STR:
+		return "[]string";
+		break;
+
+	case JSON_VALUE_ARRAY_OBJ:
+		return "[]S" + strKey;
+		break;
+
+	default:
+		break;
+	}
+
+	return "unknown type";
+}
+
+void CJsonStruct::AddField(JsonField field)
+{
+	m_vecJsonOutput.push_back(field);
+}
+
+void CJsonStruct::OutputStruct()
+{
+	for (const auto & itField : m_vecJsonOutput)
+	{
+		cout << itField.m_strKey + "\t\t" + Type2GoStuctStr(itField.m_eType, itField.m_strKey) << endl;
+	}
 }

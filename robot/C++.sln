@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "record_script", "record_scr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server", "socket\socket.vcxproj", "{5411E2A1-9B01-4BF3-8435-AF40AB2A7B0A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gtest", "gtest\gtest.vcxproj", "{E561377B-6507-4F88-9971-BD4DD1138375}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{5411E2A1-9B01-4BF3-8435-AF40AB2A7B0A}.Release|x64.Build.0 = Release|x64
 		{5411E2A1-9B01-4BF3-8435-AF40AB2A7B0A}.Release|x86.ActiveCfg = Release|Win32
 		{5411E2A1-9B01-4BF3-8435-AF40AB2A7B0A}.Release|x86.Build.0 = Release|Win32
+		{E561377B-6507-4F88-9971-BD4DD1138375}.Debug|x64.ActiveCfg = Debug|x64
+		{E561377B-6507-4F88-9971-BD4DD1138375}.Debug|x64.Build.0 = Debug|x64
+		{E561377B-6507-4F88-9971-BD4DD1138375}.Debug|x86.ActiveCfg = Debug|Win32
+		{E561377B-6507-4F88-9971-BD4DD1138375}.Debug|x86.Build.0 = Debug|Win32
+		{E561377B-6507-4F88-9971-BD4DD1138375}.Release|x64.ActiveCfg = Release|x64
+		{E561377B-6507-4F88-9971-BD4DD1138375}.Release|x64.Build.0 = Release|x64
+		{E561377B-6507-4F88-9971-BD4DD1138375}.Release|x86.ActiveCfg = Release|Win32
+		{E561377B-6507-4F88-9971-BD4DD1138375}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

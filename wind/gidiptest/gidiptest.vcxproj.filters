@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="http_net.cpp">
+      <Filter>http_net</Filter>
+    </ClCompile>
+    <ClCompile Include="http_proto.cpp">
+      <Filter>http_proto</Filter>
+    </ClCompile>
+    <ClCompile Include="md5.cpp">
+      <Filter>md5</Filter>
+    </ClCompile>
+    <ClCompile Include="utf8.cpp">
+      <Filter>utf8</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="http_net">
+      <UniqueIdentifier>{aa5d0a62-5b9d-4c28-98a6-3e7dae3077b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="http_proto">
+      <UniqueIdentifier>{bdabcab9-b655-48c5-8790-4a13e349c79a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="proto">
+      <UniqueIdentifier>{a7726b51-a4bb-4561-9a05-0383d82d0749}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="md5">
+      <UniqueIdentifier>{1c83bba6-80ee-41fe-b852-d13fc2fc87f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utf8">
+      <UniqueIdentifier>{5061c7c5-f386-4ac1-b844-6e6e7504cda3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="http_net.h">
+      <Filter>http_net</Filter>
+    </ClInclude>
+    <ClInclude Include="http_proto.h">
+      <Filter>http_proto</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
+      <Filter>md5</Filter>
+    </ClInclude>
+    <ClInclude Include="utf8.h">
+      <Filter>utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="proto1.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h" />
+  </ItemGroup>
+</Project>

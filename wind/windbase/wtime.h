@@ -16,6 +16,9 @@ namespace wind
 		tm* GetTime();
 
 		std::string ToString(const char * pszFmt="%Y-%m-%d %H:%M:%S");
+
+
+		uint64 GetNowMilTime(); //获取毫秒级时间
 	};
 }
 #endif

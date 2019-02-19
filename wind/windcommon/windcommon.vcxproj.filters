@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="timer">
+      <UniqueIdentifier>{6b96e465-7c16-4ed9-9143-a136406842b4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="wheel_timer.h">
+      <Filter>timer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="wheel_timer.cpp">
+      <Filter>timer</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

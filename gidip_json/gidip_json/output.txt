@@ -1,0 +1,1218 @@
+type HandleIdipDoUpdateMoneyReq struct{}
+
+func (p *HandleIdipDoUpdateMoneyReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUpdateMoneyReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUpdateMoneyReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Value = proto.Int32(pReq.Value)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoUpdateCashReq struct{}
+
+func (p *HandleIdipDoUpdateCashReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUpdateCashReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUpdateCashReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Value = proto.Int32(pReq.Value)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoUpdatePhysicalValueReq struct{}
+
+func (p *HandleIdipDoUpdatePhysicalValueReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUpdatePhysicalValueReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUpdatePhysicalValueReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Value = proto.Int32(pReq.Value)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoSendItemReq struct{}
+
+func (p *HandleIdipDoSendItemReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoSendItemReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoSendItemReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.MailTitle = proto.String(pReq.MailTitle)
+	pMsg.MailContent = proto.String(pReq.MailContent)
+	pMsg.ItemId = proto.Int64(pReq.ItemId)
+	pMsg.ItemNum = proto.Int32(pReq.ItemNum)
+	pMsg.ItemLevel = proto.Int32(pReq.ItemLevel)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoDelItemReq struct{}
+
+func (p *HandleIdipDoDelItemReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoDelItemReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoDelItemReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.ItemId = proto.Int64(pReq.ItemId)
+	pMsg.ItemNum = proto.Int32(pReq.ItemNum)
+	pMsg.ItemLevel = proto.Int32(pReq.ItemLevel)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoActiveUsrReq struct{}
+
+func (p *HandleIdipDoActiveUsrReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoActiveUsrReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoActiveUsrReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoBanUsrReq struct{}
+
+func (p *HandleIdipDoBanUsrReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoBanUsrReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoBanUsrReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.BanBeginTime = proto.Int64(pReq.BanBeginTime)
+	pMsg.BanEndTime = proto.Int64(pReq.BanEndTime)
+	pMsg.BanReason = proto.String(pReq.BanReason)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoUnbanUsrReq struct{}
+
+func (p *HandleIdipDoUnbanUsrReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUnbanUsrReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUnbanUsrReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.BanTerm = proto.Int32(pReq.BanTerm)
+	pMsg.BanReason = proto.String(pReq.BanReason)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipQueryInfoCurPersonReq struct{}
+
+func (p *HandleIdipQueryInfoCurPersonReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipQueryInfoCurPersonReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdQueryInfoCurPersonReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipQueryInfoCurMenkeReq struct{}
+
+func (p *HandleIdipQueryInfoCurMenkeReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipQueryInfoCurMenkeReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdQueryInfoCurMenkeReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.PageNo = proto.Int32(pReq.PageNo)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipQueryMailReq struct{}
+
+func (p *HandleIdipQueryMailReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipQueryMailReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdQueryMailReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.BeginTime = proto.Int64(pReq.BeginTime)
+	pMsg.EndTime = proto.Int64(pReq.EndTime)
+	pMsg.PageNo = proto.Int32(pReq.PageNo)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipQueryPartitionReq struct{}
+
+func (p *HandleIdipQueryPartitionReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipQueryPartitionReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdQueryPartitionReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoSendMailAllServerReq struct{}
+
+func (p *HandleIdipDoSendMailAllServerReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoSendMailAllServerReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoSendMailAllServerReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.BeginEffectTime = proto.Int64(pReq.BeginEffectTime)
+	pMsg.EndEffectTime = proto.Int64(pReq.EndEffectTime)
+	pMsg.MailTitle = proto.String(pReq.MailTitle)
+	pMsg.MailContent = proto.String(pReq.MailContent)
+	pMsg.MailSender = proto.String(pReq.MailSender)
+	pMsg.MoneyNum = proto.Int32(pReq.MoneyNum)
+	pMsg.CoinNum = proto.Int32(pReq.CoinNum)
+	pMsg.Accessory_count = proto.Int32(pReq.Accessory_count)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoUpdateStageGuideReq struct{}
+
+func (p *HandleIdipDoUpdateStageGuideReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUpdateStageGuideReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUpdateStageGuideReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Value = proto.Int32(pReq.Value)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoUpdatePveProgressReq struct{}
+
+func (p *HandleIdipDoUpdatePveProgressReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUpdatePveProgressReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUpdatePveProgressReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.ChapterType = proto.Int32(pReq.ChapterType)
+	pMsg.ChapterId = proto.Int64(pReq.ChapterId)
+	pMsg.StageId = proto.Int64(pReq.StageId)
+	pMsg.ChapterStar = proto.Int32(pReq.ChapterStar)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+
+type HandleIdipDoUpdateMoneyReq struct{}
+
+func (p *HandleIdipDoUpdateMoneyReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUpdateMoneyReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUpdateMoneyReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Value = proto.Int32(pReq.Value)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoUpdateCashReq struct{}
+
+func (p *HandleIdipDoUpdateCashReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUpdateCashReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUpdateCashReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Value = proto.Int32(pReq.Value)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoUpdatePhysicalValueReq struct{}
+
+func (p *HandleIdipDoUpdatePhysicalValueReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUpdatePhysicalValueReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUpdatePhysicalValueReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Value = proto.Int32(pReq.Value)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoSendItemReq struct{}
+
+func (p *HandleIdipDoSendItemReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoSendItemReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoSendItemReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.MailTitle = proto.String(pReq.MailTitle)
+	pMsg.MailContent = proto.String(pReq.MailContent)
+	pMsg.ItemId = proto.Int64(pReq.ItemId)
+	pMsg.ItemNum = proto.Int32(pReq.ItemNum)
+	pMsg.ItemLevel = proto.Int32(pReq.ItemLevel)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoDelItemReq struct{}
+
+func (p *HandleIdipDoDelItemReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoDelItemReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoDelItemReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.ItemId = proto.Int64(pReq.ItemId)
+	pMsg.ItemNum = proto.Int32(pReq.ItemNum)
+	pMsg.ItemLevel = proto.Int32(pReq.ItemLevel)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoActiveUsrReq struct{}
+
+func (p *HandleIdipDoActiveUsrReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoActiveUsrReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoActiveUsrReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoBanUsrReq struct{}
+
+func (p *HandleIdipDoBanUsrReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoBanUsrReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoBanUsrReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.BanBeginTime = proto.Int64(pReq.BanBeginTime)
+	pMsg.BanEndTime = proto.Int64(pReq.BanEndTime)
+	pMsg.BanReason = proto.String(pReq.BanReason)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoUnbanUsrReq struct{}
+
+func (p *HandleIdipDoUnbanUsrReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUnbanUsrReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUnbanUsrReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.BanTerm = proto.Int32(pReq.BanTerm)
+	pMsg.BanReason = proto.String(pReq.BanReason)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipQueryInfoCurPersonReq struct{}
+
+func (p *HandleIdipQueryInfoCurPersonReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipQueryInfoCurPersonReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdQueryInfoCurPersonReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipQueryInfoCurMenkeReq struct{}
+
+func (p *HandleIdipQueryInfoCurMenkeReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipQueryInfoCurMenkeReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdQueryInfoCurMenkeReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.PageNo = proto.Int32(pReq.PageNo)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipQueryMailReq struct{}
+
+func (p *HandleIdipQueryMailReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipQueryMailReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdQueryMailReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.BeginTime = proto.Int64(pReq.BeginTime)
+	pMsg.EndTime = proto.Int64(pReq.EndTime)
+	pMsg.PageNo = proto.Int32(pReq.PageNo)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipQueryPartitionReq struct{}
+
+func (p *HandleIdipQueryPartitionReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipQueryPartitionReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdQueryPartitionReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoSendMailAllServerReq struct{}
+
+func (p *HandleIdipDoSendMailAllServerReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoSendMailAllServerReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoSendMailAllServerReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.BeginEffectTime = proto.Int64(pReq.BeginEffectTime)
+	pMsg.EndEffectTime = proto.Int64(pReq.EndEffectTime)
+	pMsg.MailTitle = proto.String(pReq.MailTitle)
+	pMsg.MailContent = proto.String(pReq.MailContent)
+	pMsg.MailSender = proto.String(pReq.MailSender)
+	pMsg.MoneyNum = proto.Int32(pReq.MoneyNum)
+	pMsg.CoinNum = proto.Int32(pReq.CoinNum)
+	pMsg.Accessory_count = proto.Int32(pReq.Accessory_count)
+	pMsg.Source = proto.Int32(pReq.Source)
+	pMsg.Serial = proto.String(pReq.Serial)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoUpdateStageGuideReq struct{}
+
+func (p *HandleIdipDoUpdateStageGuideReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUpdateStageGuideReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUpdateStageGuideReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.Value = proto.Int32(pReq.Value)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+type HandleIdipDoUpdatePveProgressReq struct{}
+
+func (p *HandleIdipDoUpdatePveProgressReq) Handle(strDataPacket string) (int64, *NetSession) {
+	pReq := new(SIdipDoUpdatePveProgressReq)
+	if !ParseDataBody(&strDataPacket, pReq) {
+		return PARSE_BODY_ERROR, nil
+	}
+
+	nPlatId := GenPlat(pReq.PlatId, pReq.AreaId)
+	nAreaId := pReq.Partition
+	bIsOnline, nGameSessionId, nRoleId := CheckRoleByOpenId(int32(nPlatId), int32(nAreaId), pReq.OpenId)
+	if nRoleId == 0 {
+		logger.Errorf("open id %s not exist role in area %d.", pReq.OpenId, nAreaId)
+	}
+
+	if bIsOnline == false {
+		nGameSessionId = 0
+	}
+
+	pSession := GetNetSessionMgr().FindRandPub(int32(nPlatId), int32(nAreaId))
+	if pSession == nil {
+		return AREA_NOT_EXIST, nil
+	}
+
+	pMsg := new(GmcmdDoUpdatePveProgressReq)
+	nMsgSeq := pSession.GenMsgId()
+	pMsg.MsgSeq = proto.Int64(nMsgSeq)
+	pMsg.GameSessionId = proto.Int64(nGameSessionId)
+	pMsg.RoleId = proto.Int64(nRoleId)
+	pMsg.ChapterType = proto.Int32(pReq.ChapterType)
+	pMsg.ChapterId = proto.Int64(pReq.ChapterId)
+	pMsg.StageId = proto.Int64(pReq.StageId)
+	pMsg.ChapterStar = proto.Int32(pReq.ChapterStar)
+
+	nLen := pSession.SendProto(pMsg, pMsg.GetProtoId())
+	if nLen == 0 {
+		return SERVER_BUSY, nil
+	}
+	return nMsgSeq, pSession
+}
+
+

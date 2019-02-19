@@ -4,18 +4,20 @@ d:\c++code\robot\algorithm\skip_list.h(15): warning C4200: 使用了非标准扩
   d:\c++code\robot\algorithm\skip_list.h(15): note: 当 UDT 包含大小为零的数组时，无法生成复制构造函数或副本赋值运算符
 d:\c++code\robot\algorithm\skip_list.h(78): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
 d:\c++code\robot\algorithm\main.cpp(27): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(94): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(134): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(172): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(202): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(206): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(217): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(221): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(241): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(267): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(292): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(339): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(344): warning C4018: “<”: 有符号/无符号不匹配
-d:\c++code\robot\algorithm\main.cpp(403): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(77): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(117): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(155): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(186): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(190): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(204): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(209): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(213): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(233): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(259): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(284): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(331): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(336): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\robot\algorithm\main.cpp(385): warning C4018: “<”: 有符号/无符号不匹配
+cl : 命令行 warning D9028: 最小重新生成失败，正在转换为标准生成
   Algorithm.vcxproj -> D:\C++Code\robot\Debug\robot.exe
   Algorithm.vcxproj -> D:\C++Code\robot\Debug\robot.pdb (Full PDB)
