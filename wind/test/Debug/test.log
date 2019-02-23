@@ -1,5 +1,7 @@
 ﻿  timer_test.cpp
   main.cpp
   正在生成代码...
-  test.vcxproj -> D:\C++Code\wind\Debug\test.exe
-  test.vcxproj -> D:\C++Code\wind\Debug\test.pdb (Full PDB)
+main.obj : error LNK2019: 无法解析的外部符号 _mysql_init@4，该符号在函数 _main 中被引用
+main.obj : error LNK2019: 无法解析的外部符号 _mysql_real_connect@32，该符号在函数 _main 中被引用
+../lib3rd/mysql/lib\libmysql.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“X86”冲突
+D:\C++Code\wind\Debug\test.exe : fatal error LNK1120: 2 个无法解析的外部命令

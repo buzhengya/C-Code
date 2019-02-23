@@ -23,6 +23,12 @@
     <Filter Include="object_pool">
       <UniqueIdentifier>{77271abe-5224-4dc0-b5c3-512a014340ac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="thread">
+      <UniqueIdentifier>{ac7c562e-d3b5-410c-8fb3-c70faa3b53c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="container">
+      <UniqueIdentifier>{218a520e-176f-4338-be7d-c753fb3cdcc3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -52,6 +58,12 @@
     <ClInclude Include="object_pool.h">
       <Filter>object_pool</Filter>
     </ClInclude>
+    <ClInclude Include="wthread.h">
+      <Filter>thread</Filter>
+    </ClInclude>
+    <ClInclude Include="data_queue.h">
+      <Filter>container</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="wtime.cpp">
@@ -61,5 +73,8 @@
       <Filter>string</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="whread.cpp">
+      <Filter>thread</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

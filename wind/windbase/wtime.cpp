@@ -30,8 +30,6 @@ namespace wind
 		auto oCurDate = GetTime();
 		ss << std::put_time(oCurDate, pszFmt);
 		return ss.str();
-
-		struct tm tv;
 	}
 
 	uint64 CTime::GetNowMilTime()
