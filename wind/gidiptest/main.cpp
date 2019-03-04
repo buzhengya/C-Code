@@ -12,12 +12,12 @@
 #define OUTER_IP "193.112.62.41"
 int main(int argc, char* argv[])
 {
-	if (!CHttpNet::Instance()->Init("118.89.17.44", 6787, 5000))
+	if (!CHttpNet::Instance()->Init(INNER_IP, 6786, 5000))
 	{
 		return 0;
 	}
 
-	if (!CHttpProto::Instance()->Init("118.89.17.44"))
+	if (!CHttpProto::Instance()->Init(INNER_IP))
 	{
 		return 0;
 	}

@@ -52,9 +52,10 @@ namespace wind
 		void				SetRunning(bool value) { m_bRunning = value; }
 		bool				IsRunning() const { return m_bRunning; }
 
-		virtual void		OnTerminate() {}
-		virtual	std::string GetDebugInfo();
-
+		void SleepMliSec(const uint32 nMilSec)
+		{
+			std::this_thread::sleep_for(std::chrono::milliseconds(nMilSec));
+		}
 
 	private:
 		std::mutex                      m_oMutex;					/**< »¥³âËø */

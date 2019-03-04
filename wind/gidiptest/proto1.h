@@ -9,14 +9,14 @@ using namespace std;
 
 #define RIGHT_AREA 1
 #define WRONG_AREA 2
-#define RIGHT_PLAT 2
-#define WRONG_PLAT 1
-#define RIGHT_PARTITION 20
+#define RIGHT_PLAT 1
+#define WRONG_PLAT 2
+#define RIGHT_PARTITION 100
 #define WRONG_PARTITION 99
-#define RIGHT_OPENID "qqtest0"
+#define RIGHT_OPENID "gidip"
 #define WRONG_OPENID "illegal"
 #define ROLEID 0
-#define POSITIVE_VAL 11
+#define POSITIVE_VAL 12
 #define ZERO_VAL 0
 #define NEGATIVE_VAL -10
 
@@ -200,7 +200,7 @@ TEST(TestDoUpdatePowerReq, OPENID_NOT_EXIST)
 
 #define VALID_ITEM_ID 40002
 #define INVALID_ITEM_ID 99
-#define VALID_ITEM_NUM 11
+#define VALID_ITEM_NUM 1
 #define GOLD_ID 101
 #define JADE_ID 102
 #define POWER_ID 103

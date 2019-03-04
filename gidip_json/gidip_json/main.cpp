@@ -1,20 +1,13 @@
 #include "read_json.h"
 #include "gtest/gtest.h"
 
-//int main()
-//{
-//	CReadJson oReadJson;
-//	oReadJson.Start(3008);
-//	return 0;
-//}
-
-int getAbs(int i)
+int main()
 {
-	// 添加了以部分逻辑处理导致进入了以下逻辑
-	/* add some code here */
-
-	return abs(i);
+	CReadJson oReadJson;
+	oReadJson.Start(3008);
+	return 0;
 }
+
 
 enum ErrCode
 {
@@ -57,17 +50,3 @@ struct RspResult
 		return eErrCode == oRspRet.eErrCode && strRetMsg == oRspRet.strRetMsg;
 	}
 };
-TEST(abswapper, case1)
-{
-	EXPECT_TRUE(RspResult{}==RspResult{});
-	EXPECT_EQ(1, getAbs(1));
-	EXPECT_EQ(1, getAbs(-1));
-}
-
-int main(int argc, char* argv[])
-{
-	testing::InitGoogleTest(&argc, argv);
-	RUN_ALL_TESTS();
-
-	return 0;
-}

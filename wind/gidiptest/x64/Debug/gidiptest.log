@@ -1,0 +1,18 @@
+﻿  utf8.cpp
+d:\c++code\wind\gidiptest\utf8.cpp(205): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\c++code\wind\gidiptest\utf8.cpp(205): warning C4101: “ndx”: 未引用的局部变量
+d:\c++code\wind\gidiptest\utf8.cpp(233): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  md5.cpp
+  http_net.cpp
+  main.cpp
+d:\c++code\wind\gidiptest\proto1.h(45): warning C4244: “return”: 从“time_t”转换到“uint32”，可能丢失数据
+  http_proto.cpp
+d:\c++code\wind\gidiptest\http_proto.cpp(5): warning C4005: “BUF_SIZE”: 宏重定义
+  d:\c++code\wind\gidiptest\http_net.h(7): note: 参见“BUF_SIZE”的前一个定义
+d:\c++code\wind\gidiptest\http_proto.cpp(69): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\c++code\wind\gidiptest\http_proto.cpp(97): warning C4267: “参数”: 从“size_t”转换到“int32”，可能丢失数据
+d:\c++code\wind\gidiptest\http_proto.cpp(99): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\c++code\wind\gidiptest\http_proto.cpp(117): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+d:\c++code\wind\gidiptest\http_proto.cpp(160): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码...
+gtestd.lib(gtest-all.obj) : fatal error LNK1112: 模块计算机类型“X86”与目标计算机类型“x64”冲突
