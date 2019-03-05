@@ -13,7 +13,7 @@ using namespace std;
 #define WRONG_PLAT 2
 #define RIGHT_PARTITION 100
 #define WRONG_PARTITION 99
-#define RIGHT_OPENID "gidip"
+#define RIGHT_OPENID "o-u2I05RE5WuvD5HVRMZWrLy1yTw"
 #define WRONG_OPENID "illegal"
 #define ROLEID 0
 #define POSITIVE_VAL 12
