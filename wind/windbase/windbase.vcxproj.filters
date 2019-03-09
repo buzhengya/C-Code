@@ -64,6 +64,9 @@
     <ClInclude Include="data_queue.h">
       <Filter>container</Filter>
     </ClInclude>
+    <ClInclude Include="auto_meter.h">
+      <Filter>time</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="wtime.cpp">
@@ -75,6 +78,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="whread.cpp">
       <Filter>thread</Filter>
+    </ClCompile>
+    <ClCompile Include="auto_meter.cpp">
+      <Filter>time</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

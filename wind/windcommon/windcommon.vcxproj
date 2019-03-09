@@ -129,9 +129,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="uuid_make.h" />
     <ClInclude Include="wheel_timer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="uuid_make.cpp" />
     <ClCompile Include="wheel_timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

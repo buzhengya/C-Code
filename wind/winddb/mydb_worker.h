@@ -46,3 +46,23 @@ private:
 	MYSQL*			m_pMysql;
 	TLockFreeCmdQueue	m_oCmdQueue;
 };
+
+class IMysqlRecordset
+{
+public:
+	virtual STDCALL					~IMysqlRecordset() {}
+
+	// row number and field number
+	virtual uint32 STDCALL			GetRowsNum()const = 0;
+	virtual uint32 STDCALL			GetFieldsNum()const = 0;
+	// next array
+	virtual bool STDCALL			Next() = 0;
+	// index of get const char*
+	virtual const char* STDCALL		GetFieldOfIndex(unsigned int dwIndex)const = 0;
+	// length of get const char*
+	virtual unsigned long STDCALL	GetFieldLengthOfIndex(unsigned int dwIndex)const = 0;
+	// field name of const char*
+	virtual const char* STDCALL		GetFieldOfName(const char *szField)const = 0;
+	// release
+	virtual void STDCALL			Release() = 0;
+};

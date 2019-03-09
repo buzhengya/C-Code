@@ -4,15 +4,24 @@
     <Filter Include="timer">
       <UniqueIdentifier>{6b96e465-7c16-4ed9-9143-a136406842b4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="uuid_make">
+      <UniqueIdentifier>{20ad794d-8e81-4574-8303-c67611484c8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wheel_timer.h">
       <Filter>timer</Filter>
     </ClInclude>
+    <ClInclude Include="uuid_make.h">
+      <Filter>uuid_make</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="wheel_timer.cpp">
       <Filter>timer</Filter>
+    </ClCompile>
+    <ClCompile Include="uuid_make.cpp">
+      <Filter>uuid_make</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

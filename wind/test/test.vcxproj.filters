@@ -5,15 +5,30 @@
     <ClCompile Include="timer_test.cpp">
       <Filter>timer_test</Filter>
     </ClCompile>
+    <ClCompile Include="mysql_test.cpp">
+      <Filter>mysql_test</Filter>
+    </ClCompile>
+    <ClCompile Include="role.cpp">
+      <Filter>mysql_test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="timer_test">
       <UniqueIdentifier>{472941cb-0609-4e6a-a710-a8932e1c6792}</UniqueIdentifier>
     </Filter>
+    <Filter Include="mysql_test">
+      <UniqueIdentifier>{b43f7b0e-c9b1-42bd-98b9-633e5378bedd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="timer_test.h">
       <Filter>timer_test</Filter>
+    </ClInclude>
+    <ClInclude Include="mysql_test.h">
+      <Filter>mysql_test</Filter>
+    </ClInclude>
+    <ClInclude Include="role.h">
+      <Filter>mysql_test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

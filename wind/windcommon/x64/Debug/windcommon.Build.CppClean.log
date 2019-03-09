@@ -1,7 +1,8 @@
 d:\c++code\wind\windcommon\x64\debug\windcommon.pdb
 d:\c++code\wind\windcommon\x64\debug\windcommon.idb
 d:\c++code\wind\windcommon\x64\debug\wheel_timer.obj
-d:\c++code\wind\x64\debug\windcommon.lib
+d:\c++code\wind\windlib\windcommon.lib
+d:\c++code\wind\windcommon\..\windlib\windcommon.lib
 d:\c++code\wind\windcommon\x64\debug\windcommon.tlog\cl.command.1.tlog
 d:\c++code\wind\windcommon\x64\debug\windcommon.tlog\cl.read.1.tlog
 d:\c++code\wind\windcommon\x64\debug\windcommon.tlog\cl.write.1.tlog

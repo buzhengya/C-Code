@@ -132,6 +132,7 @@ int main()
 	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_mail.proto");
 	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_role.proto");
 	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_social.proto");
+	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_role_expand.proto");
 
 	write << "void RegisterProto()\n{\n\tRegisterBlackList();" << endl;
 

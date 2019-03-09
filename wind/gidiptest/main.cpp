@@ -11,9 +11,10 @@
 #define INNER_IP "192.168.3.70"
 #define OUTER_IP "193.112.62.41"
 #define JIAN_RONG "118.89.17.44"
+#define PRESSURE_TEST "192.168.24.55"
 int main(int argc, char* argv[])
 {
-	if (!CHttpNet::Instance()->Init(INNER_IP, 6788, 5000))
+	if (!CHttpNet::Instance()->Init(PRESSURE_TEST, 6787, 5000))
 	{
 		return 0;
 	}

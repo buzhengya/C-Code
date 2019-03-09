@@ -1,10 +1,13 @@
 #include "mysql.h"
 #include <string>
+#include "mysql_test.h"
+#include "logger.h"
 
 using namespace std;
 
 int main()
 {
-	string s1 = "";
-	//string s2 = "" + "" + s2;
+	CMysqlTest::Instance()->Test();
+
+	return 0;
 }

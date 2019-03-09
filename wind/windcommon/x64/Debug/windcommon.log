@@ -4,4 +4,6 @@ d:\c++code\wind\windcommon\wheel_timer.cpp(44): warning C4244: “=”: 从“ui
 d:\c++code\wind\windbase\object_pool.h(76): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
   d:\c++code\wind\windbase\object_pool.h(68): note: 编译类 模板 成员函数“std::string CObjPool<CWheelTimer>::GetDebugInfo(void)”时
   d:\c++code\wind\windcommon\wheel_timer.h(105): note: 参见对正在编译的类 模板 实例化“CObjPool<CWheelTimer>”的引用
+  uuid_make.cpp
+  正在生成代码...
   windcommon.vcxproj -> D:\C++Code\wind\windcommon\..\windlib\windcommon.lib
