@@ -14,7 +14,7 @@
 #define PRESSURE_TEST "192.168.24.55"
 int main(int argc, char* argv[])
 {
-	if (!CHttpNet::Instance()->Init(PRESSURE_TEST, 6787, 5000))
+	if (!CHttpNet::Instance()->Init(JIAN_RONG, 6787, 5000))
 	{
 		return 0;
 	}

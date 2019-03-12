@@ -89,6 +89,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>../windcommon;../windbase;../lib3rd/mysql/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessToFile>false</PreprocessToFile>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -125,12 +126,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="easylogging++.cc" />
+    <ClCompile Include="log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mysql_test.cpp" />
     <ClCompile Include="role.cpp" />
     <ClCompile Include="timer_test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="easylogging++.h" />
+    <ClInclude Include="log.h" />
     <ClInclude Include="mysql_test.h" />
     <ClInclude Include="role.h" />
     <ClInclude Include="timer_test.h" />

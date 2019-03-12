@@ -11,10 +11,10 @@ using namespace std;
 #define WRONG_AREA 2
 #define RIGHT_PLAT 1
 #define WRONG_PLAT 2
-#define RIGHT_PARTITION 888
+#define RIGHT_PARTITION 20
 #define WRONG_PARTITION 99
 //#define RIGHT_OPENID "o-u2I05RE5WuvD5HVRMZWrLy1yTw"
-#define RIGHT_OPENID "dalao"
+#define RIGHT_OPENID "test"
 #define WRONG_OPENID "illegal"
 #define ROLEID 0
 #define POSITIVE_VAL 12
