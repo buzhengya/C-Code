@@ -16,15 +16,15 @@ namespace el
 
 int main()
 {
-	//el::Loggers::addFlag(el::LoggingFlag::StrictLogFileSizeCheck);
+	el::Loggers::addFlag(el::LoggingFlag::StrictLogFileSizeCheck);
 
-	//el::Configurations conf("my_log.conf");
+	el::Configurations conf("test_conf.conf");
 
-	///// 可以单独设置某一个logger的配置  
-	//el::Loggers::reconfigureLogger("default", conf);
+	/// 可以单独设置某一个logger的配置  
+	el::Loggers::reconfigureLogger("default", conf);
 
-	///// 也可以设置全部logger的配置  
-	//el::Loggers::reconfigureAllLoggers(conf);
+	/// 也可以设置全部logger的配置  
+	el::Loggers::reconfigureAllLoggers(conf);
 
 	el::base::Writer(el::Level::Info, "d:\\c++code\\wind\\test\\main.cpp", 12, __FUNCSIG__, el::base::DispatchAction::NormalLog).construct(1, el::base::consts::kDefaultLoggerId) 
 		<< "My first info log using default logger.";
