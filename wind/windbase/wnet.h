@@ -42,33 +42,13 @@ namespace wind
 	const uint32 UNKNOWN_SIZE = 0xFFFFFFFF;
 
 	class IPacketParser;
-	class ISession;
+	class INetSession;
 	class ISessionFactory;
 
 	class IConnection
 	{
 	public:
-		virtual bool WAPI IsConnected(void) = 0;
-
 		virtual void WAPI Send(const char* pBuf, uint32 dwLen, bool bAtOnce = false) = 0;
-
-		virtual void WAPI SetOpt(uint32 dwType, void* pOpt) = 0;
-
-		virtual void WAPI Disconnect(void) = 0;
-
-		virtual const uint32 WAPI GetRemoteIP(void) = 0;
-
-		virtual const char* WAPI GetRemoteIPStr(void) = 0;
-
-		virtual uint16 WAPI GetRemotePort(void) = 0;
-
-		virtual const uint32 WAPI GetLocalIP(void) = 0;
-
-		virtual const char* WAPI GetLocalIPStr(void) = 0;
-
-		virtual uint16 WAPI GetLocalPort(void) = 0;
-
-		virtual uint32 WAPI GetSendBufFree(void) = 0;
 	};
 
 	class IListener
@@ -76,21 +56,11 @@ namespace wind
 	public:
 		virtual void WAPI SetPacketParser(IPacketParser* poPacketParser) = 0;
 
-		virtual void WAPI SetSessionFactory(ISessionFactory* poSessionFactory) = 0;
-
 		virtual void WAPI SetBufferSize(uint32 dwRecvBufSize, uint32 dwSendBufSize) = 0;
-
-		virtual void WAPI SetOpt(uint32 dwType, void* pOpt) = 0;
 
 		virtual bool WAPI Start(const char* pszIP, uint16 wPort, bool bReUseAddr = true) = 0;
 
 		virtual bool WAPI Stop(void) = 0;
-
-		virtual void WAPI Release(void) = 0;
-
-		virtual const uint32 WAPI GetLocalIP(void) = 0;
-
-		virtual uint16 WAPI GetLocalPort(void) = 0;
 	};
 
 	class IConnector
@@ -98,20 +68,16 @@ namespace wind
 	public:
 		virtual void WAPI SetPacketParser(IPacketParser* poPakcetParser) = 0;
 
-		virtual void WAPI SetSession(ISession* poSession) = 0;
+		virtual void WAPI SetSession(INetSession* poSession) = 0;
 
 		virtual void WAPI SetBufferSize(uint32 dwRecvBufSize, uint32 dwSendBufSize) = 0;
 
 		virtual bool WAPI Connect(const char* pszIP, uint16 wPort) = 0;
 
 		virtual bool WAPI ReConnect(void) = 0;
-
-		virtual void WAPI Release(void) = 0;
-
-		virtual void WAPI SetOpt(uint32 dwType, void* pOpt) = 0;
 	};
 
-	class INet : public IBase
+	class INet
 	{
 	public:
 
@@ -120,8 +86,6 @@ namespace wind
 		virtual IListener* WAPI CreateListener(uint32 dwNetIOType) = 0;
 
 		virtual bool WAPI Run(int32 nCount = -1) = 0;
-
-		virtual std::string WAPI DebugInfo() = 0;
 	};
 
 	class IPacketParser
@@ -130,7 +94,7 @@ namespace wind
 		virtual int32 WAPI ParsePacket(const char* pBuf, uint32 dwLen) = 0;
 	};
 
-	class ISession
+	class INetSession
 	{
 	public:
 		virtual void WAPI SetConnection(IConnection* poConnection) = 0;
@@ -139,31 +103,13 @@ namespace wind
 
 		virtual void WAPI OnTerminate(void) = 0;
 
-		virtual bool WAPI OnError(int32 nModuleErr, int32 nSysErr) = 0;
-
 		virtual void WAPI OnRecv(const char* pBuf, uint32 dwLen) = 0;
-
-#ifdef GNNET_HAS_SEND_REPORT
-
-		virtual void WAPI OnSend(const char* pBuf, uint32 dwLen)
-		{}
-#endif
-
-		virtual void WAPI Release(void) = 0;
 	};
 
 	class ISessionFactory
 	{
 	public:
-		virtual ISession* WAPI CreateSession(IConnection* poConnection) = 0;
+		virtual INetSession* WAPI CreateSession(IConnection* poConnection) = 0;
 	};
-
-	INet* WAPI NetGetModule(const SVersion* pstVersion);
-
-
-	typedef INet* (WAPI *PFN_GNNetGetModule)(const SVersion* pstVersion);
-
-
-	void WAPI NetSetOpt(uint32 dwType, void* pOpt);
 }
 #endif // _WNET_H_

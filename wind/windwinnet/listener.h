@@ -1,49 +1,33 @@
-#ifndef _LISTENER_H_
-#define _LISTENER_H_
+#pragma once
 #include "wnet.h"
-#include <WinSock2.h>
-#include "sock.h"
-#include <MSWSock.h>
-#pragma comment(lib, "ws2_32.lib")
-class CListener
+
+using namespace wind;
+
+class CCPListener
 {
 public:
-	CListener();
-	~CListener();
+	virtual void SetPacketParser(IPacketParser* poPacketParser) { m_pPacketParser = poPacketParser; }
 
-	//inline void SetPacketParser(IPacketParser* poPacketParser) { m_poPacketParser = poPacketParser; }
+	virtual void SetSessionFactory(ISessionFactory* poSessionFactory) { m_pSessionFactory = poSessionFactory; }
 
-	//inline void SetSessionFactory(ISessionFactory* poSessionFactory) { m_poSessionFactory = poSessionFactory; }
+	virtual void SetBuffSize(uint32 nRecvBufSize, uint32 nSendBufSize);
 
-	//void SetBufferSize(uint32 dwRecvBufSize, uint32 dwSendBufSize) { m_dwRecvBufSize = dwRecvBufSize; m_dwSendBufSize = dwSendBufSize; }
+	virtual void Start();
 
-	bool Start(const char* pszIP, uint16 wPort);
+	virtual void Stop();
 
-	void Stop();
+	void PostAccept();
 
-	bool PostAcceptEx(SPerIoData* pstPerIoData);
+	void OnAccept();
+private:
 
-	void OnAccept(SPerIoData* pstPerIoData);
+	bool _InitAccept();
 
-	void GetSockAddress(SPerIoData * pstPerIoData, sockaddr_in & RemoteAddr, sockaddr_in &  LocalAddr);
+	IPacketParser* m_pPacketParser;
+	ISessionFactory * m_pSessionFactory;
+	uint32 m_nRecvBufSize;
+	uint32 m_nSendBufSize;
+	bool   m_bStart;
+	SOCKET m_hListenSock;
 
-	void GetLocalSockAddress(sockaddr_in &  LocalAddr);
-protected:
-
-	bool InitAcceptEx();
-
-
-protected:
-	SPerHandleData              m_stPerHandleData;
-	SOCKET                      m_hListenSock;
-	LPFN_ACCEPTEX               m_lpfnAcceptEx;
-	LPFN_GETACCEPTEXSOCKADDRS   m_lpfnGetAcceptExSockaddrs;
-	SPerIoData*                 m_pPerIoDataArray;
-
-	//IPacketParser*				m_poPacketParser;
-	//ISessionFactory*			m_poSessionFactory;
-	//uint32                      m_dwRecvBufSize;
-	//uint32                      m_dwSendBufSize;
-	volatile bool               m_bStart;
 };
-#endif // 

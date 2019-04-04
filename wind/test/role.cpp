@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "uuid_make.h"
-#include "logger.h"
+#include "log.h"
 
 using namespace std;
 
@@ -32,11 +32,11 @@ SRole::SRole()
 
 	if (strcpy_s(m_szName, nNameLen, szName) != 0)
 	{
-		LOG << "copy name failed." << std::endl;
+		EXLOG_DEBUG << "copy name failed.";
 	}
 	if (strcpy_s(m_szSignature, nSigLen, szName) != 0)
 	{
-		LOG << "copy sig failed." << std::endl;
+		EXLOG_DEBUG << "copy sig failed.";
 	}
 }
 
@@ -64,16 +64,16 @@ SRole::SRole(const char * szName, const char * szSig)
 
 SRole::~SRole()
 {
-	//LOG << "begin delete." << std::endl;
+	//EXLOG_DEBUG << "begin delete." ;
 	if (m_szName != nullptr)
 	{
-		//LOG << "name delete." << std::endl;
+		//EXLOG_DEBUG << "name delete." ;
 		delete []m_szName;
 	}
 
 	if (m_szSignature != nullptr)
 	{
-		//LOG << "sig delete." << std::endl;
+		//EXLOG_DEBUG << "sig delete." ;
 		delete []m_szSignature;
 	}
 }
@@ -87,7 +87,7 @@ char * SRole::Role2Data(uint32& nLen)
 	char *szData = new char[nLen];
 	if (strcpy_s(szData, 8, (char *)&m_nId) != 0)
 	{
-		LOG << "copy id failed." << endl;
+		EXLOG_DEBUG << "copy id failed." ;
 	}
 	strcpy_s(szData + 8, 4, (char *)&m_nLv);
 	strcpy_s(szData + 12, nNameLen, m_szName);
@@ -113,7 +113,7 @@ void SRole::Data2Role(char * szData)
 
 void SRole::PrintRole(char * szData)
 {
-	LOG << "id : " << m_nId << "  lv : " << m_nLv << " name : " << m_szName << " sig  : " << m_szSignature << std::endl;
+	EXLOG_DEBUG << "id : " << m_nId << "  lv : " << m_nLv << " name : " << m_szName << " sig  : " << m_szSignature ;
 }
 
 void SRole::Init()

@@ -129,7 +129,7 @@
     <ClInclude Include="auto_meter.h" />
     <ClInclude Include="base_define.h" />
     <ClInclude Include="data_queue.h" />
-    <ClInclude Include="logger.h" />
+    <ClInclude Include="log.h" />
     <ClInclude Include="object_pool.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="wbase.h" />
@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="auto_meter.cpp" />
+    <ClCompile Include="log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="whread.cpp" />
     <ClCompile Include="wstring.cpp" />

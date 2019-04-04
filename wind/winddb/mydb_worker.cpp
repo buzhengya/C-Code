@@ -1,5 +1,6 @@
 #include "mydb_worker.h"
-#include "logger.h"
+#include "log.h"
+#include "mysql_db.h"
 
 void CMyDBWorker::Start()
 {
@@ -106,7 +107,7 @@ bool CMyDBWorker::_Connect()
 
 	if (mysql_options(m_pMysql, MYSQL_SET_CHARSET_NAME, m_stConnectInfo.strCharset.c_str()))
 	{
-		LOG << "mysql_options set charset name failed." << endl;
+		EXLOG_DEBUG << "mysql_options set charset name failed.";
 		return false;
 	}
 
@@ -117,8 +118,8 @@ bool CMyDBWorker::_Connect()
 		m_stConnectInfo.strDBName.c_str(),
 		m_stConnectInfo.wPort, nullptr, 0))
 	{
-		LOG << "mysql connect failed." << " IP : " << m_stConnectInfo.strIp << " database : "
-			<< m_stConnectInfo.strIp << " password : " << m_stConnectInfo.strPassword << endl;
+		EXLOG_DEBUG << "mysql connect failed." << " IP : " << m_stConnectInfo.strIp << " database : "
+			<< m_stConnectInfo.strIp << " password : " << m_stConnectInfo.strPassword;
 		return false;
 	}
 

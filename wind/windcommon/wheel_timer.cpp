@@ -1,5 +1,5 @@
 #include "wheel_timer.h"
-#include "logger.h"
+#include "log.h"
 
 const uint32 TVR_BIT = 8;
 const uint32 TVN_BIT = 6;
@@ -182,7 +182,7 @@ void CWheelTimerMgr::AddTimer(CWheelTimer * pTimer)
 	listTimer.push_back(pTimer);
 	pTimer->m_itTimer = listTimer.end();
 	--pTimer->m_itTimer;
-	LOG << "add timer in index : " << pTimer->m_nIndex << endl;
+	EXLOG_DEBUG << "add timer in index : " << pTimer->m_nIndex;
 }
 
 void CWheelTimerMgr::RemoveTimer(CWheelTimer * pTimer)
@@ -214,7 +214,7 @@ void CWheelTimerMgr::Run()
 		m_nCheckTime++;
 
 		TListTimer& listTimer = m_vecListTimer[nIndex];
-		//LOG << "run index : " << nIndex << endl;
+		//EXLOG_DEBUG << "run index : " << nIndex << endl;
 		TListTimer listTmp;
 		listTmp.splice(listTmp.end(), listTimer);
 		for (const auto & it :listTmp)
@@ -244,7 +244,7 @@ CWheelTimer * CTimerFactory::CreateWheelTimer()
 	CWheelTimer * pTimer = m_oWheelTimer.FetchObj();
 	if (pTimer == nullptr)
 	{
-		LOG << "m_oWheelTimer.FetchObj() is nullptr" << endl;
+		EXLOG_DEBUG << "m_oWheelTimer.FetchObj() is nullptr";
 	}
 	return pTimer;
 }

@@ -1,5 +1,5 @@
 #include "mysql_test.h"
-#include "logger.h"
+#include "log.h"
 #include <sstream>
 #include <vector>
 
@@ -46,7 +46,7 @@ int CMysqlTest::QueryWithResult(const char * szSql, MYSQL_RES ** pRes)
 
 	if (mysql_real_query(m_pMysql, szSql, strlen(szSql)) != 0)
 	{
-		LOG << GetLastError() << endl;
+		EXLOG_DEBUG << GetLastError();
 		return GetLastErrorNo();
 	}
 
@@ -82,11 +82,11 @@ void CMysqlTest::HandleResult(MYSQL_RES * pRes)
 		pRow = mysql_fetch_row(pRes);
 		if (pRow == nullptr || pRow[0] == nullptr || pRow[1] == nullptr || pRow[2] == nullptr || pRow[3] == nullptr || pRow[4] == nullptr)
 		{
-			LOG << "query is null.";
+			EXLOG_DEBUG << "query is null.";
 			continue;
 		}
-		LOG << "-------------------------- row " << i + 1 << " -------------------------" << endl;
-		LOG << "seq id : " << pRow[0] << " id : " << pRow[1] << " name : " << pRow[2] << " sig : " << pRow[3] << endl;
+		EXLOG_DEBUG << "-------------------------- row " << (i + 1) << " -------------------------" ;
+		EXLOG_DEBUG << "seq id : " << pRow[0] << " id : " << pRow[1] << " name : " << pRow[2] << " sig : " << pRow[3] ;
 		SRole oRole;
 		oRole.Data2Role(pRow[4]);
 	}
@@ -98,7 +98,7 @@ void CMysqlTest::Test()
 {
 	if (CMysqlTest::Instance()->Init(MYSQL_IP, MYSQL_PORT, MYSQL_USER, MYSQL_PASSWD, MYSQL_DB_NAME, MYSQL_CHARSET) == false)
 	{
-		LOG << CMysqlTest::Instance()->GetLastError() << endl;
+		EXLOG_DEBUG << "mysql error : " << CMysqlTest::Instance()->GetLastError() ;
 	}
 	Insert(1);
 }
@@ -115,11 +115,11 @@ void CMysqlTest::Insert(uint32 nNum)
 		EscapeString(szData, nDataLen, vecEscapeStr.data(), vecEscapeStr.size());
 		oSS << "insert into tbl_wf_test (id,name,signature,date) values (" << oRole.GetId() << "," << oRole.GetName() << "," 
 			<< oRole.GetSig() << vecEscapeStr.data() << ")";
-		LOG << oSS.str();
+		EXLOG_DEBUG << oSS.str();
 		int32 nRes = QueryWithoutResult(oSS.str().c_str());
 		if (nRes != 0)
 		{
-			LOG << "insert failed. errno : " << nRes << endl;
+			EXLOG_DEBUG << "insert failed. errno : " << nRes ;
 		}
 	}
 }

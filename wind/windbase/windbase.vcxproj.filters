@@ -43,9 +43,6 @@
     <ClInclude Include="wstring.h">
       <Filter>string</Filter>
     </ClInclude>
-    <ClInclude Include="logger.h">
-      <Filter>log</Filter>
-    </ClInclude>
     <ClInclude Include="wbase.h">
       <Filter>net</Filter>
     </ClInclude>
@@ -67,6 +64,9 @@
     <ClInclude Include="auto_meter.h">
       <Filter>time</Filter>
     </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="wtime.cpp">
@@ -81,6 +81,9 @@
     </ClCompile>
     <ClCompile Include="auto_meter.cpp">
       <Filter>time</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>log</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

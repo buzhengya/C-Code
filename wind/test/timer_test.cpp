@@ -10,11 +10,11 @@ bool CTimerTest::Init()
 	SetTimer(30, 30 * 1000, 0, TIMER_CIRCLE);
 	SetTimer(100, 100 * 1000, 0, TIMER_CIRCLE);
 	SetTimer(1000, 1000 * 1000, 0, TIMER_CIRCLE);
-	cout << CTime::Instance()->GetNowMilTime() << endl;
+	cout << CTime::Instance()->GetNowMilTime() ;
 	return true;
 }
 
 void CTimerTest::OnTimer(uint32 nTimerId)
 {
-	cout << "interval : " << nTimerId << "  now : " << CTime::Instance()->GetNowMilTime() << endl;
+	cout << "interval : " << nTimerId << "  now : " << CTime::Instance()->GetNowMilTime() ;
 }

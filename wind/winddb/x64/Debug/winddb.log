@@ -1,0 +1,10 @@
+﻿  mydb_worker.cpp
+d:\c++code\wind\lib3rd\mysql\include\mysql.h(41): warning C4005: “STDCALL”: 宏重定义
+  d:\c++code\wind\winddb\mysql_db.h(10): note: 参见“STDCALL”的前一个定义
+d:\c++code\wind\winddb\mydb_worker.cpp(71): error C2872: “IMysqlRecordset”: 不明确的符号
+  d:\c++code\wind\winddb\mydb_worker.h(51): note: 可能是“IMysqlRecordset”
+  d:\c++code\wind\winddb\mysql_db.h(86): note: 或  “wind::IMysqlRecordset”
+d:\c++code\wind\winddb\mydb_worker.cpp(72): error C2511: “int CMyDBWorker::QueryWithResult(const char *,IMysqlRecordset **)”:“CMyDBWorker”中没有找到重载的成员函数
+  d:\c++code\wind\winddb\mydb_worker.h(11): note: 参见“CMyDBWorker”的声明
+d:\c++code\wind\winddb\mydb_worker.cpp(73): error C2597: 对非静态成员“CMyDBWorker::m_pMysql”的非法引用
+d:\c++code\wind\winddb\mydb_worker.cpp(75): error C2597: 对非静态成员“CMyDBWorker::m_pMysql”的非法引用

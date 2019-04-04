@@ -1,6 +1,6 @@
 #include "auto_meter.h"
 #include "wtime.h"
-#include "logger.h"
+#include "log.h"
 
 using namespace wind;
 
@@ -27,10 +27,10 @@ void CAutoTimeMeter::Stop()
 
 	if (nSpend>= m_nLimitTime)
 	{
-		LOG << "[WARN] " << m_strEvent << " spend " << nSpend << endl;
+		EXLOG_DEBUG << "[WARN] " << m_strEvent << " spend " << nSpend;
 	}
 	else
 	{
-		LOG << "[INFO]" << m_strEvent << " spend " << nSpend << endl;
+		EXLOG_DEBUG << "[INFO]" << m_strEvent << " spend " << nSpend;
 	}
 }

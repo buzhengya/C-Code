@@ -193,7 +193,7 @@ void DelayFunc(string strSource, string strDest)
 				}
 				vecCountReqAndAck.push_back("p.ArrReqAndAck[SProtoSpace.ECSProtoID" + strReq + "_id]  = SProtoSpace.ECSProtoID" + strAck + "_id\n");
 
-				vecReqAndAck.push_back("p.ArrReqAndAck[SProtoSpace.ECSProtoID" + strAck + "_id]  = SProtoSpace.ECSProtoID" + strReq + "_id\n");
+				vecReqAndAck.push_back("p.ArrAckAndReq[SProtoSpace.ECSProtoID" + strAck + "_id]  = SProtoSpace.ECSProtoID" + strReq + "_id\n");
 
 				vecProtoDelay.push_back("p.SliValidProtoID = append(p.SliValidProtoID,SProtoSpace.ECSProtoID" + strAck + "_id)\n");
 			}
@@ -422,6 +422,8 @@ int main()
 	Send2Func(strSource, strDest);
 	//处理函数结构体
 	Deal2Func(strSource, strDest);
+	vector<int> vecTest;
+	vector<int>::iterator it = vecTest.begin();
 	//string strSource = "E:\\project\\y-server\\servers\\pressure_test_go\\src\\client\\task.go";
 	//string strDest = "E:\\project\\y-server\\servers\\pressure_test_go\\src\\client\\tmp.go";
 	//DStruct2SStruct(strSource, strDest, "", "");

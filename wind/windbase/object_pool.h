@@ -2,7 +2,7 @@
 #include "base_define.h"
 #include <string>
 #include <sstream>
-#include "logger.h"
+#include "log.h"
 
 using namespace std;
 
@@ -125,13 +125,13 @@ private:
 	{
 		if (m_nTotalSize + m_nObjSize * nCount > m_nMaxSize)
 		{
-			LOG << "CObjPool::AllocRaw is overflow. name : " << m_strObjName << " total size : " << m_nTotalSize << endl;
+			EXLOG_DEBUG << "CObjPool::AllocRaw is overflow. name : " << m_strObjName << " total size : " << m_nTotalSize;
 			return;
 		}
 		T * arrObj = (T*)malloc(m_nObjSize*nCount);
 		if (arrObj == nullptr)
 		{
-			LOG << "CObjPool::AllocRaw is nullptr. obj name : " << m_strObjName << " total size : " << m_nTotalSize << endl;
+			EXLOG_DEBUG << "CObjPool::AllocRaw is nullptr. obj name : " << m_strObjName << " total size : " << m_nTotalSize;
 			return;
 		}
 

@@ -88,9 +88,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../windbase;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../windlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>windbase.lib;windcommon.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -122,37 +125,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="bufpool.h" />
-    <ClInclude Include="connector.h" />
-    <ClInclude Include="conn_data_allocator.h" />
-    <ClInclude Include="conn_data_mgr.h" />
-    <ClInclude Include="iocpctrl.h" />
-    <ClInclude Include="listener.h" />
-    <ClInclude Include="net_config.h" />
-    <ClInclude Include="simple_loop_buffer.h" />
-    <ClInclude Include="sock.h" />
-    <ClInclude Include="connection.h" />
-    <ClInclude Include="netwin.h" />
-    <ClInclude Include="thread_buffer_pool.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="bufpool.cpp" />
-    <ClCompile Include="connection.cpp" />
-    <ClCompile Include="connector.cpp" />
-    <ClCompile Include="conn_data_allocator.cpp" />
-    <ClCompile Include="conn_data_mgr.cpp" />
-    <ClCompile Include="iocpctrl.cpp" />
-    <ClCompile Include="listener.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="net_config.cpp" />
-    <ClCompile Include="simple_loop_buffer.cpp" />
-    <ClCompile Include="sock.cpp" />
-    <ClCompile Include="netwin.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\windbase\windbase.vcxproj">
       <Project>{7d23459c-f98d-4c72-9c71-ff07039bd754}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="conndatamgr.h" />
+    <ClInclude Include="connectctrl.h" />
+    <ClInclude Include="connection.h" />
+    <ClInclude Include="connector.h" />
+    <ClInclude Include="cpsock.h" />
+    <ClInclude Include="listener.h" />
+    <ClInclude Include="winnet.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="conndatamgr.cpp" />
+    <ClCompile Include="connectctrl.cpp" />
+    <ClCompile Include="connection.cpp" />
+    <ClCompile Include="connector.cpp" />
+    <ClCompile Include="cpsock.cpp" />
+    <ClCompile Include="listener.cpp" />
+    <ClCompile Include="winnet.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

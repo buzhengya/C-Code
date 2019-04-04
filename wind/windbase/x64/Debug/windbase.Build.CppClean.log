@@ -1,9 +1,16 @@
 d:\c++code\wind\windbase\x64\debug\windbase.pdb
 d:\c++code\wind\windbase\x64\debug\windbase.idb
 d:\c++code\wind\windbase\x64\debug\auto_meter.obj
+d:\c++code\wind\windbase\x64\debug\log.obj
 d:\c++code\wind\windbase\x64\debug\main.obj
+d:\c++code\wind\windbase\x64\debug\whread.obj
 d:\c++code\wind\windbase\x64\debug\wstring.obj
 d:\c++code\wind\windbase\x64\debug\wtime.obj
+d:\c++code\wind\windlib\windbase.lib
+d:\c++code\wind\windbase\../windlib\windbase.lib
 d:\c++code\wind\windbase\x64\debug\windbase.tlog\cl.command.1.tlog
 d:\c++code\wind\windbase\x64\debug\windbase.tlog\cl.read.1.tlog
 d:\c++code\wind\windbase\x64\debug\windbase.tlog\cl.write.1.tlog
+d:\c++code\wind\windbase\x64\debug\windbase.tlog\lib-link.read.1.tlog
+d:\c++code\wind\windbase\x64\debug\windbase.tlog\lib-link.write.1.tlog
+d:\c++code\wind\windbase\x64\debug\windbase.tlog\lib.command.1.tlog
