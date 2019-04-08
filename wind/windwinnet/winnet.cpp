@@ -10,3 +10,8 @@ wind::IListener * WAPI CNetWin::CreateListener(uint32 dwNetIOType)
 
 }
 
+bool WAPI CNetWin::Run(uint32 nCount)
+{
+
+}
+

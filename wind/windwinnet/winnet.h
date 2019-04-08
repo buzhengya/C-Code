@@ -12,5 +12,7 @@ public:
 	IConnector * WAPI CreateConnector(uint32 dwNetIOType);
 
 	IListener * WAPI CreateListener(uint32 dwNetIOType);
+
+	bool        WAPI Run(uint32 nCount);
 private:
 };

@@ -130,20 +130,24 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bufpool.h" />
     <ClInclude Include="conndatamgr.h" />
     <ClInclude Include="connectctrl.h" />
     <ClInclude Include="connection.h" />
     <ClInclude Include="connector.h" />
     <ClInclude Include="cpsock.h" />
+    <ClInclude Include="iocpctrl.h" />
     <ClInclude Include="listener.h" />
     <ClInclude Include="winnet.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bufpool.cpp" />
     <ClCompile Include="conndatamgr.cpp" />
     <ClCompile Include="connectctrl.cpp" />
     <ClCompile Include="connection.cpp" />
     <ClCompile Include="connector.cpp" />
     <ClCompile Include="cpsock.cpp" />
+    <ClCompile Include="iocpctrl.cpp" />
     <ClCompile Include="listener.cpp" />
     <ClCompile Include="winnet.cpp" />
   </ItemGroup>

@@ -8,6 +8,8 @@
     <ClInclude Include="cpsock.h" />
     <ClInclude Include="connection.h" />
     <ClInclude Include="conndatamgr.h" />
+    <ClInclude Include="bufpool.h" />
+    <ClInclude Include="iocpctrl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winnet.cpp" />
@@ -17,5 +19,7 @@
     <ClCompile Include="cpsock.cpp" />
     <ClCompile Include="connection.cpp" />
     <ClCompile Include="conndatamgr.cpp" />
+    <ClCompile Include="bufpool.cpp" />
+    <ClCompile Include="iocpctrl.cpp" />
   </ItemGroup>
 </Project>
