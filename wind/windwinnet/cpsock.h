@@ -10,10 +10,11 @@ using namespace std;
 
 enum EIOCP_OPERATION
 {
-
+	IOCP_SEND = 0,
+	IOCP_RECV = 1,
 };
 
-struct SPerHandleData
+struct SPerKeyData
 {
 	bool bListen;
 	void *ptr;
@@ -22,14 +23,20 @@ struct SPerHandleData
 struct SPerIoData
 {
 	OVERLAPPED stOverlapped;
-	//SOCKET     hSock;
+	SOCKET     hSock;
 	EIOCP_OPERATION eOp;
 	WSABUF     stWsaBuf;
 };
 
+struct CConnData;
+
 class CCPSock
 {
 public:
+	CCPSock() {}
+
+	~CCPSock() {}
+
 	void Send(const char * pData, uint32 nLen);
 
 	void OnRecv(DWORD dwBytes);
@@ -60,7 +67,8 @@ private:
 	//uint32 m_nSendBufSize;
 	int32  m_nDataRecv;
 	//int32  m_nDataSend;
-	SPerHandleData m_stRecvIoData;
+	SPerKeyData * m_pstPerHandleData;
+	SPerIoData  * m_pstRecvIoData;
 
 	CConnData * m_pConnData;
 	IPacketParser * m_pPacketParser;

@@ -1,5 +1,6 @@
 #include "cpsock.h"
 #include "log.h"
+#include "iocpctrl.h"
 
 void CCPSock::Send(const char * pData, uint32 nLen)
 {
@@ -8,11 +9,12 @@ void CCPSock::Send(const char * pData, uint32 nLen)
 
 void CCPSock::OnRecv(DWORD dwBytes)
 {
-	
+
 }
 
 void CCPSock::AssociateWithIocp()
 {
+	CIocpCtrl::Instance()->AssociateWithIocp(m_hSock, m_pstPerHandleData);
 }
 
 void CCPSock::AttachRecvBuf(char * pRecvBuf, uint32 dwRecvBufSize)
@@ -42,7 +44,7 @@ int32 CCPSock::_SyncSend(const char * pData, uint32 nLen)
 
 int32 CCPSock::_AsyncSend(const char * pData, uint32 nLen)
 {
-
+	return 0;
 }
 
 void CCPSock::_OnError()
@@ -52,8 +54,17 @@ void CCPSock::_OnError()
 
 bool CCPSock::_PostRecv()
 {
-	WSABUF wsaBuf;
-
-	if (WSARecv(m_hSock,&wsaBuf,1,))
+	DWORD dwNumBytes;
+	DWORD dwFlags;
+	if (WSARecv(m_hSock, &m_pstRecvIoData->stWsaBuf, 1, &dwNumBytes, &dwFlags, &m_pstRecvIoData->stOverlapped, nullptr) != 0)
+	{
+		int32 nRet = WSAGetLastError();
+		if (nRet != WSA_IO_PENDING)
+		{
+			EXLOG_ERROR << "wsa recv error : " << nRet;
+			return false;
+		}
+	}
+	return true;
 }
 

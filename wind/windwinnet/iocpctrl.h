@@ -20,7 +20,7 @@ public:
 
 	void OnExecute();
 
-	bool AssociateWithIocp(SOCKET hSocket, SPerHandleData * pStData);
+	bool AssociateWithIocp(SOCKET hSocket, SPerKeyData * pStData);
 
 private:
 	HANDLE           m_hCompletionPort;

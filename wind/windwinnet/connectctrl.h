@@ -20,6 +20,7 @@ void ConnectCtrlThread();
 using namespace wind;
 class CConnectCtrl : public TSingleton<CConnectCtrl>
 {
+	friend class TSingleton<CConnectCtrl>;
 public:
 	bool Init();
 
@@ -29,12 +30,22 @@ public:
 
 	void OnExecute();
 private:
+	CConnectCtrl() {}
+
+	~CConnectCtrl() {}
+
+	CConnectCtrl & operator=(CConnectCtrl &) {}
 
 	void _ProcRequests();
 
 	void _PorcEvents();
 
+	SConnReqEvt * _GetConnReqEvt();
+
+	void _PushBackReqEvt(SConnReqEvt * pReqEvt);
+
 	thread* m_hThread;
 	bool    m_bTerminate;
-	CLockFreeQueue<SConnReqEvt> m_queConn;
+	CLockFreeQueue<SConnReqEvt*> m_queConn;
+	list<SConnReqEvt*> m_listFreeConn;
 };

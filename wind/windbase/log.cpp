@@ -65,7 +65,7 @@ void CWriter::ProcessMsg()
 string CDefaultLogBuilder::Build(const CLogMessage * pLogMsg)
 {
 	stringstream oSS;
-	oSS << GetTime(nullptr) + " " + Level2Str(pLogMsg->GetLevel()) + ":" 
+	oSS << GetTime(nullptr) + " " + Level2Str(pLogMsg->GetLevel()) + " " <<pLogMsg->GetFileName() << ":"
 		<< pLogMsg->GetLine() << " | " + pLogMsg->GetMsg() + "\n";
 	return oSS.str();
 }

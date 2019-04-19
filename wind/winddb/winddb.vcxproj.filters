@@ -1,14 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <ClInclude Include="mydb_worker.h" />
-    <ClInclude Include="mysql_db.h" />
-    <ClInclude Include="mydb_dispatcher.h" />
-    <ClInclude Include="mysql_recordset.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="mydb_worker.cpp" />
-    <ClCompile Include="mydb_dispatcher.cpp" />
-    <ClCompile Include="mysql_recordset.cpp" />
-  </ItemGroup>
-</Project>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />

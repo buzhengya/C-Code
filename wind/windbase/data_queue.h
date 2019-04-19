@@ -4,7 +4,8 @@
 #include <string>
 #include <sstream>
 #include <list>
-
+#include <atomic>
+#include <mutex>
 using namespace std;
 
 template<typename T, int QUEUE_CAP = 10000>
@@ -136,10 +137,10 @@ public:
 			return;
 		}
 
-		m_oLocker.Lock();
+		m_oLocker.lock();
 		m_oTempList.push_back(oData);
 		++m_nElemtCount;
-		m_oLocker.Unlock();
+		m_oLocker.unlock();
 	}
 
 	bool PopFront(T& oData)

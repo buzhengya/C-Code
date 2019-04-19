@@ -3,11 +3,18 @@
 #include "conndatamgr.h"
 #include "wnet.h"
 
-class CConnection
+using namespace wind;
+
+struct CConnData;
+
+class CConnection : public IConnection
 {
+public:
 	CConnection();
 
 	~CConnection() {}
+
+	void Send(const char* pBuf, uint32 dwLen, bool bAtOnce = false) {}
 
 	void Send(const char* szSendBuf, uint32 nLen);
 

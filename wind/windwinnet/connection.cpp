@@ -10,7 +10,7 @@ CConnection::CConnection()
 
 void CConnection::Send(const char * szSendBuf, uint32 nLen)
 {
-	m_pConnData->oSock.Send(szSendBuf, nLen);
+	//m_pConnData->oSock.Send(szSendBuf, nLen);
 }
 
 void CConnection::OnRecv(const char * pData, uint32 nLen)

@@ -129,17 +129,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="mydb_worker.h" />
-    <ClInclude Include="mysql_db.h" />
-    <ClInclude Include="mydb_dispatcher.h" />
-    <ClInclude Include="mysql_recordset.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="mydb_dispatcher.cpp" />
-    <ClCompile Include="mydb_worker.cpp" />
-    <ClCompile Include="mysql_recordset.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

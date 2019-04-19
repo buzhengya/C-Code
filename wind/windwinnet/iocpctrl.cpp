@@ -1,5 +1,6 @@
 #include "iocpctrl.h"
 #include "log.h"
+#include "listener.h"
 
 void IocpThread()
 {
@@ -25,19 +26,84 @@ bool CIocpCtrl::Init()
 		thread * t = new thread(IocpThread);
 		m_vecWorkerThread.push_back(t);
 	}
+	return true;
 }
 
 void CIocpCtrl::Fini()
 {
+	DWORD  dwNumBytes = 0;
+	for (size_t i = 0; i < m_nNumOfWorkers; i++)
+	{
+		PostQueuedCompletionStatus(m_hCompletionPort, dwNumBytes, 0, nullptr);
+	}
 
+	for (size_t i = 0; i < m_nNumOfWorkers; i++)
+	{
+		if (m_vecWorkerThread[i]->joinable())
+		{
+			m_vecWorkerThread[i]->join();
+		}
+	}
 }
 
 void CIocpCtrl::OnExecute()
 {
+	DWORD  dwNumBytes;
+	SPerKeyData * pstHandleData;
+	SPerIoData * pstIoData;
+	while(true)
+	{
+		int32 nRet = GetQueuedCompletionStatus(m_hCompletionPort, &dwNumBytes, (ULONG_PTR*)&pstHandleData, (LPOVERLAPPED *)&pstIoData, 0);
+		if (nRet == 0)
+		{
+			EXLOG_ERROR << "GetQueuedCompletionStatus failed. ret : " << nRet << " error : " << GetLastError();
+			return;
+		}
+		else
+		{
+			if(pstHandleData->bListen == true)
+			{
+				CCPListener * pListenr = (CCPListener*)pstHandleData->ptr;
+				if (pListenr == nullptr)
+				{
+					EXLOG_ERROR << "iocpctrl CCPListener is nullptr.";
+					return;
+				}
+				pListenr->OnAccept(pstIoData);
+			}
+			else
+			{
+				CCPSock * pSock = (CCPSock *)pstHandleData->ptr;
+				if (pSock == nullptr)
+				{
+					EXLOG_ERROR << "iocpctrl CCPSock is nullptr.";
+					return;
+				}
 
+				switch (pstIoData->eOp)
+				{
+				case IOCP_SEND:
+					EXLOG_DEBUG << "send msg successful.";
+					break;
+
+				case IOCP_RECV:
+					pSock->OnRecv(dwNumBytes);
+					break;
+
+				default:
+					break;
+				}
+			}
+		}
+	}
 }
 
-bool CIocpCtrl::AssociateWithIocp(SOCKET hSocket, SPerHandleData * pStData)
+bool CIocpCtrl::AssociateWithIocp(SOCKET hSocket, SPerKeyData * pStData)
 {
-	return false;
+	if (CreateIoCompletionPort((HANDLE)hSocket, m_hCompletionPort, (ULONG_PTR)pStData, 0) == INVALID_HANDLE_VALUE)
+	{
+		EXLOG_ERROR << "associate with iocp failed. error : " << GetLastError();
+		return false;
+	}
+	return true;
 }

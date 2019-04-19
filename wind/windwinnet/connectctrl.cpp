@@ -13,6 +13,7 @@ bool CConnectCtrl::Init()
 {
 	m_bTerminate = false;
 	m_hThread = new thread(ConnectCtrlThread);
+	return true;
 }
 
 void CConnectCtrl::Fini()
@@ -23,15 +24,16 @@ void CConnectCtrl::Fini()
 
 bool CConnectCtrl::PushConnReq(string strIp, uint16 nPort, IPacketParser *pPacketParser, INetSession* pSession, uint32 nRecvBufSize, uint32 nSendBufSize)
 {
-	SConnReqEvt connReqEvt;
-	connReqEvt.strIP = strIp;
-	connReqEvt.nPort = nPort;
-	connReqEvt.pPacketParser = pPacketParser;
-	connReqEvt.pSession = pSession;
-	connReqEvt.nRecvBufSize = nRecvBufSize;
-	connReqEvt.nSendBufSize = nSendBufSize;
+	SConnReqEvt * pReqEvt = _GetConnReqEvt();
+	if (pReqEvt == nullptr) return false;
+	pReqEvt->strIP = strIp;
+	pReqEvt->nPort = nPort;
+	pReqEvt->pPacketParser = pPacketParser;
+	pReqEvt->pSession = pSession;
+	pReqEvt->nRecvBufSize = nRecvBufSize;
+	pReqEvt->nSendBufSize = nSendBufSize;
 
-	m_queConn.PushBack(connReqEvt);
+	m_queConn.PushBack(pReqEvt);
 	return true;
 }
 
@@ -47,15 +49,17 @@ void CConnectCtrl::OnExecute()
 
 void CConnectCtrl::_ProcRequests()
 {
-	SConnReqEvt connReqEvt;
-	m_queConn.PopFront(connReqEvt);
+	SConnReqEvt * pReqEvt = nullptr;
+	m_queConn.PopFront(pReqEvt);
+	if (pReqEvt == nullptr) return;
+	_PushBackReqEvt(pReqEvt);
 
 	SOCKET hClient = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
 	sockaddr_in svrAddr;
 
 	svrAddr.sin_family = AF_INET;
-	svrAddr.sin_port = htons(connReqEvt.nPort);
-	inet_pton(AF_INET, connReqEvt.strIP.c_str(), &svrAddr.sin_addr);
+	svrAddr.sin_port = htons(pReqEvt->nPort);
+	inet_pton(AF_INET, pReqEvt->strIP.c_str(), &svrAddr.sin_addr);
 
 	if (connect(hClient, (sockaddr*)&svrAddr, sizeof(svrAddr)) == SOCKET_ERROR)
 	{
@@ -64,10 +68,32 @@ void CConnectCtrl::_ProcRequests()
 		return;
 	}
 
-
+	EXLOG_DEBUG << "connect successful!!!";
+	closesocket(hClient);
 }
 
 void CConnectCtrl::_PorcEvents()
 {
 	
+}
+
+SConnReqEvt * CConnectCtrl::_GetConnReqEvt()
+{
+	if (m_listFreeConn.empty())
+	{
+		return new SConnReqEvt;
+	}
+	SConnReqEvt * pReqEvt = m_listFreeConn.front();
+	m_listFreeConn.pop_front();
+	return pReqEvt;
+}
+
+void CConnectCtrl::_PushBackReqEvt(SConnReqEvt * pReqEvt)
+{
+	if (pReqEvt == nullptr)
+	{
+		return;
+	}
+
+	m_listFreeConn.push_back(pReqEvt);
 }

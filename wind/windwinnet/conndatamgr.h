@@ -15,10 +15,11 @@ struct CConnData
 {
 	CConnData(uint32 nRecvBufSize = DEFAULT_RECVBUF_SIZE, uint32 nSendBufSize = DEFAULT_SENDBUF_SIZE);
 
+	~CConnData();
 	void Release();
 
-	CConnection  oConnection;
-	CCPSock      oSock;
+	//CConnection  oConnection;
+	//CCPSock      oSock;
 	char * szSendBuf;
 	char * szRecvBuf;
 	uint32 nConnId;

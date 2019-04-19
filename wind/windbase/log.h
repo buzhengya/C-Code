@@ -135,7 +135,18 @@ public:
 
 	ELevel GetLevel() const { return m_nLevel; }
 
-	const char* GetFileName() const { return m_szFile; }
+	const char* GetFileName() const 
+	{
+		int nPos = -1;
+		for (int32 i = 0; m_szFile[i] != '\0'; i++)
+		{
+			if (m_szFile[i] == '\\' || m_szFile[i] == '/')
+			{
+				nPos = i;
+			}
+		}
+		return m_szFile + nPos + 1; 
+	}
 
 	const uint32 GetLine() const { return m_nLine; }
 
