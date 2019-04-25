@@ -1,0 +1,156 @@
+2019-04-25 16:04:16,450 [DEBUG] main.cpp:13 | test
+2019-04-25 16:04:16,986 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:16,989 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:16,990 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.57 port : 63545
+2019-04-25 16:04:19,486 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:19,488 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:19,489 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.58 port : 63546
+2019-04-25 16:04:22,486 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:22,489 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:22,490 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.59 port : 63547
+2019-04-25 16:04:25,488 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:25,490 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:25,491 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.60 port : 63548
+2019-04-25 16:04:28,487 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:28,490 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:28,491 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.61 port : 63549
+2019-04-25 16:04:31,488 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:31,491 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:31,492 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.65 port : 63553
+2019-04-25 16:04:34,489 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:34,492 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:34,493 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.72 port : 63560
+2019-04-25 16:04:37,491 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:37,493 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:37,496 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.74 port : 63562
+2019-04-25 16:04:40,491 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:40,492 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:40,493 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.75 port : 63563
+2019-04-25 16:04:43,492 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:43,494 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:43,496 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.76 port : 63564
+2019-04-25 16:04:46,492 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:46,495 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:46,496 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.78 port : 63566
+2019-04-25 16:04:49,494 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:49,497 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:49,499 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.79 port : 63567
+2019-04-25 16:04:52,495 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:52,498 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:52,499 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.84 port : 63572
+2019-04-25 16:04:55,495 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:55,497 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:55,499 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.90 port : 63578
+2019-04-25 16:04:58,495 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:04:58,498 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:04:58,500 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.91 port : 63579
+2019-04-25 16:05:01,497 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:01,499 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:01,500 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.95 port : 63583
+2019-04-25 16:05:04,497 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:04,501 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:04,502 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.96 port : 63584
+2019-04-25 16:05:07,498 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:07,501 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:07,502 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.98 port : 63586
+2019-04-25 16:05:10,499 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:10,501 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:10,503 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.101 port : 63589
+2019-04-25 16:05:13,501 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:13,503 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:13,505 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.102 port : 63590
+2019-04-25 16:05:16,502 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:16,504 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:16,505 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.106 port : 63594
+2019-04-25 16:05:19,503 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:19,506 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:19,507 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.108 port : 63596
+2019-04-25 16:05:22,504 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:22,507 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:22,509 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.110 port : 63598
+2019-04-25 16:05:25,504 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:25,507 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:25,509 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.111 port : 63599
+2019-04-25 16:05:28,505 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:28,508 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:28,509 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.113 port : 63601
+2019-04-25 16:05:31,507 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:31,510 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:31,512 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.114 port : 63602
+2019-04-25 16:05:34,506 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:34,509 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:34,511 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.115 port : 63603
+2019-04-25 16:05:37,507 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:37,510 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:37,511 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.116 port : 63604
+2019-04-25 16:05:40,508 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:05:40,511 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:05:40,512 [TRACE] cpsock.cpp:83 | local ip : 2.0.248.117 port : 63605
+2019-04-25 16:05:49,602 [ERROR] connectctrl.cpp:67 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-04-25 16:05:49,606 [ERROR] connectctrl.cpp:68 | remember add error event.
+2019-04-25 16:51:48,786 [DEBUG] main.cpp:13 | test
+2019-04-25 16:51:48,825 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:51:48,827 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:51:48,828 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.4 port : 50180
+2019-04-25 16:51:51,826 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:51:51,829 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:51:51,830 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.5 port : 50181
+2019-04-25 16:51:54,825 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:51:54,828 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:51:54,829 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.6 port : 50182
+2019-04-25 16:51:57,826 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:51:57,829 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:51:57,830 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.7 port : 50183
+2019-04-25 16:52:00,827 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:00,830 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:00,831 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.8 port : 50184
+2019-04-25 16:52:03,828 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:03,831 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:03,833 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.9 port : 50185
+2019-04-25 16:52:24,213 [DEBUG] main.cpp:13 | test
+2019-04-25 16:52:24,750 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:24,752 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:24,753 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.21 port : 50197
+2019-04-25 16:52:32,269 [DEBUG] main.cpp:13 | test
+2019-04-25 16:52:32,803 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:32,805 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:32,806 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.26 port : 50202
+2019-04-25 16:52:35,303 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:35,306 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:35,308 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.28 port : 50204
+2019-04-25 16:52:38,303 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:38,306 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:38,307 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.29 port : 50205
+2019-04-25 16:52:41,305 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:41,308 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:41,309 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.30 port : 50206
+2019-04-25 16:52:44,306 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:44,309 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:44,310 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.32 port : 50208
+2019-04-25 16:52:47,307 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:47,310 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:47,311 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.34 port : 50210
+2019-04-25 16:52:50,308 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:50,311 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:50,312 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.35 port : 50211
+2019-04-25 16:52:53,308 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:53,310 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:53,311 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.36 port : 50212
+2019-04-25 16:52:56,309 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:56,311 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:56,313 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.38 port : 50214
+2019-04-25 16:52:59,310 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:52:59,312 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:52:59,313 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.39 port : 50215
+2019-04-25 16:53:02,312 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:53:02,314 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:53:02,315 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.40 port : 50216
+2019-04-25 16:53:05,312 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:53:05,314 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:53:05,317 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.41 port : 50217
+2019-04-25 16:53:08,313 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:53:10,94 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:53:10,94 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.43 port : 50219
+2019-04-25 16:53:11,313 [DEBUG] connectctrl.cpp:72 | connect 10.93.186.63:8089 successful!!!
+2019-04-25 16:53:11,313 [TRACE] cpsock.cpp:79 | remote ip : 2.0.31.153 port : 8089
+2019-04-25 16:53:11,313 [TRACE] cpsock.cpp:83 | local ip : 2.0.196.44 port : 50220

@@ -14,9 +14,9 @@ public:
 
 	~CConnection() {}
 
-	void Send(const char* pBuf, uint32 dwLen, bool bAtOnce = false) {}
+	void Init(CConnData * pConnData, INetSession * pNetSession, uint32 nParentId);
 
-	void Send(const char* szSendBuf, uint32 nLen);
+	void Send(const char* szSendBuf, uint32 dwLen, bool bAtOnce = false);
 
 	void SedId(uint32 nId) { m_nId = nId; }
 

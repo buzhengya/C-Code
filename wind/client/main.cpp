@@ -13,6 +13,9 @@ int main()
 	EXLOG_DEBUG << "test";
 	CConnectCtrl::Instance()->Init();
 	CConnector oConnector;
-	oConnector.Connect("192.168.3.70", 8888);
-	this_thread::sleep_for(chrono::minutes(10));
+	while (true)
+	{
+		oConnector.Connect("10.93.186.63", 8089);
+		this_thread::sleep_for(chrono::seconds(3));
+	}
 }

@@ -31,8 +31,8 @@ bool WAPI CConnector::Connect(const char* pszIP, uint16 wPort)
 {
 	if (pszIP == nullptr) return false;
 	//if (m_pPacketParser == nullptr) return false;
-	//if (m_pSession == nullptr) return false;
-	//if (m_nRecvBufSize == 0 || m_nSendBufSize == 0) return false;
+	if (m_pSession == nullptr) return false;
+	if (m_nRecvBufSize == 0 || m_nSendBufSize == 0) return false;
 	m_strIp = pszIP;
 	m_nPort = wPort;
 

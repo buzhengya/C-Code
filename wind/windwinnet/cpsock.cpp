@@ -2,6 +2,39 @@
 #include "log.h"
 #include "iocpctrl.h"
 
+
+void CCPSock::Init(CConnData * pConnData, SOCKET hSock, IPacketParser * pPacketParser /*= nullptr*/)
+{
+	if (pConnData == nullptr)
+	{
+		return;
+	}
+	m_pConnData = pConnData;
+	m_pSendBuf = pConnData->szSendBuf;
+	m_pRecvBuf = pConnData->szRecvBuf;
+	m_nSendBufSize = pConnData->nSendSize;
+	m_nRecvBufSize = pConnData->nRecvSize;
+
+	m_pstPerKeyData = new SPerKeyData();
+	m_pstPerKeyData->bListen = false;
+	m_pstPerKeyData->ptr = this;
+
+	m_hSock = hSock;
+
+	m_pPacketParser = pPacketParser;
+
+	CIocpCtrl::Instance()->AssociateWithIocp(m_hSock, m_pstPerKeyData);
+
+	m_nDataRecv = 0;
+	m_pstRecvIoData = new SPerIoData();
+	m_pstRecvIoData->eOp = IOCP_RECV;
+	m_pstRecvIoData->hSock = hSock;
+	memset(&m_pstRecvIoData->stOverlapped, 0, sizeof(m_pstRecvIoData->stOverlapped));
+	m_pstRecvIoData->stWsaBuf.buf = m_pRecvBuf;
+
+	_PostRecv();
+}
+
 void CCPSock::Send(const char * pData, uint32 nLen)
 {
 	_SyncSend(pData, nLen);
@@ -9,12 +42,10 @@ void CCPSock::Send(const char * pData, uint32 nLen)
 
 void CCPSock::OnRecv(DWORD dwBytes)
 {
-
-}
-
-void CCPSock::AssociateWithIocp()
-{
-	CIocpCtrl::Instance()->AssociateWithIocp(m_hSock, m_pstPerHandleData);
+	if (m_pPacketParser != nullptr)
+	{
+		m_pPacketParser->ParsePacket(m_pRecvBuf, dwBytes);
+	}
 }
 
 void CCPSock::AttachRecvBuf(char * pRecvBuf, uint32 dwRecvBufSize)
@@ -68,3 +99,17 @@ bool CCPSock::_PostRecv()
 	return true;
 }
 
+void PrintSocket(SOCKET hSock)
+{
+	sockaddr_in addr;
+	int32 nLen = sizeof(addr);
+	char szIp[INET_ADDRSTRLEN];
+
+	getpeername(hSock, (sockaddr*)&addr, &nLen);	
+	inet_ntop(AF_INET, &addr, szIp, INET_ADDRSTRLEN);
+	EXLOG_INFO << "remote ip : " << szIp << " port : " << ntohs(addr.sin_port);
+
+	getsockname(hSock, (sockaddr*)&addr, &nLen);
+	inet_ntop(AF_INET, &addr, szIp, INET_ADDRSTRLEN);
+	EXLOG_INFO << "local ip : " << szIp << " port : " << ntohs(addr.sin_port);
+}

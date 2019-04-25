@@ -1,4 +1,5 @@
 #include "connectctrl.h"
+#include "cpsock.h"
 #include <WinSock2.h>
 #include <WS2tcpip.h>
 #include "log.h"
@@ -68,8 +69,18 @@ void CConnectCtrl::_ProcRequests()
 		return;
 	}
 
-	EXLOG_DEBUG << "connect successful!!!";
-	closesocket(hClient);
+	EXLOG_DEBUG << "connect " << pReqEvt->strIP << ":" << pReqEvt->nPort << " successful!!!";
+	PrintSocket(hClient);
+	
+	CConnData * pConnData = CConnDataMgr::Instance()->AllocConnData(pReqEvt->nRecvBufSize, pReqEvt->nSendBufSize);
+	if (pConnData == nullptr)
+	{
+		EXLOG_ERROR << "pConnData is nullptr.";
+		return;
+	}
+
+	pConnData->oConnection.Init(pConnData, pReqEvt->pSession, 0);
+	pConnData->oSock.Init(pConnData, hClient, pReqEvt->pPacketParser);
 }
 
 void CConnectCtrl::_PorcEvents()

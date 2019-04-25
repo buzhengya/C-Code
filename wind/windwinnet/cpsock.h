@@ -8,6 +8,8 @@
 using namespace wind;
 using namespace std;
 
+void PrintSocket(SOCKET hSock);
+
 enum EIOCP_OPERATION
 {
 	IOCP_SEND = 0,
@@ -22,10 +24,10 @@ struct SPerKeyData
 
 struct SPerIoData
 {
-	OVERLAPPED stOverlapped;
-	SOCKET     hSock;
-	EIOCP_OPERATION eOp;
-	WSABUF     stWsaBuf;
+	OVERLAPPED			stOverlapped;
+	SOCKET				hSock;
+	WSABUF				stWsaBuf;
+	EIOCP_OPERATION		eOp;
 };
 
 struct CConnData;
@@ -37,17 +39,17 @@ public:
 
 	~CCPSock() {}
 
+	void Init(CConnData * pConnData, SOCKET hSock, IPacketParser * pPacketParser = nullptr);
+
 	void Send(const char * pData, uint32 nLen);
 
 	void OnRecv(DWORD dwBytes);
 
-	void SetConnData(CConnData * pConnData) { m_pConnData = pConnData; }
+	//void SetConnData(CConnData * pConnData) { m_pConnData = pConnData; }
 
 	CConnData * GetConnData() { return m_pConnData; }
 
 	void SetPacketParser(IPacketParser * pPacketParser) { m_pPacketParser = pPacketParser; }
-
-	void AssociateWithIocp();
 
 	void AttachRecvBuf(char * pRecvBuf, uint32 dwRecvBufSize);
 
@@ -61,14 +63,15 @@ private:
 	bool  _PostRecv();
 
 	SOCKET m_hSock;
-	//char * m_pSendBuf;
+	char * m_pSendBuf;
 	char * m_pRecvBuf;
 	uint32 m_nRecvBufSize;
-	//uint32 m_nSendBufSize;
+	uint32 m_nSendBufSize;
 	int32  m_nDataRecv;
-	//int32  m_nDataSend;
-	SPerKeyData * m_pstPerHandleData;
+	int32  m_nDataSend;
+	SPerKeyData * m_pstPerKeyData;
 	SPerIoData  * m_pstRecvIoData;
+	SPerIoData  * m_pstSendIoData;
 
 	CConnData * m_pConnData;
 	IPacketParser * m_pPacketParser;

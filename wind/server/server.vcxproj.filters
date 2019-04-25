@@ -2,5 +2,18 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="server_session.cpp">
+      <Filter>server_session</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="server_session">
+      <UniqueIdentifier>{71eec08e-bede-43c9-8974-594ef1c5591f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="server_session.h">
+      <Filter>server_session</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

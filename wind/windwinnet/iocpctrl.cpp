@@ -34,7 +34,7 @@ void CIocpCtrl::Fini()
 	DWORD  dwNumBytes = 0;
 	for (size_t i = 0; i < m_nNumOfWorkers; i++)
 	{
-		PostQueuedCompletionStatus(m_hCompletionPort, dwNumBytes, 0, nullptr);
+		PostQueuedCompletionStatus(m_hCompletionPort, dwNumBytes, 0, 0);
 	}
 
 	for (size_t i = 0; i < m_nNumOfWorkers; i++)
@@ -44,55 +44,61 @@ void CIocpCtrl::Fini()
 			m_vecWorkerThread[i]->join();
 		}
 	}
+	EXLOG_INFO << "IocpCtrl finish!!!!!";
 }
 
 void CIocpCtrl::OnExecute()
 {
 	DWORD  dwNumBytes;
-	SPerKeyData * pstHandleData;
+	SPerKeyData * pstKeyData;
 	SPerIoData * pstIoData;
 	while(true)
 	{
-		int32 nRet = GetQueuedCompletionStatus(m_hCompletionPort, &dwNumBytes, (ULONG_PTR*)&pstHandleData, (LPOVERLAPPED *)&pstIoData, 0);
+		int32 nRet = GetQueuedCompletionStatus(m_hCompletionPort, &dwNumBytes, (ULONG_PTR*)&pstKeyData, (LPOVERLAPPED *)&pstIoData, INFINITE);
+
+		if (pstKeyData == nullptr || pstIoData == nullptr)
+		{
+			EXLOG_INFO << "finish IocpCtrl.";
+			return;
+		}
+
 		if (nRet == 0)
 		{
 			EXLOG_ERROR << "GetQueuedCompletionStatus failed. ret : " << nRet << " error : " << GetLastError();
 			return;
 		}
+
+		if (pstKeyData->bListen == true)
+		{
+			CCPListener * pListenr = (CCPListener*)pstKeyData->ptr;
+			if (pListenr == nullptr)
+			{
+				EXLOG_ERROR << "iocpctrl CCPListener is nullptr.";
+				return;
+			}
+			pListenr->OnAccept(pstIoData);
+		}
 		else
 		{
-			if(pstHandleData->bListen == true)
+			CCPSock * pSock = (CCPSock *)pstKeyData->ptr;
+			if (pSock == nullptr)
 			{
-				CCPListener * pListenr = (CCPListener*)pstHandleData->ptr;
-				if (pListenr == nullptr)
-				{
-					EXLOG_ERROR << "iocpctrl CCPListener is nullptr.";
-					return;
-				}
-				pListenr->OnAccept(pstIoData);
+				EXLOG_ERROR << "iocpctrl CCPSock is nullptr.";
+				return;
 			}
-			else
+
+			switch (pstIoData->eOp)
 			{
-				CCPSock * pSock = (CCPSock *)pstHandleData->ptr;
-				if (pSock == nullptr)
-				{
-					EXLOG_ERROR << "iocpctrl CCPSock is nullptr.";
-					return;
-				}
+			case IOCP_SEND:
+				EXLOG_DEBUG << "send msg successful.";
+				break;
 
-				switch (pstIoData->eOp)
-				{
-				case IOCP_SEND:
-					EXLOG_DEBUG << "send msg successful.";
-					break;
+			case IOCP_RECV:
+				pSock->OnRecv(dwNumBytes);
+				break;
 
-				case IOCP_RECV:
-					pSock->OnRecv(dwNumBytes);
-					break;
-
-				default:
-					break;
-				}
+			default:
+				break;
 			}
 		}
 	}

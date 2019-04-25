@@ -14,8 +14,11 @@ CCPListener::CCPListener(string strIp, uint32 nPort) : m_strIp(strIp), m_nPort(n
 	m_pstIoData = new SPerIoData[POST_ACCEPTEX_COUNT];
 }
 
-bool CCPListener::Start()
+bool CCPListener::Start(uint32 nSendSize, uint32 nRecvSize)
 {
+	m_nSendSize = nSendSize;
+	m_nRecvSize = nRecvSize;
+
 	m_hListen = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if (m_hListen == INVALID_SOCKET)
 	{
@@ -36,10 +39,16 @@ bool CCPListener::Start()
 		EXLOG_ERROR << "bind failed. error : " << WSAGetLastError();
 		return false;
 	}
-
-	if (listen(m_hListen, 100) == SOCKET_ERROR)
+	
+	if (listen(m_hListen, POST_ACCEPTEX_COUNT) == SOCKET_ERROR)
 	{
 		EXLOG_ERROR << "listen failed. error : " << WSAGetLastError();
+		return false;
+	}
+
+	if (_InitAcceptex() == false)
+	{
+		EXLOG_ERROR << "Init Acceptex failed.";
 		return false;
 	}
 
@@ -56,9 +65,44 @@ void CCPListener::OnAccept(SPerIoData * pstPerIoData)
 
 	//deal
 	EXLOG_INFO << "accept successful!!!";
-	closesocket(pstPerIoData->hSock);
+	_PrintSockAddr(pstPerIoData);
+
+	CConnData * pConnData = CConnDataMgr::Instance()->AllocConnData(m_nRecvSize, m_nSendSize);
+	if (pConnData != nullptr)
+	{
+		pConnData->oSock.Init(pConnData, pstPerIoData->hSock, nullptr);
+		INetSession * pSession = m_pSessionFactory->CreateSession(&pConnData->oConnection);
+		pConnData->oConnection.Init(pConnData, pSession, 0);
+	}
 
 	_PostAcceptex(pstPerIoData);
+}
+
+void CCPListener::SetSessionFactory(ISessionFactory * pSessionFactory)
+{
+	m_pSessionFactory = pSessionFactory;
+}
+
+void CCPListener::_PrintSockAddr(SPerIoData * pstPerIoData)
+{
+	if (pstPerIoData == nullptr)
+	{
+		return;
+	}
+
+	sockaddr_in * addrLocal;
+	int32 nLocalLen = 0;
+	sockaddr_in * addrRemote;
+	int32 nRemoteLen = 0;
+	m_lpfnSockAddr(&pstPerIoData->stWsaBuf, 0, sizeof(sockaddr) + 16, sizeof(sockaddr) + 16,
+		(sockaddr**)&addrLocal, &nLocalLen, (sockaddr**)& addrRemote, &nRemoteLen);
+
+	char szIp[INET_ADDRSTRLEN];
+	inet_ntop(AF_INET, addrLocal, szIp, INET_ADDRSTRLEN);
+	EXLOG_INFO << "local ip : " << szIp << " port : " << ntohs(addrLocal->sin_port);
+
+	inet_ntop(AF_INET, addrRemote, szIp, INET_ADDRSTRLEN);
+	EXLOG_INFO << "remote ip : " << szIp << " port : " << ntohs(addrRemote->sin_port);
 }
 
 bool CCPListener::_InitAcceptex()
@@ -66,9 +110,17 @@ bool CCPListener::_InitAcceptex()
 	DWORD dwBtyes = 0;
 	GUID  guidAcceptEx = WSAID_ACCEPTEX;
 	if(WSAIoctl(m_hListen, SIO_GET_EXTENSION_FUNCTION_POINTER, &guidAcceptEx, sizeof(guidAcceptEx),
-		&m_lpfnAcceptex, sizeof(m_lpfnAcceptex), &dwBtyes, nullptr, nullptr) == false)
+		&m_lpfnAcceptex, sizeof(m_lpfnAcceptex), &dwBtyes, nullptr, nullptr) != 0)
 	{
-		EXLOG_ERROR << "WSAIoctl failed. error : " << WSAGetLastError();
+		EXLOG_ERROR << "WSAIoctl get acceptex func failed. error : " << WSAGetLastError();
+		return false;
+	}
+
+	GUID guidSocketAddr = WSAID_GETACCEPTEXSOCKADDRS;
+	if (WSAIoctl(m_hListen,SIO_GET_EXTENSION_FUNCTION_POINTER, &guidSocketAddr, sizeof(guidSocketAddr),
+		&m_lpfnSockAddr, sizeof(m_lpfnSockAddr), &dwBtyes, nullptr, nullptr) != 0)
+	{
+		EXLOG_ERROR << "WSAIoctl get socket addr failed. error : " << WSAGetLastError();
 		return false;
 	}
 
@@ -100,7 +152,7 @@ bool CCPListener::_PostAcceptex(SPerIoData * pstPerIoData)
 	memset(&pstPerIoData->stOverlapped, 0, sizeof(pstPerIoData->stOverlapped));
 
 	DWORD dwBytes;
-	if (m_lpfnAcceptex(m_hListen, hCliSocket, &pstPerIoData->stWsaBuf, 1, sizeof(sockaddr_in) + 16,
+	if (m_lpfnAcceptex(m_hListen, pstPerIoData->hSock, &pstPerIoData->stWsaBuf, 0, sizeof(sockaddr_in) + 16,
 		sizeof(sockaddr_in) + 16, &dwBytes, &pstPerIoData->stOverlapped) != S_OK)
 	{
 		if (WSAGetLastError() != WSA_IO_PENDING)

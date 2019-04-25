@@ -87,11 +87,11 @@ void Send2Func(string strSource, string strDest)
 			write << "\tpProto := new(SProtoSpace." << strName << ")\n\n";
 			write << "\terr := JSON2PB(*strContent, pProto)\n";
 			write << "\tif err != nil {\n";
-			write << "\t\tgolog.Flog.Warningf(\"unmarshaling "<< strName <<" error : \", err)\n";
+			write << "\t\tgolog.Logger.Warnf(\"unmarshaling "<< strName <<" error : \", err)\n";
 			write << "\t\treturn\n\t}\n";
 			write << "\tdata, err := proto.Marshal(pProto)\n";
 			write << "\tif err != nil {\n";
-			write << "\t\tgolog.Flog.Warningf(\"" << strName << " marshaling  error : %s\", err)\n";
+			write << "\t\tgolog.Logger.Warnf(\"" << strName << " marshaling  error : %s\", err)\n";
 			write << "\t\treturn\n";
 			write << "\t}\n";
 			write << "\tpClient.SendMsg(data, int(pProto.GetProtoid()))\n";
@@ -127,12 +127,12 @@ void Deal2Func(string strSource, string strDest)
 			write << "\tpProto := new(SProtoSpace." << strName << ")\n";
 			write << "\terr := proto.Unmarshal(pMsgpMsgConten, pProto)\n";
 			write << "\tif err != nil {\n";
-			write << "\t\tgolog.Flog.Warningf(\"unmarshaling " << strName << " error : %s\", err)\n";
+			write << "\t\tgolog.Logger.Warnf(\"unmarshaling " << strName << " error : %s\", err)\n";
 			write << "\t\treturn 1\n";
 			write << "\t}\n";
 			write << "\t";
 			write << "if pProto.GetRet() != 0{\n";
-			write << "\t\tgolog.Flog.Warningf(\"" << strName << " ret is %d\",pProto.GetRet())\n";
+			write << "\t\tgolog.Logger.Warnf(\"" << strName << " ret is %d\",pProto.GetRet())\n";
 			write << "\t}\n";
 			write << "\treturn 0\n";
 			write << "}\n" << endl;
