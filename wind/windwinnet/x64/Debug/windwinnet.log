@@ -1,14 +1,17 @@
-﻿  connector.cpp
-  正在生成代码...
-  正在编译...
-  conndatamgr.cpp
-  正在生成代码...
-  正在跳过...(未检测到相关更改)
+﻿  winnet.cpp
+  thread_buf.cpp
+c:\program files (x86)\windows kits\8.1\include\um\winnt.h(147): fatal error C1189: #error:  "No Target Architecture"
+  net_event.cpp
+  loop_buf.cpp
+c:\c++\c-code\wind\windwinnet\loop_buf.cpp(31): warning C4244: “初始化”: 从“__int64”转换到“uint32”，可能丢失数据
+c:\c++\c-code\wind\windwinnet\loop_buf.cpp(57): warning C4244: “初始化”: 从“__int64”转换到“uint32”，可能丢失数据
   listener.cpp
   iocpctrl.cpp
+  event_mgr.cpp
   cpsock.cpp
+  connector.cpp
   connection.cpp
   connectctrl.cpp
-C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-windbase.lib(whread.obj) : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件
-  windwinnet.vcxproj -> D:\C++Code\wind\windwinnet\../windlib/windwinnet.lib
+  conndatamgr.cpp
+  bufpool.cpp
+  正在生成代码...

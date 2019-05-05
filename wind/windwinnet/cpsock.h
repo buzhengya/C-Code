@@ -1,12 +1,14 @@
 #pragma once
-#include "wnet.h"
 #include <WinSock2.h>
 #include <WS2tcpip.h>
 #include <string>
-#include "conndatamgr.h"
+#include "wnet.h"
 
 using namespace wind;
 using namespace std;
+
+struct CConnData;
+class CConnDataMgr;
 
 void PrintSocket(SOCKET hSock);
 

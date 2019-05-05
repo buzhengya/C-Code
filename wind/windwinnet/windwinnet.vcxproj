@@ -92,6 +92,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>../windbase;../lib3rd/boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -145,8 +146,12 @@
     <ClInclude Include="connection.h" />
     <ClInclude Include="connector.h" />
     <ClInclude Include="cpsock.h" />
+    <ClInclude Include="event_mgr.h" />
     <ClInclude Include="iocpctrl.h" />
     <ClInclude Include="listener.h" />
+    <ClInclude Include="loop_buf.h" />
+    <ClInclude Include="net_event.h" />
+    <ClInclude Include="thread_buf.h" />
     <ClInclude Include="winnet.h" />
   </ItemGroup>
   <ItemGroup>
@@ -156,8 +161,12 @@
     <ClCompile Include="connection.cpp" />
     <ClCompile Include="connector.cpp" />
     <ClCompile Include="cpsock.cpp" />
+    <ClCompile Include="event_mgr.cpp" />
     <ClCompile Include="iocpctrl.cpp" />
     <ClCompile Include="listener.cpp" />
+    <ClCompile Include="loop_buf.cpp" />
+    <ClCompile Include="net_event.cpp" />
+    <ClCompile Include="thread_buf.cpp" />
     <ClCompile Include="winnet.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

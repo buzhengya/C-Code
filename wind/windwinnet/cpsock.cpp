@@ -1,6 +1,7 @@
 #include "cpsock.h"
 #include "log.h"
 #include "iocpctrl.h"
+#include "conndatamgr.h"
 
 
 void CCPSock::Init(CConnData * pConnData, SOCKET hSock, IPacketParser * pPacketParser /*= nullptr*/)

@@ -270,7 +270,7 @@ string CLogger::GetNewFile(string strOld)
 	std::string strDate("");
 	strDate.assign(strFilename, leftPos + 1, rightPos - leftPos - 1);
 
-	uint32 nSt = strFilename.size() - 1;
+	uint32 nSt = (uint32)strFilename.size() - 1;
 	for (; nSt >= 0 && strFilename[nSt] >= '0' && strFilename[nSt] <= '9'; nSt--)
 	{
 	}

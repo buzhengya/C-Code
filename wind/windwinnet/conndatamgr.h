@@ -29,6 +29,7 @@ struct CConnData
 
 class CConnDataMgr :public TSingleton<CConnDataMgr>
 {
+	friend class TSingleton<CConnDataMgr>;
 public:
 	void Init();
 	CConnData * AllocConnData(uint32 nRecvSize, uint32 nSendSize);

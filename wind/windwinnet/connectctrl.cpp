@@ -4,6 +4,7 @@
 #include <WS2tcpip.h>
 #include "log.h"
 #pragma comment(lib, "ws2_32.lib")
+#include "conndatamgr.h"
 
 void ConnectCtrlThread()
 {

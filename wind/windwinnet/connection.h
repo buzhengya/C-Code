@@ -1,6 +1,5 @@
 #pragma once
 #include "base_define.h"
-#include "conndatamgr.h"
 #include "wnet.h"
 
 using namespace wind;

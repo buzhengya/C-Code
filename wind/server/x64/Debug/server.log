@@ -1,2 +1,4 @@
-﻿  server.vcxproj -> D:\C++Code\wind\x64\Debug\server.exe
-  server.vcxproj -> D:\C++Code\wind\x64\Debug\server.pdb (Full PDB)
+﻿  server_session.cpp
+  main.cpp
+c:\c++\c-code\wind\server\main.cpp(12): error C2660: “CCPListener::Start”: 函数不接受 0 个参数
+  正在生成代码...

@@ -4,11 +4,15 @@
 
 void IocpThread()
 {
+	CIocpCtrl::Instance()->GetThreadBuf().CreateLoopBuf();
 	CIocpCtrl::Instance()->OnExecute();
+	CIocpCtrl::Instance()->GetThreadBuf().ReleaseLoopBuf();
 }
 
 bool CIocpCtrl::Init()
 {
+	m_oThreadBuf.Init();
+
 	m_hCompletionPort = CreateIoCompletionPort(INVALID_HANDLE_VALUE, nullptr, 0, 0);
 	if (m_hCompletionPort == nullptr)
 	{
@@ -44,6 +48,7 @@ void CIocpCtrl::Fini()
 			m_vecWorkerThread[i]->join();
 		}
 	}
+	m_oThreadBuf.Finish();
 	EXLOG_INFO << "IocpCtrl finish!!!!!";
 }
 

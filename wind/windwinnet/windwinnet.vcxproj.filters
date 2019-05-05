@@ -10,6 +10,10 @@
     <ClInclude Include="conndatamgr.h" />
     <ClInclude Include="bufpool.h" />
     <ClInclude Include="iocpctrl.h" />
+    <ClInclude Include="loop_buf.h" />
+    <ClInclude Include="thread_buf.h" />
+    <ClInclude Include="net_event.h" />
+    <ClInclude Include="event_mgr.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="winnet.cpp" />
@@ -21,5 +25,9 @@
     <ClCompile Include="conndatamgr.cpp" />
     <ClCompile Include="bufpool.cpp" />
     <ClCompile Include="iocpctrl.cpp" />
+    <ClCompile Include="loop_buf.cpp" />
+    <ClCompile Include="thread_buf.cpp" />
+    <ClCompile Include="net_event.cpp" />
+    <ClCompile Include="event_mgr.cpp" />
   </ItemGroup>
 </Project>

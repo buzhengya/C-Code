@@ -5,6 +5,7 @@
 #include "cpsock.h"
 #include <thread>
 #include <vector>
+#include "thread_buf.h"
 
 using namespace wind;
 
@@ -22,7 +23,9 @@ public:
 
 	bool AssociateWithIocp(SOCKET hSocket, SPerKeyData * pStData);
 
+	CThreadBuf & GetThreadBuf() { return m_oThreadBuf; }
 private:
+	CThreadBuf		 m_oThreadBuf;
 	HANDLE           m_hCompletionPort;
 	uint32           m_nNumOfWorkers;
 	vector<thread*>  m_vecWorkerThread;

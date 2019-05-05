@@ -1,2 +1,4 @@
-﻿  client.vcxproj -> D:\C++Code\wind\x64\Debug\client.exe
-  client.vcxproj -> D:\C++Code\wind\x64\Debug\client.pdb (Full PDB)
+﻿  main.cpp
+  client_session.cpp
+  正在生成代码...
+LINK : fatal error LNK1104: 无法打开文件“windwinnet.lib”

@@ -1,5 +1,6 @@
 #include "connection.h"
 #include "log.h"
+#include "conndatamgr.h"
 
 CConnection::CConnection()
 {
