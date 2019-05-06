@@ -1,7 +1,8 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   wtime.cpp
-d:\c++code\wind\windbase\wtime.cpp(34): warning C4101: “tv”: 未引用的局部变量
-  wstring.cpp
-  main.cpp
+  whread.cpp
+  log.cpp
+  auto_meter.cpp
   正在生成代码...
+whread.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件
   windbase.vcxproj -> D:\C++Code\wind\windbase\../windlib\windbase.lib

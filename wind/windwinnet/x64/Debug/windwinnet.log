@@ -3,8 +3,8 @@
 c:\program files (x86)\windows kits\8.1\include\um\winnt.h(147): fatal error C1189: #error:  "No Target Architecture"
   net_event.cpp
   loop_buf.cpp
-c:\c++\c-code\wind\windwinnet\loop_buf.cpp(31): warning C4244: “初始化”: 从“__int64”转换到“uint32”，可能丢失数据
-c:\c++\c-code\wind\windwinnet\loop_buf.cpp(57): warning C4244: “初始化”: 从“__int64”转换到“uint32”，可能丢失数据
+d:\c++code\wind\windwinnet\loop_buf.cpp(31): warning C4244: “初始化”: 从“__int64”转换到“uint32”，可能丢失数据
+d:\c++code\wind\windwinnet\loop_buf.cpp(57): warning C4244: “初始化”: 从“__int64”转换到“uint32”，可能丢失数据
   listener.cpp
   iocpctrl.cpp
   event_mgr.cpp

@@ -1,4 +1,2 @@
-﻿  server_session.cpp
-  main.cpp
-c:\c++\c-code\wind\server\main.cpp(12): error C2660: “CCPListener::Start”: 函数不接受 0 个参数
-  正在生成代码...
+﻿  main.cpp
+LINK : fatal error LNK1104: 无法打开文件“windwinnet.lib”

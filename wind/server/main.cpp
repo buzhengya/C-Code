@@ -9,7 +9,7 @@ int main()
 	EXLOG_DEBUG << "test";
 	CIocpCtrl::Instance()->Init();
 	CCPListener oListener("10.93.186.63",8089);
-	oListener.Start();
+	oListener.Start(1024 * 1024, 1024 * 1024);
 	this_thread::sleep_for(chrono::seconds(10));
 	CIocpCtrl::Instance()->Fini();
 	this_thread::sleep_for(chrono::minutes(10));

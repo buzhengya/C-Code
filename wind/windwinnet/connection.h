@@ -15,7 +15,7 @@ public:
 
 	void Init(CConnData * pConnData, INetSession * pNetSession, uint32 nParentId);
 
-	void Send(const char* szSendBuf, uint32 dwLen, bool bAtOnce = false);
+	virtual void WAPI Send(const char* szSendBuf, uint32 dwLen, bool bAtOnce = false);
 
 	void SedId(uint32 nId) { m_nId = nId; }
 

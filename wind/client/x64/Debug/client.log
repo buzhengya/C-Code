@@ -1,4 +1,2 @@
-﻿  main.cpp
-  client_session.cpp
-  正在生成代码...
+﻿  client_session.cpp
 LINK : fatal error LNK1104: 无法打开文件“windwinnet.lib”
