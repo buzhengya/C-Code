@@ -1,9 +1,4 @@
 ﻿  main.cpp
-main.obj : error LNK2019: 无法解析的外部符号 "public: __thiscall CConnector::CConnector(void)" (??0CConnector@@QAE@XZ)，该符号在函数 _main 中被引用
-main.obj : error LNK2019: 无法解析的外部符号 "public: virtual bool __stdcall CConnector::Connect(char const *,unsigned short)" (?Connect@CConnector@@UAG_NPBDG@Z)，该符号在函数 _main 中被引用
-main.obj : error LNK2019: 无法解析的外部符号 "public: bool __thiscall CConnectCtrl::Init(void)" (?Init@CConnectCtrl@@QAE_NXZ)，该符号在函数 _main 中被引用
-main.obj : error LNK2019: 无法解析的外部符号 "public: void __thiscall CStorage::Init(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?Init@CStorage@@QAEXIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)，该符号在函数 _main 中被引用
-../windlib\windbase.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“X86”冲突
-../windlib\windcommon.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“X86”冲突
-../windlib\windwinnet.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“X86”冲突
-D:\C++Code\wind\Debug\client.exe : fatal error LNK1120: 4 个无法解析的外部命令
+  client_session.cpp
+  正在生成代码...
+Debug\client_session.obj : fatal error LNK1112: 模块计算机类型“X86”与目标计算机类型“x64”冲突

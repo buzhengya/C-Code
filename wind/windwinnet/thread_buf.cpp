@@ -1,6 +1,5 @@
 #include "thread_buf.h"
-#include <processthreadsapi.h>
-#include <WinBase.h>
+#include <windows.h>
 #include "log.h"
 
 CThreadBuf::CThreadBuf()
