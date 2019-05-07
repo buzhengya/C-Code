@@ -119,11 +119,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="base_define.h" />
+    <ClInclude Include="proto_output.h" />
+    <ClInclude Include="proto_parse.h" />
+    <ClInclude Include="proto_read.h" />
     <ClInclude Include="red_black_tree.h" />
+    <ClInclude Include="singleton.h" />
     <ClInclude Include="skip_list.h" />
+    <ClInclude Include="tool.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="proto_output.cpp" />
+    <ClCompile Include="proto_parse.cpp" />
+    <ClCompile Include="proto_read.cpp" />
+    <ClCompile Include="tool.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
