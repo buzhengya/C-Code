@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="proto_read">
+      <UniqueIdentifier>{f34a4c4b-7f0a-4061-ba20-50f25dc3c696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="proto_parse">
+      <UniqueIdentifier>{39cb5301-461b-4d99-9996-e5783212251d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="proto_output">
+      <UniqueIdentifier>{d8a6d60d-5a99-4381-b4b9-cb260a54a56c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{d1a7a20a-0543-4a0f-9782-5e1bd3444d15}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="proto_read.cpp">
+      <Filter>proto_read</Filter>
+    </ClCompile>
+    <ClCompile Include="proto_parse.cpp">
+      <Filter>proto_parse</Filter>
+    </ClCompile>
+    <ClCompile Include="proto_cpp.cpp">
+      <Filter>proto_output</Filter>
+    </ClCompile>
+    <ClCompile Include="proto_go.cpp">
+      <Filter>proto_output</Filter>
+    </ClCompile>
+    <ClCompile Include="tool.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="proto_read.h">
+      <Filter>proto_read</Filter>
+    </ClInclude>
+    <ClInclude Include="proto_parse.h">
+      <Filter>proto_parse</Filter>
+    </ClInclude>
+    <ClInclude Include="proto_cpp.h">
+      <Filter>proto_output</Filter>
+    </ClInclude>
+    <ClInclude Include="proto_go.h">
+      <Filter>proto_output</Filter>
+    </ClInclude>
+    <ClInclude Include="base_define.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="tool.h">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
