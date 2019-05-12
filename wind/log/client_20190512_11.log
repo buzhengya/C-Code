@@ -1,0 +1,154 @@
+2019-05-12 11:10:34,903 [DEBUG] main.cpp:13 | test
+2019-05-12 11:10:34,968 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:10:37,975 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:10:40,982 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:10:43,990 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:10:46,998 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:10:50,2 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:10:53,6 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:10:56,14 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:10:59,22 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:02,31 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:05,34 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:08,39 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:11,45 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:14,54 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:17,57 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:20,61 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:23,65 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:26,74 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:29,78 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:32,82 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:35,86 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:38,90 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:41,94 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:44,97 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:47,101 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:11:50,105 [ERROR] connector.cpp:41 | connector session is nullptr.
+2019-05-12 11:15:42,971 [DEBUG] main.cpp:14 | test
+2019-05-12 11:15:43,19 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:15:46,35 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:15:49,40 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:15:52,45 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:15:55,50 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:15:58,55 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:01,59 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:04,47 [ERROR] connectctrl.cpp:72 | connect error. error : 10060 connect should be asynchronous to avoid timeout.
+2019-05-12 11:16:04,53 [ERROR] connectctrl.cpp:73 | remember add error event.
+2019-05-12 11:16:04,64 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:07,68 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:10,74 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:13,78 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:16,84 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:19,87 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:22,92 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:25,59 [ERROR] connectctrl.cpp:72 | connect error. error : 10060 connect should be asynchronous to avoid timeout.
+2019-05-12 11:16:25,64 [ERROR] connectctrl.cpp:73 | remember add error event.
+2019-05-12 11:16:25,96 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:28,100 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:31,104 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:34,109 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:16:37,113 [ERROR] connector.cpp:46 | recv buf size or send buf size is 0. recv : 0 send : 0
+2019-05-12 11:17:06,922 [DEBUG] main.cpp:14 | test
+2019-05-12 11:17:28,20 [ERROR] connectctrl.cpp:72 | connect error. error : 10060 connect should be asynchronous to avoid timeout.
+2019-05-12 11:17:28,24 [ERROR] connectctrl.cpp:73 | remember add error event.
+2019-05-12 11:17:49,30 [ERROR] connectctrl.cpp:72 | connect error. error : 10060 connect should be asynchronous to avoid timeout.
+2019-05-12 11:17:49,34 [ERROR] connectctrl.cpp:73 | remember add error event.
+2019-05-12 11:18:10,50 [ERROR] connectctrl.cpp:72 | connect error. error : 10060 connect should be asynchronous to avoid timeout.
+2019-05-12 11:18:10,55 [ERROR] connectctrl.cpp:73 | remember add error event.
+2019-05-12 11:18:31,63 [ERROR] connectctrl.cpp:72 | connect error. error : 10060 connect should be asynchronous to avoid timeout.
+2019-05-12 11:18:31,68 [ERROR] connectctrl.cpp:73 | remember add error event.
+2019-05-12 11:18:52,76 [ERROR] connectctrl.cpp:72 | connect error. error : 10060 connect should be asynchronous to avoid timeout.
+2019-05-12 11:18:52,81 [ERROR] connectctrl.cpp:73 | remember add error event.
+2019-05-12 11:19:13,766 [DEBUG] main.cpp:14 | test
+2019-05-12 11:19:13,841 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:19:13,845 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:19:13,849 [TRACE] cpsock.cpp:115 | local ip : 2.0.192.165 port : 49317
+2019-05-12 11:19:13,853 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:28:06,517 [DEBUG] main.cpp:14 | test
+2019-05-12 11:28:09,466 [ERROR] connectctrl.cpp:72 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-12 11:28:09,471 [ERROR] connectctrl.cpp:73 | remember add error event.
+2019-05-12 11:28:12,425 [ERROR] connectctrl.cpp:72 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-12 11:28:12,430 [ERROR] connectctrl.cpp:73 | remember add error event.
+2019-05-12 11:29:20,36 [DEBUG] main.cpp:14 | test
+2019-05-12 11:29:22,780 [ERROR] connectctrl.cpp:72 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-12 11:29:22,785 [ERROR] connectctrl.cpp:73 | remember add error event.
+2019-05-12 11:29:23,122 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:23,126 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:23,130 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.213 port : 49621
+2019-05-12 11:29:23,133 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:26,121 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:26,125 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:26,128 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.220 port : 49628
+2019-05-12 11:29:26,132 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:29,123 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:29,127 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:29,131 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.221 port : 49629
+2019-05-12 11:29:29,134 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:32,123 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:32,127 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:32,130 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.222 port : 49630
+2019-05-12 11:29:32,133 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:35,126 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:35,133 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:35,140 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.223 port : 49631
+2019-05-12 11:29:35,146 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:38,124 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:38,128 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:38,131 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.224 port : 49632
+2019-05-12 11:29:38,135 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:41,126 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:41,130 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:41,133 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.226 port : 49634
+2019-05-12 11:29:41,137 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:44,126 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:44,135 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:44,142 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.227 port : 49635
+2019-05-12 11:29:44,152 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:47,127 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:47,131 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:47,135 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.230 port : 49638
+2019-05-12 11:29:47,140 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:50,128 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:50,132 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:50,135 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.234 port : 49642
+2019-05-12 11:29:50,139 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:53,127 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:53,131 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:53,135 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.235 port : 49643
+2019-05-12 11:29:53,139 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:56,128 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:56,133 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:56,138 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.236 port : 49644
+2019-05-12 11:29:56,143 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:29:59,130 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:29:59,134 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:29:59,138 [TRACE] cpsock.cpp:115 | local ip : 2.0.193.237 port : 49645
+2019-05-12 11:29:59,142 [ERROR] cpsock.cpp:96 | wsa recv error : 10045
+2019-05-12 11:31:45,74 [DEBUG] main.cpp:14 | test
+2019-05-12 11:31:47,172 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:31:47,176 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:31:47,180 [TRACE] cpsock.cpp:115 | local ip : 2.0.194.190 port : 49854
+2019-05-12 11:31:49,640 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:31:49,643 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:31:49,647 [TRACE] cpsock.cpp:115 | local ip : 2.0.194.191 port : 49855
+2019-05-12 11:31:52,641 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:31:52,645 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:31:52,649 [TRACE] cpsock.cpp:115 | local ip : 2.0.194.192 port : 49856
+2019-05-12 11:31:55,642 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:31:55,651 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:31:55,657 [TRACE] cpsock.cpp:115 | local ip : 2.0.194.194 port : 49858
+2019-05-12 11:31:58,641 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:31:58,646 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:31:58,651 [TRACE] cpsock.cpp:115 | local ip : 2.0.194.195 port : 49859
+2019-05-12 11:52:41,409 [DEBUG] main.cpp:15 | test
+2019-05-12 11:52:43,648 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:52:43,657 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:52:43,665 [TRACE] cpsock.cpp:115 | local ip : 2.0.196.124 port : 50300
+2019-05-12 11:56:05,433 [DEBUG] main.cpp:15 | test
+2019-05-12 11:56:05,525 [DEBUG] connectctrl.cpp:77 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 11:56:05,530 [TRACE] cpsock.cpp:111 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 11:56:05,534 [TRACE] cpsock.cpp:115 | local ip : 2.0.197.73 port : 50505
+2019-05-12 11:57:11,558 [DEBUG] main.cpp:15 | test
+2019-05-12 11:57:13,244 [ERROR] connectctrl.cpp:72 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-12 11:57:13,249 [ERROR] connectctrl.cpp:73 | remember add error event.

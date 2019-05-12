@@ -79,7 +79,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../windbase;../lib3rd/boost_1_64_0</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../windbase;../lib3rd/boost_1_64_0;../windcommon</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_WINSOCK_DEPRECATED_NO_WARNINGS</PreprocessorDefinitions>
     </ClCompile>
     <Link>

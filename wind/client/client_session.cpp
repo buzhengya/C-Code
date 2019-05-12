@@ -25,6 +25,16 @@ void WAPI CClientSession::OnRecv(const char* pBuf, uint32 dwLen)
 	this_thread::sleep_for(chrono::seconds(3));
 	if (m_pConnection != nullptr)
 	{
-		m_pConnection->Send(pBuf, dwLen);
+		//m_pConnection->Send(pBuf, dwLen);
 	}
+}
+
+void WAPI CClientSession::Send(const char * pBuf, uint32 dwLen)
+{
+	if (m_pConnection == nullptr)
+	{
+		EXLOG_ERROR << "Send failed. connection is nullptr";
+		return;
+	}
+	m_pConnection->Send(pBuf, dwLen);
 }

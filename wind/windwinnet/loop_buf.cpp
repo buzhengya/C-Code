@@ -2,6 +2,10 @@
 #include <string.h>
 CLoopBuf::CLoopBuf(uint32 nSize)
 {
+	m_nSize = nSize;
+	m_pszBuf = new char(nSize);
+	m_pszStart = m_pszBuf;
+	m_pszEnd = m_pszStart + m_nSize - 1;
 }
 
 CLoopBuf::~CLoopBuf()

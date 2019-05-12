@@ -3,7 +3,7 @@
 
 using namespace wind;
 
-class CClientSession : INetSession
+class CClientSession : public INetSession
 {
 public:
 	void WAPI SetConnection(IConnection* poConnection);
@@ -13,6 +13,8 @@ public:
 	void WAPI OnTerminate();
 
 	void WAPI OnRecv(const char* pBuf, uint32 dwLen);
+
+	void WAPI Send(const char * pBuf, uint32 dwLen);
 
 private:
 	IConnection * m_pConnection;

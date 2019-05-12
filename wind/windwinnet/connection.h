@@ -27,6 +27,8 @@ public:
 
 	void   SetSession(INetSession * pSession) { m_pNetSession = pSession; }
 
+	INetSession * GetSession() { return m_pNetSession; }
+
 	void OnRecv(const char * pData, uint32 nLen);
 
 private:

@@ -5,15 +5,24 @@
     <ClCompile Include="server_session.cpp">
       <Filter>server_session</Filter>
     </ClCompile>
+    <ClCompile Include="server_factory.cpp">
+      <Filter>session_factory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="server_session">
       <UniqueIdentifier>{71eec08e-bede-43c9-8974-594ef1c5591f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="session_factory">
+      <UniqueIdentifier>{d143c6f8-e5ae-43e1-8475-b47f59ffd355}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="server_session.h">
       <Filter>server_session</Filter>
+    </ClInclude>
+    <ClInclude Include="server_factory.h">
+      <Filter>session_factory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

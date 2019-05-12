@@ -13,6 +13,10 @@ public:
 
 	IListener * WAPI CreateListener(uint32 dwNetIOType);
 
-	bool        WAPI Run(uint32 nCount);
+	bool        WAPI Run(int32 nCount);
+
+	bool		Init(uint32 nSize);
 private:
+	char *		m_pBuf;
+	uint32		m_nBufSize;
 };

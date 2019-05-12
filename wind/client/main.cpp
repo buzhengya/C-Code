@@ -2,6 +2,8 @@
 #include "connectctrl.h"
 #include "log.h"
 #include <winsock2.h>
+#include "client_session.h"
+#include "winnet.h"
 
 #pragma comment(lib,"ws2_32.lib")
 
@@ -13,9 +15,17 @@ int main()
 	EXLOG_DEBUG << "test";
 	CConnectCtrl::Instance()->Init();
 	CConnector oConnector;
+	CClientSession * pSession = new CClientSession();
+	oConnector.SetBufferSize(1024, 1024);
+	oConnector.SetSession(pSession);
+	oConnector.Connect("192.168.1.6", 8089);
+	CNetWin::Instance()->Init(1024);
+
 	while (true)
 	{
-		oConnector.Connect("10.93.186.63", 8089);
-		this_thread::sleep_for(chrono::seconds(3));
+		CNetWin::Instance()->Run(50);
+		CWheelTimerMgr::Instance()->Run();
+		pSession->Send("hello world.", 13);
+		this_thread::sleep_for(chrono::milliseconds(100));
 	}
 }

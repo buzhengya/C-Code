@@ -20,6 +20,10 @@ void CConnection::Init(CConnData * pConnData, INetSession * pNetSession, uint32 
 
 	m_pConnData = pConnData;
 	m_pNetSession = pNetSession;
+	if (m_pNetSession != nullptr)
+	{
+		m_pNetSession->SetConnection(this);
+	}
 	m_nParentId = nParentId;
 	m_nId = m_pConnData->nConnId;
 }

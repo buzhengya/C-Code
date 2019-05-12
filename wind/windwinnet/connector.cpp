@@ -1,5 +1,6 @@
 #include "connector.h"
 #include "connectctrl.h"
+#include "log.h"
 
 CConnector::CConnector()
 {
@@ -29,10 +30,21 @@ void WAPI CConnector::SetBufferSize(uint32 dwRecvBufSize, uint32 dwSendBufSize)
 
 bool WAPI CConnector::Connect(const char* pszIP, uint16 wPort)
 {
-	if (pszIP == nullptr) return false;
+	if (pszIP == nullptr)
+	{
+		EXLOG_ERROR << "connector ip is nullptr.";
+		return false;
+	}
 	//if (m_pPacketParser == nullptr) return false;
-	if (m_pSession == nullptr) return false;
-	if (m_nRecvBufSize == 0 || m_nSendBufSize == 0) return false;
+	if (m_pSession == nullptr)
+	{
+		EXLOG_ERROR << "connector session is nullptr.";
+		return false;
+	}
+	if (m_nRecvBufSize == 0 || m_nSendBufSize == 0)
+	{
+		EXLOG_ERROR << "recv buf size or send buf size is 0. recv : " << m_nRecvBufSize << " send : " << m_nSendBufSize;
+	}
 	m_strIp = pszIP;
 	m_nPort = wPort;
 
