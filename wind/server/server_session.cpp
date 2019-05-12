@@ -21,7 +21,7 @@ void WAPI CServerSession::OnTerminate()
 void WAPI CServerSession::OnRecv(const char * pBuf, uint32 dwLen)
 {
 	EXLOG_DEBUG << "server session recv successful!!! msg : " << pBuf;
-	this_thread::sleep_for(chrono::seconds(3));
+	this_thread::sleep_for(chrono::seconds(10));
 	if (m_pConnection != nullptr)
 	{
 		m_pConnection->Send(pBuf, dwLen);

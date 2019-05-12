@@ -24,7 +24,7 @@ bool WAPI CNetWin::Run(int32 nCount)
 		switch (pEvent->eType)
 		{
 		case NETEVT_RCV:
-			pEvent->stRecvEvt.pLoopBuf->Write(m_pBuf, pEvent->stRecvEvt.nLen);
+			pEvent->stRecvEvt.pLoopBuf->Read(m_pBuf, pEvent->stRecvEvt.nLen);
 			pEvent->stRecvEvt.pConnData->oConnection.GetSession()->OnRecv(m_pBuf, m_nBufSize);
 			break;
 			
