@@ -150,9 +150,9 @@ bool CProtoGolang::_DealAckOrNtfMsg(CProtoMsg & oProtoMsg)
 	strRes += "type " + m_strProtoStruct + " struct {\n";
 	strRes += "\n";
 	strRes += "}\n";
-	strRes += "func (p *" + m_strProtoStruct + ")HandleMsg(pMsgpMsgConten []byte, pClient *SNetClient) int {\n";
+	strRes += "func (p *" + m_strProtoStruct + ")HandleMsg(sliMsg []byte, pClient *SNetClient) int {\n";
 	strRes += "\tpProto := new(" + m_strProtoName + ")\n";
-	strRes += "\terr := proto.Unmarshal(pMsgpMsgConten, pProto)\n";
+	strRes += "\terr := proto.Unmarshal(sliMsg, pProto)\n";
 	strRes += "\tif err != nil {\n";
 	strRes += "\t\tgolog.Logger.Warnf(\"unmarshaling " + m_strProtoName + " error : %s\", err)\n";
 	strRes += "\t\treturn 1\n";
