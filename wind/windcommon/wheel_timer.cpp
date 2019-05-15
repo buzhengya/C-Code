@@ -35,6 +35,7 @@ CWheelTimer::~CWheelTimer()
 	Stop();
 }
 
+
 void CWheelTimer::Start(ITimerMgr * pTimerMgr, const uint32 nTimerId, const uint32 nInterval, const uint32 nDelay, const TIMER_TYPE eType)
 {
 	Stop();

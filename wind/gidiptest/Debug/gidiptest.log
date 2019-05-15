@@ -1,4 +1,2 @@
-﻿  main.cpp
-d:\c++code\wind\gidiptest\proto1.h(46): warning C4244: “return”: 从“time_t”转换到“uint32”，可能丢失数据
-  gidiptest.vcxproj -> D:\C++Code\wind\Debug\gidiptest.exe
-  gidiptest.vcxproj -> D:\C++Code\wind\Debug\gidiptest.pdb (Full PDB)
+﻿  gidiptest.vcxproj -> C:\C++\C-Code\wind\Debug\gidiptest.exe
+  gidiptest.vcxproj -> C:\C++\C-Code\wind\Debug\gidiptest.pdb (Full PDB)

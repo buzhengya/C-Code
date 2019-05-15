@@ -15,6 +15,8 @@ bool CConnectCtrl::Init()
 {
 	m_bTerminate = false;
 	m_hThread = new thread(ConnectCtrlThread);
+
+	m_nGlobalReqId = 0;
 	return true;
 }
 
@@ -27,7 +29,11 @@ void CConnectCtrl::Fini()
 bool CConnectCtrl::PushConnReq(string strIp, uint16 nPort, IPacketParser *pPacketParser, INetSession* pSession, uint32 nRecvBufSize, uint32 nSendBufSize)
 {
 	SConnReqEvt * pReqEvt = _GetConnReqEvt();
-	if (pReqEvt == nullptr) return false;
+	if (pReqEvt == nullptr)
+	{
+		EXLOG_ERROR << "can not get free conn req evt.";
+		return false;
+	}
 	pReqEvt->strIP = strIp;
 	pReqEvt->nPort = nPort;
 	pReqEvt->pPacketParser = pPacketParser;
@@ -49,12 +55,29 @@ void CConnectCtrl::OnExecute()
 	}
 }
 
+void CConnectCtrl::OnTimer(uint32 nId)
+{
+	if (m_mapId2Evt.find(nId) == m_mapId2Evt.end())
+	{
+		return;
+	}
+
+	SConnReqEvt * pConnEvt = m_mapId2Evt[nId];
+	m_mapId2Evt.erase(nId);
+	if (pConnEvt == nullptr)
+	{
+		EXLOG_ERROR << "OnTimer pConnEvt is nullptr.";
+		return;
+	}
+	EXLOG_DEBUG << "deal conn error. conn ip : " << pConnEvt->strIP << " port : " << pConnEvt->nPort;
+	_PushConnReq(pConnEvt);
+}
+
 void CConnectCtrl::_ProcRequests()
 {
 	SConnReqEvt * pReqEvt = nullptr;
 	m_queConn.PopFront(pReqEvt);
 	if (pReqEvt == nullptr) return;
-	_PushBackReqEvt(pReqEvt);
 
 	SOCKET hClient = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
 	sockaddr_in svrAddr;
@@ -67,9 +90,11 @@ void CConnectCtrl::_ProcRequests()
 	{
 		EXLOG_ERROR << "connect error. error : " << WSAGetLastError() << " connect should be asynchronous to avoid timeout.";
 		EXLOG_ERROR << "remember add error event.";
+		_DealConnErr(pReqEvt);
 		return;
 	}
-
+	_PushBackReqEvt(pReqEvt);
+	
 	EXLOG_DEBUG << "connect " << pReqEvt->strIP << ":" << pReqEvt->nPort << " successful!!!";
 	PrintSocket(hClient);
 	
@@ -108,4 +133,25 @@ void CConnectCtrl::_PushBackReqEvt(SConnReqEvt * pReqEvt)
 	}
 
 	m_listFreeConn.push_back(pReqEvt);
+}
+
+void CConnectCtrl::_PushConnReq(SConnReqEvt * pReqEvt)
+{
+	if (pReqEvt != nullptr)
+	{
+		m_queConn.PushBack(pReqEvt);
+	}
+}
+
+void CConnectCtrl::_DealConnErr(SConnReqEvt * pReqEvt)
+{
+	if (pReqEvt == nullptr)
+	{
+		return;
+	}
+
+	uint32 nId = m_nGlobalReqId++;
+	m_mapId2Evt[nId] = pReqEvt;
+
+	SetTimer(nId, 0, 3 * 1000, TIMER_ONCE);
 }

@@ -17,6 +17,11 @@ CCPListener::CCPListener(string strIp, uint32 nPort) : m_strIp(strIp), m_nPort(n
 
 bool CCPListener::Start(uint32 nSendSize, uint32 nRecvSize)
 {
+	if (m_pSessionFactory == nullptr)
+	{
+		EXLOG_ERROR << "listener session factory is nullptr.";
+		return false;
+	}
 	m_nSendSize = nSendSize;
 	m_nRecvSize = nRecvSize;
 

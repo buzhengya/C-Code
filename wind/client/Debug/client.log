@@ -1,4 +1,2 @@
-﻿  main.cpp
-  client_session.cpp
-  正在生成代码...
-Debug\client_session.obj : fatal error LNK1112: 模块计算机类型“X86”与目标计算机类型“x64”冲突
+﻿  client.vcxproj -> C:\C++\C-Code\wind\Debug\client.exe
+  client.vcxproj -> C:\C++\C-Code\wind\Debug\client.pdb (Full PDB)

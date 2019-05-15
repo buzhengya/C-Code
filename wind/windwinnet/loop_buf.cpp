@@ -2,13 +2,17 @@
 #include <string.h>
 CLoopBuf::CLoopBuf(uint32 nSize)
 {
+	m_nSize = nSize;
+	m_pszBuf = new char(nSize);
+	m_pszStart = m_pszBuf;
+	m_pszEnd = m_pszStart;
 }
 
 CLoopBuf::~CLoopBuf()
 {
 }
 
-bool CLoopBuf::Write(char * pszBuf, uint32 nSize)
+bool CLoopBuf::Read(char * pszBuf, uint32 nSize)
 {
 	uint32 nLen = (m_pszEnd + m_nSize - m_pszStart) % m_nSize;
 	if (nLen < nSize)
@@ -17,20 +21,20 @@ bool CLoopBuf::Write(char * pszBuf, uint32 nSize)
 	}
 	if (m_pszStart < m_pszEnd)
 	{
-		memcpy(m_pszStart, pszBuf, nSize);
+		memcpy(pszBuf, m_pszStart, nSize);
 		m_pszStart += nSize;
 	}
 	else
 	{
 		if (m_pszBuf + m_nSize - m_pszStart >= nSize)
 		{
-			memcpy(m_pszStart, pszBuf, nSize);
+			memcpy(pszBuf, m_pszStart, nSize);
 		}
 		else
 		{
 			uint32 nRight = m_pszBuf + m_nSize - m_pszStart;
-			memcpy(m_pszStart, pszBuf, nRight);
-			memcpy(m_pszBuf, pszBuf, nSize - nRight);
+			memcpy(pszBuf, m_pszStart, nRight);
+			memcpy(pszBuf + nRight, m_pszBuf, nSize - nRight);
 		}
 
 		m_pszStart = m_pszBuf + (m_pszStart - m_pszBuf + nSize) % m_nSize;
@@ -39,7 +43,7 @@ bool CLoopBuf::Write(char * pszBuf, uint32 nSize)
 	return true;
 }
 
-bool CLoopBuf::Read(char * pszBuf, uint32 nSize)
+bool CLoopBuf::Write(char * pszBuf, uint32 nSize)
 {
 	uint32 nFree = (m_pszStart + m_nSize - m_pszEnd - 1) % m_nSize;
 	if (nFree < nSize)
@@ -49,20 +53,20 @@ bool CLoopBuf::Read(char * pszBuf, uint32 nSize)
 
 	if (m_pszEnd < m_pszStart)
 	{
-		memcpy(pszBuf, m_pszEnd, nSize);
+		memcpy(m_pszEnd, pszBuf, nSize);
 		m_pszEnd += nSize;
 	}
 	else
 	{
-		uint32 nRight = m_pszBuf + nSize - m_pszEnd;
+		uint32 nRight = m_pszBuf + m_nSize - m_pszEnd;
 		if (nRight >= nSize)
 		{
-			memcpy(pszBuf, m_pszEnd, nSize);
+			memcpy(m_pszEnd, pszBuf, nSize);
 		}
 		else
 		{
-			memcpy(pszBuf, m_pszEnd, nRight);
-			memcpy(pszBuf + nRight, m_pszBuf, nSize - nRight);
+			memcpy(m_pszEnd, m_pszBuf, nRight);
+			memcpy(m_pszBuf, pszBuf + nRight, nSize - nRight);
 		}
 
 		m_pszEnd = m_pszBuf + (m_pszEnd - m_pszBuf + nSize) % m_nSize;

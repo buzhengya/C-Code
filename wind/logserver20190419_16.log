@@ -1,2 +1,0 @@
-2019-04-19 16:20:30,720 [ERROR] iocpctrl.cpp:59 | GetQueuedCompletionStatus failed. ret : 0 error : 258
-2019-04-19 16:26:10,992 [ERROR] iocpctrl.cpp:59 | GetQueuedCompletionStatus failed. ret : 0 error : 258

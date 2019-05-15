@@ -1,0 +1,68 @@
+2019-05-13 00:04:04,685 [DEBUG] main.cpp:15 | test
+2019-05-13 00:04:06,498 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-13 00:04:06,512 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-13 00:04:06,520 [DEBUG] wheel_timer.cpp:185 | add timer in index : 191
+2019-05-13 00:04:08,747 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-13 00:04:09,500 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-13 00:04:09,506 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:04:09,512 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:04:09,516 [TRACE] cpsock.cpp:124 | local ip : 2.0.215.82 port : 55122
+2019-05-13 00:04:49,759 [DEBUG] main.cpp:15 | test
+2019-05-13 00:04:49,834 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:04:49,840 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:04:49,844 [TRACE] cpsock.cpp:124 | local ip : 2.0.215.178 port : 55218
+2019-05-13 00:04:54,822 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-13 00:05:19,637 [DEBUG] main.cpp:15 | test
+2019-05-13 00:05:20,239 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:05:20,245 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:05:20,249 [TRACE] cpsock.cpp:124 | local ip : 2.0.215.240 port : 55280
+2019-05-13 00:05:24,718 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-13 00:06:10,204 [DEBUG] main.cpp:15 | test
+2019-05-13 00:06:11,910 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:06:11,915 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:06:11,919 [TRACE] cpsock.cpp:124 | local ip : 2.0.216.111 port : 55407
+2019-05-13 00:06:15,292 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-13 00:07:24,791 [DEBUG] main.cpp:15 | test
+2019-05-13 00:07:26,199 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-13 00:07:26,204 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-13 00:07:26,209 [DEBUG] wheel_timer.cpp:185 | add timer in index : 140
+2019-05-13 00:07:29,887 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-13 00:07:29,979 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-13 00:07:29,985 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:07:29,990 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:07:29,994 [TRACE] cpsock.cpp:124 | local ip : 2.0.216.220 port : 55516
+2019-05-13 00:12:41,941 [DEBUG] main.cpp:26 | test
+2019-05-13 00:12:42,32 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:12:42,37 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:12:42,41 [TRACE] cpsock.cpp:124 | local ip : 2.0.217.112 port : 55664
+2019-05-13 00:12:43,19 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-13 00:13:16,875 [DEBUG] main.cpp:26 | test
+2019-05-13 00:13:19,144 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:13:19,156 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:13:19,165 [TRACE] cpsock.cpp:124 | local ip : 2.0.217.209 port : 55761
+2019-05-13 00:13:19,681 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-13 00:14:37,53 [DEBUG] main.cpp:26 | test
+2019-05-13 00:14:39,670 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:14:39,674 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:14:39,678 [TRACE] cpsock.cpp:124 | local ip : 2.0.218.58 port : 55866
+2019-05-13 00:14:40,253 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-13 00:15:25,103 [DEBUG] main.cpp:26 | test
+2019-05-13 00:15:25,713 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:15:25,720 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:15:25,725 [TRACE] cpsock.cpp:124 | local ip : 2.0.218.113 port : 55921
+2019-05-13 00:15:26,196 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-13 00:16:39,847 [DEBUG] main.cpp:26 | test
+2019-05-13 00:16:40,452 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:16:40,457 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:16:40,462 [TRACE] cpsock.cpp:124 | local ip : 2.0.219.3 port : 56067
+2019-05-13 00:16:40,932 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-13 00:22:36,592 [DEBUG] main.cpp:26 | test
+2019-05-13 00:22:36,682 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:22:36,692 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:22:36,698 [TRACE] cpsock.cpp:124 | local ip : 2.0.219.185 port : 56249
+2019-05-13 00:22:37,667 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-13 00:24:38,323 [DEBUG] main.cpp:26 | test
+2019-05-13 00:24:38,946 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-13 00:24:38,951 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-13 00:24:38,955 [TRACE] cpsock.cpp:124 | local ip : 2.0.220.0 port : 56320
+2019-05-13 00:24:45,543 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.

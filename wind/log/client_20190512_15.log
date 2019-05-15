@@ -1,0 +1,559 @@
+2019-05-12 15:28:16,170 [DEBUG] main.cpp:15 | test
+2019-05-12 15:28:30,145 [DEBUG] main.cpp:15 | test
+2019-05-12 15:28:30,372 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:31,982 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:31,982 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-12 15:28:31,991 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-12 15:28:31,995 [DEBUG] wheel_timer.cpp:185 | add timer in index : 93
+2019-05-12 15:28:32,87 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:32,263 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:32,367 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:32,472 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:32,576 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:32,680 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:32,785 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:32,889 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:32,994 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:33,98 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:33,207 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:33,315 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:33,420 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:33,524 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:33,629 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:33,733 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:33,837 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:33,942 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:34,47 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:34,151 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:34,256 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:34,366 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:34,474 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:34,583 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:34,688 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:34,792 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:34,896 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:35,0 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-12 15:28:35,4 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:28:35,7 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 15:28:35,13 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 15:28:35,17 [TRACE] cpsock.cpp:124 | local ip : 2.0.214.98 port : 54882
+2019-05-12 15:28:35,108 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:32:00,114 [DEBUG] main.cpp:15 | test
+2019-05-12 15:32:00,307 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:07,152 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-12 15:32:07,153 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:07,157 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-12 15:32:07,163 [DEBUG] wheel_timer.cpp:185 | add timer in index : 197
+2019-05-12 15:32:11,227 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-12 15:32:11,232 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:11,335 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:18,512 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-12 15:32:18,523 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-12 15:32:18,529 [DEBUG] wheel_timer.cpp:185 | add timer in index : 55
+2019-05-12 15:32:18,616 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:18,721 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:18,826 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:18,930 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:19,36 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:19,139 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:19,243 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:19,348 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:19,452 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:19,556 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:19,661 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:19,765 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:19,869 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:19,973 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:20,77 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:20,181 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:20,285 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:20,389 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:20,493 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:20,597 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:20,701 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:20,804 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:20,909 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:21,13 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:21,118 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:21,222 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:21,326 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:21,431 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:21,536 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-12 15:32:21,540 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:32:21,544 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 15:32:21,548 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 15:32:21,552 [TRACE] cpsock.cpp:124 | local ip : 2.0.214.224 port : 55008
+2019-05-12 15:32:21,644 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:33:05,456 [DEBUG] main.cpp:15 | test
+2019-05-12 15:33:07,303 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:33:07,408 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:33:56,648 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-12 15:33:56,652 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:33:56,654 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-12 15:33:56,660 [DEBUG] wheel_timer.cpp:185 | add timer in index : 12
+2019-05-12 15:33:56,758 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:34:01,33 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-12 15:34:01,37 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:34:01,40 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 15:34:01,45 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 15:34:01,48 [TRACE] cpsock.cpp:124 | local ip : 2.0.215.65 port : 55105
+2019-05-12 15:34:01,142 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:01,246 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:01,350 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:01,455 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:01,559 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:01,664 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:01,769 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:01,873 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:01,977 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:02,82 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:02,187 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:02,291 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:02,399 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:02,508 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:02,617 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:02,727 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:02,832 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:02,937 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:03,42 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:03,146 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:03,250 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:03,354 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:03,458 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:03,563 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:03,668 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:03,772 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:03,876 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:03,981 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:04,85 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:04,190 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:04,294 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:04,398 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:04,503 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:04,607 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:04,711 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:04,815 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:04,919 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:05,23 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:05,128 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:05,232 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:05,336 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:05,441 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:05,546 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:05,650 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:05,754 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:05,858 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:05,962 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:06,66 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:06,171 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:06,275 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:06,380 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:06,483 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:06,587 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:06,691 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:06,796 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:06,903 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:07,11 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:07,119 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:07,228 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:07,337 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:07,441 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:07,545 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:07,649 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:07,754 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:07,858 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:07,962 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:08,65 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:08,169 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:08,273 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:08,378 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:08,482 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:08,586 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:08,690 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:08,794 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:08,898 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:09,3 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:09,107 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:09,211 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:09,315 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:09,419 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:09,523 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:09,627 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:09,732 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:09,837 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:09,942 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:10,46 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:10,151 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:10,255 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:10,360 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:10,464 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:10,568 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:10,672 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:10,776 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:10,880 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:10,984 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:11,89 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:11,193 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:11,298 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:11,402 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:11,510 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:11,618 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:11,727 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:11,835 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:11,939 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:12,43 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:12,147 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:12,252 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:12,357 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:12,461 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:12,565 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:12,669 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:12,773 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:12,878 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:12,981 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:13,85 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:13,190 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:13,294 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:13,398 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:13,503 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:13,607 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:13,712 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:13,816 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:13,921 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:14,25 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:14,129 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:14,233 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:14,338 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:14,442 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:14,546 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:14,649 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:14,753 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:14,857 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:14,961 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:15,65 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:15,169 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:15,273 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:15,379 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:15,483 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:15,588 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:15,692 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:15,797 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:15,901 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:16,9 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:16,117 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:16,225 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:16,334 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:16,442 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:16,551 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:16,659 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:16,768 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:16,873 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:16,977 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:17,81 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:17,185 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:17,290 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:17,394 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:17,498 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:26,473 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:26,577 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:26,681 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:26,786 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:26,891 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:26,996 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:27,102 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:27,207 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:27,313 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:27,418 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:27,523 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:27,628 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:27,731 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:34:34,729 [DEBUG] main.cpp:15 | test
+2019-05-12 15:34:34,801 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 15:34:34,805 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 15:34:34,809 [TRACE] cpsock.cpp:124 | local ip : 2.0.215.143 port : 55183
+2019-05-12 15:34:34,880 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:36:43,149 [DEBUG] main.cpp:15 | test
+2019-05-12 15:36:44,655 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-12 15:36:44,660 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-12 15:36:44,665 [DEBUG] wheel_timer.cpp:185 | add timer in index : 156
+2019-05-12 15:36:44,691 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:44,864 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:44,969 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:45,74 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:45,178 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:45,283 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:45,388 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:45,493 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:45,597 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:45,701 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:45,805 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:45,910 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:46,14 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:46,118 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:46,223 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:46,327 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:46,431 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:46,535 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:46,640 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:46,744 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:46,849 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:46,953 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:47,57 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:47,161 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:47,265 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:47,369 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:47,475 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:47,579 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:47,684 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-12 15:36:47,688 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:36:47,690 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 15:36:47,696 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 15:36:47,700 [TRACE] cpsock.cpp:124 | local ip : 2.0.216.1 port : 55297
+2019-05-12 15:36:47,793 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:04,343 [DEBUG] main.cpp:15 | test
+2019-05-12 15:42:06,65 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:42:06,171 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:42:06,276 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:42:06,381 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-12 15:42:06,382 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-12 15:42:06,390 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-12 15:42:06,393 [TRACE] cpsock.cpp:124 | local ip : 2.0.216.138 port : 55434
+2019-05-12 15:42:06,487 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:06,591 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:06,696 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:06,803 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:06,908 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:07,13 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:07,117 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:07,223 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:07,327 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:07,432 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:07,541 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:07,649 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:07,761 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:07,871 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:07,977 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:08,84 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:08,189 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:08,293 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:08,397 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:08,502 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:08,607 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:08,711 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:08,816 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:08,920 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:09,25 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:09,129 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:09,234 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:09,339 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:09,445 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:09,556 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:09,661 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:09,765 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:09,869 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:09,974 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:10,79 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:10,183 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:10,287 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:10,392 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:10,497 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:10,601 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:10,705 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:10,811 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:10,921 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:11,26 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:11,131 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:11,236 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:11,341 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:11,446 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:11,551 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:11,656 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:11,761 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:11,866 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:11,971 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:12,79 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:12,187 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:12,295 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:12,403 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:12,508 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:12,613 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:12,718 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:12,822 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:12,927 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:13,32 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:13,137 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:13,241 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:13,347 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:13,457 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:13,562 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:13,667 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:13,772 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:13,876 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:13,981 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:14,85 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:14,190 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:14,295 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:14,400 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:14,504 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:14,609 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:14,714 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:14,818 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:14,923 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:15,28 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:15,133 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:15,238 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:15,343 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:15,447 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:15,551 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:15,656 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:15,761 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:15,866 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:15,970 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:16,75 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:16,179 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:16,284 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:16,389 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:16,494 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:16,598 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:16,710 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:16,819 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:16,928 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:17,37 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:17,146 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:17,255 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:17,364 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:17,472 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:17,583 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:17,688 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:17,793 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:17,897 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:18,2 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:18,107 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:18,212 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:18,317 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:18,422 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:18,527 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:18,632 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:18,737 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:18,840 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:18,944 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:19,49 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:19,154 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:19,260 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:19,365 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:19,471 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:19,576 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:19,682 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:19,786 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:19,891 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:19,996 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:20,101 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:20,206 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:20,311 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:20,415 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:20,521 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:20,626 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:20,731 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:20,835 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:20,941 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:21,48 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:21,153 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:21,258 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:21,362 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:21,467 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:21,572 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:21,677 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:21,782 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:21,890 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:21,998 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:22,106 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:22,216 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:22,323 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:22,428 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:22,533 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:22,638 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:22,742 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:22,847 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:22,957 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:23,62 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:23,167 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:23,272 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:23,377 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:23,482 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:23,586 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:23,691 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:23,795 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:23,899 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:24,4 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:24,109 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:24,214 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:24,319 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:24,424 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:24,529 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:24,633 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:24,738 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:24,843 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:24,947 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:25,52 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:25,157 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:25,262 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:25,366 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:25,470 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:25,575 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:25,680 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:25,785 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:25,890 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:25,994 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:26,98 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:26,202 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:26,307 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:26,412 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:26,522 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:26,632 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:26,741 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:26,846 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:26,950 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:27,56 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:27,161 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:27,266 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:27,374 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:27,479 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:27,584 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:27,690 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:27,795 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:27,901 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:28,6 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:28,111 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:28,216 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:28,321 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:28,426 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:28,530 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:28,635 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:28,740 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:28,845 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:28,949 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:29,55 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:29,161 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:29,266 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:29,371 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:29,475 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:29,580 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:29,684 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:29,789 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:29,895 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:30,0 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:30,105 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:30,211 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:30,315 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:30,419 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:30,524 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:30,629 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:30,733 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:30,839 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:30,945 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:31,59 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:31,167 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:31,279 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:31,388 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:31,496 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-12 15:42:31,601 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.

@@ -1,0 +1,56 @@
+2019-05-12 10:55:00,167 [DEBUG] main.cpp:9 | test
+2019-05-12 10:55:00,210 [ERROR] listener.cpp:40 | bind failed. error : 10049
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,215 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,215 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,215 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,214 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:10,250 [TRACE] iocpctrl.cpp:52 | IocpCtrl finish!!!!!
+2019-05-12 10:55:45,261 [DEBUG] main.cpp:9 | test
+2019-05-12 10:55:45,299 [ERROR] listener.cpp:40 | bind failed. error : 10049
+2019-05-12 10:55:55,304 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,304 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,304 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,304 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,304 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,304 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,304 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,305 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,305 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,305 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,305 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,305 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,305 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,305 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,306 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,306 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:55:55,340 [TRACE] iocpctrl.cpp:52 | IocpCtrl finish!!!!!
+2019-05-12 10:56:54,665 [DEBUG] main.cpp:9 | test
+2019-05-12 10:57:04,829 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,829 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,829 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,829 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,829 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,829 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,829 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,829 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,829 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,829 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,830 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,830 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,830 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,830 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,830 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,830 [TRACE] iocpctrl.cpp:66 | finish IocpCtrl.
+2019-05-12 10:57:04,865 [TRACE] iocpctrl.cpp:52 | IocpCtrl finish!!!!!

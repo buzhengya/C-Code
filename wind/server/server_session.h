@@ -3,7 +3,7 @@
 
 using namespace wind;
 
-class CServerSession : INetSession
+class CServerSession : public INetSession
 {
 public:
 	void WAPI SetConnection(IConnection* poConnection);

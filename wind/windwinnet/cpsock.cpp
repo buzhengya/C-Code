@@ -2,6 +2,7 @@
 #include "log.h"
 #include "iocpctrl.h"
 #include "conndatamgr.h"
+#include "event_mgr.h"
 
 
 void CCPSock::Init(CConnData * pConnData, SOCKET hSock, IPacketParser * pPacketParser /*= nullptr*/)
@@ -47,6 +48,11 @@ void CCPSock::OnRecv(DWORD dwBytes)
 	{
 		m_pPacketParser->ParsePacket(m_pRecvBuf, dwBytes);
 	}
+	
+	m_pRecvBuf[dwBytes] = '\0';
+	EXLOG_DEBUG << "recv data : " << m_pRecvBuf;
+	CEventMgr::Instance()->PushRecvEvt(m_pConnData, m_pRecvBuf, dwBytes);
+	_PostRecv();
 }
 
 void CCPSock::AttachRecvBuf(char * pRecvBuf, uint32 dwRecvBufSize)
@@ -71,6 +77,7 @@ int32 CCPSock::_SyncSend(const char * pData, uint32 nLen)
 		}
 	}
 
+	EXLOG_DEBUG << "send successful. content : " << pData;
 	return dwSend;
 }
 
@@ -87,7 +94,9 @@ void CCPSock::_OnError()
 bool CCPSock::_PostRecv()
 {
 	DWORD dwNumBytes;
-	DWORD dwFlags;
+	DWORD dwFlags = 0;
+	m_pstRecvIoData->stWsaBuf.buf = m_pRecvBuf;
+	m_pstRecvIoData->stWsaBuf.len = m_nRecvBufSize;
 	if (WSARecv(m_hSock, &m_pstRecvIoData->stWsaBuf, 1, &dwNumBytes, &dwFlags, &m_pstRecvIoData->stOverlapped, nullptr) != 0)
 	{
 		int32 nRet = WSAGetLastError();

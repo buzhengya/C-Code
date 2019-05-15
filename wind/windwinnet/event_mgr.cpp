@@ -25,6 +25,7 @@ bool CEventMgr::PushRecvEvt(CConnData *pConnData, char * szBuf, uint32 nSize)
 	pNetEvt->stRecvEvt.nLen = nSize;
 	pNetEvt->stRecvEvt.pLoopBuf = m_pThreadBuf->PushData(szBuf, nSize);
 
+	m_queNetEvt.PushBack(pNetEvt);
 	return true;
 }
 

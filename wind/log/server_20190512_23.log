@@ -1,0 +1,169 @@
+2019-05-12 23:37:02,268 [DEBUG] main.cpp:12 | test
+2019-05-12 23:37:05,172 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-12 23:37:05,176 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-12 23:37:05,180 [TRACE] listener.cpp:111 | remote ip : 2.0.209.241 port : 53745
+2019-05-12 23:37:05,275 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:29,177 [DEBUG] main.cpp:12 | test
+2019-05-12 23:37:29,515 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-12 23:37:29,519 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-12 23:37:29,523 [TRACE] listener.cpp:111 | remote ip : 2.0.210.75 port : 53835
+2019-05-12 23:37:29,585 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:29,692 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:29,796 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:29,905 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:30,15 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:30,119 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:30,225 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:30,335 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:30,443 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:30,554 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:30,660 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:30,764 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:30,870 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:30,981 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:31,90 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:31,195 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:31,306 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:31,415 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:31,527 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:31,636 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:31,741 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:31,851 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:31,958 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:32,62 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:32,168 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:32,274 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:32,379 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:32,485 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:32,592 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:32,701 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:32,813 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:32,922 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:33,31 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:33,138 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:33,249 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:33,358 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:33,468 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:33,577 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:33,687 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:33,796 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:33,905 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:34,12 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:34,121 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:34,228 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:34,333 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:34,439 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:34,545 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:34,655 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:34,761 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:34,869 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:34,975 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:35,85 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:35,191 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:35,301 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:35,406 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:35,515 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:35,624 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:35,735 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:35,845 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:35,954 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:36,61 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:36,166 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:36,272 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:36,386 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:36,496 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:36,600 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:36,711 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:36,821 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:36,931 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:37,41 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:37,145 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:37,251 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:37,361 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:37,475 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:37,582 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:37,694 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:37,804 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:37,913 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:38,18 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:38,127 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:38,234 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:38,340 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:38,450 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:38,560 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:38,669 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:38,779 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:38,889 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:39,3 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:39,108 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:39,218 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:39,328 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:39,445 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:39,551 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:39,656 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:39,761 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:39,866 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:39,971 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:40,76 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:40,181 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:40,286 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:40,391 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:40,496 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:40,608 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:40,719 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:40,831 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:40,947 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:41,52 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:41,159 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:41,269 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:41,375 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:41,486 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:41,595 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:41,701 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:37:41,765 [ERROR] iocpctrl.cpp:74 | GetQueuedCompletionStatus failed. ret : 0 error : 64
+2019-05-12 23:39:57,265 [DEBUG] main.cpp:12 | test
+2019-05-12 23:42:20,188 [DEBUG] main.cpp:12 | test
+2019-05-12 23:42:23,12 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-12 23:42:23,15 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-12 23:42:23,19 [TRACE] listener.cpp:111 | remote ip : 2.0.211.75 port : 54091
+2019-05-12 23:42:37,835 [DEBUG] main.cpp:12 | test
+2019-05-12 23:42:38,393 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-12 23:42:38,397 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-12 23:42:38,402 [TRACE] listener.cpp:111 | remote ip : 2.0.211.137 port : 54153
+2019-05-12 23:42:40,870 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:42:45,262 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : 
+2019-05-12 23:42:48,268 [DEBUG] cpsock.cpp:80 | send successful. content : 
+2019-05-12 23:43:29,52 [DEBUG] main.cpp:12 | test
+2019-05-12 23:43:31,164 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-12 23:43:31,168 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-12 23:43:31,172 [TRACE] listener.cpp:111 | remote ip : 2.0.212.4 port : 54276
+2019-05-12 23:43:34,149 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:43:34,156 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : 
+2019-05-12 23:43:37,163 [DEBUG] cpsock.cpp:80 | send successful. content : 
+2019-05-12 23:46:26,702 [DEBUG] main.cpp:12 | test
+2019-05-12 23:46:27,250 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-12 23:46:27,253 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-12 23:46:27,257 [TRACE] listener.cpp:111 | remote ip : 2.0.212.96 port : 54368
+2019-05-12 23:46:29,730 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:48:45,644 [DEBUG] main.cpp:12 | test
+2019-05-12 23:48:46,24 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-12 23:48:46,28 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-12 23:48:46,32 [TRACE] listener.cpp:111 | remote ip : 2.0.212.235 port : 54507
+2019-05-12 23:48:48,494 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:51:49,603 [DEBUG] main.cpp:12 | test
+2019-05-12 23:51:49,929 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-12 23:51:49,933 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-12 23:51:49,937 [TRACE] listener.cpp:111 | remote ip : 2.0.213.127 port : 54655
+2019-05-12 23:51:50,988 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:53:42,884 [DEBUG] main.cpp:12 | test
+2019-05-12 23:53:43,430 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-12 23:53:43,435 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-12 23:53:43,440 [TRACE] listener.cpp:111 | remote ip : 2.0.213.250 port : 54778
+2019-05-12 23:53:46,912 [DEBUG] cpsock.cpp:53 | recv data : hello world.
+2019-05-12 23:53:46,918 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : 
+2019-05-12 23:53:49,926 [DEBUG] cpsock.cpp:80 | send successful. content : 
+2019-05-12 23:54:50,69 [DEBUG] main.cpp:12 | test
+2019-05-12 23:54:50,623 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-12 23:54:50,628 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-12 23:54:50,634 [TRACE] listener.cpp:111 | remote ip : 2.0.214.101 port : 54885
+2019-05-12 23:54:54,99 [DEBUG] cpsock.cpp:53 | recv data : hello world.
