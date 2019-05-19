@@ -1,2 +1,4 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  wheel_timer.cpp
+c:\c++\c-code\wind\windcommon\wheel_timer.cpp(45): warning C4244: “=”: 从“uint64”转换到“uint32”，可能丢失数据
   windcommon.vcxproj -> C:\C++\C-Code\wind\windcommon\../windlib\windcommon.lib

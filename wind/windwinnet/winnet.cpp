@@ -25,6 +25,7 @@ bool WAPI CNetWin::Run(int32 nCount)
 		{
 		case NETEVT_RCV:
 			pEvent->stRecvEvt.pLoopBuf->Read(m_pBuf, pEvent->stRecvEvt.nLen);
+			m_nBufSize = pEvent->stRecvEvt.nLen;
 			pEvent->stRecvEvt.pConnData->oConnection.GetSession()->OnRecv(m_pBuf, m_nBufSize);
 			break;
 			

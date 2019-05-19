@@ -50,7 +50,7 @@ void CCPSock::OnRecv(DWORD dwBytes)
 	}
 	
 	m_pRecvBuf[dwBytes] = '\0';
-	EXLOG_DEBUG << "recv data : " << m_pRecvBuf;
+	EXLOG_DEBUG << "recv data : " << m_pRecvBuf << " len : " << dwBytes;
 	CEventMgr::Instance()->PushRecvEvt(m_pConnData, m_pRecvBuf, dwBytes);
 	_PostRecv();
 }
@@ -66,7 +66,7 @@ int32 CCPSock::_SyncSend(const char * pData, uint32 nLen)
 	WSABUF wsaBuf;
 	wsaBuf.buf = (char *)pData;
 	wsaBuf.len = nLen;
-	DWORD dwSend;
+	DWORD dwSend = nLen;
 
 	if (WSASend(m_hSock, &wsaBuf, 1, &dwSend, 0, nullptr, nullptr) != 0)
 	{
@@ -77,7 +77,7 @@ int32 CCPSock::_SyncSend(const char * pData, uint32 nLen)
 		}
 	}
 
-	EXLOG_DEBUG << "send successful. content : " << pData;
+	EXLOG_DEBUG << "send successful. content : " << pData << " nLen : " << nLen;
 	return dwSend;
 }
 
@@ -97,6 +97,7 @@ bool CCPSock::_PostRecv()
 	DWORD dwFlags = 0;
 	m_pstRecvIoData->stWsaBuf.buf = m_pRecvBuf;
 	m_pstRecvIoData->stWsaBuf.len = m_nRecvBufSize;
+	ZeroMemory(&m_pstRecvIoData->stOverlapped, sizeof(m_pstRecvIoData->stOverlapped));
 	if (WSARecv(m_hSock, &m_pstRecvIoData->stWsaBuf, 1, &dwNumBytes, &dwFlags, &m_pstRecvIoData->stOverlapped, nullptr) != 0)
 	{
 		int32 nRet = WSAGetLastError();

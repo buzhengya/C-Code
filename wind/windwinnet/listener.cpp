@@ -76,9 +76,9 @@ void CCPListener::OnAccept(SPerIoData * pstPerIoData)
 	CConnData * pConnData = CConnDataMgr::Instance()->AllocConnData(m_nRecvSize, m_nSendSize);
 	if (pConnData != nullptr)
 	{
-		pConnData->oSock.Init(pConnData, pstPerIoData->hSock, nullptr);
 		INetSession * pSession = m_pSessionFactory->CreateSession(&pConnData->oConnection);
 		pConnData->oConnection.Init(pConnData, pSession, 0);
+		pConnData->oSock.Init(pConnData, pstPerIoData->hSock, nullptr);
 	}
 
 	_PostAcceptex(pstPerIoData);

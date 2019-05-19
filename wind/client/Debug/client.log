@@ -1,2 +1,4 @@
-﻿  client.vcxproj -> C:\C++\C-Code\wind\Debug\client.exe
+﻿cl : 命令行 warning D9028: 最小重新生成失败，正在转换为标准生成
+  main.cpp
+  client.vcxproj -> C:\C++\C-Code\wind\Debug\client.exe
   client.vcxproj -> C:\C++\C-Code\wind\Debug\client.pdb (Full PDB)

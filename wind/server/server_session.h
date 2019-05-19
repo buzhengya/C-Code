@@ -16,4 +16,6 @@ public:
 
 private:
 	IConnection * m_pConnection;
+	char		  m_pBuf[1024];
+	uint32		  m_nLen;
 };
