@@ -7,6 +7,12 @@
     <Filter Include="uuid_make">
       <UniqueIdentifier>{20ad794d-8e81-4574-8303-c67611484c8d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="pipe_helper">
+      <UniqueIdentifier>{684a1cee-d5cf-46ae-9845-c2b8e503ecd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="server_helper">
+      <UniqueIdentifier>{f849d151-e6ea-452c-b07e-6a65b390ccf9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="wheel_timer.h">
@@ -15,6 +21,12 @@
     <ClInclude Include="uuid_make.h">
       <Filter>uuid_make</Filter>
     </ClInclude>
+    <ClInclude Include="server_id.h">
+      <Filter>pipe_helper</Filter>
+    </ClInclude>
+    <ClInclude Include="pipe_helper.h">
+      <Filter>pipe_helper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="wheel_timer.cpp">
@@ -22,6 +34,9 @@
     </ClCompile>
     <ClCompile Include="uuid_make.cpp">
       <Filter>uuid_make</Filter>
+    </ClCompile>
+    <ClCompile Include="pipe_helper.cpp">
+      <Filter>pipe_helper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

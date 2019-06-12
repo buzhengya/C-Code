@@ -1,5 +1,7 @@
 #include "winnet.h"
 #include "event_mgr.h"
+#include "connectctrl.h"
+#include "iocpctrl.h"
 
 IConnector * WAPI CNetWin::CreateConnector(uint32 dwNetIOType)
 {
@@ -38,6 +40,12 @@ bool WAPI CNetWin::Run(int32 nCount)
 
 bool CNetWin::Init(uint32 nSize)
 {
+	WSAData wsa;
+	WSAStartup(MAKEWORD(2, 2), &wsa);
+	CConnectCtrl::Instance()->Init();
+	CIocpCtrl::Instance()->Init();
+	CEventMgr::Instance()->Init();
+
 	m_nBufSize = nSize;
 	m_pBuf = new char(nSize);
 	return m_pBuf != nullptr;

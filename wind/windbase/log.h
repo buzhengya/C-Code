@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <iostream>
 #include <fstream>
+#include <mutex>
 
 using namespace wind;
 using namespace std;
@@ -180,10 +181,14 @@ public:
 	void Dispatch(CLogMessage * pMsg);
 };
 
+typedef std::recursive_mutex Mutex;
 class CLogDispatchCallback
 {
 public:
 	virtual void Handle(const CLogDispatchData* pData) = 0;
+	Mutex & GetMutex() { return m_Lock; }
+private:
+	Mutex		m_Lock;
 };
 
 class CDefaultLogDispatchCallback : public CLogDispatchCallback

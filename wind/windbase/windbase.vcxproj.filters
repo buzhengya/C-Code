@@ -29,6 +29,9 @@
     <Filter Include="container">
       <UniqueIdentifier>{218a520e-176f-4338-be7d-c753fb3cdcc3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="pipe">
+      <UniqueIdentifier>{bee58df4-4365-49e8-98d7-a33c421bf7fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="singleton.h">
@@ -67,6 +70,21 @@
     <ClInclude Include="log.h">
       <Filter>log</Filter>
     </ClInclude>
+    <ClInclude Include="wnet_pkg.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="wnet_proto.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="wpipe.h">
+      <Filter>pipe</Filter>
+    </ClInclude>
+    <ClInclude Include="noncopy.h">
+      <Filter>pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="assert_wrap.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="wtime.cpp">
@@ -75,7 +93,6 @@
     <ClCompile Include="wstring.cpp">
       <Filter>string</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="whread.cpp">
       <Filter>thread</Filter>
     </ClCompile>

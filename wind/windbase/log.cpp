@@ -2,11 +2,14 @@
 #include "wtime.h"
 #include <io.h>
 #include <direct.h>
+#include <mutex>
 
 string RollOutCallBack(const char * szOldFile)
 {
 	return "";
 }
+
+typedef std::lock_guard<std::recursive_mutex>  ScopedMutex;
 
 void CDefaultLogDispatchCallback::Handle(const CLogDispatchData * pData)
 {
@@ -14,6 +17,8 @@ void CDefaultLogDispatchCallback::Handle(const CLogDispatchData * pData)
 	{
 		return;
 	}
+
+	ScopedMutex scopedMutex(CLogDispatchCallback::GetMutex());
 	m_pData = pData;
 	Dispatch(pData->GetMsg()->GetLogger()->GetLogBuilder()->Build(pData->GetMsg()));
 }

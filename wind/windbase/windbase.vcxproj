@@ -126,23 +126,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="assert_wrap.h" />
     <ClInclude Include="auto_meter.h" />
     <ClInclude Include="base_define.h" />
     <ClInclude Include="data_queue.h" />
     <ClInclude Include="log.h" />
+    <ClInclude Include="noncopy.h" />
     <ClInclude Include="object_pool.h" />
+    <ClInclude Include="wpipe.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="wbase.h" />
     <ClInclude Include="wnet.h" />
     <ClInclude Include="wnet_opt.h" />
+    <ClInclude Include="wnet_proto.h" />
     <ClInclude Include="wstring.h" />
     <ClInclude Include="wthread.h" />
     <ClInclude Include="wtime.h" />
+    <ClInclude Include="wnet_pkg.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="auto_meter.cpp" />
     <ClCompile Include="log.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="whread.cpp" />
     <ClCompile Include="wstring.cpp" />
     <ClCompile Include="wtime.cpp" />
