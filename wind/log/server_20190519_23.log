@@ -1,0 +1,853 @@
+2019-05-19 23:00:01,569 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.
+2019-05-19 23:00:16,803 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-19 23:03:08,847 [DEBUG] main.cpp:12 | test
+2019-05-19 23:03:14,421 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:03:14,424 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:03:14,428 [TRACE] listener.cpp:111 | remote ip : 2.0.199.153 port : 51097
+2019-05-19 23:03:23,174 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:03:42,793 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.
+2019-05-19 23:04:00,314 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-19 23:04:44,24 [ERROR] iocpctrl.cpp:74 | GetQueuedCompletionStatus failed. ret : 0 error : 64
+2019-05-19 23:06:42,248 [DEBUG] main.cpp:12 | test
+2019-05-19 23:06:53,602 [DEBUG] main.cpp:12 | test
+2019-05-19 23:07:01,60 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:07:01,63 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:07:01,66 [TRACE] listener.cpp:111 | remote ip : 2.0.200.220 port : 51420
+2019-05-19 23:07:04,71 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:07:06,318 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.
+2019-05-19 23:07:06,322 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-19 23:07:11,61 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:07:11,69 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.
+2019-05-19 23:07:11,77 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-19 23:07:21,60 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:07:21,64 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.
+2019-05-19 23:07:21,69 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-19 23:07:27,999 [ERROR] iocpctrl.cpp:74 | GetQueuedCompletionStatus failed. ret : 0 error : 64
+2019-05-19 23:08:09,341 [DEBUG] main.cpp:12 | test
+2019-05-19 23:08:12,718 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:08:12,722 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:08:12,725 [TRACE] listener.cpp:111 | remote ip : 2.0.201.67 port : 51523
+2019-05-19 23:08:12,731 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:08:12,734 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.
+2019-05-19 23:08:12,738 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-19 23:08:22,720 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:08:22,728 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.
+2019-05-19 23:08:22,736 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-19 23:08:25,826 [ERROR] iocpctrl.cpp:74 | GetQueuedCompletionStatus failed. ret : 0 error : 64
+2019-05-19 23:13:23,418 [DEBUG] main.cpp:12 | test
+2019-05-19 23:13:27,788 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:13:27,791 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:13:27,794 [TRACE] listener.cpp:111 | remote ip : 2.0.202.147 port : 51859
+2019-05-19 23:13:27,798 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:13:27,801 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.
+2019-05-19 23:13:27,805 [DEBUG] cpsock.cpp:84 | send successful. content : hello world.
+2019-05-19 23:13:34,360 [ERROR] iocpctrl.cpp:74 | GetQueuedCompletionStatus failed. ret : 0 error : 64
+2019-05-19 23:14:14,859 [DEBUG] main.cpp:12 | test
+2019-05-19 23:14:18,731 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:14:18,734 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:14:18,737 [TRACE] listener.cpp:111 | remote ip : 2.0.202.234 port : 51946
+2019-05-19 23:14:18,743 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:14:18,748 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.e
+2019-05-19 23:14:18,752 [DEBUG] cpsock.cpp:84 | send successful. content : hello world.e nLen : 1024
+2019-05-19 23:14:28,732 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:14:28,735 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.e
+2019-05-19 23:14:28,740 [DEBUG] cpsock.cpp:84 | send successful. content : hello world.e nLen : 1024
+2019-05-19 23:14:37,814 [ERROR] iocpctrl.cpp:74 | GetQueuedCompletionStatus failed. ret : 0 error : 64
+2019-05-19 23:15:49,999 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:15:50,3 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:15:50,6 [TRACE] listener.cpp:111 | remote ip : 2.0.202.245 port : 51957
+2019-05-19 23:15:50,10 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:21:48,964 [DEBUG] main.cpp:12 | test
+2019-05-19 23:21:54,472 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:21:54,475 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:21:54,478 [TRACE] listener.cpp:111 | remote ip : 2.0.203.127 port : 52095
+2019-05-19 23:21:54,482 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:21:54,485 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 0 end : 0
+2019-05-19 23:21:54,489 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 0 end : 12
+2019-05-19 23:21:54,494 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 0 end : 12
+2019-05-19 23:21:54,497 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 12 end : 12
+2019-05-19 23:21:54,500 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world.
+2019-05-19 23:21:54,504 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 1024
+2019-05-19 23:21:58,946 [ERROR] iocpctrl.cpp:74 | GetQueuedCompletionStatus failed. ret : 0 error : 64
+2019-05-19 23:23:17,238 [DEBUG] main.cpp:12 | test
+2019-05-19 23:23:20,502 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:23:20,506 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:23:20,509 [TRACE] listener.cpp:111 | remote ip : 2.0.203.227 port : 52195
+2019-05-19 23:23:20,513 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:23:20,516 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 0 end : 0
+2019-05-19 23:23:20,519 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 0 end : 12
+2019-05-19 23:23:20,523 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 0 end : 12
+2019-05-19 23:23:20,526 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 12 end : 12
+2019-05-19 23:23:20,529 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :1024
+2019-05-19 23:23:20,533 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 1024
+2019-05-19 23:24:30,666 [DEBUG] main.cpp:12 | test
+2019-05-19 23:24:35,896 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:24:35,900 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:24:35,904 [TRACE] listener.cpp:111 | remote ip : 2.0.204.68 port : 52292
+2019-05-19 23:24:35,908 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:24:35,912 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 0 end : 0
+2019-05-19 23:24:35,914 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 0 end : 12
+2019-05-19 23:24:35,918 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 0 end : 12
+2019-05-19 23:24:35,921 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 12 end : 12
+2019-05-19 23:24:35,925 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:24:35,930 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:24:39,707 [ERROR] iocpctrl.cpp:74 | GetQueuedCompletionStatus failed. ret : 0 error : 64
+2019-05-19 23:25:13,421 [DEBUG] main.cpp:12 | test
+2019-05-19 23:25:26,327 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:25:26,331 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:25:26,335 [TRACE] listener.cpp:111 | remote ip : 2.0.204.162 port : 52386
+2019-05-19 23:25:26,339 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:26,343 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 0 end : 0
+2019-05-19 23:25:26,346 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 0 end : 12
+2019-05-19 23:25:26,351 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 0 end : 12
+2019-05-19 23:25:26,355 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 12 end : 12
+2019-05-19 23:25:26,358 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:26,362 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:27,329 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:27,336 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 12 end : 12
+2019-05-19 23:25:27,343 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 12 end : 24
+2019-05-19 23:25:27,351 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 12 end : 24
+2019-05-19 23:25:27,358 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 24 end : 24
+2019-05-19 23:25:27,365 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:27,374 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:28,329 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:28,338 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 24 end : 24
+2019-05-19 23:25:28,345 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 24 end : 36
+2019-05-19 23:25:28,355 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 24 end : 36
+2019-05-19 23:25:28,364 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 36 end : 36
+2019-05-19 23:25:28,372 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:28,383 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:29,329 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:29,337 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 36 end : 36
+2019-05-19 23:25:29,345 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 36 end : 48
+2019-05-19 23:25:29,353 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 36 end : 48
+2019-05-19 23:25:29,360 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 48 end : 48
+2019-05-19 23:25:29,368 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:29,378 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:30,329 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:30,333 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 48 end : 48
+2019-05-19 23:25:30,337 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 48 end : 60
+2019-05-19 23:25:30,341 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 48 end : 60
+2019-05-19 23:25:30,344 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 60 end : 60
+2019-05-19 23:25:30,348 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:30,353 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:31,331 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:31,338 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 60 end : 60
+2019-05-19 23:25:31,346 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 60 end : 72
+2019-05-19 23:25:31,357 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 60 end : 72
+2019-05-19 23:25:31,367 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 72 end : 72
+2019-05-19 23:25:31,377 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:31,389 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:32,331 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:32,338 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 72 end : 72
+2019-05-19 23:25:32,346 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 72 end : 84
+2019-05-19 23:25:32,356 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 72 end : 84
+2019-05-19 23:25:32,365 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 84 end : 84
+2019-05-19 23:25:32,373 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:32,383 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:33,331 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:33,339 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 84 end : 84
+2019-05-19 23:25:33,346 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 84 end : 96
+2019-05-19 23:25:33,355 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 84 end : 96
+2019-05-19 23:25:33,362 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 96 end : 96
+2019-05-19 23:25:33,371 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:33,380 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:34,332 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:34,342 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 96 end : 96
+2019-05-19 23:25:34,354 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 96 end : 108
+2019-05-19 23:25:34,364 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 96 end : 108
+2019-05-19 23:25:34,370 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 108 end : 108
+2019-05-19 23:25:34,374 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:34,379 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:35,332 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:35,339 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 108 end : 108
+2019-05-19 23:25:35,346 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 108 end : 120
+2019-05-19 23:25:35,355 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 108 end : 120
+2019-05-19 23:25:35,363 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 120 end : 120
+2019-05-19 23:25:35,372 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:35,382 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:36,333 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:36,340 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 120 end : 120
+2019-05-19 23:25:36,348 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 120 end : 132
+2019-05-19 23:25:36,357 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 120 end : 132
+2019-05-19 23:25:36,365 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 132 end : 132
+2019-05-19 23:25:36,374 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:36,384 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:37,333 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:37,341 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 132 end : 132
+2019-05-19 23:25:37,354 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 132 end : 144
+2019-05-19 23:25:37,363 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 132 end : 144
+2019-05-19 23:25:37,368 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 144 end : 144
+2019-05-19 23:25:37,372 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:37,378 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:38,334 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:38,340 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 144 end : 144
+2019-05-19 23:25:38,348 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 144 end : 156
+2019-05-19 23:25:38,357 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 144 end : 156
+2019-05-19 23:25:38,364 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 156 end : 156
+2019-05-19 23:25:38,373 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:38,386 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:39,334 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:39,341 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 156 end : 156
+2019-05-19 23:25:39,348 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 156 end : 168
+2019-05-19 23:25:39,358 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 156 end : 168
+2019-05-19 23:25:39,367 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 168 end : 168
+2019-05-19 23:25:39,374 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:39,385 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:40,335 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:40,343 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 168 end : 168
+2019-05-19 23:25:40,353 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 168 end : 180
+2019-05-19 23:25:40,362 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 168 end : 180
+2019-05-19 23:25:40,371 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 180 end : 180
+2019-05-19 23:25:40,379 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:40,388 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:41,335 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:41,341 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 180 end : 180
+2019-05-19 23:25:41,349 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 180 end : 192
+2019-05-19 23:25:41,358 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 180 end : 192
+2019-05-19 23:25:41,366 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 192 end : 192
+2019-05-19 23:25:41,374 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:41,384 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:42,335 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:42,342 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 192 end : 192
+2019-05-19 23:25:42,350 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 192 end : 204
+2019-05-19 23:25:42,357 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 192 end : 204
+2019-05-19 23:25:42,365 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 204 end : 204
+2019-05-19 23:25:42,374 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:42,384 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:43,335 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:43,340 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 204 end : 204
+2019-05-19 23:25:43,344 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 204 end : 216
+2019-05-19 23:25:43,351 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 204 end : 216
+2019-05-19 23:25:43,355 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 216 end : 216
+2019-05-19 23:25:43,359 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:43,366 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:44,336 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:44,342 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 216 end : 216
+2019-05-19 23:25:44,351 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 216 end : 228
+2019-05-19 23:25:44,359 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 216 end : 228
+2019-05-19 23:25:44,369 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 228 end : 228
+2019-05-19 23:25:44,376 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:44,389 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:45,336 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:45,343 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 228 end : 228
+2019-05-19 23:25:45,351 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 228 end : 240
+2019-05-19 23:25:45,362 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 228 end : 240
+2019-05-19 23:25:45,371 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 240 end : 240
+2019-05-19 23:25:45,379 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:45,390 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:46,336 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:46,344 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 240 end : 240
+2019-05-19 23:25:46,353 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 240 end : 252
+2019-05-19 23:25:46,362 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 240 end : 252
+2019-05-19 23:25:46,371 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 252 end : 252
+2019-05-19 23:25:46,378 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:46,390 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:47,337 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:47,343 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 252 end : 252
+2019-05-19 23:25:47,350 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 252 end : 264
+2019-05-19 23:25:47,359 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 252 end : 264
+2019-05-19 23:25:47,368 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 264 end : 264
+2019-05-19 23:25:47,376 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:47,385 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:48,337 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:48,343 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 264 end : 264
+2019-05-19 23:25:48,351 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 264 end : 276
+2019-05-19 23:25:48,358 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 264 end : 276
+2019-05-19 23:25:48,367 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 276 end : 276
+2019-05-19 23:25:48,376 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:48,386 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:49,338 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:49,347 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 276 end : 276
+2019-05-19 23:25:49,356 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 276 end : 288
+2019-05-19 23:25:49,365 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 276 end : 288
+2019-05-19 23:25:49,370 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 288 end : 288
+2019-05-19 23:25:49,374 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:49,380 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:50,338 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:50,344 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 288 end : 288
+2019-05-19 23:25:50,353 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 288 end : 300
+2019-05-19 23:25:50,361 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 288 end : 300
+2019-05-19 23:25:50,369 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 300 end : 300
+2019-05-19 23:25:50,375 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:50,388 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:51,339 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:25:51,345 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 300 end : 300
+2019-05-19 23:25:51,353 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 300 end : 312
+2019-05-19 23:25:51,361 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 300 end : 312
+2019-05-19 23:25:51,370 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 312 end : 312
+2019-05-19 23:25:51,377 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:25:51,387 [DEBUG] cpsock.cpp:84 | send successful. content : hello world. nLen : 12
+2019-05-19 23:25:51,774 [ERROR] iocpctrl.cpp:74 | GetQueuedCompletionStatus failed. ret : 0 error : 64
+2019-05-19 23:28:20,779 [DEBUG] main.cpp:12 | test
+2019-05-19 23:29:17,329 [DEBUG] main.cpp:12 | test
+2019-05-19 23:29:21,943 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:29:21,947 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:29:21,951 [TRACE] listener.cpp:111 | remote ip : 2.0.206.39 port : 52775
+2019-05-19 23:29:21,956 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:21,960 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 0 end : 0
+2019-05-19 23:29:21,963 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 0 end : 12
+2019-05-19 23:29:21,968 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 0 end : 12
+2019-05-19 23:29:21,971 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 12 end : 12
+2019-05-19 23:29:21,975 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:21,979 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:22,943 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:22,950 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 12 end : 12
+2019-05-19 23:29:22,957 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 12 end : 24
+2019-05-19 23:29:22,964 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 12 end : 24
+2019-05-19 23:29:22,970 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 24 end : 24
+2019-05-19 23:29:22,978 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:22,991 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:23,943 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:23,947 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 24 end : 24
+2019-05-19 23:29:23,950 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 24 end : 36
+2019-05-19 23:29:23,953 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 24 end : 36
+2019-05-19 23:29:23,956 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 36 end : 36
+2019-05-19 23:29:23,960 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:23,964 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:24,944 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:24,947 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 36 end : 36
+2019-05-19 23:29:24,950 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 36 end : 48
+2019-05-19 23:29:24,953 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 36 end : 48
+2019-05-19 23:29:24,956 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 48 end : 48
+2019-05-19 23:29:24,960 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:24,965 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:25,944 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:25,947 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 48 end : 48
+2019-05-19 23:29:25,951 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 48 end : 60
+2019-05-19 23:29:25,955 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 48 end : 60
+2019-05-19 23:29:25,959 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 60 end : 60
+2019-05-19 23:29:25,962 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:25,966 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:26,945 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:26,953 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 60 end : 60
+2019-05-19 23:29:26,964 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 60 end : 72
+2019-05-19 23:29:26,976 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 60 end : 72
+2019-05-19 23:29:26,984 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 72 end : 72
+2019-05-19 23:29:26,990 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:26,999 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:27,946 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:27,949 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 72 end : 72
+2019-05-19 23:29:27,953 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 72 end : 84
+2019-05-19 23:29:27,957 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 72 end : 84
+2019-05-19 23:29:27,960 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 84 end : 84
+2019-05-19 23:29:27,963 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:27,968 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:28,947 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:28,950 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 84 end : 84
+2019-05-19 23:29:28,953 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 84 end : 96
+2019-05-19 23:29:28,957 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 84 end : 96
+2019-05-19 23:29:28,961 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 96 end : 96
+2019-05-19 23:29:28,964 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:28,969 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:29,947 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:29,950 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 96 end : 96
+2019-05-19 23:29:29,953 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 96 end : 108
+2019-05-19 23:29:29,956 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 96 end : 108
+2019-05-19 23:29:29,960 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 108 end : 108
+2019-05-19 23:29:29,963 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:29,967 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:30,948 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:30,951 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 108 end : 108
+2019-05-19 23:29:30,955 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 108 end : 120
+2019-05-19 23:29:30,960 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 108 end : 120
+2019-05-19 23:29:30,964 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 120 end : 120
+2019-05-19 23:29:30,967 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:30,971 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:31,949 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:31,952 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 120 end : 120
+2019-05-19 23:29:31,955 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 120 end : 132
+2019-05-19 23:29:31,960 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 120 end : 132
+2019-05-19 23:29:31,964 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 132 end : 132
+2019-05-19 23:29:31,968 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:31,972 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:32,950 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:32,953 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 132 end : 132
+2019-05-19 23:29:32,956 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 132 end : 144
+2019-05-19 23:29:32,962 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 132 end : 144
+2019-05-19 23:29:32,966 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 144 end : 144
+2019-05-19 23:29:32,969 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:32,973 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:33,950 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:33,959 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 144 end : 144
+2019-05-19 23:29:33,969 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 144 end : 156
+2019-05-19 23:29:33,978 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 144 end : 156
+2019-05-19 23:29:33,986 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 156 end : 156
+2019-05-19 23:29:33,996 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:34,6 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:34,950 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:34,954 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 156 end : 156
+2019-05-19 23:29:34,957 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 156 end : 168
+2019-05-19 23:29:34,963 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 156 end : 168
+2019-05-19 23:29:34,966 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 168 end : 168
+2019-05-19 23:29:34,969 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:34,973 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:35,951 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:35,955 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 168 end : 168
+2019-05-19 23:29:35,959 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 168 end : 180
+2019-05-19 23:29:35,964 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 168 end : 180
+2019-05-19 23:29:35,968 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 180 end : 180
+2019-05-19 23:29:35,972 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:35,976 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:36,952 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:36,955 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 180 end : 180
+2019-05-19 23:29:36,958 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 180 end : 192
+2019-05-19 23:29:36,964 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 180 end : 192
+2019-05-19 23:29:36,967 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 192 end : 192
+2019-05-19 23:29:36,971 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:36,975 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:37,952 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:37,955 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 192 end : 192
+2019-05-19 23:29:37,959 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 192 end : 204
+2019-05-19 23:29:37,966 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 192 end : 204
+2019-05-19 23:29:37,971 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 204 end : 204
+2019-05-19 23:29:37,974 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:37,979 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:38,952 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:38,955 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 204 end : 204
+2019-05-19 23:29:38,959 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 204 end : 216
+2019-05-19 23:29:38,963 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 204 end : 216
+2019-05-19 23:29:38,966 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 216 end : 216
+2019-05-19 23:29:38,969 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:38,973 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:39,953 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:39,957 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 216 end : 216
+2019-05-19 23:29:39,960 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 216 end : 228
+2019-05-19 23:29:39,964 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 216 end : 228
+2019-05-19 23:29:39,968 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 228 end : 228
+2019-05-19 23:29:39,971 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:39,976 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:40,954 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:40,957 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 228 end : 228
+2019-05-19 23:29:40,961 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 228 end : 240
+2019-05-19 23:29:40,965 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 228 end : 240
+2019-05-19 23:29:40,969 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 240 end : 240
+2019-05-19 23:29:40,972 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:40,977 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:41,954 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:41,962 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 240 end : 240
+2019-05-19 23:29:41,971 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 240 end : 252
+2019-05-19 23:29:41,982 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 240 end : 252
+2019-05-19 23:29:41,989 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 252 end : 252
+2019-05-19 23:29:42,0 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:42,12 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:42,954 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:42,958 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 252 end : 252
+2019-05-19 23:29:42,962 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 252 end : 264
+2019-05-19 23:29:42,966 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 252 end : 264
+2019-05-19 23:29:42,969 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 264 end : 264
+2019-05-19 23:29:42,972 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:42,976 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:43,954 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:43,958 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 264 end : 264
+2019-05-19 23:29:43,962 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 264 end : 276
+2019-05-19 23:29:43,966 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 264 end : 276
+2019-05-19 23:29:43,969 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 276 end : 276
+2019-05-19 23:29:43,973 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:43,978 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:29:44,955 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 12
+2019-05-19 23:29:44,958 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 276 end : 276
+2019-05-19 23:29:44,962 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 276 end : 288
+2019-05-19 23:29:44,967 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 276 end : 288
+2019-05-19 23:29:44,971 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 288 end : 288
+2019-05-19 23:29:44,975 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :12
+2019-05-19 23:29:44,980 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 12
+2019-05-19 23:30:06,919 [DEBUG] main.cpp:12 | test
+2019-05-19 23:30:09,707 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:30:09,710 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:30:09,714 [TRACE] listener.cpp:111 | remote ip : 2.0.206.137 port : 52873
+2019-05-19 23:30:45,663 [DEBUG] main.cpp:12 | test
+2019-05-19 23:30:48,508 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:30:48,511 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:30:48,515 [TRACE] listener.cpp:111 | remote ip : 2.0.206.233 port : 52969
+2019-05-19 23:30:55,535 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:30:55,539 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 0 end : 0
+2019-05-19 23:30:55,542 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 0 end : 13
+2019-05-19 23:30:55,546 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 0 end : 13
+2019-05-19 23:30:55,549 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 13 end : 13
+2019-05-19 23:30:55,552 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:30:55,557 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:31:05,540 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:31:05,548 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 13 end : 13
+2019-05-19 23:31:05,557 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 13 end : 26
+2019-05-19 23:31:05,566 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 13 end : 26
+2019-05-19 23:31:05,570 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 26 end : 26
+2019-05-19 23:31:05,573 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:31:05,578 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:31:15,550 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:31:15,555 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 26 end : 26
+2019-05-19 23:31:15,557 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 26 end : 39
+2019-05-19 23:31:15,562 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 26 end : 39
+2019-05-19 23:31:15,564 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 39 end : 39
+2019-05-19 23:31:15,567 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:31:15,572 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:31:25,556 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:31:25,559 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 39 end : 39
+2019-05-19 23:31:25,562 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 39 end : 52
+2019-05-19 23:31:25,566 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 39 end : 52
+2019-05-19 23:31:25,570 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 52 end : 52
+2019-05-19 23:31:25,572 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:31:25,577 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:07,713 [DEBUG] main.cpp:12 | test
+2019-05-19 23:52:08,342 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-19 23:52:08,345 [TRACE] listener.cpp:108 | local ip : 2.0.31.153 port : 8089
+2019-05-19 23:52:08,349 [TRACE] listener.cpp:111 | remote ip : 2.0.211.149 port : 54165
+2019-05-19 23:52:10,824 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:10,831 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 0 end : 0
+2019-05-19 23:52:10,839 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 0 end : 13
+2019-05-19 23:52:10,848 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 0 end : 13
+2019-05-19 23:52:10,856 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 13 end : 13
+2019-05-19 23:52:10,863 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:10,873 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:10,918 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:10,925 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 13 end : 13
+2019-05-19 23:52:10,935 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 13 end : 26
+2019-05-19 23:52:10,944 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 13 end : 26
+2019-05-19 23:52:10,951 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 26 end : 26
+2019-05-19 23:52:10,958 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:10,967 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,11 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,17 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 26 end : 26
+2019-05-19 23:52:11,22 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 26 end : 39
+2019-05-19 23:52:11,28 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 26 end : 39
+2019-05-19 23:52:11,32 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 39 end : 39
+2019-05-19 23:52:11,36 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,43 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,69 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,74 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 39 end : 39
+2019-05-19 23:52:11,78 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 39 end : 52
+2019-05-19 23:52:11,85 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 39 end : 52
+2019-05-19 23:52:11,89 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 52 end : 52
+2019-05-19 23:52:11,94 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,100 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,127 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,132 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 52 end : 52
+2019-05-19 23:52:11,138 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 52 end : 65
+2019-05-19 23:52:11,143 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 52 end : 65
+2019-05-19 23:52:11,149 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 65 end : 65
+2019-05-19 23:52:11,154 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,160 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,190 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,195 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 65 end : 65
+2019-05-19 23:52:11,201 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 65 end : 78
+2019-05-19 23:52:11,208 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 65 end : 78
+2019-05-19 23:52:11,215 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 78 end : 78
+2019-05-19 23:52:11,220 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,228 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,258 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,261 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 78 end : 78
+2019-05-19 23:52:11,264 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 78 end : 91
+2019-05-19 23:52:11,269 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 78 end : 91
+2019-05-19 23:52:11,273 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 91 end : 91
+2019-05-19 23:52:11,277 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,281 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,303 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,307 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 91 end : 91
+2019-05-19 23:52:11,310 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 91 end : 104
+2019-05-19 23:52:11,315 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 91 end : 104
+2019-05-19 23:52:11,319 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 104 end : 104
+2019-05-19 23:52:11,322 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,326 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,347 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,350 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 104 end : 104
+2019-05-19 23:52:11,354 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 104 end : 117
+2019-05-19 23:52:11,359 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 104 end : 117
+2019-05-19 23:52:11,363 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 117 end : 117
+2019-05-19 23:52:11,367 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,371 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,393 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,397 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 117 end : 117
+2019-05-19 23:52:11,400 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 117 end : 130
+2019-05-19 23:52:11,405 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 117 end : 130
+2019-05-19 23:52:11,409 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 130 end : 130
+2019-05-19 23:52:11,413 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,417 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,439 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,444 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 130 end : 130
+2019-05-19 23:52:11,449 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 130 end : 143
+2019-05-19 23:52:11,453 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 130 end : 143
+2019-05-19 23:52:11,457 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 143 end : 143
+2019-05-19 23:52:11,461 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,465 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,488 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,492 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 143 end : 143
+2019-05-19 23:52:11,496 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 143 end : 156
+2019-05-19 23:52:11,501 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 143 end : 156
+2019-05-19 23:52:11,504 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 156 end : 156
+2019-05-19 23:52:11,509 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,513 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,535 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,539 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 156 end : 156
+2019-05-19 23:52:11,542 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 156 end : 169
+2019-05-19 23:52:11,547 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 156 end : 169
+2019-05-19 23:52:11,550 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 169 end : 169
+2019-05-19 23:52:11,555 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,559 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,581 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,585 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 169 end : 169
+2019-05-19 23:52:11,589 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 169 end : 182
+2019-05-19 23:52:11,593 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 169 end : 182
+2019-05-19 23:52:11,596 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 182 end : 182
+2019-05-19 23:52:11,600 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,605 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,629 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,633 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 182 end : 182
+2019-05-19 23:52:11,637 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 182 end : 195
+2019-05-19 23:52:11,643 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 182 end : 195
+2019-05-19 23:52:11,648 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 195 end : 195
+2019-05-19 23:52:11,652 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,656 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,679 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,682 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 195 end : 195
+2019-05-19 23:52:11,686 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 195 end : 208
+2019-05-19 23:52:11,691 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 195 end : 208
+2019-05-19 23:52:11,695 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 208 end : 208
+2019-05-19 23:52:11,698 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,702 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,724 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,728 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 208 end : 208
+2019-05-19 23:52:11,731 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 208 end : 221
+2019-05-19 23:52:11,737 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 208 end : 221
+2019-05-19 23:52:11,741 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 221 end : 221
+2019-05-19 23:52:11,745 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,749 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,772 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,775 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 221 end : 221
+2019-05-19 23:52:11,778 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 221 end : 234
+2019-05-19 23:52:11,783 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 221 end : 234
+2019-05-19 23:52:11,787 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 234 end : 234
+2019-05-19 23:52:11,790 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,795 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,816 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,819 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 234 end : 234
+2019-05-19 23:52:11,823 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 234 end : 247
+2019-05-19 23:52:11,828 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 234 end : 247
+2019-05-19 23:52:11,832 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 247 end : 247
+2019-05-19 23:52:11,836 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,840 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,861 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,866 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 247 end : 247
+2019-05-19 23:52:11,871 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 247 end : 260
+2019-05-19 23:52:11,876 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 247 end : 260
+2019-05-19 23:52:11,879 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 260 end : 260
+2019-05-19 23:52:11,883 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,887 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,910 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,913 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 260 end : 260
+2019-05-19 23:52:11,916 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 260 end : 273
+2019-05-19 23:52:11,921 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 260 end : 273
+2019-05-19 23:52:11,924 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 273 end : 273
+2019-05-19 23:52:11,928 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,932 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:11,955 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:11,959 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 273 end : 273
+2019-05-19 23:52:11,962 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 273 end : 286
+2019-05-19 23:52:11,968 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 273 end : 286
+2019-05-19 23:52:11,971 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 286 end : 286
+2019-05-19 23:52:11,975 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:11,979 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,1 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,4 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 286 end : 286
+2019-05-19 23:52:12,8 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 286 end : 299
+2019-05-19 23:52:12,14 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 286 end : 299
+2019-05-19 23:52:12,17 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 299 end : 299
+2019-05-19 23:52:12,21 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,26 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,47 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,51 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 299 end : 299
+2019-05-19 23:52:12,55 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 299 end : 312
+2019-05-19 23:52:12,60 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 299 end : 312
+2019-05-19 23:52:12,63 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 312 end : 312
+2019-05-19 23:52:12,66 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,72 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,97 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,100 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 312 end : 312
+2019-05-19 23:52:12,104 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 312 end : 325
+2019-05-19 23:52:12,109 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 312 end : 325
+2019-05-19 23:52:12,112 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 325 end : 325
+2019-05-19 23:52:12,116 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,120 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,143 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,147 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 325 end : 325
+2019-05-19 23:52:12,150 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 325 end : 338
+2019-05-19 23:52:12,155 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 325 end : 338
+2019-05-19 23:52:12,158 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 338 end : 338
+2019-05-19 23:52:12,162 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,166 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,189 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,192 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 338 end : 338
+2019-05-19 23:52:12,197 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 338 end : 351
+2019-05-19 23:52:12,200 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 338 end : 351
+2019-05-19 23:52:12,204 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 351 end : 351
+2019-05-19 23:52:12,208 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,212 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,233 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,236 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 351 end : 351
+2019-05-19 23:52:12,240 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 351 end : 364
+2019-05-19 23:52:12,246 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 351 end : 364
+2019-05-19 23:52:12,249 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 364 end : 364
+2019-05-19 23:52:12,253 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,257 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,280 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,284 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 364 end : 364
+2019-05-19 23:52:12,290 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 364 end : 377
+2019-05-19 23:52:12,296 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 364 end : 377
+2019-05-19 23:52:12,301 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 377 end : 377
+2019-05-19 23:52:12,305 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,309 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,331 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,335 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 377 end : 377
+2019-05-19 23:52:12,338 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 377 end : 390
+2019-05-19 23:52:12,344 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 377 end : 390
+2019-05-19 23:52:12,348 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 390 end : 390
+2019-05-19 23:52:12,352 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,356 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,377 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,380 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 390 end : 390
+2019-05-19 23:52:12,384 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 390 end : 403
+2019-05-19 23:52:12,389 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 390 end : 403
+2019-05-19 23:52:12,393 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 403 end : 403
+2019-05-19 23:52:12,397 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,401 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,422 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,426 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 403 end : 403
+2019-05-19 23:52:12,430 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 403 end : 416
+2019-05-19 23:52:12,434 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 403 end : 416
+2019-05-19 23:52:12,438 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 416 end : 416
+2019-05-19 23:52:12,442 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,446 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,467 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,470 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 416 end : 416
+2019-05-19 23:52:12,473 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 416 end : 429
+2019-05-19 23:52:12,477 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 416 end : 429
+2019-05-19 23:52:12,481 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 429 end : 429
+2019-05-19 23:52:12,484 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,490 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,514 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,517 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 429 end : 429
+2019-05-19 23:52:12,521 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 429 end : 442
+2019-05-19 23:52:12,527 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 429 end : 442
+2019-05-19 23:52:12,532 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 442 end : 442
+2019-05-19 23:52:12,535 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,540 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,564 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,568 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 442 end : 442
+2019-05-19 23:52:12,572 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 442 end : 455
+2019-05-19 23:52:12,576 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 442 end : 455
+2019-05-19 23:52:12,580 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 455 end : 455
+2019-05-19 23:52:12,585 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,589 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,611 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,615 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 455 end : 455
+2019-05-19 23:52:12,619 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 455 end : 468
+2019-05-19 23:52:12,623 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 455 end : 468
+2019-05-19 23:52:12,628 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 468 end : 468
+2019-05-19 23:52:12,633 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,637 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,659 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,663 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 468 end : 468
+2019-05-19 23:52:12,667 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 468 end : 481
+2019-05-19 23:52:12,671 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 468 end : 481
+2019-05-19 23:52:12,675 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 481 end : 481
+2019-05-19 23:52:12,679 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,684 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,706 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,711 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 481 end : 481
+2019-05-19 23:52:12,716 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 481 end : 494
+2019-05-19 23:52:12,721 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 481 end : 494
+2019-05-19 23:52:12,725 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 494 end : 494
+2019-05-19 23:52:12,729 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,733 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,757 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,761 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 494 end : 494
+2019-05-19 23:52:12,764 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 494 end : 507
+2019-05-19 23:52:12,769 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 494 end : 507
+2019-05-19 23:52:12,773 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 507 end : 507
+2019-05-19 23:52:12,777 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,781 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,804 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,807 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 507 end : 507
+2019-05-19 23:52:12,811 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 507 end : 520
+2019-05-19 23:52:12,816 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 507 end : 520
+2019-05-19 23:52:12,819 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 520 end : 520
+2019-05-19 23:52:12,823 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,828 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,851 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,854 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 520 end : 520
+2019-05-19 23:52:12,858 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 520 end : 533
+2019-05-19 23:52:12,863 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 520 end : 533
+2019-05-19 23:52:12,867 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 533 end : 533
+2019-05-19 23:52:12,871 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,875 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,900 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,903 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 533 end : 533
+2019-05-19 23:52:12,907 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 533 end : 546
+2019-05-19 23:52:12,912 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 533 end : 546
+2019-05-19 23:52:12,916 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 546 end : 546
+2019-05-19 23:52:12,921 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,925 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,951 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:12,955 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 546 end : 546
+2019-05-19 23:52:12,959 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 546 end : 559
+2019-05-19 23:52:12,964 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 546 end : 559
+2019-05-19 23:52:12,967 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 559 end : 559
+2019-05-19 23:52:12,971 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:12,975 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:12,998 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:13,2 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 559 end : 559
+2019-05-19 23:52:13,6 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 559 end : 572
+2019-05-19 23:52:13,9 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 559 end : 572
+2019-05-19 23:52:13,13 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 572 end : 572
+2019-05-19 23:52:13,16 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:13,21 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:13,42 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:13,45 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 572 end : 572
+2019-05-19 23:52:13,49 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 572 end : 585
+2019-05-19 23:52:13,55 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 572 end : 585
+2019-05-19 23:52:13,58 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 585 end : 585
+2019-05-19 23:52:13,61 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:13,65 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:13,87 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:13,91 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 585 end : 585
+2019-05-19 23:52:13,94 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 585 end : 598
+2019-05-19 23:52:13,100 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 585 end : 598
+2019-05-19 23:52:13,103 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 598 end : 598
+2019-05-19 23:52:13,106 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:13,111 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:13,135 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:13,139 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 598 end : 598
+2019-05-19 23:52:13,142 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 598 end : 611
+2019-05-19 23:52:13,148 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 598 end : 611
+2019-05-19 23:52:13,152 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 611 end : 611
+2019-05-19 23:52:13,155 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:13,160 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:13,182 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:13,186 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 611 end : 611
+2019-05-19 23:52:13,189 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 611 end : 624
+2019-05-19 23:52:13,194 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 611 end : 624
+2019-05-19 23:52:13,198 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 624 end : 624
+2019-05-19 23:52:13,201 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:13,205 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:13,228 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:13,231 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 624 end : 624
+2019-05-19 23:52:13,235 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 624 end : 637
+2019-05-19 23:52:13,239 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 624 end : 637
+2019-05-19 23:52:13,244 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 637 end : 637
+2019-05-19 23:52:13,248 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:13,252 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:13,275 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:13,279 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 637 end : 637
+2019-05-19 23:52:13,282 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 637 end : 650
+2019-05-19 23:52:13,286 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 637 end : 650
+2019-05-19 23:52:13,290 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 650 end : 650
+2019-05-19 23:52:13,294 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:13,298 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:13,321 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:13,325 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 650 end : 650
+2019-05-19 23:52:13,329 [DEBUG] loop_buf.cpp:78 | -----end write----- start : 650 end : 663
+2019-05-19 23:52:13,334 [DEBUG] loop_buf.cpp:18 | -----begin read------ start : 650 end : 663
+2019-05-19 23:52:13,339 [DEBUG] loop_buf.cpp:45 | -----end read----- start : 663 end : 663
+2019-05-19 23:52:13,343 [DEBUG] server_session.cpp:23 | server session recv successful!!! msg : hello world. len :13
+2019-05-19 23:52:13,348 [DEBUG] cpsock.cpp:80 | send successful. content : hello world. nLen : 13
+2019-05-19 23:52:13,370 [DEBUG] cpsock.cpp:53 | recv data : hello world. len : 13
+2019-05-19 23:52:13,373 [DEBUG] loop_buf.cpp:51 | -----begin write------ start : 663 end : 663

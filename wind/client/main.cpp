@@ -4,6 +4,7 @@
 #include <winsock2.h>
 #include "client_session.h"
 #include "winnet.h"
+#include "iocpctrl.h"
 
 #pragma comment(lib,"ws2_32.lib")
 
@@ -13,8 +14,12 @@ void Send()
 {
 	if (pSession != nullptr)
 	{
-		this_thread::sleep_for(chrono::seconds(1));
-		pSession->Send("hello world.", 13);
+		while (true)
+		{
+			this_thread::sleep_for(chrono::seconds(3));
+			pSession->Send("hello world.", 13);
+			return;
+		}
 	}
 }
 
@@ -22,9 +27,10 @@ int main()
 {
 	WSAData wsa;
 	WSAStartup(MAKEWORD(2, 2), &wsa);
-	CStorage::Instance()->Init(1024 * 100, "../log/", "client_");
-	EXLOG_DEBUG << "test";
+	CStorage::Instance()->Init(1024 * 100, "..\\log\\", "client_");
+	//EXLOG_DEBUG << "test";
 	CConnectCtrl::Instance()->Init();
+	CIocpCtrl::Instance()->Init();
 	CConnector oConnector;
 	pSession = new CClientSession();
 	oConnector.SetBufferSize(1024, 1024);

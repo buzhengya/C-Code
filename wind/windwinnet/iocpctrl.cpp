@@ -13,7 +13,6 @@ void IocpThread()
 bool CIocpCtrl::Init()
 {
 	m_oThreadBuf.Init();
-	CEventMgr::Instance()->Init();
 
 	m_hCompletionPort = CreateIoCompletionPort(INVALID_HANDLE_VALUE, nullptr, 0, 0);
 	if (m_hCompletionPort == nullptr)

@@ -2,11 +2,14 @@
 #include "wtime.h"
 #include <io.h>
 #include <direct.h>
+#include <mutex>
 
 string RollOutCallBack(const char * szOldFile)
 {
 	return "";
 }
+
+typedef std::lock_guard<std::recursive_mutex>  ScopedMutex;
 
 void CDefaultLogDispatchCallback::Handle(const CLogDispatchData * pData)
 {
@@ -14,6 +17,8 @@ void CDefaultLogDispatchCallback::Handle(const CLogDispatchData * pData)
 	{
 		return;
 	}
+
+	ScopedMutex scopedMutex(CLogDispatchCallback::GetMutex());
 	m_pData = pData;
 	Dispatch(pData->GetMsg()->GetLogger()->GetLogBuilder()->Build(pData->GetMsg()));
 }
@@ -60,6 +65,10 @@ void CLogDispatcher::Dispatch(CLogMessage * pMsg)
 void CWriter::ProcessMsg()
 {
 	CLogDispatcher::Instance()->Dispatch(m_pMsg);
+	if (m_pMsg != nullptr)
+	{
+		delete m_pMsg;
+	}
 }
 
 string CDefaultLogBuilder::Build(const CLogMessage * pLogMsg)
@@ -123,8 +132,6 @@ CLogger::CLogger(CLogBuilder * pLogBuilder, PreRollOutCallback * pRollOut)
 	: m_pLogBuilder(pLogBuilder), m_pRollOut(pRollOut)
 {
 	m_oTypedConf = CTypedConfigurations();
-	RollbackFileName();
-	m_pStream = GenFstream(m_oTypedConf.GetFileName());
 }
 
 void CLogger::RollbackFileName()
@@ -153,7 +160,7 @@ fstream * CLogger::GenFstream(string strPath)
 	CreateFile(strPath);
 	fstream * fs = new fstream;
 	fs->open(strPath.c_str(), ios::app);
-	if (!*fs)
+	if (fs->is_open() == false)
 	{
 		cout << "file not exist. path : " << strPath << endl;
 		return nullptr;
@@ -299,6 +306,7 @@ void CLogger::RollFile(string strNewFile)
 	{
 		m_pStream->flush();
 		m_pStream->close();
+		delete m_pStream;
 	}
 	m_oTypedConf.SetFileName(strNewFile);
 	m_pStream = GenFstream(m_oTypedConf.GetFileName());

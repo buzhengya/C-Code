@@ -1,0 +1,52 @@
+2019-05-15 00:43:52,825 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-15 00:43:52,835 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-15 00:43:52,838 [DEBUG] wheel_timer.cpp:185 | add timer in index : 246
+2019-05-15 00:43:55,801 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-15 00:43:56,810 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-15 00:43:56,815 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-15 00:43:56,818 [DEBUG] wheel_timer.cpp:185 | add timer in index : 30
+2019-05-15 00:43:59,800 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-15 00:44:00,810 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-15 00:44:00,820 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-15 00:44:00,826 [DEBUG] wheel_timer.cpp:185 | add timer in index : 70
+2019-05-15 00:44:01,801 [ERROR] client_session.cpp:36 | Send failed. connection is nullptr
+2019-05-15 00:44:03,800 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-15 00:44:04,817 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-15 00:44:04,822 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-15 00:44:04,825 [DEBUG] wheel_timer.cpp:185 | add timer in index : 110
+2019-05-15 00:44:07,800 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-15 00:48:12,408 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-15 00:48:12,413 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-15 00:48:12,417 [TRACE] cpsock.cpp:124 | local ip : 2.0.244.137 port : 62601
+2019-05-15 00:49:24,565 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-15 00:49:24,571 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-15 00:49:24,574 [TRACE] cpsock.cpp:124 | local ip : 2.0.244.203 port : 62667
+2019-05-15 00:51:17,604 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-15 00:51:17,612 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-15 00:51:17,616 [TRACE] cpsock.cpp:124 | local ip : 2.0.245.48 port : 62768
+2019-05-15 00:52:03,794 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-15 00:52:03,805 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-15 00:52:03,811 [TRACE] cpsock.cpp:124 | local ip : 2.0.245.159 port : 62879
+2019-05-15 00:52:52,176 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-15 00:52:52,183 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-15 00:52:52,188 [DEBUG] wheel_timer.cpp:185 | add timer in index : 7
+2019-05-15 00:52:55,100 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-15 00:52:55,107 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-15 00:52:55,111 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-15 00:52:55,115 [TRACE] cpsock.cpp:124 | local ip : 2.0.246.2 port : 62978
+2019-05-15 00:56:21,867 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-15 00:56:21,872 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-15 00:56:21,876 [TRACE] cpsock.cpp:124 | local ip : 2.0.246.106 port : 63082
+2019-05-15 00:57:25,946 [ERROR] connectctrl.cpp:91 | connect error. error : 10061 connect should be asynchronous to avoid timeout.
+2019-05-15 00:57:25,952 [ERROR] connectctrl.cpp:92 | remember add error event.
+2019-05-15 00:57:25,961 [DEBUG] wheel_timer.cpp:185 | add timer in index : 185
+2019-05-15 00:57:28,900 [DEBUG] connectctrl.cpp:72 | deal conn error. conn ip : 192.168.1.6 port : 8089
+2019-05-15 00:57:28,913 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-15 00:57:28,922 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-15 00:57:28,929 [TRACE] cpsock.cpp:124 | local ip : 2.0.246.199 port : 63175
+2019-05-15 00:58:53,656 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-15 00:58:53,661 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-15 00:58:53,664 [TRACE] cpsock.cpp:124 | local ip : 2.0.247.11 port : 63243
+2019-05-15 00:59:16,409 [DEBUG] connectctrl.cpp:98 | connect 192.168.1.6:8089 successful!!!
+2019-05-15 00:59:16,416 [TRACE] cpsock.cpp:120 | remote ip : 2.0.31.153 port : 8089
+2019-05-15 00:59:16,421 [TRACE] cpsock.cpp:124 | local ip : 2.0.247.89 port : 63321

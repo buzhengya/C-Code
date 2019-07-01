@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="net_builder.h" />
+    <ClInclude Include="pipe_module.h" />
+    <ClInclude Include="pipe_config.h" />
+    <ClInclude Include="node_pipe.h" />
+    <ClInclude Include="node_net_session.h" />
+    <ClInclude Include="pipe_factory.h" />
+    <ClInclude Include="node_pipe_mgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="net_builder.cpp" />
+    <ClCompile Include="pipe_module.cpp" />
+    <ClCompile Include="pipe_config.cpp" />
+    <ClCompile Include="node_pipe.cpp" />
+    <ClCompile Include="node_net_session.cpp" />
+    <ClCompile Include="pipe_factory.cpp" />
+    <ClCompile Include="node_pipe_mgr.cpp" />
+  </ItemGroup>
+</Project>

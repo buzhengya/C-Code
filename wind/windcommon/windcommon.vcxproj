@@ -129,10 +129,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="pipe_helper.h" />
+    <ClInclude Include="server_id.h" />
     <ClInclude Include="uuid_make.h" />
     <ClInclude Include="wheel_timer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="pipe_helper.cpp" />
     <ClCompile Include="uuid_make.cpp" />
     <ClCompile Include="wheel_timer.cpp" />
   </ItemGroup>

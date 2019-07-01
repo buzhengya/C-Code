@@ -1,5 +1,6 @@
 #include "loop_buf.h"
 #include <string.h>
+#include "log.h"
 CLoopBuf::CLoopBuf(uint32 nSize)
 {
 	m_nSize = nSize;
@@ -14,6 +15,7 @@ CLoopBuf::~CLoopBuf()
 
 bool CLoopBuf::Read(char * pszBuf, uint32 nSize)
 {
+	EXLOG_DEBUG << "-----begin read------ start : " << m_pszStart - m_pszBuf << " end : " << m_pszEnd - m_pszBuf;
 	uint32 nLen = (m_pszEnd + m_nSize - m_pszStart) % m_nSize;
 	if (nLen < nSize)
 	{
@@ -40,11 +42,13 @@ bool CLoopBuf::Read(char * pszBuf, uint32 nSize)
 		m_pszStart = m_pszBuf + (m_pszStart - m_pszBuf + nSize) % m_nSize;
 	}
 
+	EXLOG_DEBUG << "-----end read----- start : " << m_pszStart - m_pszBuf << " end : " << m_pszEnd - m_pszBuf;
 	return true;
 }
 
 bool CLoopBuf::Write(char * pszBuf, uint32 nSize)
 {
+	EXLOG_DEBUG << "-----begin write------ start : " << m_pszStart - m_pszBuf << " end : " << m_pszEnd - m_pszBuf;
 	uint32 nFree = (m_pszStart + m_nSize - m_pszEnd - 1) % m_nSize;
 	if (nFree < nSize)
 	{
@@ -71,5 +75,6 @@ bool CLoopBuf::Write(char * pszBuf, uint32 nSize)
 
 		m_pszEnd = m_pszBuf + (m_pszEnd - m_pszBuf + nSize) % m_nSize;
 	}
+	EXLOG_DEBUG << "-----end write----- start : " << m_pszStart - m_pszBuf << " end : " << m_pszEnd - m_pszBuf;
 	return true;
 }

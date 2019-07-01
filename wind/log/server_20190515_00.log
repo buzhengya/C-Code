@@ -1,0 +1,34 @@
+2019-05-15 00:48:12,69 [DEBUG] main.cpp:12 | test
+2019-05-15 00:48:12,407 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-15 00:48:12,410 [TRACE] listener.cpp:109 | local ip : 2.0.31.153 port : 8089
+2019-05-15 00:48:12,414 [TRACE] listener.cpp:112 | remote ip : 2.0.244.137 port : 62601
+2019-05-15 00:48:15,930 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-15 00:49:21,868 [DEBUG] cpsock.cpp:53 | recv data : 
+2019-05-15 00:49:24,437 [DEBUG] main.cpp:12 | test
+2019-05-15 00:51:17,45 [DEBUG] main.cpp:12 | test
+2019-05-15 00:51:17,602 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-15 00:51:17,607 [TRACE] listener.cpp:109 | local ip : 2.0.31.153 port : 8089
+2019-05-15 00:51:17,613 [TRACE] listener.cpp:112 | remote ip : 2.0.245.48 port : 62768
+2019-05-15 00:51:39,72 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-15 00:52:03,398 [DEBUG] main.cpp:12 | test
+2019-05-15 00:52:52,340 [DEBUG] main.cpp:12 | test
+2019-05-15 00:52:55,107 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-15 00:52:55,110 [TRACE] listener.cpp:109 | local ip : 2.0.31.153 port : 8089
+2019-05-15 00:52:55,114 [TRACE] listener.cpp:112 | remote ip : 2.0.246.2 port : 62978
+2019-05-15 00:53:12,497 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-15 00:53:16,574 [DEBUG] cpsock.cpp:53 | recv data : 
+2019-05-15 00:53:16,639 [DEBUG] cpsock.cpp:53 | recv data : 
+2019-05-15 00:56:21,473 [DEBUG] main.cpp:12 | test
+2019-05-15 00:56:21,866 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-15 00:56:21,869 [TRACE] listener.cpp:109 | local ip : 2.0.31.153 port : 8089
+2019-05-15 00:56:21,872 [TRACE] listener.cpp:112 | remote ip : 2.0.246.106 port : 63082
+2019-05-15 00:56:21,877 [DEBUG] cpsock.cpp:80 | send successful. content : hello world.
+2019-05-15 00:57:26,114 [DEBUG] main.cpp:12 | test
+2019-05-15 00:57:28,913 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-15 00:57:28,921 [TRACE] listener.cpp:109 | local ip : 2.0.31.153 port : 8089
+2019-05-15 00:57:28,929 [TRACE] listener.cpp:112 | remote ip : 2.0.246.199 port : 63175
+2019-05-15 00:58:53,525 [DEBUG] main.cpp:12 | test
+2019-05-15 00:59:15,873 [DEBUG] main.cpp:12 | test
+2019-05-15 00:59:16,408 [TRACE] listener.cpp:73 | accept successful!!!
+2019-05-15 00:59:16,411 [TRACE] listener.cpp:109 | local ip : 2.0.31.153 port : 8089
+2019-05-15 00:59:16,417 [TRACE] listener.cpp:112 | remote ip : 2.0.247.89 port : 63321
