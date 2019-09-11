@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="rb_tree">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{ad8d712d-8a4e-4b79-9b73-79a24b147ce9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rb_tree.h">
+      <Filter>rb_tree</Filter>
+    </ClInclude>
+    <ClInclude Include="rb_tree_test.h">
+      <Filter>rb_tree</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>common</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="rb_tree.cpp">
+      <Filter>rb_tree</Filter>
+    </ClCompile>
+    <ClCompile Include="rb_tree_test.cpp">
+      <Filter>rb_tree</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+</Project>

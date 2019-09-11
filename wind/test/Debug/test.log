@@ -1,4 +1,13 @@
-﻿mysql_test.obj : error LNK2019: 无法解析的外部符号 _mysql_num_rows@4，该符号在函数 "public: void __thiscall CMysqlTest::HandleResult(struct st_mysql_res *)" (?HandleResult@CMysqlTest@@QAEXPAUst_mysql_res@@@Z) 中被引用
+﻿  timer_test.cpp
+  role.cpp
+  mysql_test.cpp
+d:\c++code\wind\test\mysql_test.cpp(77): warning C4244: “初始化”: 从“my_ulonglong”转换到“uint32”，可能丢失数据
+d:\c++code\wind\test\mysql_test.cpp(80): warning C4018: “<”: 有符号/无符号不匹配
+d:\c++code\wind\test\mysql_test.cpp(108): warning C4018: “<”: 有符号/无符号不匹配
+  main.cpp
+  正在生成代码...
+d:\c++code\wind\test\mysql_test.cpp(58): warning C4715: “CMysqlTest::QueryWithResult”: 不是所有的控件路径都返回值
+mysql_test.obj : error LNK2019: 无法解析的外部符号 _mysql_num_rows@4，该符号在函数 "public: void __thiscall CMysqlTest::HandleResult(struct st_mysql_res *)" (?HandleResult@CMysqlTest@@QAEXPAUst_mysql_res@@@Z) 中被引用
 mysql_test.obj : error LNK2019: 无法解析的外部符号 _mysql_num_fields@4，该符号在函数 "public: void __thiscall CMysqlTest::HandleResult(struct st_mysql_res *)" (?HandleResult@CMysqlTest@@QAEXPAUst_mysql_res@@@Z) 中被引用
 mysql_test.obj : error LNK2019: 无法解析的外部符号 _mysql_errno@4，该符号在函数 "public: int __thiscall CMysqlTest::GetLastErrorNo(void)" (?GetLastErrorNo@CMysqlTest@@QAEHXZ) 中被引用
 mysql_test.obj : error LNK2019: 无法解析的外部符号 _mysql_error@4，该符号在函数 "public: char const * __thiscall CMysqlTest::GetLastError(void)" (?GetLastError@CMysqlTest@@QAEPBDXZ) 中被引用
@@ -10,4 +19,4 @@ mysql_test.obj : error LNK2019: 无法解析的外部符号 _mysql_free_result@4
 mysql_test.obj : error LNK2019: 无法解析的外部符号 _mysql_fetch_row@4，该符号在函数 "public: void __thiscall CMysqlTest::HandleResult(struct st_mysql_res *)" (?HandleResult@CMysqlTest@@QAEXPAUst_mysql_res@@@Z) 中被引用
 mysql_test.obj : error LNK2019: 无法解析的外部符号 _mysql_real_escape_string@16，该符号在函数 "public: bool __thiscall CMysqlTest::EscapeString(char const *,unsigned int,char *,unsigned int)" (?EscapeString@CMysqlTest@@QAE_NPBDIPADI@Z) 中被引用
 ../lib3rd/mysql/lib\libmysql.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“X86”冲突
-C:\C++\C-Code\wind\Debug\test.exe : fatal error LNK1120: 11 个无法解析的外部命令
+D:\C++Code\wind\Debug\test.exe : fatal error LNK1120: 11 个无法解析的外部命令

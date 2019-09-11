@@ -1,0 +1,2 @@
+2019-07-02 09:52:31,718 [DEBUG] main.cpp:15 | test
+2019-07-02 09:52:31,804 [ERROR] listener.cpp:45 | bind failed. error : 10049

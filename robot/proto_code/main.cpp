@@ -1,14 +1,18 @@
 #include "proto_read.h"
 #include "proto_parse.h"
 #include "proto_go.h"
+#include <algorithm>
+#include "proto_cpp.h"
+#include <direct.h>
 using namespace std;
-
-void Test();
 
 int main()
 {
-	string strSource = "E:\\project_pet\\intermediate\\Proto\\cs_proto.proto";
-	string strDest = "E:\\project_pet\\intermediate\\Proto\\cs_proto.go";
+	char szPath[1000];
+	_getcwd(szPath, sizeof(szPath));
+	cout << szPath << endl;
+	string strSource = "E:\\project_master\\intermediate\\Proto\\cs_proto.proto";
+	string strDest = "E:\\project_master\\intermediate\\Proto\\cs_proto.go";
 
 	vector<string> vecStrMsg;
 	CProtoRead::Instance()->GetProto(strSource, vecStrMsg);
@@ -25,32 +29,7 @@ int main()
 		//it.PrintMsg();
 	}
 
-	CProtoGolang::Instance()->GenGoCode(vecProtoMsg, strDest, "Pet");
+	CProtoCpp::Instance()->GenGoCode(vecProtoMsg, strDest, "CRolePetMgr");
 	system("pause");
 	return 0;
-}
-
-void Test()
-{
-	std::map<int32, std::string> mapErase;
-	mapErase[1] = "1";
-	mapErase[2] = "2";
-	mapErase[3] = "3";
-	mapErase[4] = "4";
-
-	auto itErase = mapErase.begin();
-	for (; itErase != mapErase.end(); )
-	{
-		auto & strVal = itErase->second;
-		itErase++;
-		if (strVal == "3")
-		{
-			mapErase.erase(3);
-		}
-	}
-
-	for (auto & itErase : mapErase)
-	{
-		std::cout << "first : " << itErase.first << " second : " << itErase.second << std::endl;
-	}
 }

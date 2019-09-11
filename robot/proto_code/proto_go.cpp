@@ -290,7 +290,7 @@ void CProtoGolang::_WriteDealStruct()
 
 void CProtoGolang::_WriteStatCount()
 {
-	m_fStream << "func (p *SStatProtoCount)" << m_strMoudle << "ProtoCount(){\n\n";
+	m_fStream << "func (p *SStatProtoCount)" << _UpperFirstToLow(m_strMoudle)<< "ProtoCount(){\n\n";
 
 	for (auto & it : m_vecStatCountId)
 	{
@@ -308,7 +308,7 @@ void CProtoGolang::_WriteStatCount()
 
 void CProtoGolang::_WriteStatDelay()
 {
-	m_fStream << "func (p *SStatProtoDelay)" << m_strMoudle << "ProtoDelay(){\n\n";
+	m_fStream << "func (p *SStatProtoDelay)" << _UpperFirstToLow(m_strMoudle) << "ProtoDelay(){\n\n";
 
 	for (auto & it : m_vecStatDelayId)
 	{
@@ -413,4 +413,20 @@ bool CProtoGolang::_Ack2Req(string & strAck, string & strReq)
 	size_t nStart = strAck.find("_ack_");
 	strReq = strAck.substr(0, nStart) + "_req_" + strAck.substr(nStart + 5);
 	return true;
+}
+
+string CProtoGolang::_UpperFirstToLow(const string & strSrc)
+{
+	string strDst = strSrc;
+	if (strDst.size() < 1)
+	{
+		return "";
+	}
+
+	if (strDst[0] >= 'a' && strDst[0] <= 'z')
+	{
+		strDst[0] = 'A' + strDst[0] - 'a';
+	}
+
+	return strDst;
 }

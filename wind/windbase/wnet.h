@@ -105,9 +105,9 @@ namespace wind
 
 		virtual void WAPI OnRecv(const char* pBuf, const uint32 dwLen) = 0;
 
-		virtual void WAPI OnError(int32 nModuleErr, int32 nSysErr) = 0;
+		//virtual void WAPI OnError(int32 nModuleErr, int32 nSysErr) = 0;
 
-		virtual bool WAPI Send(const char *pBuf, const uint32 nLen) = 0;
+		//virtual bool WAPI Send(const char *pBuf, const uint32 nLen) = 0;
 	};
 
 	class ISessionFactory
