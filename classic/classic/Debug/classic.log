@@ -1,11 +1,4 @@
 ﻿  rb_tree_test.cpp
-  rb_tree.cpp
-d:\c++code\classic\classic\rb_tree.cpp(57): error C2065: “pTo”: 未声明的标识符
-d:\c++code\classic\classic\rb_tree.cpp(57): error C2143: 语法错误: 缺少“;”(在“}”的前面)
-  main.cpp
-  正在生成代码...
-d:\c++code\classic\classic\rb_tree_test.cpp(15): error C4716: “CheckBSTree”: 必须返回一个值
-d:\c++code\classic\classic\rb_tree_test.cpp(21): error C4716: “CheckRBTree”: 必须返回一个值
-d:\c++code\classic\classic\rb_tree_test.cpp(27): error C4716: “CheckDataComplete”: 必须返回一个值
-d:\c++code\classic\classic\rb_tree_test.cpp(32): error C4716: “InsertData”: 必须返回一个值
-d:\c++code\classic\classic\rb_tree_test.cpp(37): error C4716: “DeleteData”: 必须返回一个值
+d:\c++code\classic\classic\rb_tree_test.cpp(283): warning C4018: “<”: 有符号/无符号不匹配
+  classic.vcxproj -> D:\C++Code\classic\Debug\classic.exe
+  classic.vcxproj -> D:\C++Code\classic\Debug\classic.pdb (Full PDB)

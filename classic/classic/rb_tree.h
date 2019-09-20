@@ -18,6 +18,8 @@ struct RBTree
 	int32			nSize;
 };
 
+bool IsRed(RBTreeNode * pNode);
+
 RBTree * RBTreeInit();
 
 void RBTreeRelease(RBTree * pTree);
@@ -26,4 +28,4 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal);
 
 bool RBTreeDelete(RBTree * pTree, int32 nKey);
 
-RBTreeNode * RBTreeQuery(int32 nKey);
+RBTreeNode * RBTreeQuery(RBTree * pTree, int32 nKey);

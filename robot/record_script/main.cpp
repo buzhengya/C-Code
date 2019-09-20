@@ -97,11 +97,23 @@ void GenerateMap(string strSrc, string strDest)
 {
 	Init(strSrc, strDest);
 	string strMsgName = "", strMsgId = "";
+	bool bIsNote = false;
 	while (!read.eof())
 	{
 		string strSrc;
-		getline(read, strSrc);
+		if (getline(read, strSrc))
 		{
+			if (strSrc.find("/*") != string::npos)
+			{
+				bIsNote = true;
+				continue;
+			}
+			if (strSrc.find("*/") != string::npos)
+			{
+				bIsNote = false;
+				continue;
+			}
+			if (bIsNote == true) continue;
 			strSrc = RemoveSpaceAndNote(strSrc);
 			if (strSrc.find("message") != string::npos && 
 				(strSrc.find("_req") != string::npos || strSrc.find("_ntf") != string::npos))
@@ -112,7 +124,7 @@ void GenerateMap(string strSrc, string strDest)
 				(strSrc.find("_req") != string::npos || strSrc.find("_ntf") != string::npos))
 			{
 				strMsgId = GenMsgId(strSrc);
-				write << "\tgpArrMsg[" << strMsgId << "] = new(" << strMsgName << ");" << endl;
+				write << "\tm_gpArrMsg[" << strMsgId << "] = new(" << strMsgName << ");" << endl;
 			}
 		}
 	}
@@ -122,24 +134,29 @@ void GenerateMap(string strSrc, string strDest)
 
 int main()
 {
-	string strDest = "E:\\project\\intermediate\\Proto\\cs_proto.go";
+	string strDest = "E:\\project_master\\intermediate\\Proto\\cs_proto.go";
 
 	vector<string> vecstrSrc;
-	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_activity.proto");
-	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_battle.proto");
-	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_chat.proto");
-	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_gamesystem.proto");
-	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_mail.proto");
-	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_role.proto");
-	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_social.proto");
-	vecstrSrc.push_back("E:\\project\\intermediate\\Proto\\cs_role_expand.proto");
+	vecstrSrc.push_back("E:\\project_master\\intermediate\\Proto\\cs_activity.proto");
+	vecstrSrc.push_back("E:\\project_master\\intermediate\\Proto\\cs_battle.proto");
+	vecstrSrc.push_back("E:\\project_master\\intermediate\\Proto\\cs_chat.proto");
+	vecstrSrc.push_back("E:\\project_master\\intermediate\\Proto\\cs_gamesystem.proto");
+	vecstrSrc.push_back("E:\\project_master\\intermediate\\Proto\\cs_mail.proto");
+	vecstrSrc.push_back("E:\\project_master\\intermediate\\Proto\\cs_role.proto");
+	vecstrSrc.push_back("E:\\project_master\\intermediate\\Proto\\cs_social.proto");
+	vecstrSrc.push_back("E:\\project_master\\intermediate\\Proto\\cs_role_expand.proto");
 
-	write << "void RegisterProto()\n{\n\tRegisterBlackList();" << endl;
+
+	write.open(strDest, ios::app);
+	write << "void CRecordClientMsg::RegisterProto()\n{\n\tRegisterBlackList();" << endl;
+	write.close();
 
 	for (int i=0; i < vecstrSrc.size(); i++)
 	{
 		GenerateMap(vecstrSrc[i], strDest);
 	}
 
+	write.open(strDest, ios::app);
 	write << "}" << endl;
+	write.close();
 }

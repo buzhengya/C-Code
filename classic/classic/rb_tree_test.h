@@ -1,4 +1,4 @@
 #pragma once
 #include "rb_tree.h"
 
-void TestRBTree();
+void TestRBTree(const int32 nCount);
