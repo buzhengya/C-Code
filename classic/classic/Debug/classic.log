@@ -1,4 +1,3 @@
-﻿  rb_tree_test.cpp
-d:\c++code\classic\classic\rb_tree_test.cpp(283): warning C4018: “<”: 有符号/无符号不匹配
+﻿  rb_tree.cpp
   classic.vcxproj -> D:\C++Code\classic\Debug\classic.exe
   classic.vcxproj -> D:\C++Code\classic\Debug\classic.pdb (Full PDB)

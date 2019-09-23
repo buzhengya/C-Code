@@ -123,16 +123,24 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 	bool bIsLeft = false;
 	while (pNode != pTree->pLeaf && pNode->nKey != nKey)
 	{
-		if (nKey < pNode->nKey && pNode->pLeft == pTree->pLeaf)
+		if (nKey < pNode->nKey)
 		{
-			bIsLeft = true;
-			break;
+			if (pNode->pLeft == pTree->pLeaf)
+			{
+				bIsLeft = true;
+				break;
+			}
+			pNode = pNode->pLeft;
 		}
 
-		if (nKey > pNode->nKey && pNode->pRight == pTree->pLeaf)
+		if (nKey > pNode->nKey)
 		{
-			bIsLeft = false;
-			break;
+			if (pNode->pRight == pTree->pLeaf)
+			{
+				bIsLeft = false;
+				break;
+			}
+			pNode = pNode->pRight;
 		}
 	}
 
@@ -153,6 +161,7 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 	{
 		pTree->pRoot = pTmp;
 		SetBlack(pTmp);
+		++pTree->nSize;
 		return true;
 	}
 
@@ -228,12 +237,14 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 
 	SetBlack(pTree->pRoot);
 
+	++pTree->nSize;
 	return true;
 }
 
 bool RBTreeDelete(RBTree * pTree, int32 nKey)
 {
-	return false;
+	--pTree->nSize;
+	return true;
 }
 
 RBTreeNode * RBTreeQuery(RBTree * pTree, int32 nKey)

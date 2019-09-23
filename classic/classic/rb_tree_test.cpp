@@ -2,6 +2,7 @@
 #include "define.h"
 #include <map>
 #include <vector>
+#include <stack>
 #include <set>
 #include <time.h>
 
@@ -21,10 +22,13 @@ bool CollectNodeAddr(RBTree * pTree, RBTreeNode * pNode)
 	return true;
 }
 
+void PrintNodeStatus(RBTree * pTree, RBTreeNode * pNode);
+
 // PreOrder 
 int32 nMaxBlack = 0;
 bool JudgeRBTree(RBTree * pTree, RBTreeNode * pNode)
 {
+	PrintNodeStatus(pTree, pNode);
 	// root is black
 	if (pTree->pRoot == pNode && IsRed(pNode))
 	{
@@ -56,6 +60,7 @@ bool JudgeRBTree(RBTree * pTree, RBTreeNode * pNode)
 		while (pTmp != pTree->pRoot)
 		{
 			nBlackNum = IsRed(pTmp) ? nBlackNum : nBlackNum + 1;
+			pTmp = pTmp->pParent;
 		}
 
 		if (nMaxBlack == 0)
@@ -96,7 +101,7 @@ void PrintNodeStatus(RBTree * pTree, RBTreeNode * pNode)
 
 	if (pNode->pLeft != pTree->pLeaf)
 	{
-		cout << "left. key : " << pNode->pLeft->nKey << " " << GetColor(pNode->pLeft);
+		cout << "left. key : " << pNode->pLeft->nKey << " " << GetColor(pNode->pLeft) << "  ";
 	}
 
 	if (pNode->pRight != pTree->pLeaf)
@@ -136,84 +141,104 @@ void InitBeforePoll()
 
 typedef bool(*DealNode)(RBTree *, RBTreeNode *);
 
-bool PollRBTree(RBTree * pTree, DealNode func, PollOrder eOrder)
+bool PrePollTree(RBTree * pTree, DealNode func)
 {
-	if (pTree->pRoot == pTree->pLeaf)
+	stack<RBTreeNode*> stNode;
+	if (pTree->pRoot != pTree->pLeaf)
 	{
-		return true;
+		stNode.push(pTree->pRoot);
 	}
 
-	InitBeforePoll();
+	RBTreeNode * pTop = nullptr;
+	while (!stNode.empty())
+	{
+		pTop = stNode.top();
+		if (!func(pTree, pTop))
+		{
+			PrintNodeStatus(pTree, pTop);
+			return false;
+		}
 
-	vector<RBTreeNode*> vecNode;
-	vecNode.push_back(pTree->pRoot);
+		if (pTop->pRight != pTree->pLeaf)
+		{
+			stNode.push(pTop->pRight);
+		}
+
+		if (pTop->pLeft != pTree->pLeaf)
+		{
+			stNode.push(pTop->pLeft);
+		}
+		stNode.pop();
+	}
+
+	return true;
+}
+
+bool InPollTree(RBTree * pTree, DealNode func)
+{
+	stack<RBTreeNode*> stNode;
+
 	RBTreeNode * pTop = pTree->pRoot;
+	while (pTop != pTree->pLeaf)
+	{
+		stNode.push(pTop);
+		pTop = pTop->pLeft;
+	}
+
+	while (!stNode.empty())
+	{
+		pTop = stNode.top();
+		if (!func(pTree, pTop))
+		{
+			return false;
+		}
+		stNode.pop();
+
+		pTop = pTop->pRight;
+		while (pTop != pTree->pLeaf)
+		{
+			stNode.push(pTop);
+			pTop = pTop->pLeft;
+		}
+	}
+
+	return true;
+}
+
+bool PostPollTree(RBTree * pTree, DealNode func)
+{
+	stack<RBTreeNode*> stNode;
+
+	RBTreeNode * pLeaf = pTree->pLeaf;
+	RBTreeNode * pTop = nullptr;
 	RBTreeNode * pLast = nullptr;
 
-	while (!vecNode.empty())
+	while (!stNode.empty())
 	{
-		pTop = vecNode[vecNode.size() - 1];
-
-		// last is left 
-		if (pTop->pLeft == pLast)
+		// case 1 left and right is leaf
+		// case 2 last is left and right is leaf
+		// case 3 last is right
+		if ((pTop->pLeft == pLeaf && pTop->pRight == pLeaf) || 
+			(pLast == pTop->pLeft && pTop->pRight == pLeaf) || 
+			pTop->pRight == pLast)
 		{
-			if (eOrder == InOrder)
+			if (!func(pTree, pTop))
 			{
-				if (func(pTree, pTop) == false)
-				{
-					PrintNodeStatus(pTree, pTop);
-					return false;
-				}
+				return false;
 			}
-
-			// right is leaf
-			if (pTop->pRight == pTree->pLeaf)
-			{
-				pLast = pTop->pRight;
-			}
-			else
-			{
-				vecNode.push_back(pTop->pRight);
-				pLast = pTop;
-			}
-		}
-		// last is right
-		else if (pTop->pRight == pLast)
-		{
-			if (eOrder == PostOrder)
-			{
-				if (func(pTree, pTop) == false)
-				{
-					PrintNodeStatus(pTree, pTop);
-					return false;
-				}
-			}
-
-			vecNode.pop_back();
-			//deal cur call back
 			pLast = pTop;
+			stNode.pop();
+			continue;
 		}
-		// last not left and right
-		else
-		{
-			if (eOrder == PreOrder)
-			{
-				if (func(pTree, pTop) == false)
-				{
-					PrintNodeStatus(pTree, pTop);
-					return false;
-				}
-			}
 
-			if (pTop->pLeft == pTree->pLeaf)
-			{
-				pLast = pTop->pLeft;
-			}
-			else
-			{
-				vecNode.push_back(pTop->pLeft);
-				pLast = pTop;
-			}
+		if (pTop->pRight != pLeaf)
+		{
+			stNode.push(pTop->pRight);
+		}
+
+		if (pTop->pLeft != pLeaf)
+		{
+			stNode.push(pTop->pLeft);
 		}
 	}
 
@@ -222,7 +247,8 @@ bool PollRBTree(RBTree * pTree, DealNode func, PollOrder eOrder)
 
 bool CheckRBTree(RBTree * pTree)
 {
-	return PollRBTree(pTree, JudgeRBTree, PreOrder);
+	LOG << pTree->nSize << endl;
+	return InPollTree(pTree, JudgeRBTree);
 }
 
 int32 GenVal();
@@ -280,7 +306,7 @@ void QueryData()
 	}
 
 	// check data not in tree
-	for (int32 i = 0; i < mapCache.size(); i++)
+	for (size_t i = 0; i < mapCache.size(); i++)
 	{
 		int32 nKey = GenKey();
 		auto * pNode = RBTreeQuery(pTree, nKey);
