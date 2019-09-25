@@ -32,23 +32,27 @@ bool JudgeRBTree(RBTree * pTree, RBTreeNode * pNode)
 	// root is black
 	if (pTree->pRoot == pNode && IsRed(pNode))
 	{
+		LOG << "root is red" << endl;
 		return false;
 	}
 
 	// red father and son
 	if (pTree->pRoot != pNode && IsRed(pNode) && IsRed(pNode->pParent))
 	{
+		LOG << "father and son is red" << endl;
 		return false;
 	}
 
 	// binary tree
 	if (pNode->pLeft != pTree->pLeaf && pNode->pLeft->nKey >= pNode->nKey)
 	{
+		LOG << "not binary tree" << endl;
 		return false;
 	}
 
 	if (pNode->pRight != pTree->pLeaf && pNode->pRight->nKey <= pNode->nKey)
 	{
+		LOG << "not binary tree" << endl;
 		return false;
 	}
 
@@ -69,6 +73,7 @@ bool JudgeRBTree(RBTree * pTree, RBTreeNode * pNode)
 		}
 		else if (nMaxBlack != nBlackNum)
 		{
+			LOG << "max black : " << nMaxBlack << " cur black : " << nBlackNum << endl;
 			return false;
 		}
 	}
@@ -247,8 +252,9 @@ bool PostPollTree(RBTree * pTree, DealNode func)
 
 bool CheckRBTree(RBTree * pTree)
 {
+	InitBeforePoll();
 	LOG << pTree->nSize << endl;
-	return InPollTree(pTree, JudgeRBTree);
+	return InPollTree(pTree, PrintNode) && InPollTree(pTree, JudgeRBTree);
 }
 
 int32 GenVal();
@@ -288,7 +294,7 @@ void InsertData(const int32 nKey)
 {
 	int32 nVal = mapCache[nKey];
 	ASSERT(RBTreeInsert(pTree, nKey, nVal) == true);
-	ASSERT(CheckRBTree(pTree) == true);
+	//ASSERT(CheckRBTree(pTree) == true);
 }
 
 void DeleteData(const int32 nKey)
@@ -310,16 +316,20 @@ void QueryData()
 	{
 		int32 nKey = GenKey();
 		auto * pNode = RBTreeQuery(pTree, nKey);
-		ASSERT(pNode == nullptr);
+		ASSERT(pNode == pTree->pLeaf);
 	}
 }
 
 void TestRBTree(const int32 nCount)
 {
+	mapCache.clear();
+
 	pTree = RBTreeInit();
 	for (int32 i = 0; i < nCount; i++)
 	{
 		int32 nKey = GenKeyVal();
 		InsertData(nKey);
+		QueryData();
 	}
+	ASSERT(CheckRBTree(pTree) == true);
 }

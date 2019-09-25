@@ -8,9 +8,6 @@ using namespace std;
 
 int main()
 {
-	char szPath[1000];
-	_getcwd(szPath, sizeof(szPath));
-	cout << szPath << endl;
 	string strSource = "E:\\project_master\\intermediate\\Proto\\cs_proto.proto";
 	string strDest = "E:\\project_master\\intermediate\\Proto\\cs_proto.go";
 
@@ -29,7 +26,7 @@ int main()
 		//it.PrintMsg();
 	}
 
-	CProtoCpp::Instance()->GenGoCode(vecProtoMsg, strDest, "CRolePetMgr");
+	CProtoGolang::Instance()->GenGoCode(vecProtoMsg, strDest, "CityMap");
 	system("pause");
 	return 0;
 }

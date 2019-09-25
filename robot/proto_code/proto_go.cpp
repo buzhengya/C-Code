@@ -236,7 +236,7 @@ void CProtoGolang::_WriteCommonSend()
 	
 	for (auto & it : m_vecCommonSend)
 	{
-		m_fStream << "\t" << it << endl;
+		//m_fStream << "\t" << it << endl;
 	}
 
 	m_fStream << "}\n\n";

@@ -185,7 +185,7 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 		if (pNode->pParent == pNode->pParent->pParent->pLeft)
 		{
 			pTmp = pNode->pParent->pParent->pRight; //uncle
-			if (IsRed(pTmp))
+			if (pTmp != pTree->pLeaf && IsRed(pTmp))
 			{
 				SetBlack(pNode->pParent);
 				SetBlack(pTmp);
@@ -204,14 +204,14 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 
 				SetBlack(pNode->pParent);
 				SetRed(pNode->pParent->pParent);
-				LeftRotate(pTree, pNode->pParent->pParent);
+				RightRotate(pTree, pNode->pParent->pParent);
 				// father is black exit
 			}
 		}
 		else // father is right
 		{
 			pTmp = pNode->pParent->pParent->pLeft; //uncle
-			if (IsRed(pTmp))
+			if (pTmp != pTree->pLeaf && IsRed(pTmp))
 			{
 				SetBlack(pNode->pParent);
 				SetBlack(pTmp);
@@ -229,7 +229,7 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 
 				SetBlack(pNode->pParent);
 				SetRed(pNode->pParent->pParent);
-				RightRotate(pTree, pNode->pParent->pParent);
+				LeftRotate(pTree, pNode->pParent->pParent);
 				// father is black exit
 			}
 		}
@@ -243,6 +243,103 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 
 bool RBTreeDelete(RBTree * pTree, int32 nKey)
 {
+	// find delete node
+	RBTreeNode * pNode = RBTreeQuery(pTree, nKey);
+	if (pNode == pTree->pLeaf)
+	{
+		return false;
+	}
+
+	RBTreeNode * pLeaf = pTree->pLeaf;
+
+	// find node 's next
+	RBTreeNode * pTmp = pNode->pRight;
+	RBTreeNode * pLast = pNode;
+	while (pTmp != pTree->pLeaf)
+	{
+		pLast = pTmp;
+		pTmp = pTmp->pLeft;
+	}
+
+	// swap last and node
+	if (pLast != pNode)
+	{
+		int32 nTmpKey = pNode->nKey;
+		int32 nTmpVal = pNode->nVal;
+
+		pNode->nKey = pLast->nKey;
+		pNode->nVal = pLast->nVal;
+
+		pLast->nKey = nTmpKey;
+		pLast->nVal = nTmpVal;
+	}
+
+	// 删除 pLast前的调整
+	// find last 's son tmp and find last 's father node
+	pNode = pLeaf;
+	pTmp = pLeaf;
+	ASSERT(pLast->pLeft == pLeaf || pLast->pRight == pLeaf);
+	if (pLast->pLeft != pLeaf)
+	{
+		pTmp = pLast->pLeft;
+	}
+
+	if (pLast->pRight != pLeaf)
+	{
+		pTmp = pLast->pRight;
+	}
+
+	// root node
+	if (pLast == pTree->pRoot)
+	{
+		if (pTmp != pLeaf)
+		{
+			pTmp->pParent = pLeaf;
+		}
+		pTree->pRoot = pTmp;
+	}
+	else
+	{
+		pNode = pLast->pParent;
+		// left son
+		if (pNode->pLeft == pLast)
+		{
+			pNode->pLeft = pTmp;
+		}
+		// right son
+		if (pNode->pRight == pLast)
+		{
+			pNode->pRight = pTmp;
+		}
+
+		if (pTmp != pLeaf)
+		{
+			pTmp->pParent = pNode;
+		}
+	}
+
+	// 如果被删除节点是红色 || 被删节点是根节点
+	if (IsRed(pLast) || pTree->pRoot = pLeaf)
+	{
+		delete pLast;
+		--pTree->nSize;
+		return true;
+	}
+	delete pLast;
+
+	// 如果被删除节点的子节点不是叶子 从被删除节点的子节点开始调整 否则从被删节点的父节点开始调整
+	if (pTmp != pLeaf)
+	{
+		pNode = pTmp;
+	}
+
+	// 开始调整树 pNode有额外黑色
+	while (!IsRed(pNode) && pNode != pTree->pRoot)
+	{
+		
+	}
+
+	SetBlack(pNode);
 	--pTree->nSize;
 	return true;
 }
