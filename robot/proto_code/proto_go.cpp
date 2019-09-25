@@ -87,7 +87,7 @@ bool CProtoGolang::_DealReqMsg(CProtoMsg & oProtoMsg)
 	//gen special send struct
 	strRes = "";
 	strRes += "type " + m_strProtoStruct + " struct {\n}\n\n";
-	strRes += "func (p *" + m_strProtoStruct + ")SendMsg(pClient *SNetClient, strContent *string) {\n";
+	strRes += "func (p *" + m_strProtoStruct + ")SendMsg(pNet *SNet, strContent *string) {\n";
 	strRes += "\tpProto := new(" + m_strProtoName + ")\n\n";
 	strRes += "\terr := JSON2PB(*strContent, pProto)\n";
 	strRes += "\tif err != nil {\n";
@@ -115,13 +115,13 @@ bool CProtoGolang::_DealReqMsg(CProtoMsg & oProtoMsg)
 		oProtoMsg.PrintMsg();
 		return false;
 	}
-	strRes += "\tpClient.SendMsg(data, int(pProto." + strProtoId + "))\n";
+	strRes += "\tpNet.SendMsg(data, int(pProto." + strProtoId + "))\n";
 	strRes += "}\n";
 	m_vecSendStruct.push_back(strRes);
 
 	//gen stat count proto id register
 	strRes = "";
-	strRes = "p.SliStatProtoID = append(p.SliStatProtoID, " + m_strProtoId + ")";
+	strRes = "p.sliStatProtoID = append(p.sliStatProtoID, " + m_strProtoId + ")";
 	m_vecStatCountId.push_back(strRes);
 
 	//gen stat count proto id map req -> ack
@@ -133,7 +133,8 @@ bool CProtoGolang::_DealReqMsg(CProtoMsg & oProtoMsg)
 		oProtoMsg.PrintMsg();
 		return false;
 	}
-	strRes = "p.ArrReqAndAck[" + m_strProtoId + "] = " + strAck;
+	strRes = "p.arrReqAndAck[" + m_strProtoId + "] = " + strAck;
+	m_vecStatCountMap.push_back(strRes);
 
 	return true;
 }
@@ -150,7 +151,7 @@ bool CProtoGolang::_DealAckOrNtfMsg(CProtoMsg & oProtoMsg)
 	strRes += "type " + m_strProtoStruct + " struct {\n";
 	strRes += "\n";
 	strRes += "}\n";
-	strRes += "func (p *" + m_strProtoStruct + ")HandleMsg(sliMsg []byte, pClient *SNetClient) int {\n";
+	strRes += "func (p *" + m_strProtoStruct + ")HandleMsg(sliMsg []byte, pNet *SNet) int {\n";
 	strRes += "\tpProto := new(" + m_strProtoName + ")\n";
 	strRes += "\terr := proto.Unmarshal(sliMsg, pProto)\n";
 	strRes += "\tif err != nil {\n";
@@ -173,6 +174,11 @@ bool CProtoGolang::_DealAckOrNtfMsg(CProtoMsg & oProtoMsg)
 	{
 		strErr = "GetErrorCodes()";
 	}
+	else if (oProtoMsg.GetFieldByName("err", oField))
+	{
+		strErr = "GetErr()";
+	}
+
 	if (strErr != "")
 	{
 		strRes += "if pProto." + strErr + " != 0{\n";
@@ -184,27 +190,28 @@ bool CProtoGolang::_DealAckOrNtfMsg(CProtoMsg & oProtoMsg)
 	strRes += "}\n";
 	m_vecDealStruct.push_back(strRes);
 
-	//gen stat delay proto id register
+	//gen stat count proto id register
 	strRes = "";
-	strRes = "p.SliStatProtoID = append(p.SliStatProtoID, " + m_strProtoId + ")";
+	strRes = "p.sliStatProtoID = append(p.sliStatProtoID, " + m_strProtoId + ")";
 	m_vecStatCountId.push_back(strRes);
 
-	//gen stat delay proto id map  ack -> req
+
+	//gen stat delay proto id register
 	strRes = "";
-	strRes = "p.SliValidProtoID = append(p.SliValidProtoID," + m_strProtoId + ")";
+	strRes = "p.sliValidAckId = append(p.sliValidAckId, " + m_strProtoId + ")";
 	m_vecStatDelayId.push_back(strRes);
-	
+
+	//gen stat delay proto id map  ack -> req
 	if (m_strProtoId.find("_ack_") != string::npos)
 	{
-		strRes = "";
 		string strReq = "";
 		if (_Ack2Req(m_strProtoId, strReq) == false)
 		{
 			cout << "ack 2 req failed. proto id : " << m_strProtoId << endl;
 			return false;
 		}
-		strReq = "p.ArrAckAndReq[" + m_strProtoId + "]  = " + strReq;
-		m_vecStatDelayMap.push_back(strRes);
+		strReq = "p.arrAckAndReq[" + m_strProtoId + "]  = " + strReq;
+		m_vecStatDelayMap.push_back(strReq);
 	}
 
 	return true;
@@ -229,7 +236,7 @@ void CProtoGolang::_WriteCommonSend()
 	
 	for (auto & it : m_vecCommonSend)
 	{
-		m_fStream << "\t" << it << endl;
+		//m_fStream << "\t" << it << endl;
 	}
 
 	m_fStream << "}\n\n";
@@ -283,7 +290,7 @@ void CProtoGolang::_WriteDealStruct()
 
 void CProtoGolang::_WriteStatCount()
 {
-	m_fStream << "func (p *SStatProtoCount)" << m_strMoudle << "ProtoCount(){\n\n";
+	m_fStream << "func (p *SStatProtoCount)" << _UpperFirstToLow(m_strMoudle)<< "ProtoCount(){\n\n";
 
 	for (auto & it : m_vecStatCountId)
 	{
@@ -301,7 +308,7 @@ void CProtoGolang::_WriteStatCount()
 
 void CProtoGolang::_WriteStatDelay()
 {
-	m_fStream << "func (p *SStatProtoDelay)" << m_strMoudle << "ProtoDelay(){\n\n";
+	m_fStream << "func (p *SStatProtoDelay)" << _UpperFirstToLow(m_strMoudle) << "ProtoDelay(){\n\n";
 
 	for (auto & it : m_vecStatDelayId)
 	{
@@ -400,9 +407,26 @@ bool CProtoGolang::_Ack2Req(string & strAck, string & strReq)
 {
 	if (strAck.find("_ack_") == string::npos)
 	{
+		cout << "ack : " << strAck << " can not find _ack_" << endl;
 		return false;
 	}
 	size_t nStart = strAck.find("_ack_");
 	strReq = strAck.substr(0, nStart) + "_req_" + strAck.substr(nStart + 5);
 	return true;
+}
+
+string CProtoGolang::_UpperFirstToLow(const string & strSrc)
+{
+	string strDst = strSrc;
+	if (strDst.size() < 1)
+	{
+		return "";
+	}
+
+	if (strDst[0] >= 'a' && strDst[0] <= 'z')
+	{
+		strDst[0] = 'A' + strDst[0] - 'a';
+	}
+
+	return strDst;
 }

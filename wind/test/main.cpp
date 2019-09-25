@@ -18,6 +18,8 @@ uint32 WorkerThread(LPVOID pParam)
 
 int main()
 {
+	int nTest;
+	memset(&nTest, 0, sizeof(nTest) + 1024);
 	CStorage::Instance()->Init(1024 * 1024 * 128, "", "../log/test");
 	thread t(WorkerThread, nullptr);
 	Sleep(2000);

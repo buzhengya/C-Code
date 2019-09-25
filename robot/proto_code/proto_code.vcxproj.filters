@@ -31,6 +31,9 @@
     <ClCompile Include="tool.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="proto_output.cpp">
+      <Filter>proto_output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="proto_read.h">
@@ -53,6 +56,9 @@
     </ClInclude>
     <ClInclude Include="tool.h">
       <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="proto_output.h">
+      <Filter>proto_output</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
