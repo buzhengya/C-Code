@@ -22,7 +22,7 @@ bool CollectNodeAddr(RBTree * pTree, RBTreeNode * pNode)
 	return true;
 }
 
-void PrintNodeStatus(RBTree * pTree, RBTreeNode * pNode);
+bool PrintNodeStatus(RBTree * pTree, RBTreeNode * pNode);
 
 // PreOrder 
 int32 nMaxBlack = 0;
@@ -91,7 +91,7 @@ char * GetColor(RBTreeNode * pNode)
 	return "Black";
 }
 
-void PrintNodeStatus(RBTree * pTree, RBTreeNode * pNode)
+bool PrintNodeStatus(RBTree * pTree, RBTreeNode * pNode)
 {
 	if (pTree->pRoot == pNode)
 	{
@@ -115,6 +115,7 @@ void PrintNodeStatus(RBTree * pTree, RBTreeNode * pNode)
 	}
 
 	cout << endl;
+	return true;
 }
 
 int32 nLastKey = -1;
@@ -163,6 +164,7 @@ bool PrePollTree(RBTree * pTree, DealNode func)
 			PrintNodeStatus(pTree, pTop);
 			return false;
 		}
+		stNode.pop();
 
 		if (pTop->pRight != pTree->pLeaf)
 		{
@@ -173,7 +175,6 @@ bool PrePollTree(RBTree * pTree, DealNode func)
 		{
 			stNode.push(pTop->pLeft);
 		}
-		stNode.pop();
 	}
 
 	return true;
@@ -254,33 +255,56 @@ bool CheckRBTree(RBTree * pTree)
 {
 	InitBeforePoll();
 	LOG << pTree->nSize << endl;
-	return InPollTree(pTree, PrintNode) && InPollTree(pTree, JudgeRBTree);
+	return InPollTree(pTree, JudgeRBTree);
 }
 
-int32 GenVal();
+int32 GetRand();
 int32 GenKey();
 
 map<int32, int32> mapCache;
+set<int32> setKey;
 int32 GenKeyVal()
 {
 	int32 nKey = GenKey();
-	mapCache[nKey] = GenVal();
+	mapCache[nKey] = GetRand();
+	setKey.insert(nKey);
 	return nKey;
 }
 
-int32 GenVal()
+int32 GetRand()
 {
 	srand(uint32(time(nullptr)));
 	return rand();
 }
 
+int32 GetKey()
+{
+	// set ¿ÕÊ± å´»ú
+	ASSERT(setKey.size() > 0);
+	vector<int32> vecKey = vector<int32>(setKey.begin(), setKey.end());
+	int32 nIndex = GetRand() % vecKey.size();
+	return vecKey[nIndex];
+}
+
+void DeleteKey(int32 nKey)
+{
+	if (mapCache.find(nKey) != mapCache.end())
+	{
+		mapCache.erase(nKey);
+	}
+
+	if (setKey.find(nKey) != setKey.end())
+	{
+		setKey.erase(nKey);
+	}
+}
+
 int32 GenKey()
 {
 	int32 nKey = 0;
-	srand(uint32(time(nullptr)));
 	while (true)
 	{
-		nKey = rand();
+		nKey = GetRand();
 		if (mapCache.find(nKey) == mapCache.end())
 		{
 			break;
@@ -297,27 +321,53 @@ void InsertData(const int32 nKey)
 	//ASSERT(CheckRBTree(pTree) == true);
 }
 
-void DeleteData(const int32 nKey)
+void DeleteData()
 {
+	int32 nKey = GetKey();
+
+	// for debug 
+	auto * pNode = RBTreeQuery(pTree, nKey);
+	ASSERT(pNode != nullptr);
+	//father
+	if (pTree->pRoot != pNode)
+	{
+		LOG << "--------- father ---------" << endl;
+		PrintNodeStatus(pTree, pNode->pParent);
+	}
+
+	LOG << "--------- self ---------" << endl;
+	PrintNodeStatus(pTree, pNode);
+	if (pNode->pLeft != pTree->pLeaf)
+	{
+		LOG << "--------- left ---------" << endl;
+		PrintNodeStatus(pTree, pNode->pLeft);
+	}
+	if (pNode->pRight != pTree->pLeaf)
+	{
+		LOG << "--------- right ---------" << endl;
+		PrintNodeStatus(pTree, pNode->pRight);
+	}
+
+	ASSERT(RBTreeDelete(pTree, nKey) == true);
+	DeleteKey(nKey);
+	LOG << "delete key : " << nKey << endl;
+
+	nKey = GenKey();
+	ASSERT(RBTreeDelete(pTree, nKey) == false);
 }
 
 void QueryData()
 {
 	// check data in tree
-	for (const auto & pairNode : mapCache)
-	{
-		auto * pNode = RBTreeQuery(pTree, pairNode.first);
-		ASSERT(pNode != nullptr);
-		ASSERT(pNode->nVal == pairNode.second);
-	}
+	int32 nKey = GetKey();
+	auto * pNode = RBTreeQuery(pTree, nKey);
+	ASSERT(pNode != nullptr);
+	ASSERT(pNode->nVal == nKey);
 
 	// check data not in tree
-	for (size_t i = 0; i < mapCache.size(); i++)
-	{
-		int32 nKey = GenKey();
-		auto * pNode = RBTreeQuery(pTree, nKey);
-		ASSERT(pNode == pTree->pLeaf);
-	}
+	nKey = GenKey();
+	pNode = RBTreeQuery(pTree, nKey);
+	ASSERT(pNode == pTree->pLeaf);
 }
 
 void TestRBTree(const int32 nCount)
@@ -325,11 +375,23 @@ void TestRBTree(const int32 nCount)
 	mapCache.clear();
 
 	pTree = RBTreeInit();
-	for (int32 i = 0; i < nCount; i++)
+	for (int32 i = 0; i < nCount; ++i)
 	{
 		int32 nKey = GenKeyVal();
 		InsertData(nKey);
+		ASSERT(CheckRBTree(pTree) == true);
 		QueryData();
+		if (GetRand() % 3 == 0)
+		{
+			DeleteData();
+			ASSERT(CheckRBTree(pTree) == true);
+		}
 	}
-	ASSERT(CheckRBTree(pTree) == true);
+
+	int32 nSize = mapCache.size();
+	for (int32 i = 0; i < nSize; ++i)
+	{
+		DeleteData();
+		ASSERT(CheckRBTree(pTree));
+	}
 }

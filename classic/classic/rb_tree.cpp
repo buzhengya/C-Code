@@ -102,6 +102,7 @@ RBTree * RBTreeInit()
 	pNode->pParent = nullptr;
 	pNode->pLeft = nullptr;
 	pNode->pRight = nullptr;
+	pTree->pLeaf = pNode;
 
 	pTree->pRoot = pTree->pLeaf;
 	return pTree;
@@ -112,6 +113,13 @@ void RBTreeRelease(RBTree * pTree)
 	// empty
 
 
+}
+
+void SwapNodeColor(RBTreeNode * pNode1, RBTreeNode * pNode2)
+{
+	bool bRed = pNode1->bRed;
+	pNode1->bRed = pNode2->bRed;
+	pNode2->bRed = bRed;
 }
 
 // 0. 空树
@@ -253,12 +261,31 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 	RBTreeNode * pLeaf = pTree->pLeaf;
 
 	// find node 's next
-	RBTreeNode * pTmp = pNode->pRight;
-	RBTreeNode * pLast = pNode;
-	while (pTmp != pTree->pLeaf)
+	RBTreeNode * pTmp = pNode->pRight; // delete node 's son
+	RBTreeNode * pLast = pNode; // to delete
+
+	if (pNode->pRight == pLeaf) //right is leaf
 	{
-		pLast = pTmp;
-		pTmp = pTmp->pLeft;
+		pLast = pNode;
+		pTmp = pNode->pLeft;
+	}
+	else if (pNode->pLeft == pLeaf) // left is leaf 
+	{
+		LOG << "------------------- delete : " << nKey << " ---------------------" << std::endl;
+		pLast = pNode;
+		pTmp = pNode->pRight;
+	}
+	else
+	{
+		ASSERT(pNode->pLeft != pLeaf && pNode->pRight != pLeaf);
+		pLast = pNode->pRight;
+		pTmp = pLast->pLeft;
+		while (pTmp != pLeaf)
+		{
+			pLast = pTmp;
+			pTmp = pTmp->pLeft;
+		}
+		pTmp = pLast->pRight;
 	}
 
 	// swap last and node
@@ -275,20 +302,6 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 	}
 
 	// 删除 pLast前的调整
-	// find last 's son tmp and find last 's father node
-	pNode = pLeaf;
-	pTmp = pLeaf;
-	ASSERT(pLast->pLeft == pLeaf || pLast->pRight == pLeaf);
-	if (pLast->pLeft != pLeaf)
-	{
-		pTmp = pLast->pLeft;
-	}
-
-	if (pLast->pRight != pLeaf)
-	{
-		pTmp = pLast->pRight;
-	}
-
 	// root node
 	if (pLast == pTree->pRoot)
 	{
@@ -312,14 +325,14 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 			pNode->pRight = pTmp;
 		}
 
-		if (pTmp != pLeaf)
-		{
-			pTmp->pParent = pNode;
-		}
+		pTmp->pParent = pNode;
 	}
 
+	ASSERT(pLast->pLeft == pLeaf || pLast->pRight == pLeaf);
+	ASSERT(pLast->nKey == nKey);
+
 	// 如果被删除节点是红色 || 被删节点是根节点
-	if (IsRed(pLast) || pTree->pRoot = pLeaf)
+	if (IsRed(pLast) || pTree->pRoot == pLeaf)
 	{
 		delete pLast;
 		--pTree->nSize;
@@ -327,16 +340,88 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 	}
 	delete pLast;
 
-	// 如果被删除节点的子节点不是叶子 从被删除节点的子节点开始调整 否则从被删节点的父节点开始调整
-	if (pTmp != pLeaf)
-	{
-		pNode = pTmp;
-	}
-
-	// 开始调整树 pNode有额外黑色
+	pNode = pTmp;
+	// 开始调整树 pNode有额外黑色 pNode可能为leaf节点
 	while (!IsRed(pNode) && pNode != pTree->pRoot)
 	{
-		
+		// pNode is left
+		if (pNode == pNode->pParent->pLeft)
+		{
+			pTmp = pNode->pParent->pRight; //brother
+			// case 1 brother is red
+			if (IsRed(pTmp))
+			{
+				SwapNodeColor(pTmp, pTmp->pParent);
+				LeftRotate(pTree, pTmp->pParent);
+				continue;
+			}
+			
+			// case 2 brother is black brother 's all son is black
+			if (!IsRed(pTmp->pLeft) && !IsRed(pTmp->pRight))
+			{
+				// set brother red and parent is two black
+				SetRed(pTmp);
+				pNode = pNode->pParent;
+				continue;
+			}
+
+			// case 3 brother is black and brother 's right is black(left must red)
+			if (!IsRed(pTmp->pRight))
+			{
+				SwapNodeColor(pTmp, pTmp->pLeft);
+				RightRotate(pTree, pTmp);
+				pTmp = pTmp->pParent;
+			}
+
+			// case 4 brother is black and brother 's right is red
+			if (IsRed(pTmp->pRight))
+			{
+				ASSERT(!IsRed(pTmp));
+				SetBlack(pTmp->pRight);
+				SwapNodeColor(pTmp, pTmp->pParent);
+				LeftRotate(pTree, pTmp->pParent);
+				ASSERT(!IsRed(pTmp->pLeft) && !IsRed(pTmp->pRight));
+				ASSERT(!IsRed(pNode->pParent) && !IsRed(pNode->pParent->pParent->pRight));
+				break;
+			}
+		}
+		else  // pNode is right
+		{
+			// case 1 brother is red 
+			pTmp = pNode->pParent->pLeft;
+			if (IsRed(pTmp))
+			{
+				SwapNodeColor(pTmp, pTmp->pParent);
+				RightRotate(pTree, pTmp);
+				continue; // 此时 pTmp非彼pTmp 旋转后的pTmp????
+			}
+			
+			// case 2 brother is black and brother 's all black
+			if (!IsRed(pTmp->pLeft) && !IsRed(pTmp->pRight))
+			{
+				SetRed(pTmp);
+				pNode = pNode->pParent;
+				continue;
+			}
+
+			// case 3 brother is black and left son is black ( right son must red)
+			if (!IsRed(pTmp->pLeft))
+			{
+				SwapNodeColor(pTmp, pTmp->pRight);
+				LeftRotate(pTree, pTmp);
+				pTmp = pTmp->pParent;
+			}
+
+			// case 4 brother is black and left son is red
+			if (IsRed(pTmp->pLeft))
+			{
+				SetBlack(pTmp->pLeft);
+				SwapNodeColor(pTmp, pTmp->pParent);
+				RightRotate(pTree, pTmp->pParent);
+				ASSERT(!IsRed(pNode->pParent) && !IsRed(pNode->pParent->pParent->pLeft));
+				break;
+			}
+		}
 	}
 
 	SetBlack(pNode);
