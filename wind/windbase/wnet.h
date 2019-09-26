@@ -48,7 +48,9 @@ namespace wind
 	class IConnection
 	{
 	public:
-		virtual void WAPI Send(const char* pBuf, uint32 dwLen, bool bAtOnce = false) = 0;
+		virtual void WAPI OnRecv(const char * pBuf, const uint32 nLen) = 0;
+
+		virtual void WAPI Send(const char* pBuf, uint32 dwLen) = 0;
 	};
 
 	class IListener
