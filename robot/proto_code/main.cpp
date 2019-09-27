@@ -27,6 +27,7 @@ int main()
 	}
 
 	CProtoGolang::Instance()->GenGoCode(vecProtoMsg, strDest, "CityMap");
+	CProtoCpp::Instance()->GenGoCode(vecProtoMsg, strDest, "CityMap");
 	system("pause");
 	return 0;
 }

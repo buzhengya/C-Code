@@ -5,6 +5,7 @@
 #include <stack>
 #include <set>
 #include <time.h>
+#include <algorithm>
 
 using namespace std;
 
@@ -16,19 +17,11 @@ enum PollOrder
 };
 
 RBTree * pTree;
-vector<RBTreeNode*> vecNodeAddr;
-bool CollectNodeAddr(RBTree * pTree, RBTreeNode * pNode)
-{
-	return true;
-}
-
-bool PrintNodeStatus(RBTree * pTree, RBTreeNode * pNode);
 
 // PreOrder 
 int32 nMaxBlack = 0;
 bool JudgeRBTree(RBTree * pTree, RBTreeNode * pNode)
 {
-	PrintNodeStatus(pTree, pNode);
 	// root is black
 	if (pTree->pRoot == pNode && IsRed(pNode))
 	{
@@ -93,16 +86,7 @@ char * GetColor(RBTreeNode * pNode)
 
 bool PrintNodeStatus(RBTree * pTree, RBTreeNode * pNode)
 {
-	if (pTree->pRoot == pNode)
-	{
-		cout << "root node!" << endl;
-	}
-	else
-	{
-		cout << "father. key : " << pNode->pParent->nKey << " " << GetColor(pNode->pParent) << endl;
-	}
-
-	cout << "self, key : " << pNode->nKey << " " << GetColor(pNode) << endl;
+	cout << "self, key : " << pNode->nKey << " " << GetColor(pNode) << "  ";
 
 	if (pNode->pLeft != pTree->pLeaf)
 	{
@@ -118,31 +102,46 @@ bool PrintNodeStatus(RBTree * pTree, RBTreeNode * pNode)
 	return true;
 }
 
-int32 nLastKey = -1;
-bool PrintNode(RBTree * pTree, RBTreeNode * pNode)
+bool PrintNodeDetail(RBTree * pTree, RBTreeNode * pNode)
 {
-	cout << pNode->nKey << endl;
-
-	int32 nTmp = nLastKey;
-	nLastKey = pNode->nKey;
-	if (nLastKey = -1)
+	//father
+	if (pTree->pRoot != pNode)
 	{
-		nLastKey = pNode->nKey;
-		return true;
+		auto * pParent = pNode->pParent;
+		if (pParent != pTree->pLeaf)
+		{
+			LOG << "---------------------------- father ----------------------------" << endl;
+			PrintNodeStatus(pTree, pParent);
+		}
+
+		auto * pBrother = pParent->pLeft == pNode ? pParent->pRight : pParent->pLeft;
+		if (pBrother != pTree->pLeaf)
+		{
+			LOG << "---------------------------- brother ----------------------------" << endl;
+			PrintNodeStatus(pTree, pBrother);
+		}
 	}
-	return nTmp < nLastKey;
+
+	LOG << "---------------------------- self ----------------------------" << endl;
+	PrintNodeStatus(pTree, pNode);
+
+	if (pNode->pLeft != pTree->pLeaf)
+	{
+		LOG << "------------------------------- left son -------------------------------" << endl;
+		PrintNodeStatus(pTree, pNode->pLeft);
+	}
+	if (pNode->pRight != pTree->pLeaf)
+	{
+		LOG << "------------------------------- right son -------------------------------" << endl;
+		PrintNodeStatus(pTree, pNode->pRight);
+	}
+	return true;
 }
 
 void InitBeforePoll()
 {
-	// print
-	nLastKey = -1;
-
 	// judge rbtree
 	nMaxBlack = 0;
-
-	// collect addr pointer
-	vecNodeAddr.clear();
 }
 
 typedef bool(*DealNode)(RBTree *, RBTreeNode *);
@@ -161,7 +160,8 @@ bool PrePollTree(RBTree * pTree, DealNode func)
 		pTop = stNode.top();
 		if (!func(pTree, pTop))
 		{
-			PrintNodeStatus(pTree, pTop);
+			LOG << "deal func failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;
+			PrintNodeDetail(pTree, pTop);
 			return false;
 		}
 		stNode.pop();
@@ -196,6 +196,8 @@ bool InPollTree(RBTree * pTree, DealNode func)
 		pTop = stNode.top();
 		if (!func(pTree, pTop))
 		{
+			LOG << "deal func failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;
+			PrintNodeDetail(pTree, pTop);
 			return false;
 		}
 		stNode.pop();
@@ -230,6 +232,8 @@ bool PostPollTree(RBTree * pTree, DealNode func)
 		{
 			if (!func(pTree, pTop))
 			{
+				LOG << "deal func failed!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;
+				PrintNodeDetail(pTree, pTop);
 				return false;
 			}
 			pLast = pTop;
@@ -254,7 +258,7 @@ bool PostPollTree(RBTree * pTree, DealNode func)
 bool CheckRBTree(RBTree * pTree)
 {
 	InitBeforePoll();
-	LOG << pTree->nSize << endl;
+	LOG << "begin check rbtree. tree size : " << pTree->nSize << endl;
 	return InPollTree(pTree, JudgeRBTree);
 }
 
@@ -271,10 +275,24 @@ int32 GenKeyVal()
 	return nKey;
 }
 
+vector<int32> vecRand;
+int32 nIndex;
+
+void InitRand()
+{
+	nIndex = 0;
+	vecRand.clear();
+	for (int32 i = 0; i < 100000; ++i)
+	{
+		vecRand.push_back(i + 100000);
+	}
+	random_shuffle(vecRand.begin(), vecRand.end());
+}
+
 int32 GetRand()
 {
-	srand(uint32(time(nullptr)));
-	return rand();
+	ASSERT(nIndex < vecRand.size());
+	return vecRand[nIndex++];
 }
 
 int32 GetKey()
@@ -318,7 +336,9 @@ void InsertData(const int32 nKey)
 {
 	int32 nVal = mapCache[nKey];
 	ASSERT(RBTreeInsert(pTree, nKey, nVal) == true);
-	//ASSERT(CheckRBTree(pTree) == true);
+	LOG << "insert key : " << nKey << endl;
+
+	ASSERT(CheckRBTree(pTree) == true);
 }
 
 void DeleteData()
@@ -328,25 +348,7 @@ void DeleteData()
 	// for debug 
 	auto * pNode = RBTreeQuery(pTree, nKey);
 	ASSERT(pNode != nullptr);
-	//father
-	if (pTree->pRoot != pNode)
-	{
-		LOG << "--------- father ---------" << endl;
-		PrintNodeStatus(pTree, pNode->pParent);
-	}
 
-	LOG << "--------- self ---------" << endl;
-	PrintNodeStatus(pTree, pNode);
-	if (pNode->pLeft != pTree->pLeaf)
-	{
-		LOG << "--------- left ---------" << endl;
-		PrintNodeStatus(pTree, pNode->pLeft);
-	}
-	if (pNode->pRight != pTree->pLeaf)
-	{
-		LOG << "--------- right ---------" << endl;
-		PrintNodeStatus(pTree, pNode->pRight);
-	}
 
 	ASSERT(RBTreeDelete(pTree, nKey) == true);
 	DeleteKey(nKey);
@@ -362,7 +364,7 @@ void QueryData()
 	int32 nKey = GetKey();
 	auto * pNode = RBTreeQuery(pTree, nKey);
 	ASSERT(pNode != nullptr);
-	ASSERT(pNode->nVal == nKey);
+	ASSERT(pNode->nKey == nKey);
 
 	// check data not in tree
 	nKey = GenKey();
@@ -373,6 +375,7 @@ void QueryData()
 void TestRBTree(const int32 nCount)
 {
 	mapCache.clear();
+	InitRand();
 
 	pTree = RBTreeInit();
 	for (int32 i = 0; i < nCount; ++i)

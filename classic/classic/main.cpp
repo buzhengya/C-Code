@@ -3,7 +3,7 @@
 int main()
 {
 	TestRBTree(10);
-	TestRBTree(80);
-	//TestRBTree(1000);
+	TestRBTree(100);
+	TestRBTree(1000);
 	return 0;
 }

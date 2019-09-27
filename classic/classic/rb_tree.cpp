@@ -1,5 +1,6 @@
 #include "rb_tree.h"
 #include <vector>
+#include "rb_tree_test.h"
 #include <assert.h>
 
 
@@ -173,6 +174,8 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 		return true;
 	}
 
+	LOG << "details for node before insert." << std::endl;
+	PrintNodeDetail(pTree, pNode);
 
 	pTmp->pParent = pNode;
 	// 1.1 node 左节点
@@ -271,7 +274,6 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 	}
 	else if (pNode->pLeft == pLeaf) // left is leaf 
 	{
-		LOG << "------------------- delete : " << nKey << " ---------------------" << std::endl;
 		pLast = pNode;
 		pTmp = pNode->pRight;
 	}
@@ -301,6 +303,12 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 		pLast->nVal = nTmpVal;
 	}
 
+	ASSERT(pLast->pLeft == pLeaf || pLast->pRight == pLeaf);
+	ASSERT(pLast->nKey == nKey);
+
+	LOG << "details for delete." << std::endl;
+	PrintNodeDetail(pTree, pLast);
+
 	// 删除 pLast前的调整
 	// root node
 	if (pLast == pTree->pRoot)
@@ -327,9 +335,6 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 
 		pTmp->pParent = pNode;
 	}
-
-	ASSERT(pLast->pLeft == pLeaf || pLast->pRight == pLeaf);
-	ASSERT(pLast->nKey == nKey);
 
 	// 如果被删除节点是红色 || 被删节点是根节点
 	if (IsRed(pLast) || pTree->pRoot == pLeaf)
@@ -392,7 +397,7 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 			if (IsRed(pTmp))
 			{
 				SwapNodeColor(pTmp, pTmp->pParent);
-				RightRotate(pTree, pTmp);
+				RightRotate(pTree, pTmp->pParent);
 				continue; // 此时 pTmp非彼pTmp 旋转后的pTmp????
 			}
 			
