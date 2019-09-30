@@ -118,14 +118,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="define.h" />
-    <ClInclude Include="rb_tree.h" />
-    <ClInclude Include="rb_tree_test.h" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mem_pool\buf.cpp" />
+    <ClCompile Include="mem_pool\pool.cpp" />
+    <ClCompile Include="rbtree\rb_tree.cpp" />
+    <ClCompile Include="rbtree\rb_tree_test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="rb_tree.cpp" />
-    <ClCompile Include="rb_tree_test.cpp" />
+    <ClInclude Include="common\define.h" />
+    <ClInclude Include="mem_pool\buf.h" />
+    <ClInclude Include="mem_pool\pool.h" />
+    <ClInclude Include="rbtree\rb_tree.h" />
+    <ClInclude Include="rbtree\rb_tree_test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

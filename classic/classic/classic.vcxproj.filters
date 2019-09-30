@@ -1,32 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="rb_tree">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="rbtree">
+      <UniqueIdentifier>{166bbdce-8ad9-43d3-b995-d05fed2113f2}</UniqueIdentifier>
     </Filter>
     <Filter Include="common">
-      <UniqueIdentifier>{ad8d712d-8a4e-4b79-9b73-79a24b147ce9}</UniqueIdentifier>
+      <UniqueIdentifier>{a2d43c57-8024-4f66-839d-5e5d5084cef6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mem_pool">
+      <UniqueIdentifier>{631c51af-8f05-42cb-a4a1-f5b37d155361}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="rb_tree.h">
-      <Filter>rb_tree</Filter>
-    </ClInclude>
-    <ClInclude Include="rb_tree_test.h">
-      <Filter>rb_tree</Filter>
-    </ClInclude>
-    <ClInclude Include="define.h">
-      <Filter>common</Filter>
-    </ClInclude>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="rbtree\rb_tree.cpp">
+      <Filter>rbtree</Filter>
+    </ClCompile>
+    <ClCompile Include="rbtree\rb_tree_test.cpp">
+      <Filter>rbtree</Filter>
+    </ClCompile>
+    <ClCompile Include="mem_pool\buf.cpp">
+      <Filter>mem_pool</Filter>
+    </ClCompile>
+    <ClCompile Include="mem_pool\pool.cpp">
+      <Filter>mem_pool</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="rb_tree.cpp">
-      <Filter>rb_tree</Filter>
-    </ClCompile>
-    <ClCompile Include="rb_tree_test.cpp">
-      <Filter>rb_tree</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="common\define.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="rbtree\rb_tree.h">
+      <Filter>rbtree</Filter>
+    </ClInclude>
+    <ClInclude Include="rbtree\rb_tree_test.h">
+      <Filter>rbtree</Filter>
+    </ClInclude>
+    <ClInclude Include="mem_pool\buf.h">
+      <Filter>mem_pool</Filter>
+    </ClInclude>
+    <ClInclude Include="mem_pool\pool.h">
+      <Filter>mem_pool</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
