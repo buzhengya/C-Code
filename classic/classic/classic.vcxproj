@@ -118,16 +118,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="common\rand_tool.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mem_pool\buf.cpp" />
     <ClCompile Include="mem_pool\pool.cpp" />
+    <ClCompile Include="mem_pool\pool_test.cpp" />
     <ClCompile Include="rbtree\rb_tree.cpp" />
     <ClCompile Include="rbtree\rb_tree_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\define.h" />
+    <ClInclude Include="common\rand_tool.h" />
     <ClInclude Include="mem_pool\buf.h" />
     <ClInclude Include="mem_pool\pool.h" />
+    <ClInclude Include="mem_pool\pool_test.h" />
     <ClInclude Include="rbtree\rb_tree.h" />
     <ClInclude Include="rbtree\rb_tree_test.h" />
   </ItemGroup>

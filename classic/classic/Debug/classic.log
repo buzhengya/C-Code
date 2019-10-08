@@ -1,4 +1,3 @@
-﻿  pool.cpp
-d:\c++code\classic\classic\mem_pool\pool.cpp(18): error C4716: “_AllocSmall”: 必须返回一个值
-d:\c++code\classic\classic\mem_pool\pool.cpp(12): error C4716: “_AllocSmallBlock”: 必须返回一个值
-d:\c++code\classic\classic\mem_pool\pool.cpp(23): error C4716: “_AllocLarge”: 必须返回一个值
+﻿  main.cpp
+  classic.vcxproj -> D:\C++Code\classic\Debug\classic.exe
+  classic.vcxproj -> D:\C++Code\classic\Debug\classic.pdb (Full PDB)

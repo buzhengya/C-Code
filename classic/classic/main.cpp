@@ -1,10 +1,8 @@
 #include "rbtree/rb_tree_test.h"
+#include "mem_pool/pool_test.h"
 
 int main()
 {
-	TestRBTree(10);
-	TestRBTree(100);
-	TestRBTree(1000);
-	TestRBTree(10000);
+	TestPool(2000);
 	return 0;
 }

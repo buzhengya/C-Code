@@ -1,6 +1,8 @@
 #pragma once
 #include "..\common\define.h"
 
+#define MAX_FAILED		4
+
 struct MemLarge {
 	void *		pData;
 	MemLarge *	pNext;

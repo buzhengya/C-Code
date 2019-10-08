@@ -25,6 +25,12 @@
     <ClCompile Include="mem_pool\pool.cpp">
       <Filter>mem_pool</Filter>
     </ClCompile>
+    <ClCompile Include="mem_pool\pool_test.cpp">
+      <Filter>mem_pool</Filter>
+    </ClCompile>
+    <ClCompile Include="common\rand_tool.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\define.h">
@@ -41,6 +47,12 @@
     </ClInclude>
     <ClInclude Include="mem_pool\pool.h">
       <Filter>mem_pool</Filter>
+    </ClInclude>
+    <ClInclude Include="mem_pool\pool_test.h">
+      <Filter>mem_pool</Filter>
+    </ClInclude>
+    <ClInclude Include="common\rand_tool.h">
+      <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

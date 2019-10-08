@@ -10,5 +10,8 @@ typedef unsigned long long		uint64;
 #define LOG		std::cout
 #define ASSERT  assert
 
+#define ALIGNMENT sizeof(unsigned long)
+
 #define wind_malloc(size)	malloc(size)
 #define wind_free(ptr)	free(ptr)
+#define wind_align(p, n) (char *)((uint64(p) + uint64(n) - 1) & ~(uint64(n) - 1))
