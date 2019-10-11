@@ -26,8 +26,8 @@ int main()
 		//it.PrintMsg();
 	}
 
-	CProtoGolang::Instance()->GenGoCode(vecProtoMsg, strDest, "CityMap");
-	CProtoCpp::Instance()->GenGoCode(vecProtoMsg, strDest, "CityMap");
+	CProtoGolang::Instance()->GenGoCode(vecProtoMsg, strDest, "Person");
+	//CProtoCpp::Instance()->GenGoCode(vecProtoMsg, strDest, "Person");
 	system("pause");
 	return 0;
 }

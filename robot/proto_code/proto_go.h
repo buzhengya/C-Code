@@ -40,7 +40,7 @@ private:
 	bool _Req2Ack(string & strReq, string & strAck);
 	bool _Ack2Req(string & strAck, string & strReq);
 
-	string _UpperFirstToLow(const string & strSrc);
+	string _StrToLow(const string & strSrc);
 
 	//total val
 	string			m_strMoudle;

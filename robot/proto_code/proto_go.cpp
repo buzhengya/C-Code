@@ -91,11 +91,11 @@ bool CProtoGolang::_DealReqMsg(CProtoMsg & oProtoMsg)
 	strRes += "\tpProto := new(" + m_strProtoName + ")\n\n";
 	strRes += "\terr := JSON2PB(*strContent, pProto)\n";
 	strRes += "\tif err != nil {\n";
-	strRes += "\t\tgolog.Logger.Warnf(\"unmarshaling " + m_strProtoName + " error : \", err)\n";
+	strRes += "\t\tlogger.Warning(\"unmarshaling " + m_strProtoName + " error : \", err)\n";
 	strRes += "\t\treturn\n\t}\n";
 	strRes += "\tdata, err := proto.Marshal(pProto)\n";
 	strRes += "\tif err != nil {\n";
-	strRes += "\t\tgolog.Logger.Warnf(\"" + m_strProtoName + " marshaling  error : %s\", err)\n";
+	strRes += "\t\tlogger.Warning(\"" + m_strProtoName + " marshaling  error : %s\", err)\n";
 	strRes += "\t\treturn\n";
 	strRes += "\t}\n";
 	
@@ -155,7 +155,7 @@ bool CProtoGolang::_DealAckOrNtfMsg(CProtoMsg & oProtoMsg)
 	strRes += "\tpProto := new(" + m_strProtoName + ")\n";
 	strRes += "\terr := proto.Unmarshal(sliMsg, pProto)\n";
 	strRes += "\tif err != nil {\n";
-	strRes += "\t\tgolog.Logger.Warnf(\"unmarshaling " + m_strProtoName + " error : %s\", err)\n";
+	strRes += "\t\tlogger.Warning(\"unmarshaling " + m_strProtoName + " error : %s\", err)\n";
 	strRes += "\t\treturn 1\n";
 	strRes += "\t}\n";
 	strRes += "\t";
@@ -182,7 +182,7 @@ bool CProtoGolang::_DealAckOrNtfMsg(CProtoMsg & oProtoMsg)
 	if (strErr != "")
 	{
 		strRes += "if pProto." + strErr + " != 0{\n";
-		strRes += "\t\tgolog.Logger.Warnf(\"" + m_strProtoName + " ret is %d\",pProto." + strErr + ")\n";
+		strRes += "\t\tlogger.Debug(\"" + m_strProtoName + " ret is %d\",pProto." + strErr + ")\n";
 		strRes += "\t}\n";
 	}
 	
@@ -290,7 +290,7 @@ void CProtoGolang::_WriteDealStruct()
 
 void CProtoGolang::_WriteStatCount()
 {
-	m_fStream << "func (p *SStatProtoCount)" << _UpperFirstToLow(m_strMoudle)<< "ProtoCount(){\n\n";
+	m_fStream << "func (p *SStatProtoCount) " << _StrToLow(m_strMoudle)<< "ProtoCount(){\n\n";
 
 	for (auto & it : m_vecStatCountId)
 	{
@@ -308,7 +308,7 @@ void CProtoGolang::_WriteStatCount()
 
 void CProtoGolang::_WriteStatDelay()
 {
-	m_fStream << "func (p *SStatProtoDelay)" << _UpperFirstToLow(m_strMoudle) << "ProtoDelay(){\n\n";
+	m_fStream << "func (p *SStatProtoDelay) " << _StrToLow(m_strMoudle) << "ProtoDelay(){\n\n";
 
 	for (auto & it : m_vecStatDelayId)
 	{
@@ -415,17 +415,15 @@ bool CProtoGolang::_Ack2Req(string & strAck, string & strReq)
 	return true;
 }
 
-string CProtoGolang::_UpperFirstToLow(const string & strSrc)
+string CProtoGolang::_StrToLow(const string & strSrc)
 {
 	string strDst = strSrc;
-	if (strDst.size() < 1)
+	for (size_t i = 0; i < strSrc.size(); i++)
 	{
-		return "";
-	}
-
-	if (strDst[0] >= 'a' && strDst[0] <= 'z')
-	{
-		strDst[0] = 'A' + strDst[0] - 'a';
+		if (strDst[i] >= 'A' && strDst[i] <= 'Z')
+		{
+			strDst[i] = 'a' + strDst[i] - 'A';
+		}
 	}
 
 	return strDst;
