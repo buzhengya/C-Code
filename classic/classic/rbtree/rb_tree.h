@@ -6,7 +6,7 @@ struct RBTreeNode
 	RBTreeNode *	pParent;
 	RBTreeNode *	pLeft;
 	RBTreeNode *	pRight;
-	int32			nKey;
+	int64			nKey;
 	int32			nVal;
 	bool			bRed;
 };
@@ -27,3 +27,7 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal);
 bool RBTreeDelete(RBTree * pTree, int32 nKey);
 
 RBTreeNode * RBTreeQuery(RBTree * pTree, int32 nKey);
+
+RBTreeNode* MinNode(RBTreeNode* pNode, RBTreeNode* pLeaf);
+
+RBTreeNode* NextNode(RBTreeNode* pNode, RBTreeNode* pLeaf);

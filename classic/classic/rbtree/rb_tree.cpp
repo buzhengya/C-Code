@@ -448,3 +448,29 @@ RBTreeNode * RBTreeQuery(RBTree * pTree, int32 nKey)
 
 	return pNode;
 }
+
+RBTreeNode* MinNode(RBTreeNode* pNode, RBTreeNode* pLeaf)
+{
+	ASSERT(pNode != pLeaf);
+
+	while (pNode->pLeft != pLeaf)
+	{
+		pNode = pNode->pLeft;
+	}
+	return pNode;
+}
+
+RBTreeNode* NextNode(RBTreeNode* pNode, RBTreeNode* pLeaf)
+{
+	ASSERT(pNode != pLeaf);
+	if (pNode->pRight != pLeaf)
+	{
+		return MinNode(pNode->pRight, pLeaf);
+	}
+	else if (pNode->pParent != nullptr && pNode->pParent != pLeaf)
+	{
+		return pNode->pParent;
+	}
+
+	return nullptr;
+}

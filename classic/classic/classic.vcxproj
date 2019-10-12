@@ -119,6 +119,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="common\rand_tool.cpp" />
+    <ClCompile Include="event\event.cpp" />
+    <ClCompile Include="event\event_timer.cpp" />
+    <ClCompile Include="event\event_timer_test.cpp" />
+    <ClCompile Include="log\log.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mem_pool\buf.cpp" />
     <ClCompile Include="mem_pool\pool.cpp" />
@@ -129,6 +133,10 @@
   <ItemGroup>
     <ClInclude Include="common\define.h" />
     <ClInclude Include="common\rand_tool.h" />
+    <ClInclude Include="event\event.h" />
+    <ClInclude Include="event\event_timer.h" />
+    <ClInclude Include="event\event_test.h" />
+    <ClInclude Include="log\log.h" />
     <ClInclude Include="mem_pool\buf.h" />
     <ClInclude Include="mem_pool\pool.h" />
     <ClInclude Include="mem_pool\pool_test.h" />
