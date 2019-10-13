@@ -242,7 +242,7 @@ void InitRand()
 
 int32 GetRand()
 {
-	ASSERT(nIndex < vecRand.size());
+	ASSERT(static_cast<uint32>(nIndex) < vecRand.size());
 	return vecRand[nIndex++];
 }
 

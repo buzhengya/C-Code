@@ -120,7 +120,7 @@ void _AddAndCheck(MemPool * pool, uint32 nCount)
 	// 分配随机大小和内容的内存
 	void * pData = nullptr;
 	uint32 nRandRight = MEM_POOL_SIZE + MEM_POOL_SIZE / 3;
-	for (int32 i = 0; i < nCount; i++)
+	for (uint32 i = 0; i < nCount; ++i)
 	{
 		uint32 nSize = GetRand(1, nRandRight);
 		LOG << "DEBUG size : " << nSize << endl;

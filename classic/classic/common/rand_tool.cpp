@@ -18,7 +18,7 @@ std::string GetRandStr(uint32 nLen)
 	string strRet(0, nLen);
 	uniform_int_distribution<uint32> oUniform(0, 255);
 
-	for (int32 i = 0; i < nLen; ++i)
+	for (uint32 i = 0; i < nLen; ++i)
 	{
 		strRet[i] = oUniform(sRandom);
 	}

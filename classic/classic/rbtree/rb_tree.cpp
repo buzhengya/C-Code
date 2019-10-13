@@ -286,7 +286,7 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 	// swap last and node
 	if (pLast != pNode)
 	{
-		int32 nTmpKey = pNode->nKey;
+		int64 nTmpKey = pNode->nKey;
 		int32 nTmpVal = pNode->nVal;
 
 		pNode->nKey = pLast->nKey;
