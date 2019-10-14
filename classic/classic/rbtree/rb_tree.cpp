@@ -128,7 +128,13 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 	pTmp->pLeft = pTree->pLeaf;
 	pTmp->pRight = pTree->pLeaf;
 
-	return RBTreeInsert(pTree, pTmp);
+	if (RBTreeInsert(pTree, pTmp) == false)
+	{
+		delete pTmp;
+		return false;
+	}
+
+	return true;
 }
 
 bool RBTreeInsert(RBTree* pTree, RBTreeNode* pTmp)
@@ -254,6 +260,17 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 {
 	// find delete node
 	RBTreeNode * pNode = RBTreeQuery(pTree, nKey);
+
+	if (RBTreeDelete(pTree, pNode) == false)
+	{
+		return false;
+	}
+	delete pNode;
+	return true;
+}
+
+bool RBTreeDelete(RBTree* pTree, RBTreeNode* pNode)
+{
 	if (pNode == pTree->pLeaf)
 	{
 		return false;
@@ -302,7 +319,7 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 	}
 
 	ASSERT(pLast->pLeft == pLeaf || pLast->pRight == pLeaf);
-	ASSERT(pLast->nKey == nKey);
+	ASSERT(pLast->nKey == pNode->nKey);
 
 	LOG << "details for delete." << std::endl;
 	PrintNodeDetail(pTree, pLast);
@@ -337,11 +354,9 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 	// 如果被删除节点是红色 || 被删节点是根节点
 	if (IsRed(pLast) || pTree->pRoot == pLeaf)
 	{
-		delete pLast;
 		--pTree->nSize;
 		return true;
 	}
-	delete pLast;
 
 	pNode = pTmp;
 	// 开始调整树 pNode有额外黑色 pNode可能为leaf节点
@@ -430,11 +445,6 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 	SetBlack(pNode);
 	--pTree->nSize;
 	return true;
-}
-
-bool RBTreeDelete(RBTree* pTree, RBTreeNode* pNode)
-{
-	return false;
 }
 
 RBTreeNode * RBTreeQuery(RBTree * pTree, int32 nKey)

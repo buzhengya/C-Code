@@ -5,22 +5,19 @@
 static RBTree* pTimerTree;
 static RBTreeNode* pTimerLeaf;
 
+// Q1 : repeat timer?  Q2 : timer precision?
+// A2 : 
 bool AddTimer(Event *ev, int64 nDelay)
 {
 	if (nDelay < 0) nDelay = 0;
 	int64 nExpire = nDelay + GetNowMilSec();
-	if (ev->pNode == nullptr)
-	{
-		ev->pNode = new RBTreeNode;
-		ASSERT(ev->pNode != nullptr);
-	}
-
-	RBTreeInsert()
+	ev->oNode.nKey = nExpire;
+	return RBTreeInsert(pTimerTree, &ev->oNode);
 }
 
 bool DelTimer(Event * ev)
 {
-
+	return RBTreeDelete(pTimerTree, &ev->oNode);
 }
 
 bool InitEventTimer()
@@ -59,6 +56,7 @@ bool DealExpireTimer()
 		pMin = MinNode(pRoot, pTimerLeaf);
 		ev = (Event*)((char*)pMin - offsetof(Event, oNode));
 		ev->fHandle(ev);
+		ASSERT(DelTimer(ev) == true);
 	}
 	return true;
 }
