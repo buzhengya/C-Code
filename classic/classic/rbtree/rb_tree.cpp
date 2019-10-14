@@ -121,11 +121,23 @@ void SwapNodeColor(RBTreeNode * pNode1, RBTreeNode * pNode2)
 // 2. 设置红色进行调整
 bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 {
+	RBTreeNode * pTmp = new(RBTreeNode);
+	SetRed(pTmp);
+	pTmp->nKey = nKey;
+	pTmp->nVal = nVal;
+	pTmp->pLeft = pTree->pLeaf;
+	pTmp->pRight = pTree->pLeaf;
+
+	return RBTreeInsert(pTree, pTmp);
+}
+
+bool RBTreeInsert(RBTree* pTree, RBTreeNode* pTmp)
+{
 	RBTreeNode * pNode = pTree->pRoot;
 	bool bIsLeft = false;
-	while (pNode != pTree->pLeaf && pNode->nKey != nKey)
+	while (pNode != pTree->pLeaf && pNode->nKey != pTmp->nKey)
 	{
-		if (nKey < pNode->nKey)
+		if (pTmp->nKey < pNode->nKey)
 		{
 			if (pNode->pLeft == pTree->pLeaf)
 			{
@@ -135,7 +147,7 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 			pNode = pNode->pLeft;
 		}
 
-		if (nKey > pNode->nKey)
+		if (pTmp->nKey > pNode->nKey)
 		{
 			if (pNode->pRight == pTree->pLeaf)
 			{
@@ -146,17 +158,10 @@ bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 		}
 	}
 
-	if (pNode != pTree->pLeaf && pNode->nKey == nKey)
+	if (pNode != pTree->pLeaf && pNode->nKey == pTmp->nKey)
 	{
 		return false;
 	}
-
-	RBTreeNode * pTmp = new(RBTreeNode);
-	SetRed(pTmp);
-	pTmp->nKey = nKey;
-	pTmp->nVal = nVal;
-	pTmp->pLeft = pTree->pLeaf;
-	pTmp->pRight = pTree->pLeaf;
 
 	// 0. 空树
 	if (pTree->pRoot == pTree->pLeaf)
@@ -425,6 +430,11 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 	SetBlack(pNode);
 	--pTree->nSize;
 	return true;
+}
+
+bool RBTreeDelete(RBTree* pTree, RBTreeNode* pNode)
+{
+	return false;
 }
 
 RBTreeNode * RBTreeQuery(RBTree * pTree, int32 nKey)

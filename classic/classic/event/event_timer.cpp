@@ -7,7 +7,15 @@ static RBTreeNode* pTimerLeaf;
 
 bool AddTimer(Event *ev, int64 nDelay)
 {
+	if (nDelay < 0) nDelay = 0;
+	int64 nExpire = nDelay + GetNowMilSec();
+	if (ev->pNode == nullptr)
+	{
+		ev->pNode = new RBTreeNode;
+		ASSERT(ev->pNode != nullptr);
+	}
 
+	RBTreeInsert()
 }
 
 bool DelTimer(Event * ev)
@@ -39,7 +47,20 @@ int64 FindExpireTimer()
 
 bool DealExpireTimer()
 {
-
+	RBTreeNode* pRoot = nullptr;
+	RBTreeNode* pMin = nullptr;
+	Event* ev = nullptr;
+	int64 nNow = GetNowMilSec();
+	while (true)
+	{
+		pRoot = pTimerTree->pRoot;
+		if (pRoot == pTimerLeaf) break;
+		
+		pMin = MinNode(pRoot, pTimerLeaf);
+		ev = (Event*)((char*)pMin - offsetof(Event, oNode));
+		ev->fHandle(ev);
+	}
+	return true;
 }
 
 bool IsNoLeftTimer()
@@ -54,7 +75,7 @@ bool IsNoLeftTimer()
 	Event* ev;
 	while (pNode != nullptr)
 	{
-		ev = (Event*)((char *)pNode -offsetof(Event, pNode));
+		ev = (Event*)((char *)pNode -offsetof(Event, oNode));
 		if (ev->nCancle != 1)
 		{
 			return false;

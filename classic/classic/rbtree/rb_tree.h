@@ -24,7 +24,10 @@ RBTree * RBTreeInit();
 
 bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal);
 
+bool RBTreeInsert(RBTree * pTree, RBTreeNode * pTmp);
+
 bool RBTreeDelete(RBTree * pTree, int32 nKey);
+bool RBTreeDelete(RBTree * pTree, RBTreeNode *pNode);
 
 RBTreeNode * RBTreeQuery(RBTree * pTree, int32 nKey);
 
