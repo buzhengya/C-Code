@@ -10,7 +10,7 @@
 using namespace std;
 
 #define FACTORY_SIZE 1000
-#define OPERATE_TIMES 100
+#define OPERATE_TIMES 1
 #define MAX_DELAY  1000
 
 map<int64, Event*> mapTimer;
@@ -30,18 +30,18 @@ void TestEventTimerHandle(Event* ev)
 
 void TestAddTimer()
 {
-	int64 nDelay = int64(GetRand(0, 1000));
+	int64 nDelay = int64(GetRand(0, MAX_DELAY));
 	Event* ev = vecFactory[vecFactory.size() -1];
 	if (AddTimer(ev, nDelay))
 	{
 		vecFactory.pop_back();
-		mapTimer[nDelay] = ev;
+		mapTimer[ev->oNode.nKey] = ev;
 	}
 }
 
 void TestDelTimer()
 {
-	int64 nDelay = int64(GetRand(0, 1000));
+	int64 nDelay = int64(GetRand(0, MAX_DELAY));
 	Event* ev = nullptr;
 	if (mapTimer.find(nDelay) == mapTimer.end())
 	{
@@ -59,7 +59,7 @@ void TestEventTimer(int32 nCnt)
 
 	// gen factory
 	Event* ev = nullptr;
-	for (int32 i = 0; i < 1000; ++i)
+	for (int32 i = 0; i < FACTORY_SIZE; ++i)
 	{
 		ev = new(Event);
 		ev->fHandle = TestEventTimerHandle;
@@ -68,12 +68,13 @@ void TestEventTimer(int32 nCnt)
 
 	for (int32 i = 0; i < nCnt; ++i)
 	{
-		for (int32 j = 0; j < 100 && !vecFactory.empty(); ++j)
+		int64 nBegin = GetNowMilSec();
+		for (int32 j = 0; j < OPERATE_TIMES && !vecFactory.empty(); ++j)
 		{
 			TestAddTimer();
 		}
 
-		for (int32 j = 0; j < 100 && vecFactory.size() < 1000; ++j)
+		for (int32 j = 0; j < OPERATE_TIMES && vecFactory.size() < FACTORY_SIZE; ++j)
 		{
 			TestDelTimer();
 		}
@@ -82,6 +83,10 @@ void TestEventTimer(int32 nCnt)
 		{
 			ASSERT(DealExpireTimer() == true);
 		}
-		this_thread::sleep_for(chrono::milliseconds(1));
+		int64 nEnd = GetNowMilSec();
+		if (nEnd != nBegin)
+		{
+			this_thread::sleep_for(chrono::milliseconds(1));
+		}
 	}
 }

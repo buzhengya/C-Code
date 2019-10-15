@@ -4,7 +4,7 @@
 
 int main()
 {
-	TestRBTree(1000);
-	//TestEventTimer(10000);
+	//TestRBTree(1000);
+	TestEventTimer(10000);
 	return 0;
 }

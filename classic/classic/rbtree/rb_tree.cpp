@@ -270,6 +270,47 @@ bool RBTreeDelete(RBTree * pTree, int32 nKey)
 	return true;
 }
 
+void NodeReplace(RBTree* pTree, RBTreeNode* pDst, RBTreeNode* pSrc)
+{
+	RBTreeNode* pLeaf = pTree->pLeaf;
+	ASSERT(pDst != pLeaf && pSrc != pLeaf);
+
+	// replace parent
+	if (pSrc == pTree->pRoot)
+	{
+		pTree->pRoot = pDst;
+	}
+	else
+	{
+		if (pSrc->pParent->pLeft == pSrc)
+		{
+			pSrc->pParent->pLeft = pDst;
+		}
+		else
+		{
+			pSrc->pParent->pRight = pDst;
+		}
+	}
+
+	// replace left
+	if (pSrc->pLeft != pLeaf)
+	{
+		pSrc->pLeft->pParent = pDst;
+	}
+
+	// replace right
+	if (pSrc->pRight != pLeaf)
+	{
+		pSrc->pRight->pParent = pDst;
+	}
+
+	// swap pointer
+	pDst->pParent = pSrc->pParent;
+	pDst->pLeft = pSrc->pLeft;
+	pDst->pRight = pSrc->pRight;
+	pDst->bRed = pSrc->bRed;
+}
+
 bool RBTreeDelete(RBTree* pTree, RBTreeNode* pNode)
 {
 	if (pNode == pTree->pLeaf)
@@ -309,13 +350,14 @@ bool RBTreeDelete(RBTree* pTree, RBTreeNode* pNode)
 	// swap last and node
 	if (pLast != pNode)
 	{
-		RBTreeNode oSwap = *pNode;
-		*pNode = *pLast;
-		*pLast = oSwap;
+		// swap all data except key val
+		RBTreeNode oSwap;
+		NodeReplace(pTree, &oSwap, pNode);
+		NodeReplace(pTree, pNode, pLast);
+		NodeReplace(pTree, pLast, &oSwap);
+
 		// swap pointer
-		RBTreeNode* pSwap = pNode;
-		pNode = pLast;
-		pLast = pSwap;
+		pLast = pNode;
 		//int64 nTmpKey = pNode->nKey;
 		//int32 nTmpVal = pNode->nVal;
 
