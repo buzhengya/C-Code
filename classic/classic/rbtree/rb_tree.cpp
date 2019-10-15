@@ -122,11 +122,8 @@ void SwapNodeColor(RBTreeNode * pNode1, RBTreeNode * pNode2)
 bool RBTreeInsert(RBTree * pTree, int32 nKey, int32 nVal)
 {
 	RBTreeNode * pTmp = new(RBTreeNode);
-	SetRed(pTmp);
 	pTmp->nKey = nKey;
 	pTmp->nVal = nVal;
-	pTmp->pLeft = pTree->pLeaf;
-	pTmp->pRight = pTree->pLeaf;
 
 	if (RBTreeInsert(pTree, pTmp) == false)
 	{
@@ -168,6 +165,10 @@ bool RBTreeInsert(RBTree* pTree, RBTreeNode* pTmp)
 	{
 		return false;
 	}
+
+	SetRed(pTmp);
+	pTmp->pLeft = pTree->pLeaf;
+	pTmp->pRight = pTree->pLeaf;
 
 	// 0. ¿ÕÊ÷
 	if (pTree->pRoot == pTree->pLeaf)
@@ -308,18 +309,24 @@ bool RBTreeDelete(RBTree* pTree, RBTreeNode* pNode)
 	// swap last and node
 	if (pLast != pNode)
 	{
-		int64 nTmpKey = pNode->nKey;
-		int32 nTmpVal = pNode->nVal;
+		RBTreeNode oSwap = *pNode;
+		*pNode = *pLast;
+		*pLast = oSwap;
+		// swap pointer
+		RBTreeNode* pSwap = pNode;
+		pNode = pLast;
+		pLast = pSwap;
+		//int64 nTmpKey = pNode->nKey;
+		//int32 nTmpVal = pNode->nVal;
 
-		pNode->nKey = pLast->nKey;
-		pNode->nVal = pLast->nVal;
+		//pNode->nKey = pLast->nKey;
+		//pNode->nVal = pLast->nVal;
 
-		pLast->nKey = nTmpKey;
-		pLast->nVal = nTmpVal;
+		//pLast->nKey = nTmpKey;
+		//pLast->nVal = nTmpVal;
 	}
 
 	ASSERT(pLast->pLeft == pLeaf || pLast->pRight == pLeaf);
-	ASSERT(pLast->nKey == pNode->nKey);
 
 	LOG << "details for delete." << std::endl;
 	PrintNodeDetail(pTree, pLast);

@@ -1,10 +1,17 @@
 #include "event_test.h"
 #include "../common/time.h"
 #include "../common/define.h"
+#include "../common/rand_tool.h"
 #include <map>
 #include <vector>
+#include <chrono>
+#include <thread>
 
 using namespace std;
+
+#define FACTORY_SIZE 1000
+#define OPERATE_TIMES 100
+#define MAX_DELAY  1000
 
 map<int64, Event*> mapTimer;
 vector<Event*> vecFactory;
@@ -13,7 +20,7 @@ void TestEventTimerHandle(Event* ev)
 {
 	// condition 1 : timer diff less 10ms
 	int64 nNow = GetNowMilSec();
-	ASSERT((nNow - ev->oNode.nKey) < 10);
+	ASSERT((nNow - ev->oNode.nKey) < 2);
 
 	// condition 2 : timer match map timer
 	ASSERT(ev == mapTimer.begin()->second);
@@ -21,7 +28,60 @@ void TestEventTimerHandle(Event* ev)
 	vecFactory.push_back(ev);
 }
 
+void TestAddTimer()
+{
+	int64 nDelay = int64(GetRand(0, 1000));
+	Event* ev = vecFactory[vecFactory.size() -1];
+	if (AddTimer(ev, nDelay))
+	{
+		vecFactory.pop_back();
+		mapTimer[nDelay] = ev;
+	}
+}
+
+void TestDelTimer()
+{
+	int64 nDelay = int64(GetRand(0, 1000));
+	Event* ev = nullptr;
+	if (mapTimer.find(nDelay) == mapTimer.end())
+	{
+		return;
+	}
+	ev = mapTimer[nDelay];
+	mapTimer.erase(nDelay);
+	vecFactory.push_back(ev);
+	ASSERT(DelTimer(ev) == true);
+}
+
 void TestEventTimer(int32 nCnt)
 {
-	
+	ASSERT(InitEventTimer() == true);
+
+	// gen factory
+	Event* ev = nullptr;
+	for (int32 i = 0; i < 1000; ++i)
+	{
+		ev = new(Event);
+		ev->fHandle = TestEventTimerHandle;
+		vecFactory.push_back(ev);
+	}
+
+	for (int32 i = 0; i < nCnt; ++i)
+	{
+		for (int32 j = 0; j < 100 && !vecFactory.empty(); ++j)
+		{
+			TestAddTimer();
+		}
+
+		for (int32 j = 0; j < 100 && vecFactory.size() < 1000; ++j)
+		{
+			TestDelTimer();
+		}
+
+		if (FindExpireTimer() == 0)
+		{
+			ASSERT(DealExpireTimer() == true);
+		}
+		this_thread::sleep_for(chrono::milliseconds(1));
+	}
 }
