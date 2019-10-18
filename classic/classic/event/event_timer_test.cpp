@@ -20,7 +20,7 @@ void TestEventTimerHandle(Event* ev)
 {
 	// condition 1 : timer diff less 10ms
 	int64 nNow = GetNowMilSec();
-	ASSERT((nNow - ev->oNode.nKey) < 2);
+	ASSERT((nNow - ev->oNode.nKey) < 20);
 
 	// condition 2 : timer match map timer
 	ASSERT(ev == mapTimer.begin()->second);
@@ -36,6 +36,7 @@ void TestAddTimer()
 	{
 		vecFactory.pop_back();
 		mapTimer[ev->oNode.nKey] = ev;
+		mapTimer.emplace(ev->oNode.nKey, ev);
 	}
 }
 
@@ -84,7 +85,7 @@ void TestEventTimer(int32 nCnt)
 			ASSERT(DealExpireTimer() == true);
 		}
 		int64 nEnd = GetNowMilSec();
-		if (nEnd != nBegin)
+		if (nEnd == nBegin)
 		{
 			this_thread::sleep_for(chrono::milliseconds(1));
 		}
