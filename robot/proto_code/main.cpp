@@ -26,8 +26,8 @@ int main()
 		//it.PrintMsg();
 	}
 
-	CProtoGolang::Instance()->GenGoCode(vecProtoMsg, strDest, "Person");
-	//CProtoCpp::Instance()->GenGoCode(vecProtoMsg, strDest, "Person");
+	//CProtoGolang::Instance()->GenGoCode(vecProtoMsg, strDest, "Person");
+	CProtoCpp::Instance()->GenGoCode(vecProtoMsg, strDest, "CUgcPlotMgr");
 	system("pause");
 	return 0;
 }

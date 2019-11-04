@@ -21,7 +21,7 @@ public:
 	CString& operator=(char pcStr);//有了该重载函数后 该形式将不合法 CString oStr=NULL; 有多个重载函数
 	CString& operator=(const char * pcStr);
 
-	//重载访问运算符
+	// element access 重载访问运算符
 	char& operator[](uint32 nPos);
 	const char& operator[](uint32 nPos)const;
 
@@ -29,18 +29,30 @@ public:
 	//析构函数
 	~CString();
 
-	//others
+	// capacity
 	uint32 Length()const;
 	uint32 Size()const;
 	uint32 Capacity()const;
 	//用于赋值和合并函数 字符串的堆内存扩大至指定大小 并且把原先字符串内容复制到新的内存堆中 
-	void Reserve(uint32 nSize = 0);
-	bool Empty();
+	void ReSize(uint32 nSize = 0);
+	bool Empty() const;
 	void Clear();
 
+	// operations
+	char* Data()const;
+
 private:
-	//负责构造时 进行内存分配并将字符串赋给该内存
-	void Assign(const char * pcStr);
+	// 负责赋值操作 考虑传入本身的情况
+	void _Assign(const char * pcStr, const uint32 nSize);
+
+	// memory alloc free
+	char* _Alloc(const uint32 nSize);
+	void _Free(char* pData);
+
+	inline uint32 _CalCap(const uint32 nSize);
+
+	inline uint32 _Size() const;
+	inline uint32 _Capacity() const;
 
 	char *m_pcData;
 	uint32 m_nLen;

@@ -1,6 +1,5 @@
 #include "cstring.h"
 
-
 CString::CString()
 {
 	m_pcData = nullptr;
@@ -10,35 +9,32 @@ CString::CString()
 
 CString::CString(const char * pcStr)
 {
-	Assign(pcStr);
+	_Assign(pcStr, strlen(pcStr));
 }
 
 
 CString::CString(const CString & oStr)
 {
-	Assign(oStr.m_pcData);
+	_Assign(oStr.m_pcData, oStr.Size());
 }
 
 
 CString& CString::operator=(const CString& oStr)
 {
-	if (this != &oStr)
-	{
-
-	}
+	_Assign(oStr.Data(), oStr.Size());
 	return *this;
 }
 
 CString & CString::operator=(char pcStr)
 {
-	m_pcData[0] = pcStr;
-	m_pcData[1] = '\0';
+	_Assign(&pcStr, 1);
 	return *this;
 }
 
 CString& CString::operator=(const char *pcStr)
 {
-	
+	uint32 nSize = pcStr == nullptr ? 0 : strlen(pcStr);
+	_Assign(pcStr, nSize);
 	return *this;
 }
 
@@ -49,8 +45,7 @@ char& CString::operator[](uint32 nPos)
 
 const char & CString::operator[](uint32 nPos) const
 {
-	// TODO: 在此处插入 return 语句
-	return NULL;
+	return m_pcData[nPos];
 }
 
 CString::~CString()
@@ -63,45 +58,102 @@ CString::~CString()
 
 uint32 CString::Length()const
 {
-	return strlen(m_pcData);
+	return _Size();
 }
 
 uint32 CString::Size()const
 {
-	return strlen(m_pcData);
+	return _Size();
 }
 
 uint32 CString::Capacity() const
 {
-	return m_nCap;
+	return _Capacity();
 }
 
 
-void CString::Reserve(uint32 nSize)
+void CString::ReSize(uint32 nSize)
 {
+	if (nSize <= _Capacity())
+	{
+		return;
+	}
+
+	char* pOld = m_pcData;
+	m_nCap = nSize;
+	m_pcData = _Alloc(m_nCap + 1);
+
+	_Assign(pOld, m_nLen);
+	_Free(pOld);
 }
 
-bool CString::Empty()
+bool CString::Empty() const
 {
-	return m_nLen == 0;
+	return _Size() == 0;
 }
 
 void CString::Clear()
 {
+	m_nLen = 0;
+	if (_Capacity() > 0)
+	{
+		m_pcData[0] = '\0';
+	}
 }
 
-void CString::Assign(const char * pcStr)
+char* CString::Data() const
 {
-	m_nLen = strlen(pcStr);
-	m_nCap = 2;
-	while (m_nCap <= m_nLen) m_nCap = m_nCap << 1;
-	if (m_pcData != nullptr)
+	return m_pcData;
+}
+
+void CString::_Assign(const char * pcStr, const uint32 nSize)
+{
+	if (m_pcData != pcStr)
 	{
-		delete m_pcData;
+		if (nSize > _Capacity())
+		{
+			_Free(m_pcData);
+			m_nCap = _CalCap(nSize);
+			m_pcData = _Alloc(m_nCap + 1);
+		}
+
+		m_nLen = nSize;
+		if (pcStr != nullptr)
+		{
+			strncpy(m_pcData, pcStr, m_nLen);
+			m_pcData[m_nLen] = '\0';
+		}
 	}
-	m_pcData = new char(m_nCap);
-	strncpy(m_pcData, pcStr, m_nLen);
-	m_pcData[m_nLen] = '\0';
+}
+
+char* CString::_Alloc(const uint32 nSize)
+{
+	return new char(nSize);
+}
+
+void CString::_Free(char* pData)
+{
+	if (pData != nullptr)
+	{
+		delete[] pData;
+	}
+}
+
+inline uint32 CString::_CalCap(const uint32 nSize)
+{
+	uint32 nCap = 2;
+	while (nCap <= nSize) nCap = nCap << 1;
+	return nCap;
+}
+
+inline uint32 CString::_Size() const
+{
+	return m_nLen;
+}
+
+inline uint32 CString::_Capacity() const
+{
+	return m_nCap;
 }
 
 CString operator+(const CString & oStr1, const CString & oStr2)
