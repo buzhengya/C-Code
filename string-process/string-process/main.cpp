@@ -2,7 +2,10 @@
 #include<string>
 int main()
 {
-	std::string s;
+	std::string xx;
+	std::string s = "xx" + xx + "y" + "10";
+	s.front();
+	s.back();
 	if(s=="")
 	{ 
 		std::cout << "empty" << std::endl;

@@ -48,12 +48,79 @@ const char & CString::operator[](uint32 nPos) const
 	return m_pcData[nPos];
 }
 
+char& CString::At(uint32 nPos)
+{
+	return m_pcData[nPos];
+}
+
+const char& CString::At(uint32 nPos) const
+{
+	return m_pcData[nPos];
+}
+
+char& CString::Front()
+{
+	return m_pcData[0];
+}
+
+const char& CString::Front() const
+{
+	return m_pcData[0];
+}
+
+char& CString::Back()
+{
+	return m_pcData[m_nLen - 1];
+}
+
+const char& CString::Back() const
+{
+	return m_pcData[m_nLen - 1];
+}
+
+CString& CString::operator+=(const char* pszData)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::operator+=(const CString& oStr)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::operator+=(const char szC)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::Append(const CString& oStr)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::Append(const CString& oStr, uint32 nPos, uint32 nSize)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::Append(const char* pszData)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::Append(const char* pszData, uint32 nSize)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::Append(uint32 nSize, char szC)
+{
+	// TODO: 在此处插入 return 语句
+}
+
 CString::~CString()
 {
-	if (m_pcData != nullptr)
-	{
-		delete m_pcData;
-	}
+	_Free(m_pcData);
 }
 
 uint32 CString::Length()const
@@ -71,20 +138,32 @@ uint32 CString::Capacity() const
 	return _Capacity();
 }
 
-
-void CString::ReSize(uint32 nSize)
+void CString::ReSize(const uint32 nSize, const char szC)
 {
-	if (nSize <= _Capacity())
+	if (_Size() < nSize)
+	{
+		m_nLen = nSize;
+		return;
+	}
+
+	if (nSize > _Capacity())
+	{
+		_ReCap(_CalCap(nSize));
+	}
+	
+	memset(m_pcData + m_nLen, szC, nSize - m_nLen);
+	m_nLen = nSize;
+	m_pcData[m_nLen] = '\0';
+}
+
+void CString::Reserve(const uint32 nCap)
+{
+	if (nCap <= _Capacity())
 	{
 		return;
 	}
 
-	char* pOld = m_pcData;
-	m_nCap = nSize;
-	m_pcData = _Alloc(m_nCap + 1);
-
-	_Assign(pOld, m_nLen);
-	_Free(pOld);
+	_ReCap(nCap);
 }
 
 bool CString::Empty() const
@@ -137,6 +216,16 @@ void CString::_Free(char* pData)
 	{
 		delete[] pData;
 	}
+}
+
+void CString::_ReCap(uint32 nCap)
+{
+	char* pOld = m_pcData;
+	m_nCap = nCap;
+	m_pcData = _Alloc(m_nCap + 1);
+
+	strncpy(m_pcData, pOld, m_nLen);
+	_Free(pOld);
 }
 
 inline uint32 CString::_CalCap(const uint32 nSize)
