@@ -1,5 +1,8 @@
 #include "cstring.h"
 
+const char END_CHAR = '\0';
+const uint32 CString::npos = -1;
+
 CString::CString()
 {
 	m_pcData = nullptr;
@@ -80,40 +83,105 @@ const char& CString::Back() const
 
 CString& CString::operator+=(const char* pszData)
 {
-	// TODO: 在此处插入 return 语句
+	return Append(pszData);
 }
 
 CString& CString::operator+=(const CString& oStr)
 {
-	// TODO: 在此处插入 return 语句
+	return Append(oStr);
 }
 
 CString& CString::operator+=(const char szC)
 {
-	// TODO: 在此处插入 return 语句
+	return Append(1, szC);
 }
 
 CString& CString::Append(const CString& oStr)
 {
-	// TODO: 在此处插入 return 语句
+	_Append(oStr.Data(), oStr.Size());
+	return *this;
 }
 
 CString& CString::Append(const CString& oStr, uint32 nPos, uint32 nSize)
 {
-	// TODO: 在此处插入 return 语句
+	_Append(oStr.Data() + nPos, nSize);
+	return *this;
 }
 
 CString& CString::Append(const char* pszData)
 {
-	// TODO: 在此处插入 return 语句
+	_Append(pszData, strlen(pszData));
+	return *this;
 }
 
 CString& CString::Append(const char* pszData, uint32 nSize)
 {
-	// TODO: 在此处插入 return 语句
+	_Append(pszData, nSize);
+	return *this;
 }
 
 CString& CString::Append(uint32 nSize, char szC)
+{
+	_Append(nSize, szC);
+	return *this;
+}
+
+void CString::PushBack(char szC)
+{
+	Append(1, szC);
+}
+
+CString& CString::Assign(const CString& oStr)
+{
+	_Assign(oStr.Data(), oStr.Size());
+	return *this;
+}
+
+CString& CString::Assign(const CString& oStr, uint32 nPos, uint32 nSize)
+{
+	_Assign(oStr.Data() + nPos, oStr.Size());
+	return *this;
+}
+
+CString& CString::Assign(const char* pszData)
+{
+	_Assign(pszData, strlen(pszData));
+	return *this;
+}
+
+CString& CString::Assign(const char* pszData, uint32 nSize)
+{
+	_Assign(pszData, nSize);
+	return *this;
+}
+
+CString& CString::Assign(uint32 nSize, char szC)
+{
+	_Assign(nSize, szC);
+	return *this;
+}
+
+CString& CString::Insert(uint32 nPos, const CString& oStr)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::Insert(uint32 nPos, const CString& oStr, uint32 nSt, uint32 nSize)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::Insert(uint32 nPos, const char* pszData)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::Insert(uint32 nPos, const char* pszData, uint32 nSize)
+{
+	// TODO: 在此处插入 return 语句
+}
+
+CString& CString::Insert(uint32 nPos, uint32 nSize, char szC)
 {
 	// TODO: 在此处插入 return 语句
 }
@@ -125,40 +193,40 @@ CString::~CString()
 
 uint32 CString::Length()const
 {
-	return _Size();
+	return m_nLen;
 }
 
 uint32 CString::Size()const
 {
-	return _Size();
+	return m_nLen;
 }
 
 uint32 CString::Capacity() const
 {
-	return _Capacity();
+	return m_nCap;
 }
 
 void CString::ReSize(const uint32 nSize, const char szC)
 {
-	if (_Size() < nSize)
+	if (m_nLen < nSize)
 	{
 		m_nLen = nSize;
 		return;
 	}
 
-	if (nSize > _Capacity())
+	if (nSize > m_nCap)
 	{
 		_ReCap(_CalCap(nSize));
 	}
 	
 	memset(m_pcData + m_nLen, szC, nSize - m_nLen);
 	m_nLen = nSize;
-	m_pcData[m_nLen] = '\0';
+	m_pcData[m_nLen] = END_CHAR;
 }
 
 void CString::Reserve(const uint32 nCap)
 {
-	if (nCap <= _Capacity())
+	if (nCap <= m_nCap)
 	{
 		return;
 	}
@@ -168,15 +236,15 @@ void CString::Reserve(const uint32 nCap)
 
 bool CString::Empty() const
 {
-	return _Size() == 0;
+	return m_nLen == 0;
 }
 
 void CString::Clear()
 {
 	m_nLen = 0;
-	if (_Capacity() > 0)
+	if (m_nCap > 0)
 	{
-		m_pcData[0] = '\0';
+		m_pcData[0] = END_CHAR;
 	}
 }
 
@@ -189,20 +257,47 @@ void CString::_Assign(const char * pcStr, const uint32 nSize)
 {
 	if (m_pcData != pcStr)
 	{
-		if (nSize > _Capacity())
-		{
-			_Free(m_pcData);
-			m_nCap = _CalCap(nSize);
-			m_pcData = _Alloc(m_nCap + 1);
-		}
+		_ExpandCap(nSize);
 
 		m_nLen = nSize;
 		if (pcStr != nullptr)
 		{
 			strncpy(m_pcData, pcStr, m_nLen);
-			m_pcData[m_nLen] = '\0';
 		}
+		m_pcData[m_nLen] = END_CHAR;
 	}
+}
+
+void CString::_Assign(uint32 nSize, char szC)
+{
+	_ExpandCap(nSize);
+
+	m_nLen = nSize;
+	if (nSize > 0)
+	{
+		memset(m_pcData, szC, nSize);
+	}
+	m_pcData[m_nLen] = END_CHAR;
+}
+
+void CString::_Append(const char* pcStr, uint32 nSize)
+{
+	uint32 nTotal = nSize + m_nLen;
+	_AdjustCap(nTotal);
+
+	strncpy(m_pcData + m_nLen, pcStr, nSize);
+	m_pcData[nTotal] = END_CHAR;
+	m_nLen = nTotal;
+}
+
+void CString::_Append(uint32 nSize, char szC)
+{
+	uint32 nTotal = nSize + m_nLen;
+	_AdjustCap(nTotal);
+
+	memset(m_pcData + m_nLen, szC, nSize);
+	m_pcData[nTotal] = END_CHAR;
+	m_nLen = nTotal;
 }
 
 char* CString::_Alloc(const uint32 nSize)
@@ -228,21 +323,36 @@ void CString::_ReCap(uint32 nCap)
 	_Free(pOld);
 }
 
+void CString::_ExpandCap(uint32 nSize)
+{
+	if (nSize > m_nCap)
+	{
+		_Free(m_pcData);
+		m_nCap = _CalCap(nSize);
+		m_pcData = _Alloc(m_nCap + 1);
+	}
+}
+
+void CString::_AdjustCap(uint32 nSize)
+{
+	if (nSize <= m_nCap)
+	{
+		return;
+	}
+
+	char* pOld = m_pcData;
+	m_nCap = _CalCap(nSize);
+	m_pcData = _Alloc(m_nCap + 1);
+
+	strncpy(m_pcData, pOld, m_nLen);
+	_Free(pOld);
+}
+
 inline uint32 CString::_CalCap(const uint32 nSize)
 {
 	uint32 nCap = 2;
 	while (nCap <= nSize) nCap = nCap << 1;
 	return nCap;
-}
-
-inline uint32 CString::_Size() const
-{
-	return m_nLen;
-}
-
-inline uint32 CString::_Capacity() const
-{
-	return m_nCap;
 }
 
 CString operator+(const CString & oStr1, const CString & oStr2)
