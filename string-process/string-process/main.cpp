@@ -1,8 +1,17 @@
 #include "cstring.h"
 #include<string>
+#include<iostream>
+#include<fstream>
+
+using namespace std;
 int main()
 {
+	CString oStr;
+	cin >> oStr;
+	cout << oStr;
 	std::string xx;
+	cin >> xx;
+	cout << xx;
 	std::string s = "xx" + xx + "y" + "10";
 	s.front();
 	s.back();
