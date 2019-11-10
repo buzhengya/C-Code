@@ -12,20 +12,56 @@
     <Filter Include="framework">
       <UniqueIdentifier>{d84cbfb2-a3df-469f-bb9b-21f55c238afc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="log">
+      <UniqueIdentifier>{c39c94e9-ea91-451e-87b9-106aa482c153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{5d506ce8-e620-4ee6-8ae8-be1a7c4fbd2e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cstring.cpp">
-      <Filter>cstring</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>framework</Filter>
     </ClCompile>
+    <ClCompile Include="log\log.cpp">
+      <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="common\rand_tool.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\time.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\mem_pool.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="cstring\cstring.cpp">
+      <Filter>cstring</Filter>
+    </ClCompile>
+    <ClCompile Include="cstring\string_test.cpp">
+      <Filter>cstring</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cstring.h">
+    <ClInclude Include="log\log.h">
+      <Filter>log</Filter>
+    </ClInclude>
+    <ClInclude Include="common\define.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\rand_tool.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\time.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\mem_pool.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="cstring\cstring.h">
       <Filter>cstring</Filter>
     </ClInclude>
-    <ClInclude Include="define.h">
+    <ClInclude Include="cstring\string_test.h">
       <Filter>cstring</Filter>
     </ClInclude>
   </ItemGroup>

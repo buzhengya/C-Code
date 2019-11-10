@@ -119,12 +119,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cstring.cpp" />
+    <ClCompile Include="common\mem_pool.cpp" />
+    <ClCompile Include="common\rand_tool.cpp" />
+    <ClCompile Include="common\time.cpp" />
+    <ClCompile Include="cstring\cstring.cpp" />
+    <ClCompile Include="cstring\string_test.cpp" />
+    <ClCompile Include="log\log.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cstring.h" />
-    <ClInclude Include="define.h" />
+    <ClInclude Include="common\define.h" />
+    <ClInclude Include="common\mem_pool.h" />
+    <ClInclude Include="common\rand_tool.h" />
+    <ClInclude Include="common\time.h" />
+    <ClInclude Include="cstring\cstring.h" />
+    <ClInclude Include="cstring\string_test.h" />
+    <ClInclude Include="log\log.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

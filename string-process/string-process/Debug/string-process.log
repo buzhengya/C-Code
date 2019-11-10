@@ -1,2 +1,5 @@
 ﻿  cstring.cpp
-  string-process.vcxproj -> D:\C++Code\string-process\Debug\string-process.exe
+  string_test.cpp
+  main.cpp
+  Generating Code...
+  string-process.vcxproj -> C:\C++\C-Code\string-process\Debug\string-process.exe
