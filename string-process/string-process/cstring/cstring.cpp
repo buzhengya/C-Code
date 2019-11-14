@@ -1,6 +1,7 @@
 #include "cstring.h"
 #include "../common/mem_pool.h"
 #include <utility>
+#include "../log/log.h"
 
 using namespace std;
 
@@ -222,7 +223,7 @@ CString& CString::Insert(uint32 nPos, const CString& oStr)
 
 CString& CString::Insert(uint32 nPos, const CString& oStr, uint32 nSt, uint32 nSize)
 {
-	_Insert(nPos, oStr.Data() + nSize, nSize);
+	_Insert(nPos, oStr.Data() + nSt, nSize);
 	return *this;
 }
 
@@ -246,13 +247,18 @@ CString& CString::Insert(uint32 nPos, uint32 nSize, char szC)
 
 CString& CString::Erase(uint32 nPos, uint32 nLen)
 {
+	if (nPos >= m_nLen)
+	{
+		return *this;
+	}
+
 	if (nLen == npos)
 	{
-		nLen = m_nLen;
+		nLen = m_nLen - nPos;
 	}
 	uint32 nSt = nPos;
 	uint32 nEnd = nPos + nLen;
-	for (; nSt <= nEnd; ++nSt)
+	for (; nSt < nEnd; ++nSt)
 	{
 		m_pcData[nSt] = m_pcData[nSt + nLen];
 	}
@@ -454,6 +460,7 @@ const char* CString::Data() const
 
 void CString::_Init()
 {
+	LOG_DEBUG << "CString construct";
 	m_pcData = nullptr;
 	m_nLen = 0;
 	m_nCap = 0;

@@ -122,3 +122,58 @@ void TestConstruct(uint32 nCnt)
 		ASSERT(false);
 	}
 }
+
+vector<CString> vecStr1;
+vector<string> vecStr2;
+const uint32 INIT_VEC_SIZE = 1000;
+
+void GenStr()
+{
+	for (uint32 i = 0; i < INIT_VEC_SIZE; ++i)
+	{
+		uint32 nTotal = GetRand(MIN_STR_LEN, MAX_STR_LEN);
+		string oStr1 = GetRandStr(nTotal);
+		vecStr2.push_back(oStr1);
+		//vecStr1.emplace(forward_as_tuple(oStr1.data(), nTotal));
+		TestStringEq(vecStr1.back(), vecStr2.back());
+	}
+}
+
+void TestOperator(uint32 nCnt)
+{
+	for (uint32 i = 0; i < nCnt; ++i)
+	{
+		// insert
+		uint32 nTotal = GetRand(MIN_STR_LEN, MAX_STR_LEN);
+		string oStr2 = GetRandStr(nTotal);
+		CString oStr1(oStr2.data(), oStr2.size());
+
+		nTotal = GetRand(MIN_STR_LEN, MAX_STR_LEN);
+		string oTmp = GetRandStr(nTotal);
+
+		// insert 1
+		uint32 nPos = GetRand(0, nTotal - 1);
+		TestStringEq(oStr1.Insert(nPos, oTmp.data(), oTmp.size()), oStr2.insert(nPos, oTmp.data(), oTmp.size()));
+
+		// insert 2
+		char szC = GetRandChar();
+		TestStringEq(oStr1.Insert(nPos, nTotal, szC), oStr2.insert(nPos, nTotal, szC));
+
+		// erase
+		nPos = GetRand(0, nTotal - 1);
+		uint32 nSize = GetRand(0, nTotal);
+		TestStringEq(oStr1.Erase(nPos, nSize), oStr2.erase(nPos, nSize));
+
+		// swap 1
+		CString oTmp1(oTmp.data(), oTmp.size());
+		string oTmp2(oTmp.data(), oTmp.size());
+		oStr2.swap(oTmp2);
+		TestStringEq(oStr1.Swap(oTmp1), oStr2);
+
+		// swap 2
+		oStr2.swap(oTmp2);
+		TestStringEq(oStr1.Swap(CString(oTmp1)), oStr2);
+
+		// replace
+	}
+}

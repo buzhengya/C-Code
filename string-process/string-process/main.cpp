@@ -8,5 +8,8 @@
 using namespace std;
 int main()
 {
-	TestConstruct(1000);
+	CString oStr;
+	CString* p = (CString*)malloc(sizeof CString);
+	p = new(p)CString();
+	TestOperator(10);
 }
