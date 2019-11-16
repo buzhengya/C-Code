@@ -1,6 +1,0 @@
-﻿  production.cc
-  gtest_prod_test.cc
-  正在生成代码...
-gtest_prod_test.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
-  gtest_prod_test.vcxproj -> D:\C++Code\googletest\googletest\msvc\gtest/Debug\gtest_prod_test.exe
-  gtest_prod_test.vcxproj -> gtest/Debug\gtest_prod_test.pdb (Full PDB)

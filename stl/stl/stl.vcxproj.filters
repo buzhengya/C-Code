@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="alloc">
+      <UniqueIdentifier>{539f1c85-21f5-4e81-9629-2fba39831155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="iterator">
+      <UniqueIdentifier>{5543a4b7-033e-48d3-a2a5-07095a381c39}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="iterator\iterator.cpp">
+      <Filter>iterator</Filter>
+    </ClCompile>
+    <ClCompile Include="alloc\alloc.cpp">
+      <Filter>alloc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="iterator\iterator.h">
+      <Filter>iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="alloc\alloc.h">
+      <Filter>alloc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
