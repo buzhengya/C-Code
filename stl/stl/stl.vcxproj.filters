@@ -7,22 +7,40 @@
     <Filter Include="iterator">
       <UniqueIdentifier>{5543a4b7-033e-48d3-a2a5-07095a381c39}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vector">
+      <UniqueIdentifier>{5693ee17-5a3c-4391-9dda-8e7c1890e740}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="algo">
+      <UniqueIdentifier>{79fcd8d4-6f6a-4e9f-a27e-eed0ad67cc9d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="iterator\iterator.cpp">
-      <Filter>iterator</Filter>
-    </ClCompile>
-    <ClCompile Include="alloc\alloc.cpp">
+    <ClCompile Include="cpp\alloc.cpp">
       <Filter>alloc</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\algo.cpp">
+      <Filter>algo</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\vector.cpp">
+      <Filter>vector</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\iterator.cpp">
+      <Filter>iterator</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="iterator\iterator.h">
-      <Filter>iterator</Filter>
-    </ClInclude>
-    <ClInclude Include="alloc\alloc.h">
+    <ClInclude Include="include\alloc.h">
       <Filter>alloc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\algo.h">
+      <Filter>algo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\vector.h">
+      <Filter>vector</Filter>
+    </ClInclude>
+    <ClInclude Include="include\iterator.h">
+      <Filter>iterator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

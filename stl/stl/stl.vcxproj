@@ -123,13 +123,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="alloc\alloc.cpp" />
-    <ClCompile Include="iterator\iterator.cpp" />
+    <ClCompile Include="cpp\algo.cpp" />
+    <ClCompile Include="cpp\alloc.cpp" />
+    <ClCompile Include="cpp\iterator.cpp" />
+    <ClCompile Include="cpp\vector.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="alloc\alloc.h" />
-    <ClInclude Include="iterator\iterator.h" />
+    <ClInclude Include="include\algo.h" />
+    <ClInclude Include="include\alloc.h" />
+    <ClInclude Include="include\iterator.h" />
+    <ClInclude Include="include\vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

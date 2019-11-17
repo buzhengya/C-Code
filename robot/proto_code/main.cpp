@@ -8,8 +8,8 @@ using namespace std;
 
 int main()
 {
-	string strSource = "E:\\project_master\\intermediate\\Proto\\cs_proto.proto";
-	string strDest = "E:\\project_master\\intermediate\\Proto\\cs_proto.go";
+	string strSource = "E:\\project_master\\DailyWork\\Proto\\cs_proto.proto";
+	string strDest = "E:\\project_master\\DailyWork\\Proto\\cs_proto.go";
 
 	vector<string> vecStrMsg;
 	CProtoRead::Instance()->GetProto(strSource, vecStrMsg);
