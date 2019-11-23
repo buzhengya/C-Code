@@ -13,6 +13,9 @@
     <Filter Include="algo">
       <UniqueIdentifier>{79fcd8d4-6f6a-4e9f-a27e-eed0ad67cc9d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="list">
+      <UniqueIdentifier>{66f3bcdb-0b22-4d06-ba1e-60da51c8988f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -28,6 +31,9 @@
     <ClCompile Include="cpp\iterator.cpp">
       <Filter>iterator</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\list.cpp">
+      <Filter>list</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\alloc.h">
@@ -41,6 +47,12 @@
     </ClInclude>
     <ClInclude Include="include\iterator.h">
       <Filter>iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\iterator_test.h">
+      <Filter>iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="include\list.h">
+      <Filter>list</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

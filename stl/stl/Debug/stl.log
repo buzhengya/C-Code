@@ -1,7 +1,2 @@
-﻿  algo.cpp
-  alloc.cpp
-  iterator.cpp
-  vector.cpp
-  main.cpp
-  正在生成代码...
+﻿  main.cpp
   stl.vcxproj -> D:\C++Code\stl\Debug\stl.exe

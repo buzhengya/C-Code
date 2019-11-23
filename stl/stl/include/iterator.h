@@ -11,19 +11,29 @@ struct RandomIterator : BidirectionalIterator {};
 template<class I>
 struct IteratorTraits
 {
-	typedef I::Iterator::ValueType			ValueType;
-	typedef I::Iterator::DifferenceType		DifferenceType;
-	typedef I::Iterator::Pointer			Pointer;
-	typedef I::Iterator::Reference			Reference;
-	typedef I::Iterator::IteratorCategory	IteratorCategory;
+	typedef typename I::Iterator::ValueType			ValueType;
+	typedef typename I::Iterator::DifferenceType		DifferenceType;
+	typedef typename I::Iterator::Pointer			Pointer;
+	typedef typename I::Iterator::Reference			Reference;
+	typedef typename I::Iterator::IteratorCategory	IteratorCategory;
 };
 
 template<class T>
 struct IteratorTraits<T*>
 {
-	typedef T			ValueType;
-	typedef ptrdiff_t	DifferenceType;
-	typedef T*			Pointer;
-	typedef T&			Reference;
-	typedef 	IteratorCategory;
+	typedef T				ValueType;
+	typedef ptrdiff_t		DifferenceType;
+	typedef T*				Pointer;
+	typedef T&				Reference;
+	typedef RandomIterator	IteratorCategory;
+};
+
+template<class T>
+struct IteratorTraits<const T*>
+{
+	typedef T				ValueType;
+	typedef ptrdiff_t		DifferenceType;
+	typedef const T*		Poniter;
+	typedef const T&		Reference;
+	typedef RandomIterator	IteratorCategory;
 };

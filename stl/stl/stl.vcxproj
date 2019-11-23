@@ -76,9 +76,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>./include;./cpp;../../common/common/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>../../common/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>common.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -126,6 +129,7 @@
     <ClCompile Include="cpp\algo.cpp" />
     <ClCompile Include="cpp\alloc.cpp" />
     <ClCompile Include="cpp\iterator.cpp" />
+    <ClCompile Include="cpp\list.cpp" />
     <ClCompile Include="cpp\vector.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -133,6 +137,8 @@
     <ClInclude Include="include\algo.h" />
     <ClInclude Include="include\alloc.h" />
     <ClInclude Include="include\iterator.h" />
+    <ClInclude Include="include\iterator_test.h" />
+    <ClInclude Include="include\list.h" />
     <ClInclude Include="include\vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
