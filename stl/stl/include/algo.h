@@ -1,29 +1,21 @@
 #pragma once
-#include <functional>
-#include <iostream>
 
-template<class T>
-class TJudge : public std::unary_function<T, bool>
+template<class Iterator, class Func>
+void Accumulate(Iterator it1, Iterator it2, Func func)
 {
-public:
-	TJudge() {}
-
-	bool operator()(T t)
+	Iterator itSecond = it1;
+	Iterator itFirst = itSecond++;
+	for (; itSecond < it2; ++itSecond, ++itFirst)
 	{
-		bool bRet = t.Val();
-		std::cout << "TJudge::operator() val : " << bRet << std::endl;
-		return bRet;
+		*itSecond = func(*itFirst, *itSecond);
 	}
-};
+}
 
-template<class T>
-class TPrint : public std::unary_function<T, void>
+template<class Iterator, class Func>
+void Increase(Iterator it1, Iterator it2, Func func)
 {
-public:
-	TPrint() {}
-
-	void operator()(T t)
+	for (; it1 != it2; ++it1)
 	{
-		t.Print();
+		*it1 = func(*it1);
 	}
-};
+}

@@ -12,7 +12,8 @@ CWriter::CWriter(LOG_LEVEL eLevel, const char* pszFile, const char* pszFunc, con
 	m_oStream << _GetLevelStr(eLevel) << " ";
 
 	// log file function line
-	m_oStream << _GetFileName(pszFile) << " " << pszFunc << ":" << nLine << " ";
+	//m_oStream << _GetFileName(pszFile) << " " << pszFunc << ":" << nLine << " ";
+	m_oStream << _GetFileName(pszFile) << ":" << nLine << " ";
 }
 
 CWriter::~CWriter()

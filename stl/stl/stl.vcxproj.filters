@@ -16,6 +16,9 @@
     <Filter Include="list">
       <UniqueIdentifier>{66f3bcdb-0b22-4d06-ba1e-60da51c8988f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="function">
+      <UniqueIdentifier>{08a7e89a-3587-4383-9d4a-a30bc5235c4a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -33,6 +36,9 @@
     </ClCompile>
     <ClCompile Include="cpp\list.cpp">
       <Filter>list</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\function.cpp">
+      <Filter>function</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +59,12 @@
     </ClInclude>
     <ClInclude Include="include\list.h">
       <Filter>list</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\algo_test.h">
+      <Filter>algo</Filter>
+    </ClInclude>
+    <ClInclude Include="include\function.h">
+      <Filter>function</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

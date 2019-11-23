@@ -128,14 +128,17 @@
   <ItemGroup>
     <ClCompile Include="cpp\algo.cpp" />
     <ClCompile Include="cpp\alloc.cpp" />
+    <ClCompile Include="cpp\function.cpp" />
     <ClCompile Include="cpp\iterator.cpp" />
     <ClCompile Include="cpp\list.cpp" />
     <ClCompile Include="cpp\vector.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cpp\algo_test.h" />
     <ClInclude Include="include\algo.h" />
     <ClInclude Include="include\alloc.h" />
+    <ClInclude Include="include\function.h" />
     <ClInclude Include="include\iterator.h" />
     <ClInclude Include="include\iterator_test.h" />
     <ClInclude Include="include\list.h" />
