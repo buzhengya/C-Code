@@ -42,5 +42,8 @@
     <ClInclude Include="include\iterator.h">
       <Filter>iterator</Filter>
     </ClInclude>
+    <ClInclude Include="cpp\algo_test.h">
+      <Filter>algo</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
