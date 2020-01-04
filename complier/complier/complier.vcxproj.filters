@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="lex_anal">
+      <UniqueIdentifier>{c8be468a-fe60-4f22-beeb-55f6d83b8137}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lex_anal\basic_data.h">
+      <Filter>lex_anal</Filter>
+    </ClInclude>
+    <ClInclude Include="lex_anal\nfa_dfa.h">
+      <Filter>lex_anal</Filter>
+    </ClInclude>
+    <ClInclude Include="lex_anal\re_nfa.h">
+      <Filter>lex_anal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lex_anal\nfa_dfa.cpp">
+      <Filter>lex_anal</Filter>
+    </ClCompile>
+    <ClCompile Include="lex_anal\re_nfa.cpp">
+      <Filter>lex_anal</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="lex_anal\basic_data.cpp">
+      <Filter>lex_anal</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

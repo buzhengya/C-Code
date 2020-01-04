@@ -7,6 +7,12 @@
     <Filter Include="log">
       <UniqueIdentifier>{94989a2b-0b03-407c-8ec6-e1f6ce251de1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="file_deal">
+      <UniqueIdentifier>{4be9935c-7bb0-48d4-a529-44fcd8a61de0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wrap_assert">
+      <UniqueIdentifier>{9ecd2b13-936b-4550-96db-49ef41525cc1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\define.h">
@@ -21,6 +27,15 @@
     <ClInclude Include="src\log.h">
       <Filter>log</Filter>
     </ClInclude>
+    <ClInclude Include="src\singleton.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\read_file.h">
+      <Filter>file_deal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\wrap_assert.h">
+      <Filter>wrap_assert</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\rand_tool.cpp">
@@ -31,6 +46,9 @@
     </ClCompile>
     <ClCompile Include="src\log.cpp">
       <Filter>log</Filter>
+    </ClCompile>
+    <ClCompile Include="src\read_file.cpp">
+      <Filter>file_deal</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

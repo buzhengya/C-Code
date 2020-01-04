@@ -128,11 +128,15 @@
     <ClInclude Include="src\define.h" />
     <ClInclude Include="src\log.h" />
     <ClInclude Include="src\rand_tool.h" />
+    <ClInclude Include="src\read_file.h" />
+    <ClInclude Include="src\singleton.h" />
     <ClInclude Include="src\time.h" />
+    <ClInclude Include="src\wrap_assert.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\log.cpp" />
     <ClCompile Include="src\rand_tool.cpp" />
+    <ClCompile Include="src\read_file.cpp" />
     <ClCompile Include="src\time.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

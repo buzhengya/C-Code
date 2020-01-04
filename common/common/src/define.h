@@ -8,6 +8,7 @@ typedef long long				int64;
 typedef unsigned long long		uint64;
 
 #define ASSERT  assert
+#define INVALID_32BIT ~0
 
 #define ALIGNMENT sizeof(unsigned long)
 
