@@ -13,13 +13,20 @@ class CProtoCpp : public TSingleton<CProtoCpp>, public CProtoOutput
 	friend class TSingleton<CProtoCpp>;
 
 public:
-	bool GenGoCode(vector<CProtoMsg> & vecProtoMsg, const string & strDstFile, const string & strMoudle);
+	bool GenCppCode(vector<CProtoMsg> & vecProtoMsg, const string & strDstFile);
 
+	void SetModule(const string& strModule) { m_strModuleName = strModule; }
+
+	void SetSession(const string& strSession) { m_strSession = strSession; }
+
+	void SetHandler(const string& strHandler) { m_strHandler = strHandler; }
 private:
 	CProtoCpp() {}
 	~CProtoCpp() {}
 
 	bool _DealReqMsg(CProtoMsg & oProtoMsg);
+
+	bool _DealAckOrNtfMsg(CProtoMsg& oProtoMsg);
 
 	bool _GenRegister();
 	bool _GenPipeDeclare();
@@ -41,6 +48,8 @@ private:
 	std::vector<string>		m_vecModuleDeclare;
 	std::vector<string>		m_vecModuleDefine;
 
+	string					m_strSession;
+	string					m_strHandler;
 	string					m_strModuleName;
 	string					m_strReqName;
 	string					m_strAckName;

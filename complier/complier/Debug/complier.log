@@ -1,2 +1,21 @@
-﻿  nfa_dfa.cpp
-  complier.vcxproj -> D:\C++Code\complier\Debug\complier.exe
+﻿  main.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(18,13): error C2039: “clock_t”: 不是“`global namespace'”的成员
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(18,20): error C2873: “clock_t”: 符号不能用在 using 声明中
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(22,13): error C2039: “asctime”: 不是“`global namespace'”的成员
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(22,20): error C2873: “asctime”: 符号不能用在 using 声明中
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(23,13): error C2039: “clock”: 不是“`global namespace'”的成员
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(23,18): error C2873: “clock”: 符号不能用在 using 声明中
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(24,13): error C2039: “ctime”: 不是“`global namespace'”的成员
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(24,18): error C2873: “ctime”: 符号不能用在 using 声明中
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(25,13): error C2039: “difftime”: 不是“`global namespace'”的成员
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(25,21): error C2873: “difftime”: 符号不能用在 using 声明中
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(26,13): error C2039: “gmtime”: 不是“`global namespace'”的成员
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(26,19): error C2873: “gmtime”: 符号不能用在 using 声明中
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(27,13): error C2039: “localtime”: 不是“`global namespace'”的成员
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(27,22): error C2873: “localtime”: 符号不能用在 using 声明中
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(28,13): error C2039: “mktime”: 不是“`global namespace'”的成员
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(28,19): error C2873: “mktime”: 符号不能用在 using 声明中
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(29,13): error C2039: “strftime”: 不是“`global namespace'”的成员
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(29,21): error C2873: “strftime”: 符号不能用在 using 声明中
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(30,13): error C2039: “time”: 不是“`global namespace'”的成员
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.23.28105\include\ctime(30,17): error C2873: “time”: 符号不能用在 using 声明中

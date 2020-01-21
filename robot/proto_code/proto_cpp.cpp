@@ -6,11 +6,15 @@ const string strAckName = "ACK_NAME";
 const string strFuncName = "FUNC_NAME";
 const string strProtoId = "PROTO_ID";
 const string strModuleName = "MODULE_NAME";
+const string strSession = "SESSION";
+const string strHandler = "HANDLER";
 
-static const string strGame2GateTemplateDeclare = 
-"	bool FUNC_NAME(const char* pszData, uint32 nLen, CGame2GateSession* pSession, uint64 nId);\n";
-static const string strGame2GateTemplateDefine =
-"bool CGame2GateHandler::FUNC_NAME(const char* pszData, uint32 nLen, CGame2GateSession* pSession, uint64 nId)\n"
+static const string strPipeDeclareTemp = 
+"	bool FUNC_NAME(const char* pszData, uint32 nLen, SESSION* pSession, uint64 nId);\n";
+static const string strPipeRealTemp =
+
+//// gate to game template req function
+"bool HANDLER::FUNC_NAME(const char* pszData, uint32 nLen, SESSION* pSession, uint64 nId)\n"
 "{\n"
 "	REQ_NAME oReq;\n"
 "	CRole* pRole = nullptr;\n"
@@ -21,13 +25,26 @@ static const string strGame2GateTemplateDefine =
 "	}\n"
 "	pRole->ModuleName().FUNC_NAME(oReq);\n"
 "	return true;\n"
-"}\n";
+"}\n"
 
-static const string strGame2GateTemplateRegister =
-"	RegisterDealer(SProtoSpace::PROTO_ID, &CGame2GateHandler::FUNC_NAME) &&\n";
+//// world req func
+//"bool HANDLER::FUNC_NAME(const char* pszData, uint32 nLen, SESSION* pSession, uint64 nId)\n"
+//"{\n"
+//"	REQ_NAME oReq;\n"
+//"	PARSE_PROTO(REQ_NAME, oReq, pszData, nLen);\n"
+//"	ModuleName::Instance()->FUNC_NAME(oReq, nId);\n"
+//"	return true;\n"
+//"}\n"
+;
+
+static const string strPipeRegisterTmp =
+"	RegisterDealer(SProtoSpace::PROTO_ID, &HANDLER::FUNC_NAME) &&\n";
 
 static const string strModuleFuncDeclare =
+// req function
 "	void   FUNC_NAME(const REQ_NAME& oReq);\n";
+
+// game req function
 static const string strModuleFuncDefine =
 "void  MODULE_NAME::FUNC_NAME(const REQ_NAME& oReq)\n"
 "{\n"
@@ -38,14 +55,20 @@ static const string strModuleFuncDefine =
 "		m_pOwner->Send(oAck.proto_id(), oAck, EPACKET_ACK);\n"
 "	};\n\n\n"
 "	funcSend(RES_ERROR_None);\n"
-"}\n";
+"}\n"
 
-bool CProtoCpp::GenGoCode(vector<CProtoMsg>& vecProtoMsg, const string & strDstFile, const string & strMoudle)
+// world req function
+//"void  MODULE_NAME::FUNC_NAME(const REQ_NAME& oReq, uint64 nRoleId)\n"
+//"{\n"
+//"	EXLOG_DEBUG << \"receive REQ_NAME. role id : \" << nRoleId;"
+//"}\n"
+;
+
+bool CProtoCpp::GenCppCode(vector<CProtoMsg>& vecProtoMsg, const string & strDstFile)
 {
 	_Clear();
 
 	m_strDstFile = strDstFile;
-	m_strModuleName = strMoudle;
 
 	if (_OpenFile() == false)
 	{
@@ -58,6 +81,10 @@ bool CProtoCpp::GenGoCode(vector<CProtoMsg>& vecProtoMsg, const string & strDstF
 		if (it.GetMsgType() == MSG_REQ)
 		{
 			_DealReqMsg(it);
+		}
+		else
+		{
+			_DealAckOrNtfMsg(it);
 		}
 	}
 
@@ -89,11 +116,32 @@ bool CProtoCpp::_DealReqMsg(CProtoMsg & oProtoMsg)
 	_GenPipeDefine();
 	_GenModuleDeclare();
 	_GenModuleDefine();
+	return true;
+}
+
+bool CProtoCpp::_DealAckOrNtfMsg(CProtoMsg& oProtoMsg)
+{
+	m_strAckName = oProtoMsg.GetMsgName();
+	
+	_Underline2Hump(m_strAckName, m_strFuncName);
+	if (_GenProtoId(oProtoMsg, m_strProtoId) == false)
+	{
+		cout << "get proto id failed" << endl;
+		oProtoMsg.PrintMsg();
+		return false;
+	}
+
+	_GenRegister();
+	_GenPipeDeclare();
+	_GenPipeDefine();
+	_GenModuleDeclare();
+	_GenModuleDefine();
+	return true;
 }
 
 bool CProtoCpp::_GenRegister()
 {
-	string strRegister = strGame2GateTemplateRegister;
+	string strRegister = strPipeRegisterTmp;
 	_ReplaceStr(strRegister);
 	m_vecRegister.push_back(strRegister);
 	return true;
@@ -101,7 +149,7 @@ bool CProtoCpp::_GenRegister()
 
 bool CProtoCpp::_GenPipeDeclare()
 {
-	string strPipeDeclare = strGame2GateTemplateDeclare;
+	string strPipeDeclare = strPipeDeclareTemp;
 	_ReplaceStr(strPipeDeclare);
 	m_vecPipeDeclare.push_back(strPipeDeclare);
 	return true;
@@ -109,7 +157,7 @@ bool CProtoCpp::_GenPipeDeclare()
 
 bool CProtoCpp::_GenPipeDefine()
 {
-	string strPipeDefine = strGame2GateTemplateDefine;
+	string strPipeDefine = strPipeRealTemp;
 	_ReplaceStr(strPipeDefine);
 	m_vecPipeDefine.push_back(strPipeDefine);
 	return true;
@@ -133,6 +181,8 @@ bool CProtoCpp::_GenModuleDefine()
 
 void CProtoCpp::_ReplaceStr(string & strSrc)
 {
+	_ReplaceStr(strSrc, strSession, m_strSession);
+	_ReplaceStr(strSrc, strHandler, m_strHandler);
 	_ReplaceStr(strSrc, strReqName, m_strReqName);
 	_ReplaceStr(strSrc, strAckName, m_strAckName);
 	_ReplaceStr(strSrc, strModuleName, m_strModuleName);

@@ -6,10 +6,21 @@
 #include <direct.h>
 using namespace std;
 
+template<typename T>
+uint32 GetRandom(std::vector<T*>& vecKey)
+{
+	for (auto it : vecKey)
+	{
+		cout << *it << endl;
+	}
+	return 0;
+}
+
+
 int main()
 {
-	string strSource = "E:\\project_master\\DailyWork\\Proto\\cs_proto.proto";
-	string strDest = "E:\\project_master\\DailyWork\\Proto\\cs_proto.go";
+	string strSource = "D:\\project_dw\\config\\Proto\\cs_proto.proto";
+	string strDest = "D:\\project_dw\\config\\Proto\\cs_proto.go";
 
 	vector<string> vecStrMsg;
 	CProtoRead::Instance()->GetProto(strSource, vecStrMsg);
@@ -27,7 +38,10 @@ int main()
 	}
 
 	//CProtoGolang::Instance()->GenGoCode(vecProtoMsg, strDest, "Person");
-	CProtoCpp::Instance()->GenGoCode(vecProtoMsg, strDest, "CUgcPlotMgr");
+	CProtoCpp::Instance()->SetHandler("");
+	CProtoCpp::Instance()->SetSession("");
+	CProtoCpp::Instance()->SetModule("CUgcPlotMgr");
+	CProtoCpp::Instance()->GenCppCode(vecProtoMsg, strDest);
 	system("pause");
 	return 0;
 }

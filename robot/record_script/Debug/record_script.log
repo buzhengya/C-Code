@@ -1,2 +1,6 @@
-﻿  record_script.vcxproj -> D:\C++Code\robot\Debug\record_script.exe
-  record_script.vcxproj -> D:\C++Code\robot\Debug\record_script.pdb (Full PDB)
+﻿  main.cpp
+D:\C++Code\robot\record_script\main.cpp(44,17): warning C4018: “<”: 有符号/无符号不匹配
+D:\C++Code\robot\record_script\main.cpp(53,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\C++Code\robot\record_script\main.cpp(67,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\C++Code\robot\record_script\main.cpp(154,18): warning C4018: “<”: 有符号/无符号不匹配
+  record_script.vcxproj -> D:\C++Code\robot\Debug\record_script.exe
